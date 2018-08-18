@@ -7,25 +7,23 @@
   <META NAME="KEYWORDS" CONTENT="periodic, table, element, chemistry, science, classification, electron configuration, atomic, mass, description, print, alkali, alkaline, transition, lanthanide, actinide, noble, nonmetal, matter, Michael Dayah">
 
   <SCRIPT TYPE="text/javascript">
-   <!--
-    // Copyright 1998-99 Michael Dayah.
-    setTimeout ("noFrames()",3000);
-    function noFrames() {
-    	if (parent.frames.length) {
-    		top.location.href = "http:\/\/www.dayah.com\/periodic\/html4css.html";
-    	}
-    }
-    function element(name) {
-    	elementWin = window.open("Elements\/" + name + ".html","elementWindow","scrollbars=yes,height=180,width=250");
-    }
-    function openKey() {
-    	keyWin = window.open("key.html","keyWindow","height=144,width=374");
-    }
-   // -->
+   // Copyright 1998-2000 Michael Dayah.
+   setTimeout ("noFrames()",3000);
+   function noFrames() {
+   	if (parent.frames.length) {
+   		top.location.href = "http:\/\/www.dayah.com\/periodic\/html4css.html";
+   	}
+   }
+   function element(name) {
+   	elementWin = window.open("Elements.html#" + name,"elementWindow","scrollbars=yes,height=180,width=250");
+   	elementWin.focus();
+   }
+   function openKey() {
+   	keyWin = window.open("key.html","keyWindow","height=144,width=374");
+   }
   </SCRIPT>
 
   <STYLE TYPE="text/css">
-   <!--
 
     A:active, A:hover	{ background: white; }
     A:link		{ text-decoration: underline; }
@@ -34,7 +32,7 @@
     BODY		{ background-color: white; font-family: sans-serif; }
     HR			{ border: solid; color: #AA3333; height: 0.3ex; width: 70%; }
     IMG			{ border: 0px; }
-    P			{ margin-left: 8%; margin-right: 8%; text-align: justify; text-indent: 5ex; }
+    P			{ margin-left: auto; margin-right: auto; text-align: justify; text-indent: 5ex; width: 85%; }
 
     .Header		{ background-color: #88FFFF; font-size: xx-large; }
 
@@ -69,15 +67,12 @@
     .OuterBorder	{ background-color: #0000FF; }
     .Removed		{ color: #0000FF; font-size: small; text-align: center; }
 
+    .Navigation		{ background-color: #DDDDDD; text-align: center; width: 25%; }
     .RowSpace		{ height: 8px; }
-    .NavRow		{ background-color: #DDDDDD; text-align: center; }
-    .Navigation		{ width: 25%; }
-    .Centered		{ margin-left: auto; margin-right: auto; }
     .Link		{ color: blue; text-decoration: none; }
 
     @page		{ margin: 1cm; size: landscape; }
 
-   -->
   </STYLE>
 
   <TITLE>Periodic Table of the Elements</TITLE>
@@ -91,20 +86,20 @@
 
   <P>This table gives information about the chemical elements. Elements are grouped into eight classes according to their properties. Each class is shown in a different color. Hydrogen does not belong to any one class. Click the name of an element to see its description.</P>
 
-  <TABLE CLASS="Centered" WIDTH="84%">
-   <TR STYLE="text-align: center;">
+  <TABLE WIDTH="85%" STYLE="margin-left: auto; margin-right: auto;">
+   <TR ALIGN="CENTER">
     <TD><A HREF="http://validator.w3.org/check?uri=http://www.dayah.com/periodic/html4css.html"><IMG SRC="Images/ValidHTML.GIF" ALT="HTML 4.0 Validated" HEIGHT=31 WIDTH=88></A></TD>
     <TD>
      <TABLE BORDER=5 CELLPADDING=5 CELLSPACING=15 STYLE="background-color: #BBBBBB;">
-      <TR CLASS="NavRow">
+      <TR>
        <TD CLASS="Navigation"><A HREF="JavaScript:openKey()" TITLE="Legend for the periodic table">Key</A></TD>
        <TD CLASS="Navigation"><A HREF="index.html" TITLE="View the periodic table optimized for browser compatibility rather than HTML compliance">Compatible</A></TD>
        <TD CLASS="Navigation"><A HREF="about.html" TITLE="About the designer, disclaimer, sources, recognition, and awards">About</A></TD>
        <TD CLASS="Navigation"><A HREF="questions.html" TITLE="Questions and answers about the periodic table">Questions</A></TD>
       </TR>
-      <TR CLASS="NavRow">
+      <TR>
        <TD CLASS="Navigation"><A HREF="Images/PeriodicTable.GIF" TITLE="Download a printable version of the periodic table">Print</A></TD>
-       <TD>HTML 4</TD>
+       <TD CLASS="Navigation">HTML 4</TD>
        <TD CLASS="Navigation"><A HREF="structure.html" TITLE="View the periodic table with borders turned on">Borders</A></TD>
        <TD CLASS="Navigation"><A HREF="feedback.html" TITLE="Use a form to send a message to the designer of this table">Feedback</A></TD>
       </TR>
@@ -115,23 +110,21 @@
   </TABLE>
 
   <SCRIPT TYPE="text/javascript">
-   <!--
-    // Copyright 1998-99 Michael Dayah.
-    document.write("<P>Because of the complexity of this page, certain browsers may not display it correctly. ");
-    var browser = ((navigator.appName.indexOf("Netscape") != -1) ? "Netscape Navigator" : navigator.appName);
-    var fullVersion = navigator.appVersion.split(" ");
-    document.write("Your browser, " + browser + " version " + fullVersion[0] + ", is ");
-    if (browser == "Microsoft Internet Explorer") {
-    	document.write((navigator.appVersion.indexOf("5.0") != -1) ? "<STRONG>sufficient<\/STRONG> for viewing this page." : "<STRONG>insufficient<\/STRONG> for viewing this page. It is recommended that you get Internet Explorer 5.");
-    }
-    if (browser == "Netscape Navigator") {
-    	document.write((parseInt(fullVersion[0]) == 5) ? "<STRONG>sufficient<\/STRONG> for viewing this page." : "<STRONG>insufficient<\/STRONG> for viewing this page. It is recommended that you get Netscape Navigator 5.");
-    }
-    if ((browser != "Netscape Navigator") && (browser != "Microsoft Internet Explorer")) {
-    	document.write("<STRONG>insufficient<\/STRONG> for viewing this page.");
-    }
-    document.write("<\/P>");
-   // -->
+   // Copyright 1998-2000 Michael Dayah.
+   document.write("<P>Because of the complexity of this page, certain browsers may not display it correctly. ");
+   var browser = ((navigator.appName.indexOf("Netscape") != -1) ? "Netscape Navigator" : navigator.appName);
+   var fullVersion = navigator.appVersion.split(" ");
+   document.write("Your browser, " + browser + " version " + fullVersion[0] + ", is ");
+   if (browser == "Microsoft Internet Explorer") {
+   	document.write((navigator.appVersion.indexOf("5.0") != -1) ? "<STRONG>sufficient<\/STRONG> for viewing this page." : "<STRONG>insufficient<\/STRONG> for viewing this page. It is recommended that you get Internet Explorer 5.");
+   }
+   if (browser == "Netscape Navigator") {
+   	document.write((parseInt(fullVersion[0]) == 5) ? "<STRONG>sufficient<\/STRONG> for viewing this page." : "<STRONG>insufficient<\/STRONG> for viewing this page. It is recommended that you get Netscape Navigator 5.");
+   }
+   if ((browser != "Netscape Navigator") && (browser != "Microsoft Internet Explorer")) {
+   	document.write("<STRONG>insufficient<\/STRONG> for viewing this page.");
+   }
+   document.write("<\/P>");
   </SCRIPT>
   <NOSCRIPT><P>Because either your browser does not support client-side scripting or you have disabled client-side scripts, it is unknown whether your browser is sufficient for viewing this page.</P></NOSCRIPT>
 
@@ -715,7 +708,7 @@
    </TR>
    <TR>
 
-    <TD CLASS="InnerBorder" ALIGN="CENTER" COLSPAN=47 STYLE="color: blue; font-size: x-small;">Web Page Design Copyright &copy; 1997-1999 <A CLASS="Link" HREF="mailto:michael@dayah.com">Michael Dayah</A>. <SCRIPT TYPE="text/javascript">if (Date.parse(document.lastModified)) { document.write('Last Modified: ' + document.lastModified); }</SCRIPT></TD>
+    <TD CLASS="InnerBorder" COLSPAN=47 STYLE="color: blue; font-size: x-small; text-align: center;">Web Page Design Copyright &copy; 1997-2000 <A CLASS="Link" HREF="mailto:michael@dayah.com">Michael Dayah</A>. <SCRIPT TYPE="text/javascript">if (Date.parse(document.lastModified)) { document.write('Last Modified: ' + document.lastModified); }</SCRIPT></TD>
     <TD CLASS="OuterBorder" ROWSPAN=5></TD>
 
    </TR>
