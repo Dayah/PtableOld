@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <title>404 - Document Not Found - Michael Dayah's Personal Web Site</title>
+  <link rel="stylesheet" type="text/css" href="dayah.css">
+ </head>
+ <body>
+  <h1>404 - Document Not Found</h1>
+  <h2>Commonly-Requested Documents</h2>
+  <dl>
+   <dt><a href="/periodic/">Periodic Table of the Elements</a></dt>
+    <dd>http://www.dayah.com/periodic/</dd>
+   <dt><a href="/essay/">Essays</a></dt>
+    <dd>http://www.dayah.com/essay/</dd>
+   <dt><a href="/software/">Software</a></dt>
+    <dd>http://www.dayah.com/software/</dd>
+   <dt><a href="/toes/">Ingrown Toenails Online</a></dt>
+    <dd>http://www.dayah.com/toes/</dd>
+   <dt><a href="/demo/">CSS Demo 1 - Windows Interface</a></dt>
+    <dd>http://www.dayah.com/demo/</dd>
+   <dt><a href="/demo2/">CSS Demo 2 - Magazine Layout</a></dt>
+    <dd>http://www.dayah.com/demo2/</dd>
+  </dl>
+ </body>
+</html>

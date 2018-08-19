@@ -8,18 +8,19 @@
 
   <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
    <!--
-    // Copyright 1998-99 Michael Dayah.
+    // Copyright 1998-2000 Michael Dayah.
     setTimeout ("noFrames()",3000);
     function noFrames() {
-        if (parent.frames.length) {
-                top.location.href = "http:\/\/www.dayah.com\/periodic\/";
-        }
+    	if (parent.frames.length) {
+    		top.location.href = "http:\/\/www.dayah.com\/periodic\/";
+    	}
     }
     function element(name) {
-        elementWin = window.open("Elements\/" + name + ".html","elementWindow","scrollbars=yes,height=180,width=250");
+    	elementWin = window.open("Elements.html#" + name,"elementWindow","scrollbars=yes,height=180,width=250");
+    	elementWin.focus();
     }
     function openKey() {
-        keyWin = window.open("key.html","keyWindow","height=144,width=374");
+    	keyWin = window.open("key.html","keyWindow","height=144,width=374");
     }
    // -->
   </SCRIPT>
@@ -30,7 +31,7 @@
     A:link { text-decoration: none; }
     A:visited { color: purple; text-decoration: none; }
     B { font-size: large; }
-    B, BLOCKQUOTE, BODY, FONT, TD { font-family: sans-serif; }
+    BODY, BLOCKQUOTE,FONT, TD { font-family: Arial, sans-serif; }
     BLOCKQUOTE { text-align: justify; }
     HR { color: #AA3333; }
     TH { text-align: center; }
@@ -42,9 +43,9 @@
  </HEAD>
  <BODY BGCOLOR="#FFFFFF" TEXT="#000000" ALINK="#0000FF" LINK="#000000" VLINK="#000000">
 
-  <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=0 WIDTH="100%">
+  <TABLE BORDER=1 WIDTH="100%">
    <TR>
-    <TH BGCOLOR="#88FFFF" NOWRAP><FONT SIZE=7>Periodic Table of the Elements</FONT></TH>
+    <TH BGCOLOR="#88FFFF"><FONT SIZE=7>Periodic&nbsp;Table&nbsp;of&nbsp;the&nbsp;Elements</FONT></TH>
    </TR>
   </TABLE>
 
@@ -70,7 +71,7 @@
   <BLOCKQUOTE>&nbsp; &nbsp; &nbsp;Because of the complexity of this page, certain browsers may not display it correctly.
    <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
     <!--
-     // Copyright 1998-99 Michael Dayah.
+     // Copyright 1998-2000 Michael Dayah.
      var browser = ((navigator.appName.indexOf("Netscape") != -1) ? "Netscape Navigator" : navigator.appName);
      var fullVersion = navigator.appVersion.split(" ");
      document.write("Your browser, " + browser + " version " + fullVersion[0] + ", is ");
@@ -99,8 +100,8 @@
 
     <TD COLSPAN=3><FONT SIZE=4>New</FONT></TD>
 
-    <TH COLSPAN=29 ROWSPAN=7>
-     <TABLE BORDER=1 CELLPADDING=5 CELLSPACING=0>
+    <TD COLSPAN=29 ROWSPAN=7>
+     <TABLE ALIGN="CENTER" BORDER=1 CELLPADDING=5 CELLSPACING=0>
       <TR>
 
        <TH>
@@ -381,7 +382,7 @@
    </TR>
    <TR>
 
-    <TD COLSPAN=41 HEIGHT=7></TD>
+    <TD COLSPAN=40 HEIGHT=7></TD>
     <TD BGCOLOR="#000000" COLSPAN=3><SPACER TYPE="BLOCK" HEIGHT=1 WIDTH=1></TD>
 
    </TR>
@@ -450,7 +451,7 @@
    </TR>
    <TR>
 
-    <TD COLSPAN=44 HEIGHT=7></TD>
+    <TD COLSPAN=43 HEIGHT=7></TD>
     <TD BGCOLOR="#000000" COLSPAN=3><SPACER TYPE="BLOCK" HEIGHT=1 WIDTH=1></TD>
 
    </TR>
@@ -640,13 +641,13 @@
 
     <TD BGCOLOR="#00DDDD" COLSPAN=2>114<BR><FONT COLOR="#FFFFFF"><B>Uuq</B></FONT><BR><FONT SIZE=2>Ununquadium<BR>(289)</FONT></TD>
 
-    <TD BGCOLOR="#00DDDD" COLSPAN=2>115<BR><FONT COLOR="#FFFFFF"><B>&nbsp;</B><BR><FONT SIZE=2>&nbsp;<BR>&nbsp;</FONT></TD>
+    <TD BGCOLOR="#00DDDD" COLSPAN=2>115<BR><FONT COLOR="#FFFFFF"><B>&nbsp;</B></FONT><BR><FONT SIZE=2>&nbsp;<BR>&nbsp;</FONT></TD>
 
     <TD BGCOLOR="#00DDDD" COLSPAN=2>116<BR><FONT COLOR="#FFFFFF"><B>Uuh</B></FONT><BR><FONT SIZE=2>Ununhexium<BR>(289)</FONT></TD>
 
     <TD ROWSPAN=8></TD>
 
-    <TD BGCOLOR="#00DDDD" COLSPAN=2>117<BR><FONT COLOR="#FFFFFF"><B>&nbsp;</B><BR><FONT SIZE=2>&nbsp;<BR>&nbsp;</FONT></TD>
+    <TD BGCOLOR="#00DDDD" COLSPAN=2>117<BR><FONT COLOR="#FFFFFF"><B>&nbsp;</B></FONT><BR><FONT SIZE=2>&nbsp;<BR>&nbsp;</FONT></TD>
 
     <TD BGCOLOR="#000000"><SPACER TYPE="BLOCK" HEIGHT=1 WIDTH=1></TD>
 
@@ -673,7 +674,7 @@
    </TR>
    <TR>
 
-    <TD ALIGN="CENTER" COLSPAN=47 BGCOLOR="#CCCCFF"><FONT COLOR="#6666FF" SIZE=2>Web Page Design Copyright &copy; 1997-1999 <A HREF="mailto:michael@dayah.com" STYLE="text-decoration: underline"><FONT COLOR="#6666FF">Michael Dayah</FONT></A>. <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">document.write('Last Modified: ' + document.lastModified);</SCRIPT></FONT></TD>
+    <TD ALIGN="CENTER" COLSPAN=47 BGCOLOR="#CCCCFF"><FONT COLOR="#6666FF" SIZE=2>Web Page Design Copyright &copy; 1997-2000 <A HREF="mailto:michael@dayah.com" STYLE="text-decoration: underline"><FONT COLOR="#6666FF">Michael Dayah</FONT></A>. <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">document.write('Last Modified: ' + document.lastModified);</SCRIPT></FONT></TD>
     <TD BGCOLOR="#0000FF" ROWSPAN=5><SPACER TYPE="BLOCK" HEIGHT=1 WIDTH=1></TD>
 
    </TR>
