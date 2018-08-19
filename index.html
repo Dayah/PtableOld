@@ -5,8 +5,10 @@
   <title>Periodic Table of the Elements</title>
 
   <meta http-equiv="PICS-Label" CONTENT='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" for "http://www.dayah.com/" on "1999.01.25T17:12-0800" r (n 0 s 0 v 0 l 0))'>
-  <meta name="description" content="Up-to-date periodic table of the elements made with only HTML tables. Has all important information on one page. Includes latest information on new element naming. Click an element's name for a short description.">
-  <meta name="keywords" content="periodic table, chart, print, element, chemistry, science, electron configuration, atomic, mass, description, alkali, alkaline, transition, lanthanide, actinide, noble, nonmetal, matter, Michael Dayah">
+  <meta name="description" content="Large color printable text-only periodic table of the elements. All information on one single page. Latest new elements.">
+  <meta name="keywords" content="periodic table, chart, print, printable, large, pdf, text, element, electron configuration, atomic, mass, description, alkali, alkaline, lanthanide, actinide, noble, nonmetal">
+
+  <link href="Style/screen-default.css" rel="stylesheet" title="Default" type="text/css" media="screen">
 
   <script type="text/javascript">
    function element(name) {
@@ -20,67 +22,17 @@
    google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.dayah.com/periodic/essays-banner.html"; google_ad_width = 728; google_ad_height = 90; google_ad_format = "728x90_as"; google_ad_type = "text_image"; google_ad_channel =""; google_color_border = "BBBBBB"; google_color_bg = "DDDDDD"; google_color_link = "0000FF"; google_color_url = "008000"; google_color_text = "000000";
   </script>
 
-  <style type="text/css" media="screen">
-   .Name A, .LongName A	{ display: block; color: black; text-decoration: none; }
-   A:active, A:hover	{ text-decoration: underline; }
-   STRONG		{ font-size: large; display: block; }
-   BODY			{ background-color: white; color: black; font-family: sans-serif; }
-   HR			{ border: solid; color: #A33; height: 0.1em; width: 70%; }
-   IMG			{ border: 0; }
-   P			{ margin-left: auto; margin-right: auto; text-align: justify; text-indent: 3ex; width: 85%; }
-
-   H1			{ background-color: #8FF; white-space: nowrap; text-align: center; }
-
-   .CategoryBlock	{ height: 1.5em; width: 1.5em; }
-   .StateBlock		{ height: 1.5em; width: 1.5em; background-color: white; vertical-align: middle; border: thin solid black; }
-   .CategoryName	{ font-size: large; }
-   .State		{ font-weight: bold; font-size: large; }
-   .Solid		{ color: black; }
-   .Liquid		{ color: green; }
-   .Gas			{ color: red; }
-   .Synthetic		{ color: white; }
-   .Undiscovered	{ color: #BBB; }
-
-   .Alkali		{ background-color: #FA0; }
-   .Alkaline		{ background-color: #FF0; }
-   .Nonmetal		{ background-color: #0F0; }
-   .Transition		{ background-color: #F09; }
-   .Actinide		{ background-color: #F9C; }
-   .Lanthanide		{ background-color: #F99; }
-   .Other		{ background-color: #0DD; }
-   .Noble		{ background-color: #8FF; }
-   .Hydrogen		{ background-color: #DDD; }
-   .Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Other, .Noble, .Hydrogen, .Electron { padding: 2pt; color: black; }
-
-   .NewGroup		{ font-size: medium; text-align: center; vertical-align: bottom; }
-   .OldGroup		{ color: #A33; font-size: medium; text-align: center; }
-   .Period		{ font-size: large; text-align: right; }
-
-   .Name		{ font-size: x-small; }
-   .LongName		{ font-size: xx-small; }
-   .Electron		{ font-size: xx-small; line-height: 1; text-align: right; vertical-align: top; }
-
-   .Divider		{ background-color: black; }
-   .InnerBorder		{ background-color: #CCF; }
-   .OuterBorder		{ background-color: #00F; }
-   .Removed		{ color: #00F; font-size: small; text-align: center; }
-
-   .Navigation		{ background-color: #BBB; text-align: center; }
-   .Navigation TD	{ color: black; background-color: #DDD; width: 25%; white-space: nowrap; }
-   .RowSpace		{ height: 0.5em; padding-right: 0.5em; }
-  </style>
-
   <style type="text/css" media="print">
-   @page					{ size: landscape; margin: 0; }
-   H1						{ font-size: xx-large; }
+   @page			{ size: landscape; margin: 0; }
+   H1				{ font-size: xx-large; }
    STRONG, .CategoryName, .State, .Period, .NewGroup, .OldGroup	{ font-size: 10pt; }
-   TD, .Removed					{ font-size: 8pt; }
-   .Name, .Electron				{ font-size: 6pt; }
-   .LongName					{ font-size: 4pt; }
-   .Navigation, IMG, P				{ display: none; }
-   .RowSpace					{ height: 3pt; width: 3pt; }
-   .CategoryBlock				{ height: 6pt; width: 6pt; }
-   .StateBlock					{ height: 10pt; width: 10pt; }
+   TD, .Removed			{ font-size: 8pt; }
+   .Name, .Electron		{ font-size: 6pt; }
+   .LongName			{ font-size: 4pt; }
+   .Navigation, IMG, P		{ display: none; }
+   .RowSpace			{ height: 3pt; width: 3pt; }
+   .CategoryBlock		{ height: 6pt; width: 6pt; }
+   .StateBlock			{ height: 10pt; width: 10pt; }
    .Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Other, .Noble, .Hydrogen, .Electron { padding: 1pt; }
   </style>
 
@@ -89,27 +41,28 @@
 
   <h1>Periodic Table of the Elements</h1>
 
-  <p>This table gives information about the chemical elements. Elements are grouped into eight classes according to their properties. Each class is shown in a different color. Hydrogen does not belong to any one class. Click the name of an element to see its description.</p>
+  <h2>This large full-size color-coded periodic table (periodic chart) contains most important information (atomic number, chemical symbol, element name, mass number, and electron configuration) on a single page. It is rendered only with text, so you are free to use your browser's font scaling (View, Text Size) to increase or decrease its size. Also available are a <a href="periodic table.html" title="PNG image (2119x1329)">large image version</a> and <a href="Other/periodic table.pdf">printable PDF of the periodic table</a>.</h2>
+
   <table style="margin-left: auto; margin-right: auto; width: 85%;">
    <tr>
-    <td><a href="http://validator.w3.org/check?uri=http://www.dayah.com/periodic/"><img src="Images/ValidHTML.GIF" alt="HTML 4.0 Validated" height=31 width=88></a></td>
+    <td><img src="Images/ValidHTML.GIF" alt="HTML 4.0 Validated" height=31 width=88></td>
     <td>
      <table style="margin-left: auto; margin-right: auto;" class="Navigation" border=5 cellpadding=5 cellspacing=15>
       <tr>
-       <td><a href="JavaScript:openKey()" title="Legend for the periodic table">Key</a></td>
-       <td><a href="compatible.html" title="View the periodic table optimized for browser compatibility rather than HTML compliance">Old Browsers</a></td>
-       <td><a href="about.html" title="About the designer, disclaimer, sources, recognition, and awards">About</a></td>
-       <td><a href="questions.html" title="Questions and answers about the periodic table">Questions</a></td>
+       <td><a href="key.html" onClick="openKey(); return false;" title="Legend for the periodic table">Key</a></td>
+       <td><a href="questions.html" title="Questions and answers about this periodic table">Table FAQ</a></td>
+       <td><a href="feedback.html" title="Use a form to send a message to the designer of this table">Feedback</a></td>
+       <td><a href="about.html" title="Code and banners for linking to this table">Linking</a></td>
       </tr>
       <tr>
-       <td>Print: <a href="Images/periodic table.png" title="View a single image version of the periodic table">PNG</a>, <a href="Other/periodic table.pdf" title="Download a PDF of the periodic table for printing">PDF</a></td>
+       <td>Print: <a href="periodic table.html" title="View a single image version of the periodic table">PNG</a>, <a href="Other/periodic table.pdf" title="Download a PDF of the periodic table for printing">PDF</a></td>
        <td>HTML 4/CSS</td>
-       <td><a href="structure.html" title="View the periodic table with borders turned on">HTML Borders</a></td>
-       <td><a href="feedback.html" title="Use a form to send a message to the designer of this table">Feedback</a></td>
+       <td><a href="compatible.html" title="View the periodic table optimized for browser compatibility rather than HTML compliance">Old Browsers</a></td>
+       <td><a href="structure.html" title="View the periodic table with borders turned on">Show Borders</a></td>
       </tr>
      </table>
     </td>
-    <td style="text-align: right;"><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.dayah.com/periodic/"><img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Validated" height=31 width=88></a></td>
+    <td style="text-align: right;"><img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Validated" height=31 width=88></td>
    </tr>
   </table>
 
@@ -127,7 +80,7 @@
     <td class="NewGroup" colspan=3 style="text-align: left;">New</td>
 
     <td colspan=29 rowspan=7>
-     <table cellpadding=5 cellspacing=5 style="margin-left: auto; margin-right: auto;">
+     <table id="Key" cellpadding=5 cellspacing=5>
       <tr>
 
        <th><div class="CategoryBlock Alkali"></div></th>
@@ -176,8 +129,8 @@
        <th><div class="CategoryBlock Noble"></div></th>
        <td class="CategoryName">Noble gases</td>
 
-       <th class="StateBlock" style="background-color: black;"><strong class="Synthetic">Tc</strong></th>
-       <td class="State" style="color: #BBB;">Synthetic</td>
+       <th class="StateBlock ContrastBG"><strong class="Synthetic">Tc</strong></th>
+       <td class="State Synthetic ContrastFG">Synthetic</td>
 
       </tr>
      </table>
