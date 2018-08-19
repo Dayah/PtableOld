@@ -29,13 +29,13 @@
    </TR>
   </TABLE>
 
-  <BLOCKQUOTE>&nbsp; &nbsp; &nbsp;Please use this form to tell me what you thought of my <A HREF=".">Periodic Table page</A>. If you have not already been, read <A HREF="about.html">about the Periodic Table Page</A>. Suggestions and criticism are welcome.</BLOCKQUOTE>
+  <BLOCKQUOTE>&nbsp; &nbsp; &nbsp;Please use this form to tell me what you thought of my <A HREF="./">Periodic Table page</A>. If you have not already been, read <A HREF="about.html">about the Periodic Table Page</A>. Suggestions and criticism are welcome.</BLOCKQUOTE>
 
   <DIV ALIGN="CENTER">
    <TABLE ALIGN="CENTER" BGCOLOR="#BBBBBB" BORDER=5 CELLPADDING=5 CELLSPACING=15>
     <TR ALIGN="CENTER" BGCOLOR="#DDDDDD">
      <TD WIDTH="25%"><A HREF="JavaScript:openKey()" STYLE="color: blue; text-decoration: underline" TITLE="Legend for the periodic table">Key</A></TD>
-     <TD WIDTH="25%"><A HREF="." STYLE="color: blue; text-decoration: underline" TITLE="View the periodic table optimized for browser compatibility rather than HTML compliance">Compatible</A></TD>
+     <TD WIDTH="25%"><A HREF="./" STYLE="color: blue; text-decoration: underline" TITLE="View the periodic table optimized for browser compatibility rather than HTML compliance">Compatible</A></TD>
      <TD WIDTH="25%"><A HREF="about.html" STYLE="color: blue; text-decoration: underline" TITLE="About the designer, disclaimer, sources, recognition, and awards">About</A></TD>
      <TD WIDTH="25%"><A HREF="questions.html" STYLE="color: blue; text-decoration: underline" TITLE="Questions and answers about the periodic table">Questions</A></TD>
     </TR>
@@ -50,7 +50,11 @@
 
   <BR><BR>
 
-  <FORM ACTION="feedback.phtml" METHOD="GET">
+  <FORM METHOD="POST" ACTION="form.asp">
+   <input name="_recipients" type="hidden" value="michael@dayah.com">
+   <input name="_subject" type="hidden" value="Dayah.com Periodic Table Feedback">
+   <input name="_redirect" type="hidden" value="./">
+   <input name="_replyToField" type="hidden" value="E-Mail">
 
    <TABLE ALIGN="CENTER" BGCOLOR="#000088" BORDER=0 CELLPADDING=10>
     <TR>
@@ -88,7 +92,7 @@
 
        <TR>
         <TD ALIGN="RIGHT">City:</TD>
-        <TD><INPUT TYPE=TEXT NAME="City" SIZE=17>, State: <INPUT TYPE=TEXT NAME="State" SIZE=2></TD>
+        <TD><INPUT TYPE=TEXT NAME="City" SIZE=17> State: <INPUT TYPE=TEXT NAME="State" SIZE=2></TD>
        </TR>
 
        <TR>
@@ -119,7 +123,7 @@
    </TABLE>
   </FORM>
 
-  <P ALIGN="CENTER"><FONT FACE="Verdana, Arial" SIZE=2>Copyright &copy; 1998-99 Michael Dayah. All Rights Reserved.</FONT></P>
+  <P ALIGN="CENTER"><FONT FACE="Verdana, Arial" SIZE=2>Copyright &copy; 1998 Michael Dayah. All Rights Reserved.</FONT></P>
 
  </BODY>
 </HTML>
