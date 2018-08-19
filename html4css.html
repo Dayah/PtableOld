@@ -1,13 +1,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
-<HTML>
- <HEAD>
+<html>
+ <head>
 
-  <META HTTP-EQUIV="PICS-Label" CONTENT='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" for "http://www.dayah.com/" on "1999.01.25T17:12-0800" r (n 0 s 0 v 0 l 0))'>
-  <META NAME="DESCRIPTION" CONTENT="Up-to-date periodic table of the elements made with only HTML tables. Has all important information on one page. Includes latest information on new element naming. Click an element's name for a short description.">
-  <META NAME="KEYWORDS" CONTENT="periodic, table, element, chemistry, science, classification, electron configuration, atomic, mass, description, print, alkali, alkaline, transition, lanthanide, actinide, noble, nonmetal, matter, Michael Dayah">
+  <title>Periodic Table of the Elements</title>
 
-  <SCRIPT TYPE="text/javascript">
-   // Copyright 1998-2000 Michael Dayah.
+  <meta http-equiv="PICS-Label" CONTENT='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" for "http://www.dayah.com/" on "1999.01.25T17:12-0800" r (n 0 s 0 v 0 l 0))'>
+  <meta name="description" content="Up-to-date periodic table of the elements made with only HTML tables. Has all important information on one page. Includes latest information on new element naming. Click an element's name for a short description.">
+  <meta name="keywords" content="periodic table, chart, print, element, chemistry, science, electron configuration, atomic, mass, description, alkali, alkaline, transition, lanthanide, actinide, noble, nonmetal, matter, Michael Dayah">
+
+  <script type="text/javascript">
    setTimeout ("noFrames()",3000);
    function noFrames() {
    	if (parent.frames.length) {
@@ -15,102 +16,108 @@
    	}
    }
    function element(name) {
-   	elementWin = window.open("elements.html#" + name,"elementWindow","resizable=yes,scrollbars=yes,height=180,width=250");
+   	elementWin = window.open("elements.html#" + name, "elementWindow", "resizable=yes,scrollbars=yes,height=180,width=250");
    	elementWin.focus();
    }
    function openKey() {
-   	keyWin = window.open("key.html","keyWindow","height=144,width=374");
+   	keyWin = window.open("key.html", "keyWindow", "height=144,width=374");
    }
-  </SCRIPT>
+  </script>
 
-  <STYLE TYPE="text/css">
+  <style type="text/css" media="screen, print">
+   A:active, A:hover	{ text-decoration: underline; }
+   TD DIV A		{ color: black; text-decoration: none; }
+   STRONG		{ font-size: large; }
+   BODY			{ background-color: white; font-family: sans-serif; }
+   HR			{ border: solid; color: #A33; height: 0.1em; width: 70%; }
+   IMG			{ border: 0; }
+   P			{ margin-left: auto; margin-right: auto; text-align: justify; text-indent: 3ex; width: 85%; }
 
-    A:active, A:hover	{ background: white; }
-    A:link		{ text-decoration: underline; }
-    TD DIV A:link	{ color: black; text-decoration: none; }
-    B			{ font-size: large; }
-    BODY		{ background-color: white; font-family: sans-serif; }
-    HR			{ border: solid; color: #AA3333; height: 0.3ex; width: 70%; }
-    IMG			{ border: 0px; }
-    P			{ margin-left: auto; margin-right: auto; text-align: justify; text-indent: 5ex; width: 85%; }
+   #Header		{ background-color: #8FF; font-size: xx-large; font-weight: bold; white-space: nowrap; text-align: center; }
 
-    .Header		{ background-color: #88FFFF; font-size: xx-large; }
+   .CategoryBlock	{ height: 1.5em; width: 1.5em; }
+   .StateBlock		{ height: 2em; width: 2em; vertical-align: middle; border: thin solid black; }
+   .CategoryName	{ font-size: large; }
+   .State		{ font-weight: bold; font-size: large; }
+   .Liquid		{ color: green; }
+   .Gas			{ color: red; }
+   .Synthetic		{ color: white; }
 
-    .CategoryBlock	{ height: 3ex; width: 3ex; }
-    .StateBlock		{ height: 4.5ex; width: 4.5ex; }
-    .CategoryName	{ font-size: large; }
-    .State		{ font-weight: bold; font-size: large; }
-    .Liquid		{ color: green; }
-    .Gas		{ color: red; }
-    .Synthetic		{ color: white; }
+   .Alkali		{ background-color: #FA0; }
+   .Alkaline		{ background-color: #FF0; }
+   .Nonmetal		{ background-color: #0F0; }
+   .Transition		{ background-color: #F09; }
+   .Actinide		{ background-color: #F9C; }
+   .Lanthanide		{ background-color: #F99; }
+   .Other		{ background-color: #0DD; }
+   .Noble		{ background-color: #8FF; }
+   .Hydrogen		{ background-color: #DDD; }
+   .Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Other, .Noble, .Hydrogen, .Electron { padding: 2pt; }
 
-    .Alkali		{ background-color: #FFAA00; }
-    .Alkaline		{ background-color: #FFFF00; }
-    .Nonmetal		{ background-color: #00FF00; }
-    .Transition		{ background-color: #FF0099; }
-    .Actinide		{ background-color: #FF99CC; }
-    .Lanthanide		{ background-color: #FF9999; }
-    .Other		{ background-color: #00DDDD; }
-    .Noble		{ background-color: #88FFFF; }
-    .Hydrogen		{ background-color: #DFDFDF; }
+   .NewGroup		{ font-size: medium; text-align: center; vertical-align: bottom; }
+   .OldGroup		{ color: #A33; font-size: medium; text-align: center; }
+   .Period		{ font-size: large; text-align: right; }
 
-    .NewGroup		{ font-size: medium; text-align: center; vertical-align: bottom; }
-    .OldGroup		{ color: #AA3333; font-size: medium; text-align: center; }
-    .Period		{ font-size: large; text-align: right; }
+   .Name		{ font-size: x-small; }
+   .LongName		{ font-size: xx-small; }
+   .Electron		{ font-size: xx-small; line-height: 1; text-align: right; vertical-align: top; }
 
-    .Name		{ font-size: x-small; }
-    .LongName		{ font-size: xx-small; }
-    .Electron		{ font-size: xx-small; text-align: right; vertical-align: top; }
+   .Divider		{ background-color: black; }
+   .InnerBorder		{ background-color: #CCF; }
+   .OuterBorder		{ background-color: #00F; }
+   .Removed		{ color: #00F; font-size: small; text-align: center; }
 
-    .Divider		{ background-color: black; }
-    .InnerBorder	{ background-color: #CCCCFF; }
-    .OuterBorder	{ background-color: #0000FF; }
-    .Removed		{ color: #0000FF; font-size: small; text-align: center; }
+   .Navigation		{ background-color: #BBB; text-align: center; }
+   .Navigation TD	{ background-color: #DDD; width: 25%; }
+   .RowSpace		{ height: 0.5em; padding-right: 0.5em; }
+   .Link		{ color: inherit; }
+  </style>
 
-    .Navigation		{ background-color: #DDDDDD; text-align: center; width: 25%; }
-    .RowSpace		{ height: 8px; }
-    .Link		{ color: blue; text-decoration: none; }
+  <style type="text/css" media="print">
+   @page					{ size: landscape; margin: 0; }
+   .Header					{ font-size: xx-large; }
+   STRONG, .CategoryName, .State, .Period, .NewGroup, .OldGroup	{ font-size: 10pt; }
+   TD, .Removed					{ font-size: 8pt; }
+   .Name, .Electron				{ font-size: 6pt; }
+   .LongName					{ font-size: 4pt; }
+   .Navigation, IMG, P				{ display: none; }
+   .RowSpace					{ height: 3pt; width: 3pt; }
+   .CategoryBlock				{ height: 6pt; width: 6pt; }
+   .StateBlock					{ height: 10pt; width: 10pt; }
+   .Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Other, .Noble, .Hydrogen, .Electron { padding: 1pt; }
+  </style>
 
-    @page		{ margin: 1cm; size: landscape; }
+ </head>
+ <body>
 
-  </STYLE>
+  <div id="Header">Periodic Table of the Elements</div>
 
-  <TITLE>Periodic Table of the Elements</TITLE>
+  <p>This table gives information about the chemical elements. Elements are grouped into eight classes according to their properties. Each class is shown in a different color. Hydrogen does not belong to any one class. Click the name of an element to see its description.</p>
+  <table style="margin-left: auto; margin-right: auto; width: 85%;">
+   <tr>
+    <td><a href="http://validator.w3.org/check?uri=http://www.dayah.com/periodic/html4css.html"><img src="Images/ValidHTML.GIF" alt="HTML 4.0 Validated" height=31 width=88></a></td>
+    <td>
+     <table class="Navigation" border=5 cellpadding=5 cellspacing=15>
+      <tr>
+       <td><a href="JavaScript:openKey()" title="Legend for the periodic table">Key</a></td>
+       <td><a href="./" title="View the periodic table optimized for browser compatibility rather than HTML compliance">Compatible</a></td>
+       <td><a href="about.html" title="About the designer, disclaimer, sources, recognition, and awards">About</a></td>
+       <td><a href="questions.html" title="Questions and answers about the periodic table">Questions</a></td>
+      </tr>
+      <tr>
+       <td><a href="Images/PeriodicTable.GIF" title="Download a printable version of the periodic table">Print</a></td>
+       <td>HTML 4/CSS</td>
+       <td><a href="structure.html" title="View the periodic table with borders turned on">Borders</a></td>
+       <td><a href="feedback.html" title="Use a form to send a message to the designer of this table">Feedback</a></td>
+      </tr>
+     </table>
+    </td>
+    <td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.dayah.com/periodic/html4css.html"><img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Validated" height=31 width=88></a></td>
+   </tr>
+  </table>
 
- </HEAD>
- <BODY>
-
-  <TABLE BORDER=0 CELLPADDING=1 CELLSPACING=0 WIDTH="100%">
-   <TR><TH CLASS="Header">Periodic&nbsp;Table&nbsp;of&nbsp;the&nbsp;Elements</TH></TR>
-  </TABLE>
-
-  <P>This table gives information about the chemical elements. Elements are grouped into eight classes according to their properties. Each class is shown in a different color. Hydrogen does not belong to any one class. Click the name of an element to see its description.</P>
-
-  <TABLE WIDTH="85%" STYLE="margin-left: auto; margin-right: auto;">
-   <TR ALIGN="CENTER">
-    <TD><A HREF="http://validator.w3.org/check?uri=http://www.dayah.com/periodic/html4css.html"><IMG SRC="Images/ValidHTML.GIF" ALT="HTML 4.0 Validated" HEIGHT=31 WIDTH=88></A></TD>
-    <TD>
-     <TABLE BORDER=5 CELLPADDING=5 CELLSPACING=15 STYLE="background-color: #BBBBBB;">
-      <TR>
-       <TD CLASS="Navigation"><A HREF="JavaScript:openKey()" TITLE="Legend for the periodic table">Key</A></TD>
-       <TD CLASS="Navigation"><A HREF="." TITLE="View the periodic table optimized for browser compatibility rather than HTML compliance">Compatible</A></TD>
-       <TD CLASS="Navigation"><A HREF="about.html" TITLE="About the designer, disclaimer, sources, recognition, and awards">About</A></TD>
-       <TD CLASS="Navigation"><A HREF="questions.html" TITLE="Questions and answers about the periodic table">Questions</A></TD>
-      </TR>
-      <TR>
-       <TD CLASS="Navigation"><A HREF="Images/PeriodicTable.GIF" TITLE="Download a printable version of the periodic table">Print</A></TD>
-       <TD CLASS="Navigation">HTML 4</TD>
-       <TD CLASS="Navigation"><A HREF="structure.html" TITLE="View the periodic table with borders turned on">Borders</A></TD>
-       <TD CLASS="Navigation"><A HREF="feedback.html" TITLE="Use a form to send a message to the designer of this table">Feedback</A></TD>
-      </TR>
-     </TABLE>
-    </TD>
-    <TD><A HREF="http://jigsaw.w3.org/css-validator/validator?uri=http://www.dayah.com/periodic/html4css.html"><IMG SRC="Images/ValidCSS.GIF" ALT="CSS Validated" HEIGHT=31 WIDTH=88></A></TD>
-   </TR>
-  </TABLE>
-
+<!--
   <SCRIPT TYPE="text/javascript">
-   // Copyright 1998-2000 Michael Dayah.
    document.write("<P>Because of the complexity of this page, certain browsers may not display it correctly. ");
    var browser = ((navigator.appName.indexOf("Netscape") != -1) ? "Netscape Navigator" : navigator.appName);
    var fullVersion = navigator.appVersion.split(" ");
@@ -127,716 +134,669 @@
    document.write("<\/P>");
   </SCRIPT>
   <NOSCRIPT><P>Because either your browser does not support client-side scripting or you have disabled client-side scripts, it is unknown whether your browser is sufficient for viewing this page.</P></NOSCRIPT>
+-->
 
-  <TABLE BORDER=0 CELLPADDING=4 CELLSPACING=0>
-   <TR>
-
-    <TD COLSPAN=2 ROWSPAN=2></TD>
-
-    <TD CLASS="NewGroup" COLSPAN=2>1</TD>
-
-    <TD ROWSPAN=18></TD>
-
-    <TD CLASS="NewGroup" COLSPAN=3 STYLE="text-align: left;">New</TD>
-
-    <TH COLSPAN=29 ROWSPAN=7>
-     <TABLE BORDER=0 CELLPADDING=5 CELLSPACING=0>
-      <TR>
-
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Alkali"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Alkali Metals</TD>
-
-       <TD ROWSPAN=4 STYLE="width: 6ex;"></TD>
-
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Actinide"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Actinide series</TD>
-
-       <TD ROWSPAN=4 STYLE="width: 12ex;"></TD>
-
-       <TH>
-        <TABLE BORDER=1 CELLSPACING=0>
-         <TR><TH CLASS="StateBlock"><B>C</B></TH></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="State">Solid</TD>
+  <table border=0 cellpadding=0 cellspacing=0>
+   <tr>
 
-      </TR>
-      <TR>
+    <td colspan=2 rowspan=2></td>
 
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Alkaline"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Alkaline earth Metals</TD>
+    <td class="NewGroup" colspan=2>1</td>
 
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Other"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Other Metals</TD>
+    <td class="RowSpace" rowspan=18></td>
 
-       <TH>
-        <TABLE BORDER=1 CELLSPACING=0>
-         <TR><TH CLASS="StateBlock"><B CLASS="Liquid">Br</B></TH></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="State Liquid">Liquid</TD>
+    <td class="NewGroup" colspan=3 style="text-align: left;">New</td>
 
-      </TR>
-      <TR>
+    <th colspan=29 rowspan=7>
+     <table cellpadding=5 cellspacing=0>
+      <tr>
 
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Transition"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Transition metals</TD>
+       <th><div class="CategoryBlock Alkali"></div></th>
+       <td class="CategoryName">Alkali Metals</td>
 
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Nonmetal"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Nonmetals</TD>
+       <td rowspan=4 style="width: 2em;"></td>
 
-       <TH>
-        <TABLE BORDER=1 CELLSPACING=0>
-         <TR><TH CLASS="StateBlock"><B CLASS="Gas">H</B></TH></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="State Gas">Gas</TD>
+       <th><div class="CategoryBlock Actinide"></div></th>
+       <td class="CategoryName">Actinide series</td>
 
-      </TR>
-      <TR>
+       <td rowspan=4 style="width: 4em;"></td>
 
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Lanthanide"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Lanthanide series</TD>
+       <th class="StateBlock"><strong>C</strong></th>
+       <td class="State">Solid</td>
 
-       <TH>
-        <TABLE BORDER=0 CELLSPACING=0>
-         <TR><TD CLASS="CategoryBlock Noble"></TD></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="CategoryName">Noble gases</TD>
+      </tr>
+      <tr>
 
-       <TH>
-        <TABLE BORDER=1 CELLSPACING=0>
-         <TR><TH CLASS="StateBlock" STYLE="background-color: black;"><B CLASS="Synthetic">Tc</B></TH></TR>
-        </TABLE>
-       </TH>
-       <TD CLASS="State" STYLE="color: #BBBBBB;">Synthetic</TD>
+       <th><div class="CategoryBlock Alkaline"></div></th>
+       <td class="CategoryName">Alkaline earth Metals</td>
 
-      </TR>
-     </TABLE>
-    </TH>
+       <th><div class="CategoryBlock Other"></div></th>
+       <td class="CategoryName">Other Metals</td>
 
-    <TD ROWSPAN=25></TD>
+       <th class="StateBlock"><strong class="Liquid">Br</strong></th>
+       <td class="State Liquid">Liquid</td>
 
-    <TD COLSPAN=15 ROWSPAN=2></TD>
+      </tr>
+      <tr>
 
-    <TD CLASS="NewGroup" COLSPAN=2>18</TD>
+       <th><div class="CategoryBlock Transition"></div></th>
+       <td class="CategoryName">Transition metals</td>
 
-   </TR>
-   <TR>
+       <th><div class="CategoryBlock Nonmetal"></div></th>
+       <td class="CategoryName">Nonmetals</td>
 
-    <TD CLASS="OldGroup" COLSPAN=2>IA</TD>
+       <th class="StateBlock"><strong class="Gas">H</strong></th>
+       <td class="State Gas">Gas</td>
 
-    <TD CLASS="OldGroup" COLSPAN=3 STYLE="text-align: left;">Original</TD>
+      </tr>
+      <tr>
 
-    <TD CLASS="OldGroup" COLSPAN=2>VIIIA</TD>
+       <th><div class="CategoryBlock Lanthanide"></div></th>
+       <td class="CategoryName">Lanthanide series</td>
 
-   </TR>
-   <TR>
+       <th><div class="CategoryBlock Noble"></div></th>
+       <td class="CategoryName">Noble gases</td>
 
-    <TD CLASS="RowSpace"></TD>
+       <th class="StateBlock" style="background-color: black;"><strong class="Synthetic">Tc</strong></th>
+       <td class="State" style="color: #BBB;">Synthetic</td>
 
-   </TR>
-   <TR>
+      </tr>
+     </table>
+    </th>
 
-    <TD CLASS="Period" ROWSPAN=2>1</TD>
-    <TD ROWSPAN=15></TD>
+    <td class="RowSpace" rowspan=25></td>
 
-    <TD CLASS="Hydrogen" ROWSPAN=2>1<BR><B CLASS="Gas">H</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Hydrogen')">Hydrogen</A><BR>1.00794</DIV></TD>
-    <TD CLASS="Hydrogen Electron" ROWSPAN=2>1</TD>
+    <td colspan=15 rowspan=2></td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>2</TD>
-    <TD ROWSPAN=11></TD>
+    <td class="NewGroup" colspan=2>18</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>13</TD>
-    <TD ROWSPAN=5></TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="NewGroup" COLSPAN=2>14</TD>
-    <TD ROWSPAN=7></TD>
+    <td class="OldGroup" colspan=2>IA</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>15</TD>
-    <TD ROWSPAN=9></TD>
+    <td class="OldGroup" colspan=3 style="text-align: left;">Original</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>16</TD>
-    <TD ROWSPAN=11></TD>
+    <td class="OldGroup" colspan=2>VIIIA</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>17</TD>
-    <TD ROWSPAN=13></TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Noble" ROWSPAN=2>2<BR><B CLASS="Gas">He</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Helium')">Helium</A><BR>4.002602</DIV></TD>
-    <TD CLASS="Noble Electron" ROWSPAN=2>2</TD>
+    <td class="RowSpace"></td>
 
-   </TR>
-   <TR>
+   </tr>
+   <tr>
 
-    <TD CLASS="OldGroup" COLSPAN=2>IIA</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>IIIA</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>IVA</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VA</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VIA</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VIIA</TD>
+    <td class="Period" rowspan=2>1</td>
+    <td class="RowSpace" rowspan=15></td>
 
-   </TR>
-   <TR>
+    <td class="Hydrogen" rowspan=2>1<br><strong class="Gas">H</strong><br><div class="Name"><a href="JavaScript:element('Hydrogen')">Hydrogen</a><br>1.00794</div></td>
+    <td class="Hydrogen Electron" rowspan=2>1</td>
 
-    <TD CLASS="RowSpace"></TD>
+    <td class="NewGroup" colspan=2>2</td>
+    <td class="RowSpace" rowspan=11></td>
 
-   </TR>
-   <TR>
+    <td class="NewGroup" colspan=2>13</td>
+    <td class="RowSpace" rowspan=5></td>
 
-    <TD CLASS="Period">2</TD>
+    <td class="NewGroup" colspan=2>14</td>
+    <td class="RowSpace" rowspan=7></td>
 
-    <TD CLASS="Alkali">3<BR><B>Li</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Lithium')">Lithium</A><BR>6.941</DIV></TD>
-    <TD CLASS="Alkali Electron">2<BR>1</TD>
+    <td class="NewGroup" colspan=2>15</td>
+    <td class="RowSpace" rowspan=9></td>
 
-    <TD CLASS="Alkaline">4<BR><B>Be</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Beryllium')">Beryllium</A><BR>9.012182</DIV></TD>
-    <TD CLASS="Alkaline Electron">2<BR>2</TD>
+    <td class="NewGroup" colspan=2>16</td>
+    <td class="RowSpace" rowspan=11></td>
 
-    <TD CLASS="Nonmetal">5<BR><B>B</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Boron')">Boron</A><BR>10.811</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>3</TD>
+    <td class="NewGroup" colspan=2>17</td>
+    <td class="RowSpace" rowspan=13></td>
 
-    <TD CLASS="Nonmetal">6<BR><B>C</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Carbon')">Carbon</A><BR>12.0107</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>4</TD>
+    <td class="Noble" rowspan=2>2<br><strong class="Gas">He</strong><br><div class="Name"><a href="JavaScript:element('Helium')">Helium</a><br>4.002602</div></td>
+    <td class="Noble Electron" rowspan=2>2</td>
 
-    <TD CLASS="Nonmetal">7<BR><B CLASS="Gas">N</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Nitrogen')">Nitrogen</A><BR>14.00674</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>5</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Nonmetal">8<BR><B CLASS="Gas">O</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Oxygen')">Oxygen</A><BR>15.9994</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>6</TD>
+    <td class="OldGroup" colspan=2>IIA</td>
+    <td class="OldGroup" colspan=2>IIIA</td>
+    <td class="OldGroup" colspan=2>IVA</td>
+    <td class="OldGroup" colspan=2>VA</td>
+    <td class="OldGroup" colspan=2>VIA</td>
+    <td class="OldGroup" colspan=2>VIIA</td>
 
-    <TD CLASS="Nonmetal">9<BR><B CLASS="Gas">F</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Fluorine')">Fluorine</A><BR>18.9984032</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>7</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Noble">10<BR><B CLASS="Gas">Ne</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Neon')">Neon</A><BR>20.1797</DIV></TD>
-    <TD CLASS="Noble Electron">2<BR>8</TD>
+    <td class="RowSpace"></td>
 
-   </TR>
-   <TR>
+   </tr>
+   <tr>
 
-    <TD CLASS="RowSpace" COLSPAN=37></TD>
-    <TD CLASS="Divider" COLSPAN=3></TD>
+    <td class="Period">2</td>
 
-   </TR>
-   <TR>
+    <td class="Alkali">3<br><strong>Li</strong><br><div class="Name"><a href="JavaScript:element('Lithium')">Lithium</a><br>6.941</div></td>
+    <td class="Alkali Electron">2<br>1</td>
 
-    <TD CLASS="Period" ROWSPAN=2>3</TD>
+    <td class="Alkaline">4<br><strong>Be</strong><br><div class="Name"><a href="JavaScript:element('Beryllium')">Beryllium</a><br>9.012182</div></td>
+    <td class="Alkaline Electron">2<br>2</td>
 
-    <TD CLASS="Alkali" ROWSPAN=2>11<BR><B>Na</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Sodium')">Sodium</A><BR>22.989770</DIV></TD>
-    <TD CLASS="Alkali Electron" ROWSPAN=2>2<BR>8<BR>1</TD>
+    <td class="Nonmetal">5<br><strong>B</strong><br><div class="Name"><a href="JavaScript:element('Boron')">Boron</a><br>10.811</div></td>
+    <td class="Nonmetal Electron">2<br>3</td>
 
-    <TD CLASS="Alkaline" ROWSPAN=2>12<BR><B>Mg</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Magnesium')">Magnesium</A><BR>24.3050</DIV></TD>
-    <TD CLASS="Alkaline Electron" ROWSPAN=2>2<BR>8<BR>2</TD>
+    <td class="Nonmetal">6<br><strong>C</strong><br><div class="Name"><a href="JavaScript:element('Carbon')">Carbon</a><br>12.0107</div></td>
+    <td class="Nonmetal Electron">2<br>4</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>3</TD>
-    <TD ROWSPAN=6></TD>
+    <td class="Nonmetal">7<br><strong class="Gas">N</strong><br><div class="Name"><a href="JavaScript:element('Nitrogen')">Nitrogen</a><br>14.00674</div></td>
+    <td class="Nonmetal Electron">2<br>5</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>4</TD>
-    <TD ROWSPAN=17></TD>
+    <td class="Nonmetal">8<br><strong class="Gas">O</strong><br><div class="Name"><a href="JavaScript:element('Oxygen')">Oxygen</a><br>15.9994</div></td>
+    <td class="Nonmetal Electron">2<br>6</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>5</TD>
-    <TD ROWSPAN=17></TD>
+    <td class="Nonmetal">9<br><strong class="Gas">F</strong><br><div class="Name"><a href="JavaScript:element('Fluorine')">Fluorine</a><br>18.9984032</div></td>
+    <td class="Nonmetal Electron">2<br>7</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>6</TD>
-    <TD ROWSPAN=17></TD>
+    <td class="Noble">10<br><strong class="Gas">Ne</strong><br><div class="Name"><a href="JavaScript:element('Neon')">Neon</a><br>20.1797</div></td>
+    <td class="Noble Electron">2<br>8</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>7</TD>
-    <TD ROWSPAN=17></TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="NewGroup" COLSPAN=2>8</TD>
-    <TD ROWSPAN=17></TD>
+    <td class="RowSpace" colspan=37></td>
+    <td class="Divider" colspan=3></td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>9</TD>
-    <TD ROWSPAN=17></TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="NewGroup" COLSPAN=2>10</TD>
-    <TD ROWSPAN=17></TD>
+    <td class="Period" rowspan=2>3</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>11</TD>
-    <TD ROWSPAN=17></TD>
+    <td class="Alkali" rowspan=2>11<br><strong>Na</strong><br><div class="Name"><a href="JavaScript:element('Sodium')">Sodium</a><br>22.989770</div></td>
+    <td class="Alkali Electron" rowspan=2>2<br>8<br>1</td>
 
-    <TD CLASS="NewGroup" COLSPAN=2>12</TD>
+    <td class="Alkaline" rowspan=2>12<br><strong>Mg</strong><br><div class="Name"><a href="JavaScript:element('Magnesium')">Magnesium</a><br>24.3050</div></td>
+    <td class="Alkaline Electron" rowspan=2>2<br>8<br>2</td>
 
-    <TD CLASS="Other" ROWSPAN=2>13<BR><B>Al</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Aluminum')">Aluminum</A><BR>26.981538</DIV></TD>
-    <TD CLASS="Other Electron" ROWSPAN=2>2<BR>8<BR>3</TD>
+    <td class="NewGroup" colspan=2>3</td>
+    <td class="RowSpace" rowspan=6></td>
 
-    <TD CLASS="Divider" ROWSPAN=3></TD>
+    <td class="NewGroup" colspan=2>4</td>
+    <td class="RowSpace" rowspan=17></td>
 
-    <TD CLASS="Nonmetal" ROWSPAN=2>14<BR><B>Si</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Silicon')">Silicon</A><BR>28.0855</DIV></TD>
-    <TD CLASS="Nonmetal Electron" ROWSPAN=2>2<BR>8<BR>4</TD>
+    <td class="NewGroup" colspan=2>5</td>
+    <td class="RowSpace" rowspan=17></td>
 
-    <TD CLASS="Nonmetal" ROWSPAN=2>15<BR><B>P</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Phosphorus')">Phosphorus</A><BR>30.973761</DIV></TD>
-    <TD CLASS="Nonmetal Electron" ROWSPAN=2>2<BR>8<BR>5</TD>
+    <td class="NewGroup" colspan=2>6</td>
+    <td class="RowSpace" rowspan=17></td>
 
-    <TD CLASS="Nonmetal" ROWSPAN=2>16<BR><B>S</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Sulfur')">Sulfur</A><BR>32.066</DIV></TD>
-    <TD CLASS="Nonmetal Electron" ROWSPAN=2>2<BR>8<BR>6</TD>
+    <td class="NewGroup" colspan=2>7</td>
+    <td class="RowSpace" rowspan=17></td>
 
-    <TD CLASS="Nonmetal" ROWSPAN=2>17<BR><B CLASS="Gas">Cl</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Chlorine')">Chlorine</A><BR>35.4527</DIV></TD>
-    <TD CLASS="Nonmetal Electron" ROWSPAN=2>2<BR>8<BR>7</TD>
+    <td class="NewGroup" colspan=2>8</td>
+    <td class="RowSpace" rowspan=17></td>
 
-    <TD CLASS="Noble" ROWSPAN=2>18<BR><B CLASS="Gas">Ar</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Argon')">Argon</A><BR>39.948</DIV></TD>
-    <TD CLASS="Noble Electron" ROWSPAN=2>2<BR>8<BR>8</TD>
+    <td class="NewGroup" colspan=2>9</td>
+    <td class="RowSpace" rowspan=17></td>
 
-   </TR>
-   <TR>
+    <td class="NewGroup" colspan=2>10</td>
+    <td class="RowSpace" rowspan=17></td>
 
-    <TD CLASS="OldGroup" COLSPAN=2>IIIB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>IVB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VIB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VIIB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2 STYLE="text-align: right;"><HR></TD>
-    <TD CLASS="OldGroup" COLSPAN=2>VIIIB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2 STYLE="text-align: left;"><HR></TD>
-    <TD CLASS="OldGroup" COLSPAN=2>IB</TD>
-    <TD CLASS="OldGroup" COLSPAN=2>IIB</TD>
+    <td class="NewGroup" colspan=2>11</td>
+    <td class="RowSpace" rowspan=17></td>
 
-   </TR>
-   <TR>
+    <td class="NewGroup" colspan=2>12</td>
 
-    <TD CLASS="RowSpace" COLSPAN=40></TD>
-    <TD CLASS="Divider" COLSPAN=3></TD>
+    <td class="Other" rowspan=2>13<br><strong>Al</strong><br><div class="Name"><a href="JavaScript:element('Aluminum')">Aluminum</a><br>26.981538</div></td>
+    <td class="Other Electron" rowspan=2>2<br>8<br>3</td>
 
-   </TR>
-   <TR>
+    <td class="Divider" rowspan=3></td>
 
-    <TD CLASS="Period">4</TD>
+    <td class="Nonmetal" rowspan=2>14<br><strong>Si</strong><br><div class="Name"><a href="JavaScript:element('Silicon')">Silicon</a><br>28.0855</div></td>
+    <td class="Nonmetal Electron" rowspan=2>2<br>8<br>4</td>
 
-    <TD CLASS="Alkali">19<BR><B>K</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Potassium')">Potassium</A><BR>39.0983</DIV></TD>
-    <TD CLASS="Alkali Electron">2<BR>8<BR>8<BR>1</TD>
+    <td class="Nonmetal" rowspan=2>15<br><strong>P</strong><br><div class="Name"><a href="JavaScript:element('Phosphorus')">Phosphorus</a><br>30.973761</div></td>
+    <td class="Nonmetal Electron" rowspan=2>2<br>8<br>5</td>
 
-    <TD CLASS="Alkaline">20<BR><B>Ca</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Calcium')">Calcium</A><BR>40.078</DIV></TD>
-    <TD CLASS="Alkaline Electron">2<BR>8<BR>8<BR>2</TD>
+    <td class="Nonmetal" rowspan=2>16<br><strong>S</strong><br><div class="Name"><a href="JavaScript:element('Sulfur')">Sulfur</a><br>32.066</div></td>
+    <td class="Nonmetal Electron" rowspan=2>2<br>8<br>6</td>
 
-    <TD CLASS="Transition">21<BR><B>Sc</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Scandium')">Scandium</A><BR>44.955910</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>9<BR>2</TD>
+    <td class="Nonmetal" rowspan=2>17<br><strong class="Gas">Cl</strong><br><div class="Name"><a href="JavaScript:element('Chlorine')">Chlorine</a><br>35.4527</div></td>
+    <td class="Nonmetal Electron" rowspan=2>2<br>8<br>7</td>
 
-    <TD CLASS="Transition">22<BR><B>Ti</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Titanium')">Titanium</A><BR>47.867</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>10<BR>2</TD>
+    <td class="Noble" rowspan=2>18<br><strong class="Gas">Ar</strong><br><div class="Name"><a href="JavaScript:element('Argon')">Argon</a><br>39.948</div></td>
+    <td class="Noble Electron" rowspan=2>2<br>8<br>8</td>
 
-    <TD CLASS="Transition">23<BR><B>V</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Vanadium')">Vanadium</A><BR>50.9415</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>11<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">24<BR><B>Cr</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Chromium')">Chromium</A><BR>51.9961</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>13<BR>1</TD>
+    <td class="OldGroup" colspan=2>IIIB</td>
+    <td class="OldGroup" colspan=2>IVB</td>
+    <td class="OldGroup" colspan=2>VB</td>
+    <td class="OldGroup" colspan=2>VIB</td>
+    <td class="OldGroup" colspan=2>VIIB</td>
+    <td class="OldGroup" colspan=2 style="text-align: right;"><HR></td>
+    <td class="OldGroup" colspan=2>VIIIB</td>
+    <td class="OldGroup" colspan=2 style="text-align: left;"><HR></td>
+    <td class="OldGroup" colspan=2>IB</td>
+    <td class="OldGroup" colspan=2>IIB</td>
 
-    <TD CLASS="Transition">25<BR><B>Mn</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Manganese')">Manganese</A><BR>54.938049</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>13<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">26<BR><B>Fe</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Iron')">Iron</A><BR>55.8457</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>14<BR>2</TD>
+    <td class="RowSpace" colspan=40></td>
+    <td class="Divider" colspan=3></td>
 
-    <TD CLASS="Transition">27<BR><B>Co</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Cobalt')">Cobalt</A><BR>58.933200</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>15<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">28<BR><B>Ni</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Nickel')">Nickel</A><BR>58.6934</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>16<BR>2</TD>
+    <td class="Period">4</td>
 
-    <TD CLASS="Transition">29<BR><B>Cu</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Copper')">Copper</A><BR>63.546</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>1</TD>
+    <td class="Alkali">19<br><strong>K</strong><br><div class="Name"><a href="JavaScript:element('Potassium')">Potassium</a><br>39.0983</div></td>
+    <td class="Alkali Electron">2<br>8<br>8<br>1</td>
 
-    <TD CLASS="Transition">30<BR><B>Zn</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Zinc')">Zinc</A><BR>65.39</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>2</TD>
+    <td class="Alkaline">20<br><strong>Ca</strong><br><div class="Name"><a href="JavaScript:element('Calcium')">Calcium</a><br>40.078</div></td>
+    <td class="Alkaline Electron">2<br>8<br>8<br>2</td>
 
-    <TD CLASS="Other">31<BR><B>Ga</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Gallium')">Gallium</A><BR>69.723</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>3</TD>
+    <td class="Transition">21<br><strong>Sc</strong><br><div class="Name"><a href="JavaScript:element('Scandium')">Scandium</a><br>44.955910</div></td>
+    <td class="Transition Electron">2<br>8<br>9<br>2</td>
 
-    <TD ROWSPAN=14></TD>
+    <td class="Transition">22<br><strong>Ti</strong><br><div class="Name"><a href="JavaScript:element('Titanium')">Titanium</a><br>47.867</div></td>
+    <td class="Transition Electron">2<br>8<br>10<br>2</td>
 
-    <TD CLASS="Other">32<BR><B>Ge</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Germanium')">Germanium</A><BR>72.61</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>4</TD>
+    <td class="Transition">23<br><strong>V</strong><br><div class="Name"><a href="JavaScript:element('Vanadium')">Vanadium</a><br>50.9415</div></td>
+    <td class="Transition Electron">2<br>8<br>11<br>2</td>
 
-    <TD CLASS="Divider" ROWSPAN=2></TD>
+    <td class="Transition">24<br><strong>Cr</strong><br><div class="Name"><a href="JavaScript:element('Chromium')">Chromium</a><br>51.9961</div></td>
+    <td class="Transition Electron">2<br>8<br>13<br>1</td>
 
-    <TD CLASS="Nonmetal">33<BR><B>As</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Arsenic')">Arsenic</A><BR>74.92160</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>8<BR>18<BR>5</TD>
+    <td class="Transition">25<br><strong>Mn</strong><br><div class="Name"><a href="JavaScript:element('Manganese')">Manganese</a><br>54.938049</div></td>
+    <td class="Transition Electron">2<br>8<br>13<br>2</td>
 
-    <TD CLASS="Nonmetal">34<BR><B>Se</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Selenium')">Selenium</A><BR>78.96</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>8<BR>18<BR>6</TD>
+    <td class="Transition">26<br><strong>Fe</strong><br><div class="Name"><a href="JavaScript:element('Iron')">Iron</a><br>55.8457</div></td>
+    <td class="Transition Electron">2<br>8<br>14<br>2</td>
 
-    <TD CLASS="Nonmetal">35<BR><B CLASS="Liquid">Br</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Bromine')">Bromine</A><BR>79.904</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>8<BR>18<BR>7</TD>
+    <td class="Transition">27<br><strong>Co</strong><br><div class="Name"><a href="JavaScript:element('Cobalt')">Cobalt</a><br>58.933200</div></td>
+    <td class="Transition Electron">2<br>8<br>15<br>2</td>
 
-    <TD CLASS="Noble">36<BR><B CLASS="Gas">Kr</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Krypton')">Krypton</A><BR>83.80</DIV></TD>
-    <TD CLASS="Noble Electron">2<BR>8<BR>18<BR>8</TD>
+    <td class="Transition">28<br><strong>Ni</strong><br><div class="Name"><a href="JavaScript:element('Nickel')">Nickel</a><br>58.6934</div></td>
+    <td class="Transition Electron">2<br>8<br>16<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Transition">29<br><strong>Cu</strong><br><div class="Name"><a href="JavaScript:element('Copper')">Copper</a><br>63.546</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>1</td>
 
-    <TD CLASS="RowSpace" COLSPAN=43></TD>
-    <TD CLASS="Divider" COLSPAN=3></TD>
+    <td class="Transition">30<br><strong>Zn</strong><br><div class="Name"><a href="JavaScript:element('Zinc')">Zinc</a><br>65.39</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Other">31<br><strong>Ga</strong><br><div class="Name"><a href="JavaScript:element('Gallium')">Gallium</a><br>69.723</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>3</td>
 
-    <TD CLASS="Period">5</TD>
+    <td rowspan=14></td>
 
-    <TD CLASS="Alkali">37<BR><B>Rb</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Rubidium')">Rubidium</A><BR>85.4678</DIV></TD>
-    <TD CLASS="Alkali Electron">2<BR>8<BR>18<BR>8<BR>1</TD>
+    <td class="Other">32<br><strong>Ge</strong><br><div class="Name"><a href="JavaScript:element('Germanium')">Germanium</a><br>72.61</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>4</td>
 
-    <TD CLASS="Alkaline">38<BR><B>Sr</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Strontium')">Strontium</A><BR>87.62</DIV></TD>
-    <TD CLASS="Alkaline Electron">2<BR>8<BR>18<BR>8<BR>2</TD>
+    <td class="Divider" rowspan=2></td>
 
-    <TD CLASS="Transition">39<BR><B>Y</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Yttrium')">Yttrium</A><BR>88.90585</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>9<BR>2</TD>
+    <td class="Nonmetal">33<br><strong>As</strong><br><div class="Name"><a href="JavaScript:element('Arsenic')">Arsenic</a><br>74.92160</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>5</td>
 
-    <TD CLASS="Transition">40<BR><B>Zr</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Zirconium')">Zirconium</A><BR>91.224</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>10<BR>2</TD>
+    <td class="Nonmetal">34<br><strong>Se</strong><br><div class="Name"><a href="JavaScript:element('Selenium')">Selenium</a><br>78.96</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>6</td>
 
-    <TD CLASS="Transition">41<BR><B>Nb</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Niobium')">Niobium</A><BR>92.90638</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>12<BR>1</TD>
+    <td class="Nonmetal">35<br><strong class="Liquid">Br</strong><br><div class="Name"><a href="JavaScript:element('Bromine')">Bromine</a><br>79.904</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>7</td>
 
-    <TD CLASS="Transition">42<BR><B>Mo</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Molybdenum')">Molybdenum</A><BR>95.94</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>13<BR>1</TD>
+    <td class="Noble">36<br><strong class="Gas">Kr</strong><br><div class="Name"><a href="JavaScript:element('Krypton')">Krypton</a><br>83.80</div></td>
+    <td class="Noble Electron">2<br>8<br>18<br>8</td>
 
-    <TD CLASS="Transition">43<BR><B CLASS="Synthetic">Tc</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Technetium')">Technetium</A><BR>(98)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>13<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">44<BR><B>Ru</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Ruthenium')">Ruthenium</A><BR>101.07</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>15<BR>1</TD>
+    <td class="RowSpace" colspan=43></td>
+    <td class="Divider" colspan=3></td>
 
-    <TD CLASS="Transition">45<BR><B>Rh</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Rhodium')">Rhodium</A><BR>102.90550</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>16<BR>1</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">46<BR><B>Pd</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Palladium')">Palladium</A><BR>106.42</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>18<BR>0</TD>
+    <td class="Period">5</td>
 
-    <TD CLASS="Transition">47<BR><B>Ag</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Silver')">Silver</A><BR>107.8682</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>18<BR>1</TD>
+    <td class="Alkali">37<br><strong>Rb</strong><br><div class="Name"><a href="JavaScript:element('Rubidium')">Rubidium</a><br>85.4678</div></td>
+    <td class="Alkali Electron">2<br>8<br>18<br>8<br>1</td>
 
-    <TD CLASS="Transition">48<BR><B>Cd</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Cadmium')">Cadmium</A><BR>112.411</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>18<BR>2</TD>
+    <td class="Alkaline">38<br><strong>Sr</strong><br><div class="Name"><a href="JavaScript:element('Strontium')">Strontium</a><br>87.62</div></td>
+    <td class="Alkaline Electron">2<br>8<br>18<br>8<br>2</td>
 
-    <TD CLASS="Other">49<BR><B>In</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Indium')">Indium</A><BR>114.818</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>18<BR>3</TD>
+    <td class="Transition">39<br><strong>Y</strong><br><div class="Name"><a href="JavaScript:element('Yttrium')">Yttrium</a><br>88.90585</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>9<br>2</td>
 
-    <TD CLASS="Other">50<BR><B>Sn</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Tin')">Tin</A><BR>118.710</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>18<BR>4</TD>
+    <td class="Transition">40<br><strong>Zr</strong><br><div class="Name"><a href="JavaScript:element('Zirconium')">Zirconium</a><br>91.224</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>10<br>2</td>
 
-    <TD ROWSPAN=12></TD>
+    <td class="Transition">41<br><strong>Nb</strong><br><div class="Name"><a href="JavaScript:element('Niobium')">Niobium</a><br>92.90638</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>12<br>1</td>
 
-    <TD CLASS="Other">51<BR><B>Sb</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Antimony')">Antimony</A><BR>121.760</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>18<BR>5</TD>
+    <td class="Transition">42<br><strong>Mo</strong><br><div class="Name"><a href="JavaScript:element('Molybdenum')">Molybdenum</a><br>95.94</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>13<br>1</td>
 
-    <TD CLASS="Divider" ROWSPAN=2></TD>
+    <td class="Transition">43<br><strong class="Synthetic">Tc</strong><br><div class="Name"><a href="JavaScript:element('Technetium')">Technetium</a><br>(98)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>13<br>2</td>
 
-    <TD CLASS="Nonmetal">52<BR><B>Te</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Tellurium')">Tellurium</A><BR>127.60</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>8<BR>18<BR>18<BR>6</TD>
+    <td class="Transition">44<br><strong>Ru</strong><br><div class="Name"><a href="JavaScript:element('Ruthenium')">Ruthenium</a><br>101.07</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>15<br>1</td>
 
-    <TD CLASS="Nonmetal">53<BR><B>I</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Iodine')">Iodine</A><BR>126.90447</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>8<BR>18<BR>18<BR>7</TD>
+    <td class="Transition">45<br><strong>Rh</strong><br><div class="Name"><a href="JavaScript:element('Rhodium')">Rhodium</a><br>102.90550</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>16<br>1</td>
 
-    <TD CLASS="Noble">54<BR><B CLASS="Gas">Xe</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Xenon')">Xenon</A><BR>131.29</DIV></TD>
-    <TD CLASS="Noble Electron">2<BR>8<BR>18<BR>18<BR>8</TD>
+    <td class="Transition">46<br><strong>Pd</strong><br><div class="Name"><a href="JavaScript:element('Palladium')">Palladium</a><br>106.42</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>18<br>0</td>
 
-   </TR>
-   <TR>
+    <td class="Transition">47<br><strong>Ag</strong><br><div class="Name"><a href="JavaScript:element('Silver')">Silver</a><br>107.8682</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>18<br>1</td>
 
-    <TD CLASS="RowSpace" COLSPAN=7></TD>
-    <TD CLASS="OuterBorder" COLSPAN=4></TD>
-    <TD COLSPAN=35></TD>
-    <TD CLASS="Divider" COLSPAN=3></TD>
+    <td class="Transition">48<br><strong>Cd</strong><br><div class="Name"><a href="JavaScript:element('Cadmium')">Cadmium</a><br>112.411</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>18<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Other">49<br><strong>In</strong><br><div class="Name"><a href="JavaScript:element('Indium')">Indium</a><br>114.818</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>18<br>3</td>
 
-    <TD CLASS="Period">6</TD>
+    <td class="Other">50<br><strong>Sn</strong><br><div class="Name"><a href="JavaScript:element('Tin')">Tin</a><br>118.710</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>18<br>4</td>
 
-    <TD CLASS="Alkali">55<BR><B>Cs</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Cesium')">Cesium</A><BR>132.90545</DIV></TD>
-    <TD CLASS="Alkali Electron">2<BR>8<BR>18<BR>18<BR>8<BR>1</TD>
+    <td rowspan=12></td>
 
-    <TD CLASS="Alkaline">56<BR><B>Ba</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Barium')">Barium</A><BR>137.327</DIV></TD>
-    <TD CLASS="Alkaline Electron">2<BR>8<BR>18<BR>18<BR>8<BR>2</TD>
+    <td class="Other">51<br><strong>Sb</strong><br><div class="Name"><a href="JavaScript:element('Antimony')">Antimony</a><br>121.760</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>18<br>5</td>
 
-    <TD CLASS="OuterBorder" ROWSPAN=10></TD>
-    <TD CLASS="InnerBorder Removed" COLSPAN=2>57 to 71</TD>
-    <TD CLASS="OuterBorder" ROWSPAN=4></TD>
+    <td class="Divider" rowspan=2></td>
 
-    <TD CLASS="Transition">72<BR><B>Hf</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Hafnium')">Hafnium</A><BR>178.49</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>10<BR>2</TD>
+    <td class="Nonmetal">52<br><strong>Te</strong><br><div class="Name"><a href="JavaScript:element('Tellurium')">Tellurium</a><br>127.60</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>18<br>6</td>
 
-    <TD CLASS="Transition">73<BR><B>Ta</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Tantalum')">Tantalum</A><BR>180.9479</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>11<BR>2</TD>
+    <td class="Nonmetal">53<br><strong>I</strong><br><div class="Name"><a href="JavaScript:element('Iodine')">Iodine</a><br>126.90447</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>18<br>7</td>
 
-    <TD CLASS="Transition">74<BR><B>W</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Tungsten')">Tungsten</A><BR>183.84</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>12<BR>2</TD>
+    <td class="Noble">54<br><strong class="Gas">Xe</strong><br><div class="Name"><a href="JavaScript:element('Xenon')">Xenon</a><br>131.29</div></td>
+    <td class="Noble Electron">2<br>8<br>18<br>18<br>8</td>
 
-    <TD CLASS="Transition">75<BR><B>Re</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Rhenium')">Rhenium</A><BR>186.207</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>13<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">76<BR><B>Os</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Osmium')">Osmium</A><BR>190.23</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>14<BR>2</TD>
+    <td class="RowSpace" colspan=7></td>
+    <td class="OuterBorder" colspan=4></td>
+    <td colspan=35></td>
+    <td class="Divider" colspan=3></td>
 
-    <TD CLASS="Transition">77<BR><B>Ir</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Iridium')">Iridium</A><BR>192.217</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>15<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">78<BR><B>Pt</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Platinum')">Platinum</A><BR>195.078</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>17<BR>1</TD>
+    <td class="Period">6</td>
 
-    <TD CLASS="Transition">79<BR><B>Au</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Gold')">Gold</A><BR>196.96655</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>18<BR>1</TD>
+    <td class="Alkali">55<br><strong>Cs</strong><br><div class="Name"><a href="JavaScript:element('Cesium')">Cesium</a><br>132.90545</div></td>
+    <td class="Alkali Electron">2<br>8<br>18<br>18<br>8<br>1</td>
 
-    <TD CLASS="Transition">80<BR><B CLASS="Liquid">Hg</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Mercury')">Mercury</A><BR>200.59</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>18<BR>2</TD>
+    <td class="Alkaline">56<br><strong>Ba</strong><br><div class="Name"><a href="JavaScript:element('Barium')">Barium</a><br>137.327</div></td>
+    <td class="Alkaline Electron">2<br>8<br>18<br>18<br>8<br>2</td>
 
-    <TD CLASS="Other">81<BR><B>Tl</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Thallium')">Thallium</A><BR>204.3833</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>32<BR>18<BR>3</TD>
+    <td class="OuterBorder" rowspan=10></td>
+    <td class="InnerBorder Removed" colspan=2>57 to 71</td>
+    <td class="OuterBorder" rowspan=4></td>
 
-    <TD CLASS="Other">82<BR><B>Pb</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Lead')">Lead</A><BR>207.2</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>32<BR>18<BR>4</TD>
+    <td class="Transition">72<br><strong>Hf</strong><br><div class="Name"><a href="JavaScript:element('Hafnium')">Hafnium</a><br>178.49</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>10<br>2</td>
 
-    <TD CLASS="Other">83<BR><B>Bi</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Bismuth')">Bismuth</A><BR>208.98038</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>32<BR>18<BR>5</TD>
+    <td class="Transition">73<br><strong>Ta</strong><br><div class="Name"><a href="JavaScript:element('Tantalum')">Tantalum</a><br>180.9479</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>11<br>2</td>
 
-    <TD ROWSPAN=10></TD>
+    <td class="Transition">74<br><strong>W</strong><br><div class="Name"><a href="JavaScript:element('Tungsten')">Tungsten</a><br>183.84</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>12<br>2</td>
 
-    <TD CLASS="Other">84<BR><B>Po</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Polonium')">Polonium</A><BR>(209)</DIV></TD>
-    <TD CLASS="Other Electron">2<BR>8<BR>18<BR>32<BR>18<BR>6</TD>
+    <td class="Transition">75<br><strong>Re</strong><br><div class="Name"><a href="JavaScript:element('Rhenium')">Rhenium</a><br>186.207</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>13<br>2</td>
 
-    <TD CLASS="Divider" ROWSPAN=2></TD>
+    <td class="Transition">76<br><strong>Os</strong><br><div class="Name"><a href="JavaScript:element('Osmium')">Osmium</a><br>190.23</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>14<br>2</td>
 
-    <TD CLASS="Nonmetal">85<BR><B>At</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Astatine')">Astatine</A><BR>(210)</DIV></TD>
-    <TD CLASS="Nonmetal Electron">2<BR>8<BR>18<BR>32<BR>18<BR>7</TD>
+    <td class="Transition">77<br><strong>Ir</strong><br><div class="Name"><a href="JavaScript:element('Iridium')">Iridium</a><br>192.217</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>15<br>2</td>
 
-    <TD CLASS="Noble">86<BR><B CLASS="Gas">Rn</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Radon')">Radon</A><BR>(222)</DIV></TD>
-    <TD CLASS="Noble Electron">2<BR>8<BR>18<BR>32<BR>18<BR>8</TD>
+    <td class="Transition">78<br><strong>Pt</strong><br><div class="Name"><a href="JavaScript:element('Platinum')">Platinum</a><br>195.078</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>17<br>1</td>
 
-   </TR>
-   <TR>
+    <td class="Transition">79<br><strong>Au</strong><br><div class="Name"><a href="JavaScript:element('Gold')">Gold</a><br>196.96655</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>18<br>1</td>
 
-    <TD CLASS="RowSpace" COLSPAN=7></TD>
-    <TD CLASS="InnerBorder" COLSPAN=2></TD>
-    <TD COLSPAN=38></TD>
-    <TD CLASS="Divider" COLSPAN=3></TD>
+    <td class="Transition">80<br><strong class="Liquid">Hg</strong><br><div class="Name"><a href="JavaScript:element('Mercury')">Mercury</a><br>200.59</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>18<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Other">81<br><strong>Tl</strong><br><div class="Name"><a href="JavaScript:element('Thallium')">Thallium</a><br>204.3833</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>3</td>
 
-    <TD CLASS="Period">7</TD>
+    <td class="Other">82<br><strong>Pb</strong><br><div class="Name"><a href="JavaScript:element('Lead')">Lead</a><br>207.2</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>4</td>
 
-    <TD CLASS="Alkali">87<BR><B>Fr</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Francium')">Francium</A><BR>(223)</DIV></TD>
-    <TD CLASS="Alkali Electron">2<BR>8<BR>18<BR>32<BR>18<BR>8<BR>1</TD>
+    <td class="Other">83<br><strong>Bi</strong><br><div class="Name"><a href="JavaScript:element('Bismuth')">Bismuth</a><br>208.98038</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>5</td>
 
-    <TD CLASS="Alkaline">88<BR><B>Ra</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Radium')">Radium</A><BR>(226)</DIV></TD>
-    <TD CLASS="Alkaline Electron">2<BR>8<BR>18<BR>32<BR>18<BR>8<BR>2</TD>
+    <td rowspan=10></td>
 
-    <TD CLASS="InnerBorder Removed" COLSPAN=2>89 to 103</TD>
+    <td class="Other">84<br><strong>Po</strong><br><div class="Name"><a href="JavaScript:element('Polonium')">Polonium</a><br>(209)</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>6</td>
 
-    <TD CLASS="Transition">104<BR><B CLASS="Synthetic">Rf</B><BR><DIV CLASS="LongName">Rutherfordium</DIV><DIV CLASS="Name">(261)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>10<BR>2</TD>
+    <td class="Divider" rowspan=2></td>
 
-    <TD CLASS="Transition">105<BR><B CLASS="Synthetic">Db</B><BR><DIV CLASS="Name">Dubnium<BR>(262)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>11<BR>2</TD>
+    <td class="Nonmetal">85<br><strong>At</strong><br><div class="Name"><a href="JavaScript:element('Astatine')">Astatine</a><br>(210)</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>32<br>18<br>7</td>
 
-    <TD CLASS="Transition">106<BR><B CLASS="Synthetic">Sg</B><BR><DIV CLASS="Name">Seaborgium<BR>(263)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>12<BR>2</TD>
+    <td class="Noble">86<br><strong class="Gas">Rn</strong><br><div class="Name"><a href="JavaScript:element('Radon')">Radon</a><br>(222)</div></td>
+    <td class="Noble Electron">2<br>8<br>18<br>32<br>18<br>8</td>
 
-    <TD CLASS="Transition">107<BR><B CLASS="Synthetic">Bh</B><BR><DIV CLASS="Name">Bohrium<BR>(262)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>13<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">108<BR><B CLASS="Synthetic">Hs</B><BR><DIV CLASS="Name">Hassium<BR>(265)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>14<BR>2</TD>
+    <td class="RowSpace" colspan=7></td>
+    <td class="InnerBorder" colspan=2></td>
+    <td colspan=38></td>
+    <td class="Divider" colspan=3></td>
 
-    <TD CLASS="Transition">109<BR><B CLASS="Synthetic">Mt</B><BR><DIV CLASS="Name">Meitnerium<BR>(266)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>15<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">110<BR><B CLASS="Synthetic">Uun</B><BR><DIV CLASS="Name">Ununnilium<BR>(269)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>17<BR>1</TD>
+    <td class="Period">7</td>
 
-    <TD CLASS="Transition">111<BR><B CLASS="Synthetic">Uuu</B><BR><DIV CLASS="Name">Unununium<BR>(272)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>18<BR>1</TD>
+    <td class="Alkali">87<br><strong>Fr</strong><br><div class="Name"><a href="JavaScript:element('Francium')">Francium</a><br>(223)</div></td>
+    <td class="Alkali Electron">2<br>8<br>18<br>32<br>18<br>8<br>1</td>
 
-    <TD CLASS="Transition">112<BR><B CLASS="Synthetic">Uub</B><BR><DIV CLASS="Name">Ununbium<BR>(277)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>32<BR>18<BR>2</TD>
+    <td class="Alkaline">88<br><strong>Ra</strong><br><div class="Name"><a href="JavaScript:element('Radium')">Radium</a><br>(226)</div></td>
+    <td class="Alkaline Electron">2<br>8<br>18<br>32<br>18<br>8<br>2</td>
 
-    <TD CLASS="Other" COLSPAN=2>113<BR><B CLASS="Synthetic">&nbsp;<IMG SRC="http://www.dayah.com/periodic/Images/Spacer.GIF" ALT="" HEIGHT=5 WIDTH=5></B><BR><DIV CLASS="Name">&nbsp;<BR>&nbsp;</DIV></TD>
+    <td class="InnerBorder Removed" colspan=2>89 to 103</td>
 
-    <TD CLASS="Other" COLSPAN=2>114<BR><B CLASS="Synthetic">Uuq</B><BR><DIV CLASS="Name">Ununquadium<BR>(285)</DIV></TD>
+    <td class="Transition">104<br><strong class="Synthetic">Rf</strong><br><div class="LongName">Rutherfordium</div><div class="Name">(261)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>10<br>2</td>
 
-    <TD CLASS="Other" COLSPAN=2>115<BR><B CLASS="Synthetic">&nbsp;</B><BR><DIV CLASS="Name">&nbsp;<BR>&nbsp;</DIV></TD>
+    <td class="Transition">105<br><strong class="Synthetic">Db</strong><br><div class="Name">Dubnium<br>(262)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>11<br>2</td>
 
-    <TD CLASS="Other" COLSPAN=2>116<BR><B CLASS="Synthetic">Uuh</B><BR><DIV CLASS="Name">Ununhexium<BR>(289)</DIV></TD>
+    <td class="Transition">106<br><strong class="Synthetic">Sg</strong><br><div class="Name">Seaborgium<br>(263)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>12<br>2</td>
 
-    <TD ROWSPAN=8></TD>
+    <td class="Transition">107<br><strong class="Synthetic">Bh</strong><br><div class="Name">Bohrium<br>(262)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>13<br>2</td>
 
-    <TD CLASS="Other" COLSPAN=2>117<BR><B CLASS="Synthetic">&nbsp;</B><BR><DIV CLASS="Name">&nbsp;<BR>&nbsp;</DIV></TD>
+    <td class="Transition">108<br><strong class="Synthetic">Hs</strong><br><div class="Name">Hassium<br>(265)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>14<br>2</td>
 
-    <TD CLASS="Divider"></TD>
+    <td class="Transition">109<br><strong class="Synthetic">Mt</strong><br><div class="Name">Meitnerium<br>(266)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>15<br>2</td>
 
-    <TD CLASS="Noble" COLSPAN=2>118<BR><B CLASS="Synthetic">Uuo</B><BR><DIV CLASS="Name">Ununoctium<BR>(293)</DIV></TD>
+    <td class="Transition">110<br><strong class="Synthetic">Uun</strong><br><div class="Name">Ununnilium<br>(269)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>17<br>1</td>
 
-   </TR>
-   <TR>
+    <td class="Transition">111<br><strong class="Synthetic">Uuu</strong><br><div class="Name">Unununium<br>(272)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>18<br>1</td>
 
-    <TD COLSPAN=7 ROWSPAN=4></TD>
-    <TD CLASS="InnerBorder" COLSPAN=2 ROWSPAN=7></TD>
-    <TD></TD>
-    <TD COLSPAN=43 STYLE="font-size: medium; height: 8ex;">Atomic masses in parentheses are those of the most stable or common isotope.</TD>
+    <td class="Transition">112<br><strong class="Synthetic">Uub</strong><br><div class="Name">Ununbium<br>(277)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>18<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Other" colspan=2>113<br><strong class="Synthetic">&nbsp;<IMG SRC="http://www.dayah.com/periodic/Images/Spacer.GIF" ALT="" HEIGHT=5 WIDTH=5></strong><br><div class="Name">&nbsp;<br>&nbsp;</div></td>
 
-    <TD CLASS="RowSpace OuterBorder" COLSPAN=48></TD>
+    <td class="Other" colspan=2>114<br><strong class="Synthetic">Uuq</strong><br><div class="Name">Ununquadium<br>(285)</div></td>
 
-   </TR>
-   <TR>
+    <td class="Other" colspan=2>115<br><strong class="Synthetic">&nbsp;</strong><br><div class="Name">&nbsp;<br>&nbsp;</div></td>
 
-    <TD CLASS="InnerBorder" COLSPAN=47 STYLE="color: blue; font-size: x-small; text-align: center;">Web Page Design Copyright &copy; 1997-2000 <A CLASS="Link" HREF="mailto:michael@dayah.com">Michael Dayah</A>. <SCRIPT TYPE="text/javascript">if (Date.parse(document.lastModified)) { document.write('Last Modified: ' + document.lastModified); }</SCRIPT></TD>
-    <TD CLASS="OuterBorder" ROWSPAN=5></TD>
+    <td class="Other" colspan=2>116<br><strong class="Synthetic">Uuh</strong><br><div class="Name">Ununhexium<br>(289)</div></td>
 
-   </TR>
-   <TR>
+    <td rowspan=8></td>
 
-    <TD CLASS="RowSpace OuterBorder" COLSPAN=46></TD>
-    <TD CLASS="InnerBorder"></TD>
+    <td class="Other" colspan=2>117<br><strong class="Synthetic">&nbsp;</strong><br><div class="Name">&nbsp;<br>&nbsp;</div></td>
 
-   </TR>
-   <TR>
+    <td class="Divider"></td>
 
-    <TD COLSPAN=7 ROWSPAN=3><DIV CLASS="Name">Note: The subgroup numbers 1-18 were adopted in 1984 by the International Union of Pure and Applied Chemistry. The names of elements 110-118 are the Latin equivalents of those numbers.</DIV></TD>
+    <td class="Noble" colspan=2>118<br><strong class="Synthetic">Uuo</strong><br><div class="Name">Ununoctium<br>(293)</div></td>
 
-    <TD CLASS="OuterBorder" ROWSPAN=3></TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Transition">57<BR><B>La</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Lanthanum')">Lanthanum</A><BR>138.9055</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>18<BR>9<BR>2</TD>
+    <td colspan=7 rowspan=4></td>
+    <td class="InnerBorder" colspan=2 rowspan=7></td>
+    <td></td>
+    <td colspan=43 style="font-size: medium; line-height: 3;">Atomic masses in parentheses are those of the most stable or common isotope.</td>
 
-    <TD CLASS="Lanthanide">58<BR><B>Ce</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Cerium')">Cerium</A><BR>140.116</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>20<BR>8<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Lanthanide">59<BR><B>Pr</B><BR><DIV CLASS="LongName"><A HREF="JavaScript:element('Praseodymium')">Praseodymium</A></DIV><DIV CLASS="Name">140.90765</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>21<BR>8<BR>2</TD>
+    <td class="RowSpace OuterBorder" colspan=48></td>
 
-    <TD CLASS="Lanthanide">60<BR><B>Nd</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Neodymium')">Neodymium</A><BR>144.24</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>22<BR>8<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Lanthanide">61<BR><B CLASS="Synthetic">Pm</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Promethium')">Promethium</A><BR>(145)</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>23<BR>8<BR>2</TD>
+    <td class="InnerBorder" colspan=47 style="line-height: 1.5; color: blue; font-size: x-small; text-align: center;">Web Page Design Copyright &copy; 1997 <a class="Link" href="mailto:michael@dayah.com">Michael Dayah</a>. <script type="text/javascript">if (Date.parse(document.lastModified)) { document.write('Last Modified: ' + document.lastModified); }</script></td>
+    <td class="RowSpace OuterBorder" rowspan=5></td>
 
-    <TD CLASS="Lanthanide">62<BR><B>Sm</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Samarium')">Samarium</A><BR>150.36</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>24<BR>8<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Lanthanide">63<BR><B>Eu</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Europium')">Europium</A><BR>151.964</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>25<BR>8<BR>2</TD>
+    <td class="OuterBorder" colspan=46></td>
+    <td class="RowSpace InnerBorder"></td>
 
-    <TD CLASS="Lanthanide">64<BR><B>Gd</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Gadolinium')">Gadolinium</A><BR>157.25</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>25<BR>9<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Lanthanide">65<BR><B>Tb</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Terbium')">Terbium</A><BR>158.92534</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>27<BR>8<BR>2</TD>
+    <td colspan=7 rowspan=3><div class="Name">Note: The subgroup numbers 1-18 were adopted in 1984 by the International Union of Pure and Applied Chemistry. The names of elements 110-118 are the Latin equivalents of those numbers.</div></td>
 
-    <TD CLASS="Lanthanide">66<BR><B>Dy</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Dysprosium')">Dysprosium</A><BR>162.50</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>28<BR>8<BR>2</TD>
+    <td class="OuterBorder" rowspan=3></td>
 
-    <TD CLASS="Lanthanide">67<BR><B>Ho</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Holmium')">Holmium</A><BR>164.93032</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>29<BR>8<BR>2</TD>
+    <td class="Transition">57<br><strong>La</strong><br><div class="Name"><a href="JavaScript:element('Lanthanum')">Lanthanum</a><br>138.9055</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>18<br>9<br>2</td>
 
-    <TD CLASS="Lanthanide">68<BR><B>Er</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Erbium')">Erbium</A><BR>167.26</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>30<BR>8<BR>2</TD>
+    <td class="Lanthanide">58<br><strong>Ce</strong><br><div class="Name"><a href="JavaScript:element('Cerium')">Cerium</a><br>140.116</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>20<br>8<br>2</td>
 
-    <TD CLASS="Lanthanide">69<BR><B>Tm</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Thulium')">Thulium</A><BR>168.93421</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>31<BR>8<BR>2</TD>
+    <td class="Lanthanide">59<br><strong>Pr</strong><br><div class="LongName"><a href="JavaScript:element('Praseodymium')">Praseodymium</a></div><div class="Name">140.90765</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>21<br>8<br>2</td>
 
-    <TD CLASS="Lanthanide">70<BR><B>Yb</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Ytterbium')">Ytterbium</A><BR>173.04</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>32<BR>8<BR>2</TD>
+    <td class="Lanthanide">60<br><strong>Nd</strong><br><div class="Name"><a href="JavaScript:element('Neodymium')">Neodymium</a><br>144.24</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>22<br>8<br>2</td>
 
-    <TD ROWSPAN=3></TD>
+    <td class="Lanthanide">61<br><strong class="Synthetic">Pm</strong><br><div class="Name"><a href="JavaScript:element('Promethium')">Promethium</a><br>(145)</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>23<br>8<br>2</td>
 
-    <TD CLASS="Lanthanide">71<BR><B>Lu</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Lutetium')">Lutetium</A><BR>174.967</DIV></TD>
-    <TD CLASS="Lanthanide Electron">2<BR>8<BR>18<BR>32<BR>9<BR>2</TD>
+    <td class="Lanthanide">62<br><strong>Sm</strong><br><div class="Name"><a href="JavaScript:element('Samarium')">Samarium</a><br>150.36</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>24<br>8<br>2</td>
 
-    <TD CLASS="OuterBorder" ROWSPAN=3></TD>
-    <TD CLASS="InnerBorder" ROWSPAN=3>&nbsp;&nbsp;</TD>
+    <td class="Lanthanide">63<br><strong>Eu</strong><br><div class="Name"><a href="JavaScript:element('Europium')">Europium</a><br>151.964</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>25<br>8<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Lanthanide">64<br><strong>Gd</strong><br><div class="Name"><a href="JavaScript:element('Gadolinium')">Gadolinium</a><br>157.25</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>25<br>9<br>2</td>
 
-    <TD CLASS="RowSpace"></TD>
+    <td class="Lanthanide">65<br><strong>Tb</strong><br><div class="Name"><a href="JavaScript:element('Terbium')">Terbium</a><br>158.92534</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>27<br>8<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Lanthanide">66<br><strong>Dy</strong><br><div class="Name"><a href="JavaScript:element('Dysprosium')">Dysprosium</a><br>162.50</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>28<br>8<br>2</td>
 
-    <TD CLASS="Transition">89<BR><B>Ac</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Actinium')">Actinium</A><BR>(227)</DIV></TD>
-    <TD CLASS="Transition Electron">2<BR>8<BR>18<BR>32<BR>18<BR>9<BR>2</TD>
+    <td class="Lanthanide">67<br><strong>Ho</strong><br><div class="Name"><a href="JavaScript:element('Holmium')">Holmium</a><br>164.93032</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>29<br>8<br>2</td>
 
-    <TD CLASS="Actinide">90<BR><B>Th</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Thorium')">Thorium</A><BR>232.0381</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>18<BR>10<BR>2</TD>
+    <td class="Lanthanide">68<br><strong>Er</strong><br><div class="Name"><a href="JavaScript:element('Erbium')">Erbium</a><br>167.26</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>30<br>8<br>2</td>
 
-    <TD CLASS="Actinide">91<BR><B>Pa</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Protactinium')">Protactinium</A><BR>231.03588</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>20<BR>9<BR>2</TD>
+    <td class="Lanthanide">69<br><strong>Tm</strong><br><div class="Name"><a href="JavaScript:element('Thulium')">Thulium</a><br>168.93421</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>31<br>8<br>2</td>
 
-    <TD CLASS="Actinide">92<BR><B>U</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Uranium')">Uranium</A><BR>238.0289</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>21<BR>9<BR>2</TD>
+    <td class="Lanthanide">70<br><strong>Yb</strong><br><div class="Name"><a href="JavaScript:element('Ytterbium')">Ytterbium</a><br>173.04</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>32<br>8<br>2</td>
 
-    <TD CLASS="Actinide">93<BR><B CLASS="Synthetic">Np</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Neptunium')">Neptunium</A><BR>(237)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>22<BR>9<BR>2</TD>
+    <td rowspan=3></td>
 
-    <TD CLASS="Actinide">94<BR><B CLASS="Synthetic">Pu</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Plutonium')">Plutonium</A><BR>(244)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>24<BR>8<BR>2</TD>
+    <td class="Lanthanide">71<br><strong>Lu</strong><br><div class="Name"><a href="JavaScript:element('Lutetium')">Lutetium</a><br>174.967</div></td>
+    <td class="Lanthanide Electron">2<br>8<br>18<br>32<br>9<br>2</td>
 
-    <TD CLASS="Actinide">95<BR><B CLASS="Synthetic">Am</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Americium')">Americium</A><BR>(243)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>25<BR>8<BR>2</TD>
+    <td class="RowSpace OuterBorder" rowspan=3></td>
+    <td class="InnerBorder" rowspan=3></td>
 
-    <TD CLASS="Actinide">96<BR><B CLASS="Synthetic">Cm</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Curium')">Curium</A><BR>(247)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>25<BR>9<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Actinide">97<BR><B CLASS="Synthetic">Bk</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Berkelium')">Berkelium</A><BR>(247)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>26<BR>9<BR>2</TD>
+    <td class="RowSpace"></td>
 
-    <TD CLASS="Actinide">98<BR><B CLASS="Synthetic">Cf</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Californium')">Californium</A><BR>(251)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>28<BR>8<BR>2</TD>
+   </tr>
+   <tr>
 
-    <TD CLASS="Actinide">99<BR><B CLASS="Synthetic">Es</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Einsteinium')">Einsteinium</A><BR>(252)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>29<BR>8<BR>2</TD>
+    <td class="Transition">89<br><strong>Ac</strong><br><div class="Name"><a href="JavaScript:element('Actinium')">Actinium</a><br>(227)</div></td>
+    <td class="Transition Electron">2<br>8<br>18<br>32<br>18<br>9<br>2</td>
 
-    <TD CLASS="Actinide">100<BR><B CLASS="Synthetic">Fm</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Fermium')">Fermium</A><BR>(257)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>30<BR>8<BR>2</TD>
+    <td class="Actinide">90<br><strong>Th</strong><br><div class="Name"><a href="JavaScript:element('Thorium')">Thorium</a><br>232.0381</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>18<br>10<br>2</td>
 
-    <TD CLASS="Actinide">101<BR><B CLASS="Synthetic">Md</B><BR><DIV CLASS="LongName"><A HREF="JavaScript:element('Mendelevium')">Mendelevium</A></DIV><DIV CLASS="Name">(258)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>31<BR>8<BR>2</TD>
+    <td class="Actinide">91<br><strong>Pa</strong><br><div class="Name"><a href="JavaScript:element('Protactinium')">Protactinium</a><br>231.03588</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>20<br>9<br>2</td>
 
-    <TD CLASS="Actinide">102<BR><B CLASS="Synthetic">No</B><BR><DIV CLASS="Name"><A HREF="JavaScript:element('Nobelium')">Nobelium</A><BR>(259)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>32<BR>8<BR>2</TD>
+    <td class="Actinide">92<br><strong>U</strong><br><div class="Name"><a href="JavaScript:element('Uranium')">Uranium</a><br>238.0289</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>21<br>9<br>2</td>
 
-    <TD CLASS="Actinide">103<BR><B CLASS="Synthetic">Lr</B><BR><DIV CLASS="LongName"><A HREF="JavaScript:element('Lawrencium')">Lawrencium</A></DIV><DIV CLASS="Name">(262)</DIV></TD>
-    <TD CLASS="Actinide Electron">2<BR>8<BR>18<BR>32<BR>32<BR>9<BR>2</TD>
+    <td class="Actinide">93<br><strong class="Synthetic">Np</strong><br><div class="Name"><a href="JavaScript:element('Neptunium')">Neptunium</a><br>(237)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>22<br>9<br>2</td>
 
-   </TR>
-   <TR>
+    <td class="Actinide">94<br><strong class="Synthetic">Pu</strong><br><div class="Name"><a href="JavaScript:element('Plutonium')">Plutonium</a><br>(244)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>24<br>8<br>2</td>
 
-    <TD CLASS="RowSpace" COLSPAN=7></TD>
-    <TD CLASS="OuterBorder" COLSPAN=4></TD>
-    <TD COLSPAN=44></TD>
-    <TD CLASS="OuterBorder" COLSPAN=3></TD>
+    <td class="Actinide">95<br><strong class="Synthetic">Am</strong><br><div class="Name"><a href="JavaScript:element('Americium')">Americium</a><br>(243)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>25<br>8<br>2</td>
 
-   </TR>
-  </TABLE>
+    <td class="Actinide">96<br><strong class="Synthetic">Cm</strong><br><div class="Name"><a href="JavaScript:element('Curium')">Curium</a><br>(247)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>25<br>9<br>2</td>
 
- </BODY>
-</HTML>
+    <td class="Actinide">97<br><strong class="Synthetic">Bk</strong><br><div class="Name"><a href="JavaScript:element('Berkelium')">Berkelium</a><br>(247)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>26<br>9<br>2</td>
+
+    <td class="Actinide">98<br><strong class="Synthetic">Cf</strong><br><div class="Name"><a href="JavaScript:element('Californium')">Californium</a><br>(251)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>28<br>8<br>2</td>
+
+    <td class="Actinide">99<br><strong class="Synthetic">Es</strong><br><div class="Name"><a href="JavaScript:element('Einsteinium')">Einsteinium</a><br>(252)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>29<br>8<br>2</td>
+
+    <td class="Actinide">100<br><strong class="Synthetic">Fm</strong><br><div class="Name"><a href="JavaScript:element('Fermium')">Fermium</a><br>(257)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>30<br>8<br>2</td>
+
+    <td class="Actinide">101<br><strong class="Synthetic">Md</strong><br><div class="LongName"><a href="JavaScript:element('Mendelevium')">Mendelevium</a></div><div class="Name">(258)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>31<br>8<br>2</td>
+
+    <td class="Actinide">102<br><strong class="Synthetic">No</strong><br><div class="Name"><a href="JavaScript:element('Nobelium')">Nobelium</a><br>(259)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>32<br>8<br>2</td>
+
+    <td class="Actinide">103<br><strong class="Synthetic">Lr</strong><br><div class="LongName"><a href="JavaScript:element('Lawrencium')">Lawrencium</a></div><div class="Name">(262)</div></td>
+    <td class="Actinide Electron">2<br>8<br>18<br>32<br>32<br>9<br>2</td>
+
+   </tr>
+   <tr>
+
+    <td class="RowSpace" colspan=7></td>
+    <td class="OuterBorder" colspan=4></td>
+    <td colspan=44></td>
+    <td class="OuterBorder" colspan=3></td>
+
+   </tr>
+  </table>
+
+ </body>
+</html>
