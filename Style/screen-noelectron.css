@@ -1,0 +1,13 @@
+SMALL		{ display: none; }
+.Shells		{ visibility: hidden; }
+STRONG, EM	{ line-height: 1; }
+BIG, DIV, EM	{ text-align: center; }
+BIG		{ margin-left: auto; margin-right: auto; width: 2.9em; }
+.Long		{ font-size: 0.6em; }
+STRONG		{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; height: 1em; }
+#Key		{ font-size: 0.9em; }
+Removed	{ font-size: 0.8em; }
+#Note		{ font-size: 0.7em; }
+.Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Poor, .Noble, .Hydrogen
+		{ padding: 0.2em; }
+.Electron	{ padding: 0; }
