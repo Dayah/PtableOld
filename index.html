@@ -13,11 +13,8 @@
   <link href="Style/print-default.css" rel="stylesheet" type="text/css" media="print">
   <!--  link href="Style/print-letter.css" rel="stylesheet" type="text/css" media="print" -->
 
+  <script type="text/javascript" src="Script/wikielements.js" defer="defer"></script>
   <script type="text/javascript">
-   function element(name) {
-   	elementWin = window.open("elements.html#" + name, "elementWindow", "resizable=yes,scrollbars=yes,height=180,width=250");
-   	elementWin.focus();
-   }
    google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.dayah.com/periodic/essays-banner.html"; google_ad_width = 728; google_ad_height = 90; google_ad_format = "728x90_as"; google_ad_type = "text_image"; google_ad_channel =""; google_color_border = "BBBBBB"; google_color_bg = "DDDDDD"; google_color_link = "0000FF"; google_color_url = "008000"; google_color_text = "000000";
   </script>
 
@@ -29,13 +26,14 @@
  <a href="Other/Periodic Table.pdf" title="US paper size (8.5&times;11 in) printable PDF">PDF (Letter)</a>
  <a href="Other/A4 Periodic Table.pdf" title="European paper size (210&times;297 mm) printable PDF">PDF (A4)</a>
  <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5&times;14 in) printable PDF">PDF (Legal)</a>
- <a href="Images/periodic table.png" title="PNG image of the periodic table (194 KB)">PNG (2665&times;1741)</a>
- <a style="margin-left: 2em;" href="key.html" onClick="window.open('key.html', 'keyWindow', 'height=144,width=374'); return false;" title="Legend for the periodic table">Key</a>
- <a href="feedback.html" title="Use a form to send a message to the designer of this table">Feedback</a>
+ <a href="Images/periodic table.png" title="PNG image of the periodic table (2665&times;1741, 194 KB)">PNG image</a>
+ <a style="margin-left: 1em;" href="key.html" onClick="window.open('key.html', 'keyWindow', 'height=144,width=374'); return false;" title="Legend for the periodic table">Key</a>
+ <a href="feedback.html" title="Use a form to send a message to the designer of this table">Contact</a>
  <a href="about.html" title="Images and text for use in linking to this site">Link to Us</a>
  <a href="compatible.html" title="Table optimized for browser compatibility rather than HTML compliance">Old Browsers</a>
  <a href="structure.html" title="View the periodic table with HTML borders turned on">Show Borders</a>
  <a href="questions.html" title="Questions and answers about this particular periodic table">Table FAQ</a>
+ <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
 </div>
 
   <form method="get">
@@ -44,7 +42,7 @@
 
   <h2>This full-size color-coded printable periodic table of elements (sometimes called a periodic chart or table of chemical elements) has most important information (atomic number, chemical symbol, element name, atomic weight, electron configuration, state of matter at 298 K, manmade vs. natural, and class) on one single page.</h2>
 
-  <div id="Ad"><a href='http://www.dayah.com/periodic/ads/adclick.php?bannerid=1&amp;zoneid=1&amp;source=&amp;dest=http%3A%2F%2Fwebsite.ws%2Fkvmlm2%2Fmy.dhtml%3Fsponsor%3Dadamsgroup' target='_blank'><img src='http://www.dayah.com/periodic/ads/adimage.php?filename=chemistry-homework.gif&amp;contenttype=gif' width='728' height='90' alt='Finish your chemistry homework? Now learn how other students are earning easy money with the new dot com!' title='Finish your chemistry homework? Now learn how other students are earning easy money with the new dot com!' border='0'></a><div id="beacon_1" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dayah.com/periodic/ads/adlog.php?bannerid=1&amp;clientid=2&amp;zoneid=1&amp;source=&amp;block=0&amp;capping=0&amp;cb=44f0a544b511dab4e069651cb15220b8' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div></div>
+  <div id="Ad"><a href='http://www.dayah.com/periodic/ads/adclick.php?bannerid=1&amp;zoneid=1&amp;source=&amp;dest=http%3A%2F%2Fwebsite.ws%2Fkvmlm2%2Fmy.dhtml%3Fsponsor%3Dadamsgroup' target='_blank'><img src='http://www.dayah.com/periodic/ads/adimage.php?filename=chemistry-homework.gif&amp;contenttype=gif' width='728' height='90' alt='Finish your chemistry homework? Now learn how other students are earning easy money with the new dot com!' title='Finish your chemistry homework? Now learn how other students are earning easy money with the new dot com!' border='0'></a><div id="beacon_1" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dayah.com/periodic/ads/adlog.php?bannerid=1&amp;clientid=2&amp;zoneid=1&amp;source=&amp;block=0&amp;capping=0&amp;cb=45b3f13f5ee28c42e88c0bf1761209d7' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div></div>
 
   <table id="Main" summary="printable periodic table">
    <tr>
@@ -80,8 +78,8 @@
        <th><div class="CategoryBlock Alkaline"></div></th>
        <td class="CategoryName">Alkaline earth metals</td>
 
-       <th><div class="CategoryBlock Other"></div></th>
-       <td class="CategoryName">Other metals</td>
+       <th><div class="CategoryBlock Poor"></div></th>
+       <td class="CategoryName">Poor metals</td>
 
        <th class="StateBlock"><strong class="Liquid">Br</strong></th>
        <td class="State Liquid">Liquid</td>
@@ -140,7 +138,7 @@
     <td class="Period" rowspan=2>1</td>
     <td class="RowSpace" rowspan=15></td>
 
-    <td class="Hydrogen" rowspan=2>1<strong class="Gas">H</strong><div class="Name"><a href="JavaScript:element('Hydrogen')">Hydrogen</a>1.00794</div></td>
+    <td class="Hydrogen" rowspan=2>1<strong class="Gas">H</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Hydrogen?printable=yes" onClick="return element('en', 'Hydrogen');">Hydrogen</a>1.00794</div></td>
     <td class="Hydrogen Electron" rowspan=2>1</td>
 
     <td class="NewGroup" colspan=2>2</td>
@@ -161,7 +159,7 @@
     <td class="NewGroup" colspan=2>17</td>
     <td class="RowSpace" rowspan=13></td>
 
-    <td class="Noble" rowspan=2>2<strong class="Gas">He</strong><div class="Name"><a href="JavaScript:element('Helium')">Helium</a>4.002602</div></td>
+    <td class="Noble" rowspan=2>2<strong class="Gas">He</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Helium?printable=yes" onClick="return element('en', 'Helium');">Helium</a>4.002602</div></td>
     <td class="Noble Electron" rowspan=2>2</td>
 
     <td class="RowSpace" rowspan=15></td>
@@ -188,28 +186,28 @@
 
     <td class="Period">2</td>
 
-    <td class="Alkali">3<strong>Li</strong><div class="Name"><a href="JavaScript:element('Lithium')">Lithium</a>6.941</div></td>
+    <td class="Alkali">3<strong>Li</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Lithium?printable=yes" onClick="return element('en', 'Lithium');">Lithium</a>6.941</div></td>
     <td class="Alkali Electron">2<br>1</td>
 
-    <td class="Alkaline">4<strong>Be</strong><div class="Name"><a href="JavaScript:element('Beryllium')">Beryllium</a>9.012182</div></td>
+    <td class="Alkaline">4<strong>Be</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Beryllium?printable=yes" onClick="return element('en', 'Beryllium');">Beryllium</a>9.012182</div></td>
     <td class="Alkaline Electron">2<br>2</td>
 
-    <td class="Nonmetal">5<strong>B</strong><div class="Name"><a href="JavaScript:element('Boron')">Boron</a>10.811</div></td>
+    <td class="Nonmetal">5<strong>B</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Boron?printable=yes" onClick="return element('en', 'Boron');">Boron</a>10.811</div></td>
     <td class="Nonmetal Electron">2<br>3</td>
 
-    <td class="Nonmetal">6<strong>C</strong><div class="Name"><a href="JavaScript:element('Carbon')">Carbon</a>12.0107</div></td>
+    <td class="Nonmetal">6<strong>C</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Carbon?printable=yes" onClick="return element('en', 'Carbon');">Carbon</a>12.0107</div></td>
     <td class="Nonmetal Electron">2<br>4</td>
 
-    <td class="Nonmetal">7<strong class="Gas">N</strong><div class="Name"><a href="JavaScript:element('Nitrogen')">Nitrogen</a>14.00674</div></td>
+    <td class="Nonmetal">7<strong class="Gas">N</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Nitrogen?printable=yes" onClick="return element('en', 'Nitrogen');">Nitrogen</a>14.00674</div></td>
     <td class="Nonmetal Electron">2<br>5</td>
 
-    <td class="Nonmetal">8<strong class="Gas">O</strong><div class="Name"><a href="JavaScript:element('Oxygen')">Oxygen</a>15.9994</div></td>
+    <td class="Nonmetal">8<strong class="Gas">O</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Oxygen?printable=yes" onClick="return element('en', 'Oxygen');">Oxygen</a>15.9994</div></td>
     <td class="Nonmetal Electron">2<br>6</td>
 
-    <td class="Nonmetal">9<strong class="Gas">F</strong><div class="Name"><a href="JavaScript:element('Fluorine')">Fluorine</a>18.9984032</div></td>
+    <td class="Nonmetal">9<strong class="Gas">F</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Fluorine?printable=yes" onClick="return element('en', 'Fluorine');">Fluorine</a>18.9984032</div></td>
     <td class="Nonmetal Electron">2<br>7</td>
 
-    <td class="Noble">10<strong class="Gas">Ne</strong><div class="Name"><a href="JavaScript:element('Neon')">Neon</a>20.1797</div></td>
+    <td class="Noble">10<strong class="Gas">Ne</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Neon?printable=yes" onClick="return element('en', 'Neon');">Neon</a>20.1797</div></td>
     <td class="Noble Electron">2<br>8</td>
 
     <td class="Electron Shells">K<br>L</td>
@@ -225,10 +223,10 @@
 
     <td class="Period" rowspan=2>3</td>
 
-    <td class="Alkali" rowspan=2>11<strong>Na</strong><div class="Name"><a href="JavaScript:element('Sodium')">Sodium</a>22.989770</div></td>
+    <td class="Alkali" rowspan=2>11<strong>Na</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Sodium?printable=yes" onClick="return element('en', 'Sodium');">Sodium</a>22.989770</div></td>
     <td class="Alkali Electron" rowspan=2>2<br>8<br>1</td>
 
-    <td class="Alkaline" rowspan=2>12<strong>Mg</strong><div class="Name"><a href="JavaScript:element('Magnesium')">Magnesium</a>24.3050</div></td>
+    <td class="Alkaline" rowspan=2>12<strong>Mg</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Magnesium?printable=yes" onClick="return element('en', 'Magnesium');">Magnesium</a>24.3050</div></td>
     <td class="Alkaline Electron" rowspan=2>2<br>8<br>2</td>
 
     <td class="NewGroup" colspan=2>3</td>
@@ -260,24 +258,24 @@
 
     <td class="NewGroup" colspan=2>12</td>
 
-    <td class="Other" rowspan=2>13<strong>Al</strong><div class="Name"><a href="JavaScript:element('Aluminum')">Aluminum</a>26.981538</div></td>
-    <td class="Other Electron" rowspan=2>2<br>8<br>3</td>
+    <td class="Poor" rowspan=2>13<strong>Al</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Aluminum?printable=yes" onClick="return element('en', 'Aluminum');">Aluminum</a>26.981538</div></td>
+    <td class="Poor Electron" rowspan=2>2<br>8<br>3</td>
 
     <td class="Divider" rowspan=3></td>
 
-    <td class="Nonmetal" rowspan=2>14<strong>Si</strong><div class="Name"><a href="JavaScript:element('Silicon')">Silicon</a>28.0855</div></td>
+    <td class="Nonmetal" rowspan=2>14<strong>Si</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Silicon?printable=yes" onClick="return element('en', 'Silicon');">Silicon</a>28.0855</div></td>
     <td class="Nonmetal Electron" rowspan=2>2<br>8<br>4</td>
 
-    <td class="Nonmetal" rowspan=2>15<strong>P</strong><div class="Name"><a href="JavaScript:element('Phosphorus')">Phosphorus</a>30.973761</div></td>
+    <td class="Nonmetal" rowspan=2>15<strong>P</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Phosphorus?printable=yes" onClick="return element('en', 'Phosphorus');">Phosphorus</a>30.973761</div></td>
     <td class="Nonmetal Electron" rowspan=2>2<br>8<br>5</td>
 
-    <td class="Nonmetal" rowspan=2>16<strong>S</strong><div class="Name"><a href="JavaScript:element('Sulfur')">Sulfur</a>32.066</div></td>
+    <td class="Nonmetal" rowspan=2>16<strong>S</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Sulfur?printable=yes" onClick="return element('en', 'Sulfur');">Sulfur</a>32.066</div></td>
     <td class="Nonmetal Electron" rowspan=2>2<br>8<br>6</td>
 
-    <td class="Nonmetal" rowspan=2>17<strong class="Gas">Cl</strong><div class="Name"><a href="JavaScript:element('Chlorine')">Chlorine</a>35.453</div></td>
+    <td class="Nonmetal" rowspan=2>17<strong class="Gas">Cl</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Chlorine?printable=yes" onClick="return element('en', 'Chlorine');">Chlorine</a>35.453</div></td>
     <td class="Nonmetal Electron" rowspan=2>2<br>8<br>7</td>
 
-    <td class="Noble" rowspan=2>18<strong class="Gas">Ar</strong><div class="Name"><a href="JavaScript:element('Argon')">Argon</a>39.948</div></td>
+    <td class="Noble" rowspan=2>18<strong class="Gas">Ar</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Argon?printable=yes" onClick="return element('en', 'Argon');">Argon</a>39.948</div></td>
     <td class="Noble Electron" rowspan=2>2<br>8<br>8</td>
 
     <td class="Electron Shells" rowspan=2>K<br>L<br>M</td>
@@ -307,62 +305,62 @@
 
     <td class="Period">4</td>
 
-    <td class="Alkali">19<strong>K</strong><div class="Name"><a href="JavaScript:element('Potassium')">Potassium</a>39.0983</div></td>
+    <td class="Alkali">19<strong>K</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Potassium?printable=yes" onClick="return element('en', 'Potassium');">Potassium</a>39.0983</div></td>
     <td class="Alkali Electron">2<br>8<br>8<br>1</td>
 
-    <td class="Alkaline">20<strong>Ca</strong><div class="Name"><a href="JavaScript:element('Calcium')">Calcium</a>40.078</div></td>
+    <td class="Alkaline">20<strong>Ca</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Calcium?printable=yes" onClick="return element('en', 'Calcium');">Calcium</a>40.078</div></td>
     <td class="Alkaline Electron">2<br>8<br>8<br>2</td>
 
-    <td class="Transition">21<strong>Sc</strong><div class="Name"><a href="JavaScript:element('Scandium')">Scandium</a>44.955910</div></td>
+    <td class="Transition">21<strong>Sc</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Scandium?printable=yes" onClick="return element('en', 'Scandium');">Scandium</a>44.955910</div></td>
     <td class="Transition Electron">2<br>8<br>9<br>2</td>
 
-    <td class="Transition">22<strong>Ti</strong><div class="Name"><a href="JavaScript:element('Titanium')">Titanium</a>47.867</div></td>
+    <td class="Transition">22<strong>Ti</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Titanium?printable=yes" onClick="return element('en', 'Titanium');">Titanium</a>47.867</div></td>
     <td class="Transition Electron">2<br>8<br>10<br>2</td>
 
-    <td class="Transition">23<strong>V</strong><div class="Name"><a href="JavaScript:element('Vanadium')">Vanadium</a>50.9415</div></td>
+    <td class="Transition">23<strong>V</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Vanadium?printable=yes" onClick="return element('en', 'Vanadium');">Vanadium</a>50.9415</div></td>
     <td class="Transition Electron">2<br>8<br>11<br>2</td>
 
-    <td class="Transition">24<strong>Cr</strong><div class="Name"><a href="JavaScript:element('Chromium')">Chromium</a>51.9961</div></td>
+    <td class="Transition">24<strong>Cr</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Chromium?printable=yes" onClick="return element('en', 'Chromium');">Chromium</a>51.9961</div></td>
     <td class="Transition Electron">2<br>8<br>13<br>1</td>
 
-    <td class="Transition">25<strong>Mn</strong><div class="Name"><a href="JavaScript:element('Manganese')">Manganese</a>54.938049</div></td>
+    <td class="Transition">25<strong>Mn</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Manganese?printable=yes" onClick="return element('en', 'Manganese');">Manganese</a>54.938049</div></td>
     <td class="Transition Electron">2<br>8<br>13<br>2</td>
 
-    <td class="Transition">26<strong>Fe</strong><div class="Name"><a href="JavaScript:element('Iron')">Iron</a>55.8457</div></td>
+    <td class="Transition">26<strong>Fe</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Iron?printable=yes" onClick="return element('en', 'Iron');">Iron</a>55.8457</div></td>
     <td class="Transition Electron">2<br>8<br>14<br>2</td>
 
-    <td class="Transition">27<strong>Co</strong><div class="Name"><a href="JavaScript:element('Cobalt')">Cobalt</a>58.933200</div></td>
+    <td class="Transition">27<strong>Co</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Cobalt?printable=yes" onClick="return element('en', 'Cobalt');">Cobalt</a>58.933200</div></td>
     <td class="Transition Electron">2<br>8<br>15<br>2</td>
 
-    <td class="Transition">28<strong>Ni</strong><div class="Name"><a href="JavaScript:element('Nickel')">Nickel</a>58.6934</div></td>
+    <td class="Transition">28<strong>Ni</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Nickel?printable=yes" onClick="return element('en', 'Nickel');">Nickel</a>58.6934</div></td>
     <td class="Transition Electron">2<br>8<br>16<br>2</td>
 
-    <td class="Transition">29<strong>Cu</strong><div class="Name"><a href="JavaScript:element('Copper')">Copper</a>63.546</div></td>
+    <td class="Transition">29<strong>Cu</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Copper?printable=yes" onClick="return element('en', 'Copper');">Copper</a>63.546</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>1</td>
 
-    <td class="Transition">30<strong>Zn</strong><div class="Name"><a href="JavaScript:element('Zinc')">Zinc</a>65.409</div></td>
+    <td class="Transition">30<strong>Zn</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Zinc?printable=yes" onClick="return element('en', 'Zinc');">Zinc</a>65.409</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>2</td>
 
-    <td class="Other">31<strong>Ga</strong><div class="Name"><a href="JavaScript:element('Gallium')">Gallium</a>69.723</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>3</td>
+    <td class="Poor">31<strong>Ga</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Gallium?printable=yes" onClick="return element('en', 'Gallium');">Gallium</a>69.723</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>3</td>
 
     <td rowspan=14></td>
 
-    <td class="Other">32<strong>Ge</strong><div class="Name"><a href="JavaScript:element('Germanium')">Germanium</a>72.64</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>4</td>
+    <td class="Poor">32<strong>Ge</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Germanium?printable=yes" onClick="return element('en', 'Germanium');">Germanium</a>72.64</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>4</td>
 
     <td class="Divider" rowspan=2></td>
 
-    <td class="Nonmetal">33<strong>As</strong><div class="Name"><a href="JavaScript:element('Arsenic')">Arsenic</a>74.92160</div></td>
+    <td class="Nonmetal">33<strong>As</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Arsenic?printable=yes" onClick="return element('en', 'Arsenic');">Arsenic</a>74.92160</div></td>
     <td class="Nonmetal Electron">2<br>8<br>18<br>5</td>
 
-    <td class="Nonmetal">34<strong>Se</strong><div class="Name"><a href="JavaScript:element('Selenium')">Selenium</a>78.96</div></td>
+    <td class="Nonmetal">34<strong>Se</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Selenium?printable=yes" onClick="return element('en', 'Selenium');">Selenium</a>78.96</div></td>
     <td class="Nonmetal Electron">2<br>8<br>18<br>6</td>
 
-    <td class="Nonmetal">35<strong class="Liquid">Br</strong><div class="Name"><a href="JavaScript:element('Bromine')">Bromine</a>79.904</div></td>
+    <td class="Nonmetal">35<strong class="Liquid">Br</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Bromine?printable=yes" onClick="return element('en', 'Bromine');">Bromine</a>79.904</div></td>
     <td class="Nonmetal Electron">2<br>8<br>18<br>7</td>
 
-    <td class="Noble">36<strong class="Gas">Kr</strong><div class="Name"><a href="JavaScript:element('Krypton')">Krypton</a>83.798</div></td>
+    <td class="Noble">36<strong class="Gas">Kr</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Krypton?printable=yes" onClick="return element('en', 'Krypton');">Krypton</a>83.798</div></td>
     <td class="Noble Electron">2<br>8<br>18<br>8</td>
 
     <td class="Electron Shells">K<br>L<br>M<br>N</td>
@@ -378,62 +376,62 @@
 
     <td class="Period">5</td>
 
-    <td class="Alkali">37<strong>Rb</strong><div class="Name"><a href="JavaScript:element('Rubidium')">Rubidium</a>85.4678</div></td>
+    <td class="Alkali">37<strong>Rb</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Rubidium?printable=yes" onClick="return element('en', 'Rubidium');">Rubidium</a>85.4678</div></td>
     <td class="Alkali Electron">2<br>8<br>18<br>8<br>1</td>
 
-    <td class="Alkaline">38<strong>Sr</strong><div class="Name"><a href="JavaScript:element('Strontium')">Strontium</a>87.62</div></td>
+    <td class="Alkaline">38<strong>Sr</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Strontium?printable=yes" onClick="return element('en', 'Strontium');">Strontium</a>87.62</div></td>
     <td class="Alkaline Electron">2<br>8<br>18<br>8<br>2</td>
 
-    <td class="Transition">39<strong>Y</strong><div class="Name"><a href="JavaScript:element('Yttrium')">Yttrium</a>88.90585</div></td>
+    <td class="Transition">39<strong>Y</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Yttrium?printable=yes" onClick="return element('en', 'Yttrium');">Yttrium</a>88.90585</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>9<br>2</td>
 
-    <td class="Transition">40<strong>Zr</strong><div class="Name"><a href="JavaScript:element('Zirconium')">Zirconium</a>91.224</div></td>
+    <td class="Transition">40<strong>Zr</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Zirconium?printable=yes" onClick="return element('en', 'Zirconium');">Zirconium</a>91.224</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>10<br>2</td>
 
-    <td class="Transition">41<strong>Nb</strong><div class="Name"><a href="JavaScript:element('Niobium')">Niobium</a>92.90638</div></td>
+    <td class="Transition">41<strong>Nb</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Niobium?printable=yes" onClick="return element('en', 'Niobium');">Niobium</a>92.90638</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>12<br>1</td>
 
-    <td class="Transition">42<strong>Mo</strong><div class="LongName"><a href="JavaScript:element('Molybdenum')">Molybdenum</a></div><div class="Name">95.94</div></td>
+    <td class="Transition">42<strong>Mo</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Molybdenum?printable=yes" onClick="return element('en', 'Molybdenum');">Molybdenum</a></div><div class="Name">95.94</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>13<br>1</td>
 
-    <td class="Transition">43<strong class="Synthetic">Tc</strong><div class="Name"><a href="JavaScript:element('Technetium')">Technetium</a>(98)</div></td>
+    <td class="Transition">43<strong class="Synthetic">Tc</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Technetium?printable=yes" onClick="return element('en', 'Technetium');">Technetium</a>(98)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>13<br>2</td>
 
-    <td class="Transition">44<strong>Ru</strong><div class="Name"><a href="JavaScript:element('Ruthenium')">Ruthenium</a>101.07</div></td>
+    <td class="Transition">44<strong>Ru</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ruthenium?printable=yes" onClick="return element('en', 'Ruthenium');">Ruthenium</a>101.07</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>15<br>1</td>
 
-    <td class="Transition">45<strong>Rh</strong><div class="Name"><a href="JavaScript:element('Rhodium')">Rhodium</a>102.90550</div></td>
+    <td class="Transition">45<strong>Rh</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Rhodium?printable=yes" onClick="return element('en', 'Rhodium');">Rhodium</a>102.90550</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>16<br>1</td>
 
-    <td class="Transition">46<strong>Pd</strong><div class="Name"><a href="JavaScript:element('Palladium')">Palladium</a>106.42</div></td>
+    <td class="Transition">46<strong>Pd</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Palladium?printable=yes" onClick="return element('en', 'Palladium');">Palladium</a>106.42</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>18<br>0</td>
 
-    <td class="Transition">47<strong>Ag</strong><div class="Name"><a href="JavaScript:element('Silver')">Silver</a>107.8682</div></td>
+    <td class="Transition">47<strong>Ag</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Silver?printable=yes" onClick="return element('en', 'Silver');">Silver</a>107.8682</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>18<br>1</td>
 
-    <td class="Transition">48<strong>Cd</strong><div class="Name"><a href="JavaScript:element('Cadmium')">Cadmium</a>112.411</div></td>
+    <td class="Transition">48<strong>Cd</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Cadmium?printable=yes" onClick="return element('en', 'Cadmium');">Cadmium</a>112.411</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>18<br>2</td>
 
-    <td class="Other">49<strong>In</strong><div class="Name"><a href="JavaScript:element('Indium')">Indium</a>114.818</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>18<br>3</td>
+    <td class="Poor">49<strong>In</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Indium?printable=yes" onClick="return element('en', 'Indium');">Indium</a>114.818</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>18<br>3</td>
 
-    <td class="Other">50<strong>Sn</strong><div class="Name"><a href="JavaScript:element('Tin')">Tin</a>118.710</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>18<br>4</td>
+    <td class="Poor">50<strong>Sn</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Tin?printable=yes" onClick="return element('en', 'Tin');">Tin</a>118.710</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>18<br>4</td>
 
     <td rowspan=12></td>
 
-    <td class="Other">51<strong>Sb</strong><div class="Name"><a href="JavaScript:element('Antimony')">Antimony</a>121.760</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>18<br>5</td>
+    <td class="Poor">51<strong>Sb</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Antimony?printable=yes" onClick="return element('en', 'Antimony');">Antimony</a>121.760</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>18<br>5</td>
 
     <td class="Divider" rowspan=2></td>
 
-    <td class="Nonmetal">52<strong>Te</strong><div class="Name"><a href="JavaScript:element('Tellurium')">Tellurium</a>127.60</div></td>
+    <td class="Nonmetal">52<strong>Te</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Tellurium?printable=yes" onClick="return element('en', 'Tellurium');">Tellurium</a>127.60</div></td>
     <td class="Nonmetal Electron">2<br>8<br>18<br>18<br>6</td>
 
-    <td class="Nonmetal">53<strong>I</strong><div class="Name"><a href="JavaScript:element('Iodine')">Iodine</a>126.90447</div></td>
+    <td class="Nonmetal">53<strong>I</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Iodine?printable=yes" onClick="return element('en', 'Iodine');">Iodine</a>126.90447</div></td>
     <td class="Nonmetal Electron">2<br>8<br>18<br>18<br>7</td>
 
-    <td class="Noble">54<strong class="Gas">Xe</strong><div class="Name"><a href="JavaScript:element('Xenon')">Xenon</a>131.293</div></td>
+    <td class="Noble">54<strong class="Gas">Xe</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Xenon?printable=yes" onClick="return element('en', 'Xenon');">Xenon</a>131.293</div></td>
     <td class="Noble Electron">2<br>8<br>18<br>18<br>8</td>
 
     <td class="Electron Shells">K<br>L<br>M<br>N<br>O</td>
@@ -451,63 +449,63 @@
 
     <td class="Period">6</td>
 
-    <td class="Alkali">55<strong>Cs</strong><div class="Name"><a href="JavaScript:element('Cesium')">Cesium</a>132.90545</div></td>
+    <td class="Alkali">55<strong>Cs</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Cesium?printable=yes" onClick="return element('en', 'Cesium');">Cesium</a>132.90545</div></td>
     <td class="Alkali Electron">2<br>8<br>18<br>18<br>8<br>1</td>
 
-    <td class="Alkaline">56<strong>Ba</strong><div class="Name"><a href="JavaScript:element('Barium')">Barium</a>137.327</div></td>
+    <td class="Alkaline">56<strong>Ba</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Barium?printable=yes" onClick="return element('en', 'Barium');">Barium</a>137.327</div></td>
     <td class="Alkaline Electron">2<br>8<br>18<br>18<br>8<br>2</td>
 
     <td class="OuterBorder" rowspan=10></td>
     <td class="InnerBorder Removed" colspan=2>57 to 71</td>
     <td class="OuterBorder" rowspan=4></td>
 
-    <td class="Transition">72<strong>Hf</strong><div class="Name"><a href="JavaScript:element('Hafnium')">Hafnium</a>178.49</div></td>
+    <td class="Transition">72<strong>Hf</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Hafnium?printable=yes" onClick="return element('en', 'Hafnium');">Hafnium</a>178.49</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>10<br>2</td>
 
-    <td class="Transition">73<strong>Ta</strong><div class="Name"><a href="JavaScript:element('Tantalum')">Tantalum</a>180.9479</div></td>
+    <td class="Transition">73<strong>Ta</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Tantalum?printable=yes" onClick="return element('en', 'Tantalum');">Tantalum</a>180.9479</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>11<br>2</td>
 
-    <td class="Transition">74<strong>W</strong><div class="Name"><a href="JavaScript:element('Tungsten')">Tungsten</a>183.84</div></td>
+    <td class="Transition">74<strong>W</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Tungsten?printable=yes" onClick="return element('en', 'Tungsten');">Tungsten</a>183.84</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>12<br>2</td>
 
-    <td class="Transition">75<strong>Re</strong><div class="Name"><a href="JavaScript:element('Rhenium')">Rhenium</a>186.207</div></td>
+    <td class="Transition">75<strong>Re</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Rhenium?printable=yes" onClick="return element('en', 'Rhenium');">Rhenium</a>186.207</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>13<br>2</td>
 
-    <td class="Transition">76<strong>Os</strong><div class="Name"><a href="JavaScript:element('Osmium')">Osmium</a>190.23</div></td>
+    <td class="Transition">76<strong>Os</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Osmium?printable=yes" onClick="return element('en', 'Osmium');">Osmium</a>190.23</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>14<br>2</td>
 
-    <td class="Transition">77<strong>Ir</strong><div class="Name"><a href="JavaScript:element('Iridium')">Iridium</a>192.217</div></td>
+    <td class="Transition">77<strong>Ir</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Iridium?printable=yes" onClick="return element('en', 'Iridium');">Iridium</a>192.217</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>15<br>2</td>
 
-    <td class="Transition">78<strong>Pt</strong><div class="Name"><a href="JavaScript:element('Platinum')">Platinum</a>195.078</div></td>
+    <td class="Transition">78<strong>Pt</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Platinum?printable=yes" onClick="return element('en', 'Platinum');">Platinum</a>195.078</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>17<br>1</td>
 
-    <td class="Transition">79<strong>Au</strong><div class="Name"><a href="JavaScript:element('Gold')">Gold</a>196.96655</div></td>
+    <td class="Transition">79<strong>Au</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Gold?printable=yes" onClick="return element('en', 'Gold');">Gold</a>196.96655</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>18<br>1</td>
 
-    <td class="Transition">80<strong class="Liquid">Hg</strong><div class="Name"><a href="JavaScript:element('Mercury')">Mercury</a>200.59</div></td>
+    <td class="Transition">80<strong class="Liquid">Hg</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Mercury?printable=yes" onClick="return element('en', 'Mercury');">Mercury</a>200.59</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>18<br>2</td>
 
-    <td class="Other">81<strong>Tl</strong><div class="Name"><a href="JavaScript:element('Thallium')">Thallium</a>204.3833</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>3</td>
+    <td class="Poor">81<strong>Tl</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Thallium?printable=yes" onClick="return element('en', 'Thallium');">Thallium</a>204.3833</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>32<br>18<br>3</td>
 
-    <td class="Other">82<strong>Pb</strong><div class="Name"><a href="JavaScript:element('Lead')">Lead</a>207.2</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>4</td>
+    <td class="Poor">82<strong>Pb</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Lead?printable=yes" onClick="return element('en', 'Lead');">Lead</a>207.2</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>32<br>18<br>4</td>
 
-    <td class="Other">83<strong>Bi</strong><div class="Name"><a href="JavaScript:element('Bismuth')">Bismuth</a>208.98038</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>5</td>
+    <td class="Poor">83<strong>Bi</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Bismuth?printable=yes" onClick="return element('en', 'Bismuth');">Bismuth</a>208.98038</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>32<br>18<br>5</td>
 
     <td rowspan=10></td>
 
-    <td class="Other">84<strong>Po</strong><div class="Name"><a href="JavaScript:element('Polonium')">Polonium</a>(209)</div></td>
-    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>6</td>
+    <td class="Poor">84<strong>Po</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Polonium?printable=yes" onClick="return element('en', 'Polonium');">Polonium</a>(209)</div></td>
+    <td class="Poor Electron">2<br>8<br>18<br>32<br>18<br>6</td>
 
     <td class="Divider"></td>
 
-    <td class="Nonmetal">85<strong>At</strong><div class="Name"><a href="JavaScript:element('Astatine')">Astatine</a>(210)</div></td>
+    <td class="Nonmetal">85<strong>At</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Astatine?printable=yes" onClick="return element('en', 'Astatine');">Astatine</a>(210)</div></td>
     <td class="Nonmetal Electron">2<br>8<br>18<br>32<br>18<br>7</td>
 
-    <td class="Noble">86<strong class="Gas">Rn</strong><div class="Name"><a href="JavaScript:element('Radon')">Radon</a>(222)</div></td>
+    <td class="Noble">86<strong class="Gas">Rn</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Radon?printable=yes" onClick="return element('en', 'Radon');">Radon</a>(222)</div></td>
     <td class="Noble Electron">2<br>8<br>18<br>32<br>18<br>8</td>
 
     <td class="Electron Shells">K<br>L<br>M<br>N<br>O<br>P</td>
@@ -525,56 +523,56 @@
 
     <td class="Period">7</td>
 
-    <td class="Alkali">87<strong>Fr</strong><div class="Name"><a href="JavaScript:element('Francium')">Francium</a>(223)</div></td>
+    <td class="Alkali">87<strong>Fr</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Francium?printable=yes" onClick="return element('en', 'Francium');">Francium</a>(223)</div></td>
     <td class="Alkali Electron">2<br>8<br>18<br>32<br>18<br>8<br>1</td>
 
-    <td class="Alkaline">88<strong>Ra</strong><div class="Name"><a href="JavaScript:element('Radium')">Radium</a>(226)</div></td>
+    <td class="Alkaline">88<strong>Ra</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Radium?printable=yes" onClick="return element('en', 'Radium');">Radium</a>(226)</div></td>
     <td class="Alkaline Electron">2<br>8<br>18<br>32<br>18<br>8<br>2</td>
 
     <td class="InnerBorder Removed" colspan=2>89 to 103</td>
 
-    <td class="Transition">104<strong class="Synthetic">Rf</strong><div class="LongName"><a href="JavaScript:element('Rutherfordium')">Rutherfordium</a></div><div class="Name">(261)</div></td>
+    <td class="Transition">104<strong class="Synthetic">Rf</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Rutherfordium?printable=yes" onClick="return element('en', 'Rutherfordium');">Rutherfordium</a></div><div class="Name">(261)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>10<br>2</td>
 
-    <td class="Transition">105<strong class="Synthetic">Db</strong><div class="Name"><a href="JavaScript:element('Dubnium')">Dubnium</a>(262)</div></td>
+    <td class="Transition">105<strong class="Synthetic">Db</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Dubnium?printable=yes" onClick="return element('en', 'Dubnium');">Dubnium</a>(262)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>11<br>2</td>
 
-    <td class="Transition">106<strong class="Synthetic">Sg</strong><div class="LongName"><a href="JavaScript:element('Seaborgium')">Seaborgium</a></div><div class="Name">(266)</div></td>
+    <td class="Transition">106<strong class="Synthetic">Sg</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Seaborgium?printable=yes" onClick="return element('en', 'Seaborgium');">Seaborgium</a></div><div class="Name">(266)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>12<br>2</td>
 
-    <td class="Transition">107<strong class="Synthetic">Bh</strong><div class="Name"><a href="JavaScript:element('Bohrium')">Bohrium</a>(264)</div></td>
+    <td class="Transition">107<strong class="Synthetic">Bh</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Bohrium?printable=yes" onClick="return element('en', 'Bohrium');">Bohrium</a>(264)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>13<br>2</td>
 
-    <td class="Transition">108<strong class="Synthetic">Hs</strong><div class="Name"><a href="JavaScript:element('Hassium')">Hassium</a>(269)</div></td>
+    <td class="Transition">108<strong class="Synthetic">Hs</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Hassium?printable=yes" onClick="return element('en', 'Hassium');">Hassium</a>(269)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>14<br>2</td>
 
-    <td class="Transition">109<strong class="Synthetic">Mt</strong><div class="Name"><a href="JavaScript:element('Meitnerium')">Meitnerium</a>(268)</div></td>
+    <td class="Transition">109<strong class="Synthetic">Mt</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Meitnerium?printable=yes" onClick="return element('en', 'Meitnerium');">Meitnerium</a>(268)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>15<br>2</td>
 
-    <td class="Transition">110<strong class="Synthetic">Ds</strong><div class="LongName"><a href="JavaScript:element('Darmstadtium')">Darmstadtium</a></div><div class="Name">(271)</div></td>
+    <td class="Transition">110<strong class="Synthetic">Ds</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Darmstadtium?printable=yes" onClick="return element('en', 'Darmstadtium');">Darmstadtium</a></div><div class="Name">(271)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>17<br>1</td>
 
-    <td class="Transition">111<strong class="Synthetic">Rg</strong><div class="LongName"><a href="JavaScript:element('Roentgenium')">Roentgenium</a></div><div class="Name">(272)</div></td>
+    <td class="Transition">111<strong class="Synthetic">Rg</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Roentgenium?printable=yes" onClick="return element('en', 'Roentgenium');">Roentgenium</a></div><div class="Name">(272)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>18<br>1</td>
 
-    <td class="Transition">112<strong class="Synthetic">Uub</strong><div class="Name"><a href="JavaScript:element('Ununbium')">Ununbium</a>(285)</div></td>
+    <td class="Transition">112<strong class="Synthetic">Uub</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununbium?printable=yes" onClick="return element('en', 'Ununbium');">Ununbium</a>(285)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>32<br>18<br>2</td>
 
-    <td class="Other" colspan=2>113<strong class="Synthetic">Uut</strong><div class="Name"><a href="JavaScript:element('Ununtrium')">Ununtrium</a>(284)</div></td>
+    <td class="Poor" colspan=2>113<strong class="Synthetic">Uut</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununtrium?printable=yes" onClick="return element('en', 'Ununtrium');">Ununtrium</a>(284)</div></td>
 
-    <td class="Other" colspan=2>114<strong class="Synthetic">Uuq<img src="http://www.dayah.com/periodic/Images/Spacer.GIF?lang=" alt="" height=5 width=5></strong><div class="Name"><a href="JavaScript:element('Ununquadium')">Ununquadium</a>(289)</div></td>
+    <td class="Poor" colspan=2>114<strong class="Synthetic">Uuq<img src="http://www.dayah.com/periodic/Images/Spacer.GIF?lang=" alt="" height=5 width=5></strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununquadium?printable=yes" onClick="return element('en', 'Ununquadium');">Ununquadium</a>(289)</div></td>
 
-    <td class="Other" colspan=2>115<strong class="Synthetic">Uup</strong><div class="Name"><a href="JavaScript:element('Ununpentium')">Ununpentium</a>(288)</div></td>
+    <td class="Poor" colspan=2>115<strong class="Synthetic">Uup</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununpentium?printable=yes" onClick="return element('en', 'Ununpentium');">Ununpentium</a>(288)</div></td>
 
-    <td class="Other" colspan=2>116<strong class="Synthetic">Uuh</strong><div class="Name"><a href="JavaScript:element('Ununhexium')">Ununhexium</a>(292)</div></td>
+    <td class="Poor" colspan=2>116<strong class="Synthetic">Uuh</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununhexium?printable=yes" onClick="return element('en', 'Ununhexium');">Ununhexium</a>(292)</div></td>
 
     <td rowspan=8></td>
 
-    <td colspan=2>117<strong class="Synthetic">Uus</strong><div class="Name"><a href="JavaScript:element('Ununseptium')">Ununseptium</a>&nbsp;</div></td>
+    <td colspan=2>117<strong class="Synthetic">Uus</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununseptium?printable=yes" onClick="return element('en', 'Ununseptium');">Ununseptium</a>&nbsp;</div></td>
 
     <td></td>
 
-    <td colspan=2>118<strong class="Synthetic">Uuo</strong><div class="Name"><a href="JavaScript:element('Ununoctium')">Ununoctium</a>&nbsp;</div></td>
+    <td colspan=2>118<strong class="Synthetic">Uuo</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ununoctium?printable=yes" onClick="return element('en', 'Ununoctium');">Ununoctium</a>&nbsp;</div></td>
 
     <td class="Electron Shells">K<br>L<br>M<br>N<br>O<br>P<br>Q</td>
 
@@ -594,7 +592,7 @@
    </tr>
    <tr>
 
-    <td class="InnerBorder" colspan=47 id="Copyright">Web Page Design Copyright &copy; 1997 <a class="Web" href="mailto:michael@dayah.com">Michael Dayah</a><span id="Print">Michael Dayah (michael@dayah.com). http://www.dayah.com/periodic/</span>. <span class="Web">Last Modified: August 28, 2005</span></td>
+    <td class="InnerBorder" colspan=47 id="Copyright">Web Page Design Copyright &copy; 1997 <a class="Web" href="mailto:michael@dayah.com">Michael Dayah</a><span id="Print">Michael Dayah (michael@dayah.com). http://www.dayah.com/periodic/</span>. <span class="Web">Last Modified: August 30, 2005</span></td>
     <td class="RowSpace OuterBorder" rowspan=5></td>
 
    </tr>
@@ -609,54 +607,54 @@
     <td colspan=7 rowspan=3><div id="Note">Note: The subgroup numbers 1-18 were adopted in 1984 by the International Union of Pure and Applied Chemistry. The names of elements 112-118 are the Latin equivalents of those numbers.</div></td>
 
     <td class="OuterBorder" rowspan=3></td>
-    <td class="Transition">57<strong>La</strong><div class="Name"><a href="JavaScript:element('Lanthanum')">Lanthanum</a>138.9055</div></td>
+    <td class="Transition">57<strong>La</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Lanthanum?printable=yes" onClick="return element('en', 'Lanthanum');">Lanthanum</a>138.9055</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>18<br>9<br>2</td>
 
-    <td class="Lanthanide">58<strong>Ce</strong><div class="Name"><a href="JavaScript:element('Cerium')">Cerium</a>140.116</div></td>
+    <td class="Lanthanide">58<strong>Ce</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Cerium?printable=yes" onClick="return element('en', 'Cerium');">Cerium</a>140.116</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>19<br>9<br>2</td>
 
-    <td class="Lanthanide">59<strong>Pr</strong><div class="LongName"><a href="JavaScript:element('Praseodymium')">Praseodymium</a></div><div class="Name">140.90765</div></td>
+    <td class="Lanthanide">59<strong>Pr</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Praseodymium?printable=yes" onClick="return element('en', 'Praseodymium');">Praseodymium</a></div><div class="Name">140.90765</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>21<br>8<br>2</td>
 
-    <td class="Lanthanide">60<strong>Nd</strong><div class="Name"><a href="JavaScript:element('Neodymium')">Neodymium</a>144.24</div></td>
+    <td class="Lanthanide">60<strong>Nd</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Neodymium?printable=yes" onClick="return element('en', 'Neodymium');">Neodymium</a>144.24</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>22<br>8<br>2</td>
 
-    <td class="Lanthanide">61<strong class="Synthetic">Pm</strong><div class="Name"><a href="JavaScript:element('Promethium')">Promethium</a>(145)</div></td>
+    <td class="Lanthanide">61<strong class="Synthetic">Pm</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Promethium?printable=yes" onClick="return element('en', 'Promethium');">Promethium</a>(145)</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>23<br>8<br>2</td>
 
-    <td class="Lanthanide">62<strong>Sm</strong><div class="Name"><a href="JavaScript:element('Samarium')">Samarium</a>150.36</div></td>
+    <td class="Lanthanide">62<strong>Sm</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Samarium?printable=yes" onClick="return element('en', 'Samarium');">Samarium</a>150.36</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>24<br>8<br>2</td>
 
-    <td class="Lanthanide">63<strong>Eu</strong><div class="Name"><a href="JavaScript:element('Europium')">Europium</a>151.964</div></td>
+    <td class="Lanthanide">63<strong>Eu</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Europium?printable=yes" onClick="return element('en', 'Europium');">Europium</a>151.964</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>25<br>8<br>2</td>
 
-    <td class="Lanthanide">64<strong>Gd</strong><div class="Name"><a href="JavaScript:element('Gadolinium')">Gadolinium</a>157.25</div></td>
+    <td class="Lanthanide">64<strong>Gd</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Gadolinium?printable=yes" onClick="return element('en', 'Gadolinium');">Gadolinium</a>157.25</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>25<br>9<br>2</td>
 
-    <td class="Lanthanide">65<strong>Tb</strong><div class="Name"><a href="JavaScript:element('Terbium')">Terbium</a>158.92534</div></td>
+    <td class="Lanthanide">65<strong>Tb</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Terbium?printable=yes" onClick="return element('en', 'Terbium');">Terbium</a>158.92534</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>27<br>8<br>2</td>
 
-    <td class="Lanthanide">66<strong>Dy</strong><div class="Name"><a href="JavaScript:element('Dysprosium')">Dysprosium</a>162.500</div></td>
+    <td class="Lanthanide">66<strong>Dy</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Dysprosium?printable=yes" onClick="return element('en', 'Dysprosium');">Dysprosium</a>162.500</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>28<br>8<br>2</td>
 
-    <td class="Lanthanide">67<strong>Ho</strong><div class="Name"><a href="JavaScript:element('Holmium')">Holmium</a>164.93032</div></td>
+    <td class="Lanthanide">67<strong>Ho</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Holmium?printable=yes" onClick="return element('en', 'Holmium');">Holmium</a>164.93032</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>29<br>8<br>2</td>
 
-    <td class="Lanthanide">68<strong>Er</strong><div class="Name"><a href="JavaScript:element('Erbium')">Erbium</a>167.259</div></td>
+    <td class="Lanthanide">68<strong>Er</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Erbium?printable=yes" onClick="return element('en', 'Erbium');">Erbium</a>167.259</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>30<br>8<br>2</td>
 
-    <td class="Lanthanide">69<strong>Tm</strong><div class="Name"><a href="JavaScript:element('Thulium')">Thulium</a>168.93421</div></td>
+    <td class="Lanthanide">69<strong>Tm</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Thulium?printable=yes" onClick="return element('en', 'Thulium');">Thulium</a>168.93421</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>31<br>8<br>2</td>
 
-    <td class="Lanthanide">70<strong>Yb</strong><div class="Name"><a href="JavaScript:element('Ytterbium')">Ytterbium</a>173.04</div></td>
+    <td class="Lanthanide">70<strong>Yb</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Ytterbium?printable=yes" onClick="return element('en', 'Ytterbium');">Ytterbium</a>173.04</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>32<br>8<br>2</td>
 
     <td rowspan=3></td>
 
-    <td class="Lanthanide">71<strong>Lu</strong><div class="Name"><a href="JavaScript:element('Lutetium')">Lutetium</a>174.967</div></td>
+    <td class="Lanthanide">71<strong>Lu</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Lutetium?printable=yes" onClick="return element('en', 'Lutetium');">Lutetium</a>174.967</div></td>
     <td class="Lanthanide Electron">2<br>8<br>18<br>32<br>9<br>2</td>
 
-    <td class="RowSpace OuterBorder" rowspan=3></td>
+    <td class="OuterBorder" rowspan=3></td>
     <td class="InnerBorder" rowspan=3></td>
 
    </tr>
@@ -667,49 +665,49 @@
    </tr>
    <tr>
 
-    <td class="Transition">89<strong>Ac</strong><div class="Name"><a href="JavaScript:element('Actinium')">Actinium</a>(227)</div></td>
+    <td class="Transition">89<strong>Ac</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Actinium?printable=yes" onClick="return element('en', 'Actinium');">Actinium</a>(227)</div></td>
     <td class="Transition Electron">2<br>8<br>18<br>32<br>18<br>9<br>2</td>
 
-    <td class="Actinide">90<strong>Th</strong><div class="Name"><a href="JavaScript:element('Thorium')">Thorium</a>232.0381</div></td>
+    <td class="Actinide">90<strong>Th</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Thorium?printable=yes" onClick="return element('en', 'Thorium');">Thorium</a>232.0381</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>18<br>10<br>2</td>
 
-    <td class="Actinide">91<strong>Pa</strong><div class="LongName"><a href="JavaScript:element('Protactinium')">Protactinium</a></div><div class="Name">231.03588</div></td>
+    <td class="Actinide">91<strong>Pa</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Protactinium?printable=yes" onClick="return element('en', 'Protactinium');">Protactinium</a></div><div class="Name">231.03588</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>20<br>9<br>2</td>
 
-    <td class="Actinide">92<strong>U</strong><div class="Name"><a href="JavaScript:element('Uranium')">Uranium</a>238.02891</div></td>
+    <td class="Actinide">92<strong>U</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Uranium?printable=yes" onClick="return element('en', 'Uranium');">Uranium</a>238.02891</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>21<br>9<br>2</td>
 
-    <td class="Actinide">93<strong class="Synthetic">Np</strong><div class="Name"><a href="JavaScript:element('Neptunium')">Neptunium</a>(237)</div></td>
+    <td class="Actinide">93<strong class="Synthetic">Np</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Neptunium?printable=yes" onClick="return element('en', 'Neptunium');">Neptunium</a>(237)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>22<br>9<br>2</td>
 
-    <td class="Actinide">94<strong class="Synthetic">Pu</strong><div class="Name"><a href="JavaScript:element('Plutonium')">Plutonium</a>(244)</div></td>
+    <td class="Actinide">94<strong class="Synthetic">Pu</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Plutonium?printable=yes" onClick="return element('en', 'Plutonium');">Plutonium</a>(244)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>24<br>8<br>2</td>
 
-    <td class="Actinide">95<strong class="Synthetic">Am</strong><div class="Name"><a href="JavaScript:element('Americium')">Americium</a>(243)</div></td>
+    <td class="Actinide">95<strong class="Synthetic">Am</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Americium?printable=yes" onClick="return element('en', 'Americium');">Americium</a>(243)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>25<br>8<br>2</td>
 
-    <td class="Actinide">96<strong class="Synthetic">Cm</strong><div class="Name"><a href="JavaScript:element('Curium')">Curium</a>(247)</div></td>
+    <td class="Actinide">96<strong class="Synthetic">Cm</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Curium?printable=yes" onClick="return element('en', 'Curium');">Curium</a>(247)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>25<br>9<br>2</td>
 
-    <td class="Actinide">97<strong class="Synthetic">Bk</strong><div class="Name"><a href="JavaScript:element('Berkelium')">Berkelium</a>(247)</div></td>
+    <td class="Actinide">97<strong class="Synthetic">Bk</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Berkelium?printable=yes" onClick="return element('en', 'Berkelium');">Berkelium</a>(247)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>27<br>8<br>2</td>
 
-    <td class="Actinide">98<strong class="Synthetic">Cf</strong><div class="Name"><a href="JavaScript:element('Californium')">Californium</a>(251)</div></td>
+    <td class="Actinide">98<strong class="Synthetic">Cf</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Californium?printable=yes" onClick="return element('en', 'Californium');">Californium</a>(251)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>28<br>8<br>2</td>
 
-    <td class="Actinide">99<strong class="Synthetic">Es</strong><div class="Name"><a href="JavaScript:element('Einsteinium')">Einsteinium</a>(252)</div></td>
+    <td class="Actinide">99<strong class="Synthetic">Es</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Einsteinium?printable=yes" onClick="return element('en', 'Einsteinium');">Einsteinium</a>(252)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>29<br>8<br>2</td>
 
-    <td class="Actinide">100<strong class="Synthetic">Fm</strong><div class="Name"><a href="JavaScript:element('Fermium')">Fermium</a>(257)</div></td>
+    <td class="Actinide">100<strong class="Synthetic">Fm</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Fermium?printable=yes" onClick="return element('en', 'Fermium');">Fermium</a>(257)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>30<br>8<br>2</td>
 
-    <td class="Actinide">101<strong class="Synthetic">Md</strong><div class="LongName"><a href="JavaScript:element('Mendelevium')">Mendelevium</a></div><div class="Name">(258)</div></td>
+    <td class="Actinide">101<strong class="Synthetic">Md</strong><div class="LongName"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Mendelevium?printable=yes" onClick="return element('en', 'Mendelevium');">Mendelevium</a></div><div class="Name">(258)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>31<br>8<br>2</td>
 
-    <td class="Actinide">102<strong class="Synthetic">No</strong><div class="Name"><a href="JavaScript:element('Nobelium')">Nobelium</a>(259)</div></td>
+    <td class="Actinide">102<strong class="Synthetic">No</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Nobelium?printable=yes" onClick="return element('en', 'Nobelium');">Nobelium</a>(259)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>32<br>8<br>2</td>
 
-    <td class="Actinide">103<strong class="Synthetic">Lr</strong><div class="Name"><a href="JavaScript:element('Lawrencium')">Lawrencium</a>(262)</div></td>
+    <td class="Actinide">103<strong class="Synthetic">Lr</strong><div class="Name"><a rel="nofollow" href="http://en.wikipedia.org/wiki/Lawrencium?printable=yes" onClick="return element('en', 'Lawrencium');">Lawrencium</a>(262)</div></td>
     <td class="Actinide Electron">2<br>8<br>18<br>32<br>32<br>9<br>2</td 
 
    </tr>
@@ -722,6 +720,9 @@
 
    </tr>
   </table>
+
+  <iframe id="ElementFrame" name="ElementFrame" src="Other/loading.html" frameborder=0></iframe>
+  <div id="Close"><span onClick="destroy(this);">Close</span></div>
 
  </body>
 </html>
