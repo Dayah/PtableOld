@@ -1,76 +1,50 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
 <HTML>
  <HEAD>
 
-  <SCRIPT TYPE="text/javascript">
-   <!--
-    // Copyright 1998-99 Michael Dayah.
-    function openKey() {
-    	keyWin = window.open("key.html","keyWindow","height=144,width=374");
-    }
-   // -->
-  </SCRIPT>
+  <style type="text/css">
+   A:active, A:hover { background: white; }
+   BODY	{ font-family: sans-serif; }
 
-  <STYLE TYPE="text/css">
-   <!--
-    BLOCKQUOTE, TD { font-family: Arial }
-   -->
-  </STYLE>
+   H1	{ background-color: #8FF; white-space: nowrap; text-align: center; font-size: 2.5em; margin-top: 0; }
+   H2	{ background: cyan; }
+   H3	{ margin-left: auto; margin-right: auto; text-align: left; text-indent: 3ex; width: 85%; font: normal 1em sans-serif; }
 
-  <TITLE>Periodic Table of the Elements - Feedback</TITLE>
+   .Navigation		{ background-color: #BBB; text-align: center; }
+   .Navigation TD	{ color: black; background-color: #DDD; width: 25%; white-space: nowrap; }
+  </style>
+
+  <TITLE>Periodic Table of Elements - Feedback</TITLE>
 
  </HEAD>
- <BODY BGCOLOR="#FFFFFF">
-  <TABLE BGCOLOR="#88FFFF" BORDER=0 WIDTH="100%">
-   <TR>
+ <BODY>
 
-    <TH NOWRAP><FONT FACE="Arial" SIZE=7>Periodic Table Feedback</FONT></TH>
+  <h1>Periodic Table of Elements - Feedback</h1>
 
-   </TR>
-  </TABLE>
+  <h3>Please use this form to tell me what you thought of my <A HREF=".">Periodic Table page</A>. If you have not already been, read the FAQ. Suggestions and criticism are welcome.</h3>
 
-  <BLOCKQUOTE>&nbsp; &nbsp; &nbsp;Please use this form to tell me what you thought of my <A HREF=".">Periodic Table page</A>. If you have not already been, read <A HREF="about.html">about the Periodic Table Page</A>. Suggestions and criticism are welcome.</BLOCKQUOTE>
-
-  <DIV ALIGN="CENTER">
-   <TABLE ALIGN="CENTER" BGCOLOR="#BBBBBB" BORDER=5 CELLPADDING=5 CELLSPACING=15>
-    <TR ALIGN="CENTER" BGCOLOR="#DDDDDD">
-     <TD WIDTH="25%"><A HREF="JavaScript:openKey()" STYLE="color: blue; text-decoration: underline" TITLE="Legend for the periodic table">Key</A></TD>
-     <TD WIDTH="25%"><A HREF="compatible.html" STYLE="color: blue; text-decoration: underline" TITLE="View the periodic table optimized for browser compatibility rather than HTML compliance">Compatible</A></TD>
-     <TD WIDTH="25%"><A HREF="about.html" STYLE="color: blue; text-decoration: underline" TITLE="About the designer, disclaimer, sources, recognition, and awards">About</A></TD>
-     <TD WIDTH="25%"><A HREF="questions.html" STYLE="color: blue; text-decoration: underline" TITLE="Questions and answers about the periodic table">Questions</A></TD>
-    </TR>
-    <TR ALIGN="CENTER" BGCOLOR="#DDDDDD">
-     <TD><A HREF="Images/PeriodicTable.GIF" STYLE="color: blue; text-decoration: underline" TITLE="Download a printable version of the periodic table">Print</A></TD>
-     <TD><A HREF="." STYLE="color: blue; text-decoration: underline" TITLE="View the periodic table optimized for HTML 4 compliance and CSS">HTML 4</A></TD>
-     <TD><A HREF="structure.html" STYLE="color: blue; text-decoration: underline" TITLE="View the periodic table with borders turned on">Borders</A></TD>
-     <TD>Feedback</TD>
-    </TR>
-   </TABLE>
-  </DIV>
-
-  <BR><BR>
-
-  <FORM ACTION="mail.asp" METHOD="POST">
+  <FORM ACTION="/cgi-bin/formmail/FormMail.pl" METHOD="POST">
+   <input type="hidden" name="recipient" value="michael@dayah.com">
 
    <TABLE ALIGN="CENTER" BGCOLOR="#000088" BORDER=0 CELLPADDING=10>
     <TR>
      <TD ALIGN="CENTER">
-      <TABLE BGCOLOR="#DDDDFF" BORDER=0 CELLPADDING=5 CELLSPACING=0>
+      <TABLE BGCOLOR="#DDDDFF" BORDER=0 CELLPADDING=5 CELLSPACING=0 style="text-align: left;">
 
        <TR>
         <TD ALIGN="RIGHT">Subject:</TD>
         <TD>
-         <SELECT NAME="Subject">
-          <OPTION></OPTION>
+         <SELECT NAME="subject">
           <OPTION>Question</OPTION>
           <OPTION>Suggestion</OPTION>
           <OPTION>Criticism</OPTION>
           <OPTION>Review</OPTION>
-          <OPTION>Page Author</OPTION>
-          <OPTION>Page Design</OPTION>
-          <OPTION>Chemistry</OPTION>
-          <OPTION>Report Error</OPTION>
-          <OPTION>Request Image</OPTION>
+          <OPTION>Page author</OPTION>
+          <OPTION>Page design</OPTION>
+          <OPTION>HTML/CSS</OPTION>
+          <OPTION>Report error</OPTION>
+          <OPTION>Help printing</OPTION>
+          <OPTION>Advertising</OPTION>
           <OPTION>Other</OPTION>
          </SELECT>
         </TD>
@@ -78,22 +52,12 @@
 
        <TR>
         <TD ALIGN="RIGHT">Name:</TD>
-        <TD><INPUT TYPE=TEXT NAME="Name" SIZE=30></TD>
+        <TD><INPUT TYPE=TEXT NAME="realname" SIZE=30></TD>
        </TR>
 
        <TR>
         <TD ALIGN="RIGHT">E-Mail:</TD>
-        <TD><INPUT TYPE=TEXT NAME="E-Mail" SIZE=30></TD>
-       </TR>
-
-       <TR>
-        <TD ALIGN="RIGHT">City:</TD>
-        <TD><INPUT TYPE=TEXT NAME="City" SIZE=17>, State: <INPUT TYPE=TEXT NAME="State" SIZE=2></TD>
-       </TR>
-
-       <TR>
-        <TD ALIGN="RIGHT">Country:</TD>
-        <TD><INPUT TYPE=TEXT NAME="Country" SIZE=30></TD>
+        <TD><INPUT TYPE=TEXT NAME="email" SIZE=30></TD>
        </TR>
 
        <TR>
@@ -117,9 +81,10 @@
      </TD>
     </TR>
    </TABLE>
+   <input type=hidden name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT">
   </FORM>
 
-  <P ALIGN="CENTER"><FONT FACE="Verdana, Arial" SIZE=2>Copyright &copy; 1998-99 Michael Dayah. All Rights Reserved.</FONT></P>
+  <P ALIGN="CENTER"><FONT FACE="Verdana, Arial" SIZE=2>Copyright &copy; 1998 Michael Dayah. All Rights Reserved.</FONT></P>
 
  </BODY>
 </HTML>
