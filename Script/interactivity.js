@@ -1,4 +1,4 @@
-window.onload = function() {
+﻿window.onload = function() {
 	n_atomic = 0; n_name = (language == "zh") ? 2 : 4; n_symbol = 2; n_mass = 5;
 	i_neutrons = 0, i_isomass = 1, i_binding = 2, i_masscontrib = 3, i_halflife = 4, i_decaymode = 5, i_width = 6;
 
@@ -20,6 +20,7 @@ window.onload = function() {
 	slider = document.getElementById("SliderBar");
 	searchinput = document.getElementById("SearchInput");
 	aufbau = document.getElementById("Hund").tBodies[0].getElementsByTagName("th");
+	wikibox = document.getElementById("WikiBox");
 
 	window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
 	init_layout();
@@ -57,7 +58,7 @@ window.onload = function() {
 	spec_discover = {"unit" : [""], "slidermin": 1730, "slidermax": 2007, "default": 2007, "startcolor" : "#FFFFFF", "endcolor" : "#666600", "defaultcolor": "#FFFFFF", "Legend": ["Year"], "replace": [,], "subset": 0};
 	spec_density = {"unit": [" kg/m&sup3;"," kg/m&sup3;"], "startcolor": "#FFFFFF", "endcolor": "#006666", "defaultcolor": "#FFFFFF", "Legend": ["kg/m&sup3;","kg/m&sup3;"], "values": ["STP","Liquid"], "scale": "linear", "replace": [,], "subset": 0};
 	spec_affinity = {"unit": [" kJ/mol"], "startcolor": "#006600", "endcolor": "#FFFFFF", "defaultcolor": "#CCCCCC", "Legend": ["kJ/mol"], "scale": "log", "replace": [,], "subset": 0};
-	spec_abundance = {"unit": ["%","%","%","%","%","%"], "startcolor": "#FFFFFF", "endcolor": "#3333FF", "defaultcolor": "#CCCCCC", "Legend": ["%","%","%","%","%","%"], "values": ["Universe","Solar","Meteor","Crust","Ocean","Human"], "scale": "log", "replace": [/e(.*)/, "&times;10<sup>$1<\/sup>"], "subset": 0};
+	spec_abundance = {"unit": ["%","%","%","%","%","%"], "startcolor": "#FFFFFF", "endcolor": "#3333FF", "defaultcolor": "#CCCCCC", "Legend": ["%","%","%","%","%","%"], "values": ["Universe","Solar","Meteor","Crust","Ocean","Human"], "scale": "log", "replace": [/e(.*)/, "×10<sup>$1<\/sup>"], "subset": 0};
 	spec_heat = {"unit": [" J/kgK"," kJ/mol"," kJ/mol"], "startcolor": "#FFFFFF", "endcolor": "#FF0000", "defaultcolor": "#CCCCCC", "Legend": [" J/kgK"," kJ/mol"," kJ/mol"], "values": ["Specific","Vapor","Fusion"], "scale": "log", "replace": [,], "subset": 0};
 	spec_conduct = {"unit": [" W/mK"," MS/m"], "startcolor": "#FFFFFF", "endcolor": "#880000", "defaultcolor": "#BBBBBB", "Legend":["W/mK","MS/m"], "values": ["Therm.","Elect."], "scale": "log", "replace": [,], "subset": 0};
 	spec_electronstring = {"unit": [""], "replace": [/(\d+)(\d[spdf]|$)/g, "<sup>$1<\/sup> $2"], "subset": 0};
@@ -216,23 +217,52 @@ function click_checkbox(name, obj) {
 	for (x in checkbox_ids) document.getElementById(checkbox_ids[x]).parentNode.className = (document.getElementById(checkbox_ids[x]).checked) ? "Active" : "";
 }
 
-function click_wiki(address) {
+function startWikiDrag(e) {
+	var el = this || srcElement;
+	e = e || event;
+	this.startX = this.offsetLeft;
+	this.startY = this.offsetTop;
+	this.mouseStartX = e.clientX;
+	this.mouseStartY = e.clientY;
+	document.onmousemove = moveWiki;
+	document.onmouseup = releaseWiki;
+	return false;
+}
+
+function moveWiki(e) {
+	e = e || event;
+	wikibox.style.left = wikibox.startX + e.clientX - wikibox.mouseStartX + "px";
+	wikibox.style.top = wikibox.startY + e.clientY - wikibox.mouseStartY + "px";
+	return false;
+}
+
+function releaseWiki(e) {
+	document.onmousemove = null;
+	document.onmouseup = null;
+}
+
+function click_wiki(address, atomic) {
 	var wiki = window.frames["WikiFrame"];
-	wiki.location.href = "about:blank";
+	wiki.location.replace("about:blank");
 	document.getElementById("ElementName").innerHTML = address;
-	document.getElementById("WikiBox").style.display = "block";
+	wikibox.style.display = "block";
+	if (atomic) init_throb(atomic);
+	wikibox.onmousedown = startWikiDrag;
 	document.getElementById("ElementName").href = "http://" + language + ".wikipedia.org/wiki/" + encodeURIComponent(address);
-	if (navigator.userAgent.match(/MSIE [67]/))
+	wiki.location.replace("http://" + language + ".wikipedia.org/w/index.php?title=" + encodeURIComponent(address) + "&printable=yes");
+
+/*	if (navigator.userAgent.match(/MSIE [67]/))
 		wiki.location.href = "http://" + language + ".wikipedia.org/w/index.php?title=" + encodeURIComponent(address) + "&printable=yes";
 	else if (language == "en")
 		wiki.location.href = language + ".wikipedia.org/wiki/" + address + ".html";
 	else
 		wiki.document.body.innerHTML = "Internet Explorer 6+ required to view multilingual element descriptions due to frame security issues.";
+*/
 }
 
 function destroy() {
 	window.frames["WikiFrame"].location.href = "about:blank";
-	document.getElementById("WikiBox").style.display = "";
+	wikibox.style.display = "";
 //	window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
 }
 
@@ -354,7 +384,7 @@ function attach(what) {
 			for (var i = 1; i <= 118; i++) {
 				element_ids[i].idx = i;
 				element_ids[i].onmouseover = function() { on_mouse_over(this.idx); };
-				element_ids[i].onclick = function() { click_wiki(element_ids[this.idx].childNodes[n_name].innerHTML); };
+				element_ids[i].onclick = function() { click_wiki(element_ids[this.idx].childNodes[n_name].innerHTML, this.idx); };
 			}
 		case "groups":
 			var groups = wholetable.tHead.rows[0].cells;
@@ -742,10 +772,10 @@ function keyboard_nav(e) {
 	e = e || event;
 	switch (e.keyCode) {
 		case 13:
-			if (lastHover) { click_wiki(element_ids[lastHover].childNodes[n_name].innerHTML); return false; }
+			if (lastHover) { click_wiki(element_ids[lastHover].childNodes[n_name].innerHTML, lastHover); return false; }
 			return;
 		case 27:
-			if (document.getElementById("WikiBox").style.display == "block") { destroy(); return false; }
+			if (wikibox.style.display == "block") { destroy(); return false; }
 			return;
 	}
 	if (e.keyCode >= 37 && e.keyCode <= 40) {
@@ -851,16 +881,20 @@ function parse_into_arrays(oXML, sVars) {
 	else if (lastHover) on_mouse_over(lastHover); else on_mouse_over(1);
 }
 
-function load_isotope(atomic) {
+function init_throb(atomic) {
 	if (typeof(throbber) != "undefined") clearInterval(throbber);
 	throb_atomic = atomic;
 	throb_value = 0;
-	throbber = setInterval(throb_isotope, 50);
+	throbber = setInterval(throb_element, 50);
+}
+
+function load_isotope(atomic) {
+	init_throb(atomic);
 	var conn = new getAJAXobj();
 	conn.connect("isotope.php?all=" + Boolean(spec_isotope["subset"]) + "&set=", atomic, click_isotope);
 }
 
-function throb_isotope() {
+function throb_element() {
 	var x = throb_value++;
 	set_bgcolor(element_ids[throb_atomic], calc_color(x % 10 <= 5 ? x % 10 : 10 - x % 10, default_colors[throb_atomic], "FFFFFF", 0, 5), true);
 }
@@ -935,7 +969,7 @@ function countsigfig(num) {
 }
 
 function scinot(num) {
-	return num.replace(/e[+]*(-)*(\d*)$/, "&times;10<sup>$1$2<\/sup>");
+	return num.replace(/e[+]*(-)*(\d*)$/, "×10<sup>$1$2<\/sup>");
 }
 
 function findPos(obj, lefttop) {
