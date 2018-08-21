@@ -58,7 +58,6 @@ scheme = "day";
 throb_atomic = false;
   //]]>
   </script>
-  <script type="text/javascript" src="Script/interactivity.js" defer="defer"></script>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"/>
 
@@ -469,7 +468,7 @@ throb_atomic = false;
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: April 02, 2008</span>&nbsp;</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: April 10, 2008</span>&nbsp;</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
@@ -531,7 +530,8 @@ throb_atomic = false;
 <!--   <a href="link.php?lang=en" title="Link to this site">Link</a> -->
    <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
 <!--   <a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a> -->
-   <a href="#" onclick="return load_demo();" title="Short demonstration of Ptable's features">Demo</a>
+   <a href="#" onclick="return load_script('demo');" title="Short demonstration of Ptable's features">Demo</a>
+<!--   <a href="#" onclick="return load_demo('song');" title="Song">Song</a> -->
 <!--   <a href="http://del.icio.us/post?url=www.ptable.com;title=Periodic+Table+of+Elements;notes=Interactive+Web+2.0+periodic+table+with+dynamic+layouts+showing+names%2C+electrons%2C+trend+visualization%2C+orbitals%2C+isotopes%2C+search.+Full+descriptions.">+del.icio.us</a> -->
    <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go"/></form>
   </div>
@@ -540,5 +540,6 @@ throb_atomic = false;
    <h1 id="WikiTitle"><input type="button" onclick="destroy();" value="×"/> Wikipedia - <a href="http://en.wikipedia.org/" id="ElementName">Loading</a> - Periodic Table</h1>
    <div id="WikiFrameBox"><iframe id="WikiFrame" name="WikiFrame" frameborder="0" title="Wikipedia article on element" security="restricted"><h1>Loading&hellip;</h1></iframe></div>
   </div>
+  <script type="text/javascript" src="Script/interactivity.js" defer="defer"></script>
  </body>
 </html>
