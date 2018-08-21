@@ -101,6 +101,7 @@ H1 #Close		{ text-align: right; font-size: medium; width: 1ex; border: 2px outse
 #Title A		{ color: white; }
 
 /*** Slider ***/
+.ElectronString		{ width: 20em; }
 #SliderTrack		{ width: 100%; position: relative; height: auto; border: 1px solid white; }
 #SliderTrack #SliderSlit{ border: 2px inset; background-color: ButtonFace; height: 2px; font-size: 0; margin: 9px 6px; }
 #SliderTrack #SliderBar	{ position: absolute; top: 0; border: 2px outset; background-color: ButtonFace; width: 10px; height: 20px; cursor: pointer; }

@@ -5,7 +5,6 @@ window.onload = function() {
 	lastHover = false;
 	waiting = false;
 	keyscroll = false;
-	firstTime = true;
 	dataset = "series";
 	tab = "Property";
 	widecheck = document.getElementById("wide");
@@ -98,7 +97,7 @@ function switch_viz(newset) {
 	dataset = newset;
 	on_mouse_over();
 	if (dataset == "series") { lastHover = false; restore_colors(default_colors); }
-	if (dataset != "state") document.getElementById("Main").className = "";
+	if (dataset != "state") wholetable.className = "";
 	init_slider();
 	save_colors(current_colors);
 	on_mouse_over(lastHover);
@@ -125,7 +124,15 @@ function colorize_and_mass(includemass) {
 }
 
 function init_layout() {
-	save_element_ids();
+	element_ids = new Array();
+	var tags = document.getElementsByTagName("td");
+	for (var i = 0; i < tags.length; i++) {
+		var current = tags[i];
+		if (current.className.indexOf("Element") != -1) {
+			var atomic = current.childNodes[n_atomic].innerHTML * 1;
+			if (!element_ids[atomic]) element_ids[atomic] = current;
+		}
+	}
 	attach_elementhovers();
 	results = 0;
 	search_active = false;
@@ -186,23 +193,28 @@ function activeTab(name, full) {
 }
 
 function switchTab(name) {
-	tab = name;
-	switch(tab) {
+	if (tab == "Electron") color_spdf(false);
+	switch(name) {
 		case "Series":
+		case "Isotope":
+			tab = name;
 			switch_viz("series");
 			hideDetails(true);
 			document.getElementById("ElectronBox").style.display = "";
 			break;
 		case "Property":
+			tab = name;
 			if (!lastHover) on_mouse_over(element_ids[1]);
 			else on_mouse_over(lastHover);
 			break;
 		case "Electron":
-//			elecstr = document.getElementById("ELECTRONSTRING").innerHTML;
-//			while (elecstr.match(/\[.*\]/))
-//				elecstr = elecstr.replace(/\[(.*)\]/, findSymbol);
+			if (typeof(electronstring) == "undefined") {
+				load_details(["electronstring"]);
+				return;
+			}
+			tab = name;
+			color_spdf(true);
 			document.getElementById("ElectronBox").style.display = "block";
-//			document.getElementById("ElectronBox").innerHTML = elecstr;
 			document.getElementById("visualize").style.display = "";
 			key_id.style.display = "none";
 			break;
@@ -220,13 +232,14 @@ function tab_electron(elTarget) {
 	var elecstr = electronstring[0][elTarget.childNodes[n_atomic].innerHTML];
 	while (elecstr.match(/\[.*\]/)) elecstr = elecstr.replace(/\[(.*)\]/, findSymbol);
 	var parts = elecstr.replace(/(\d+)(\d[spdf]|$)/g, "$1 $2").split(" ");
+	wholetable.tBodies[0].rows[0].cells[7].innerHTML = elecstr.replace(spec_electronstring["replace"][0], spec_electronstring["replace"][1]);
 	var aufbau = document.getElementById("Hund").tBodies[0].getElementsByTagName("th");
 	for (var x = 0; x < parts.length - 1; x++)
 		shells[parts[x].substr(0,2)] = parts[x].match(/[spdf](\d+)$/)[1];
 	for (var x = 0; x < aufbau.length; x++) {
 		var max = maxsubshell[aufbau[x].innerHTML.charAt(1)];
 		for (var y = 1; y <= max; y++)
-			aufbau[x].parentNode.cells[(y <= max / 2 ? y : y - max / 2)].childNodes[(y <= max / 2 ? 0 : 1)].style.visibility = (y <= (aufbau[x].innerHTML.substr(0,2) in shells ? shells[aufbau[x].innerHTML.substr(0,2)] : 0) ? "visible" : "hidden");
+			aufbau[x].parentNode.cells[y <= max / 2 ? y : y - max / 2].childNodes[y <= max / 2 ? 0 : 1].style.visibility = (y <= (aufbau[x].innerHTML.substr(0,2) in shells ? shells[aufbau[x].innerHTML.substr(0,2)] : 0) ? "visible" : "hidden");
 	}
 }
 
@@ -283,9 +296,9 @@ function rgb2hex(value) {
 function calc_color(value, start, end, min, max) {
 	var n = (value - min) / (max - min);
 	var s = parseInt(start.replace("#", ""), 16);
-//	if(start.length < 6) s = ((((s & 0xF00) << 4) + (s & 0xF00)) << 8) + ((((s & 0x0F0) << 4) + (s & 0x0F0)) << 4) + ((((s & 0x00F) << 4) + (s & 0x00F)) << 0);
+//	if (start.length < 6) s = ((((s & 0xF00) << 4) + (s & 0xF00)) << 8) + ((((s & 0x0F0) << 4) + (s & 0x0F0)) << 4) + ((((s & 0x00F) << 4) + (s & 0x00F)) << 0);
 	var e = parseInt(end.replace("#", ""), 16);
-//	if(end.length < 6) e = ((((e & 0xF00) << 4) + (e & 0xF00)) << 8) + ((((e & 0x0F0) << 4) + (e & 0x0F0)) << 4) + ((((e & 0x00F) << 4) + (e & 0x00F)) << 0);
+//	if (end.length < 6) e = ((((e & 0xF00) << 4) + (e & 0xF00)) << 8) + ((((e & 0x0F0) << 4) + (e & 0x0F0)) << 4) + ((((e & 0x00F) << 4) + (e & 0x00F)) << 0);
 
 	var r = Math.round(((e >> 16) - (s >> 16)) * n) + (s >> 16);
 	var g = Math.round((((e >> 8) & 0xFF) - ((s >> 8) & 0xFF)) * n) + ((s >> 8) & 0xFF);
@@ -374,7 +387,7 @@ function setLeft(el, pos) {
 function dim_for_states() {
 	on_mouse_over();
 	hideDetails(false);
-	document.getElementById("Main").className += " InvertState";
+	wholetable.className += " InvertState";
 	current_colors = new Array();
 	restore_colors(current_colors);
 }
@@ -425,7 +438,7 @@ function moveSlider(evnt) {
 
 function sliderMouseUp() {
 	keyscroll = false;
-	if (dataset != "state") document.getElementById("Main").className = "";
+	if (dataset != "state") wholetable.className = "";
 	save_colors(current_colors);
 	on_mouse_over(lastHover);
 	document.onmousemove = null;
@@ -481,18 +494,19 @@ function attach_elementhovers() {
 }
 
 function on_mouse_over(el) {
-	if (firstTime) {
-		lastHover = el;
-		preload_details();
-		return;
-	}
 	if (lastHover) dark(lastHover);
 	if (el) {
 		dim(el);
 		switch (tab) {
 			case "Series": break;
-			case "Property": showDetails(el); break;
-			case "Electron": tab_electron(el); break;
+			case "Property":
+				if (typeof(conduct) == "undefined") load_details(datasets);
+				else showDetails(el);
+				break;
+			case "Electron":
+				if (typeof(electronstring) == "undefined") load_details(["electronstring"])
+				else tab_electron(el);
+				break;
 		}
 		lastHover = el;
 	}
@@ -526,18 +540,55 @@ function set_stateclass(elTarget, stateclass, stop) {
 	}
 }
 
+function color_spdf(convert) {
+	if (convert) {
+		with (wholetable.tBodies[0].rows[0]) {
+			insertBefore(cells[7], cells[3]);
+			insertBefore(cells[8], cells[4]);
+			insertCell(7).colSpan = 12;
+			cells[7].className = "ElectronString";
+			cells[5].style.display = cells[8].style.display = cells[9].style.display = "none";
+		}
+		var shellcoeff = {"s": 0, "p": 0.75, "d": 1.5, "f": 2.25};
+		var shellcolor = {"s": "#FF6699", "p": "#99CCFF", "d": "#CCFF99", "f": "#66FFCC"};
+		for (var i = 1; i <= 118; i++) {
+			var max = [0, 0];
+			var elecstr = electronstring[0][i];
+			while (elecstr.match(/\[.*\]/)) elecstr = elecstr.replace(/\[(.*)\]/, findSymbol);
+			var parts = elecstr.replace(/(\d+)(\d[spdf]|$)/g, "$1 $2").split(" ");
+			for (var x = 0; x < parts.length - 1; x++)
+				if (Number(parts[x].charAt(0)) + shellcoeff[parts[x].charAt(1)] > max[1])
+					max = [parts[x].substr(0,2), Number(parts[x].charAt(0)) + shellcoeff[parts[x].charAt(1)]]
+			set_bgcolor(element_ids[i], shellcolor[max[0].charAt(1)], false)
+		}
+		save_colors(current_colors);
+	} else {
+		with (wholetable.tBodies[0].rows[0]) {
+			cells[5].style.display = cells[8].style.display = cells[9].style.display = "";
+			deleteCell(7);
+			insertBefore(cells[3], cells[9]);
+			insertBefore(cells[3], cells[9]);
+		}
+		current_colors = new Array();
+		restore_colors(current_colors);
+	}
+}
+
 function insert_rareearths(obj) {
 	var table = wholetable.tBodies[0].rows;
 
 	if (obj.checked) {
 		wholetable.tHead.rows[0].insertCell(3).colSpan = 28;
 
-		table[0].insertCell(5).colSpan = 20;
-		table[0].cells[5].rowSpan = 3;
-		table[0].cells[5].className = "KeyRegion";
-		table[0].cells[5].style.verticalAlign = "middle";
+		with (table[0]) {
+alert(key_id.cellIndex);
+			insertCell(5).colSpan = 20;
+			cells[5].rowSpan = 3;
+			cells[5].className = "KeyRegion";
+			cells[5].style.verticalAlign = "middle";
+			cells[5].appendChild(document.getElementById("visualize"));
+		}
 
-		table[0].cells[5].appendChild(document.getElementById("visualize"));
 		key_id.style.display = "";
 		key_id.style.fontSize = "1.5em";
 		key_id.parentNode.style.verticalAlign = "middle";
@@ -546,10 +597,13 @@ function insert_rareearths(obj) {
 		table[0].cells[4].rowSpan = 4;
 		table[0].cells[4].colSpan = 28;
 
-		table[4].insertCell(5).colSpan = 28;
-		table[4].cells[5].innerHTML = table[7].cells[2].innerHTML;
-		table[4].cells[5].style.textAlign = "center";
-		table[4].cells[5].className = "Clean";
+
+		with (table[4]) {
+			insertCell(5).colSpan = 28;
+			cells[5].innerHTML = table[7].cells[2].innerHTML;
+			cells[5].style.textAlign = "center";
+			cells[5].className = "Clean";
+		}
 
 		for (var i = 29; i >= 0; i--)
 			for (var j = 5, k = 2; j <= 6; j++, k -= 2)
@@ -577,18 +631,6 @@ function insert_rareearths(obj) {
 		table[0].deleteCell(5); table[4].deleteCell(5);
 		table[0].cells[4].colSpan = 20;
 		table[0].cells[4].rowSpan = 3;
-	}
-}
-
-function save_element_ids() {
-	element_ids = new Array();
-	var tags = document.getElementsByTagName("td");
-	for (var i = 0; i < tags.length; i++) {
-		var current = tags[i];
-		if (current.className.indexOf("Element") != -1) {
-			var atomic = current.childNodes[n_atomic].innerHTML * 1;
-			if (!element_ids[atomic]) element_ids[atomic] = current;
-		}
 	}
 }
 
@@ -683,15 +725,14 @@ function getAJAXobj() {
 		if (!xmlhttp) return false;
 		complete = false;
 		try {
-			xmlhttp.open("GET", sURL + "?" + sVars, true);
-			sVars = "";
+			xmlhttp.open("GET", sURL + "?set=" + sVars, true);
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && !complete) {
 					complete = true;
-					fnDone(xmlhttp);
+					fnDone(xmlhttp, sVars);
 				}
 			};
-			xmlhttp.send(sVars);
+			xmlhttp.send("");
 		}
 		catch(z) { return false; }
 		return true;
@@ -699,21 +740,22 @@ function getAJAXobj() {
 	return this;
 }
 
-function preload_details() {
+function load_details(arrays) {
 	if (!waiting) {
 		waiting = true;
 		var conn = new getAJAXobj();
 		var list = new Array();
-		for (set in datasets) {
-			if ("values" in window["spec_" + datasets[set]])
-				list.push(datasets[set] + "-" + window["spec_" + datasets[set]]["values"].join(":").toLowerCase().replace(/\./g, ""));
-			else	list.push(datasets[set]);
+		for (set in arrays) {
+			if (window[arrays[set]]) continue;
+			if ("values" in window["spec_" + arrays[set]])
+				list.push(arrays[set] + "-" + window["spec_" + arrays[set]]["values"].join(":").toLowerCase().replace(/\./g, ""));
+			else	list.push(arrays[set]);
 		}
-		conn.connect("http://www.dayah.com/periodic/data.php", "set=" + list.join(","), parse_into_arrays);
+		conn.connect("http://www.dayah.com/periodic/data.php", list.join(","), parse_into_arrays);
 	}
 }
 
-function parse_into_arrays(oXML) {
+function parse_into_arrays(oXML, sVars) {
 	var returned_data = oXML.responseText.split("\n");
 	for (sets in returned_data) {
 		temp = new Array();
@@ -721,8 +763,8 @@ function parse_into_arrays(oXML) {
 		for (element in arrays) temp.push(eval("[" + arrays[element] + "]"));
 		window[returned_data[sets].split("=")[0]] = temp;
 	}
-	firstTime = false;
-	on_mouse_over(lastHover);
+	if (sVars == "electronstring") activeTab("Electron", true);
+	else on_mouse_over(lastHover);
 }
 
 function findPos(obj, left, top) {
