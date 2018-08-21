@@ -29,7 +29,7 @@
 
   <h2>Logo</h2>
   <div><a href="/periodic/" title="Periodic Table of Elements"><img src="Images/ptable-logo.png" alt="Periodic Table" height=60 width=120 border=0></a></div>
-  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/poster-logo.png" alt="Ptable.com" height=60 width=120 border=0&gt;&lt;/a&gt;</textarea></div>
+  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/ptable-logo.png" alt="Ptable.com" height=60 width=120 border=0&gt;&lt;/a&gt;</textarea></div>
 
  </body>
 </html>
