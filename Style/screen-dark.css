@@ -1,0 +1,29 @@
+BODY		{ color: white; background-color: black; }
+H1		{ background-color: rgb(90, 32, 255); }
+
+#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Synthetic
+		{ border-color: white; }
+#Key TH.Synthetic
+		{ background-color: white; }
+.OldGroup TD	{ color: #F00; }
+
+.Solid		{ color: white; }
+.Liquid		{ color: rgb(0, 97, 99); }
+.Gas		{ color: rgb(181, 16, 16); }
+.Synthetic	{ color: black; } 
+
+.Divider	{ background-color: rgb(128, 128, 128); }
+HR		{ border-color: #F33; }
+.InnerBorder	{ background-color: #008; }
+.OuterBorder	{ background-color: #00F; }
+.Removed	{ color: #AAF; }
+
+.Alkali		{ background-color: rgb(222, 134, 0); }
+.Alkaline	{ background-color: rgb(181, 150, 0); }
+.Nonmetal	{ background-color: rgb(107, 158, 49); }
+.Transition	{ background-color: rgb(181, 16, 16); }
+.Lanthanide	{ background-color: rgb(156, 40, 99); }
+.Actinide	{ background-color: rgb(156, 40, 99); }
+.Poor		{ background-color: rgb(90, 32, 255); }
+.Noble		{ background-color: rgb(0, 97, 99); }
+.Hydrogen	{ background-color: rgb(80, 80, 80); }
