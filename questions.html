@@ -7,14 +7,10 @@
    BODY	{ font-family: sans-serif; }
 
    H1	{ background-color: #8FF; white-space: nowrap; text-align: center; font-size: 2.5em; margin-top: 0; }
-   H2	{ background: cyan; }
-   H3	{ text-indent: 3ex; font: normal 1em sans-serif; }
 
-   DT	{ font-weight: bold; }
-   DD	{ font-style: italic; font-weight: normal; }
+   DT	{ font-weight: bold; margin-top: 1em; }
+   DD	{ font-weight: normal; }
 
-   .Navigation		{ background-color: #BBB; text-align: center; }
-   .Navigation TD	{ color: black; background-color: #DDD; width: 25%; white-space: nowrap; }
   </STYLE>
 
   <TITLE>Periodic Table of Elements - Questions</TITLE>
@@ -23,112 +19,60 @@
  <BODY>
 
   <h1>Periodic Table of Elements - Questions</h1>
-  <img src="Images/blackmesa.jpg" width=320 title="This periodic table will be an in-game graphic in the upcoming Half-Life TC Black Mesa Source" style="float: right;">
+  <img src="Images/blackmesa.jpg" width=320 title="This periodic table will be an in-game graphic in the upcoming Half-Life TC Black Mesa Source" style="float: right;" alt="Half Life in game graphic">
 
-  <h3>Below you will find the answers to some commonly asked questions about the <A HREF="./">Periodic Table page</A>. If you have a question that's not on this page or you would like to follow up on one of the below questions, contact me.</h3>
+  <p>Below you will find the answers to some commonly asked questions about the <a href="./">periodic table</A>. If you have a question that's not on this page or you would like to follow up on one of the below questions, contact me.</p>
 
-  <DL>
-   <H2>General Questions</FONT></H2>
-   <DT>
     <DL>
 
+<!--
      <dt>Why does the page have a black background?</dt>
      <dd>You're visiting at night. If you'd rather it be white, come back tomorrow or stay up until dawn. <a href="feedback.html">I don't like this.</a></dd>
-
+-->
      <dt>Where did the element names go?</dt>
-     <dd>They are now turned off by default. Use the check boxes in the menu beneath the blue title to turn them on.</a></dd>
+     <dd>They are now turned off by default. Use the check boxes in the menu beneath the blue title to turn them on.</dd>
 
-     <dt>Who made <b>this</b> periodic table?</dt>
-     <dd>Michael Dayah.</dd>
+     <dt>Some of the blue and black lines look messed up.</dt>
+     <dd>As of May 2007, this table now uses the "new" <a href="http://www.w3.org/TR/REC-CSS2/tables.html#collapsing-borders">collapsed border model</a> in favor of the previous complex interweaved overlapping rows and columns. Bugs in your browser may produce rendering anomalies. Consider voting for the relevant bugs: <a href="https://bugzilla.mozilla.org/votes.cgi?action=show_user&bug_id=262709">transparent borders appear black</a>, <a href="https://bugzilla.mozilla.org/votes.cgi?action=show_user&bug_id=203686">collapse code abandoned</a>, <a href="http://wiki.mozilla.org/Gecko:Border_collapse#Discussion:_No_compromise_on_corners">corner conflict resolution</a>.</dd>
 
-     <dt>Why?</dt>
-     <dd>He thought it would look nice converted to HTML and wanted to see if he could do it. He was also bored while staying at home recovering from <A HREF="/toes/">toe surgery</A>.</dd>
+     <dt>What makes this periodic table different from all the others?</dt>
+<ul style="font-weight: normal;">
+<li><strong>All HTML. No images. No Flash.</strong> This gives all the scalability and accessibility of a normal web page while looking as good as any image or Flash out there. Copy, highlight, print, and resize to suit your vision, whatever you need.
+<li><strong>Instantly swap layouts.</strong> Use the checkboxes at the top of the page to dynamically switch between simple, with names, and with electron configuration views, showing as much or as little information as you'd like.
+<li><strong>Instantly swap data.</strong> Only want to see one piece of data at a time, like electronegativity? No problem! Whatever you choose appears in place of atomic mass while symbol and atomic number stay visible. Or, maximize and select names and/or electron configs to accompany the dataset you choose.
+<li><strong>Visualize trends.</strong> Does atomic radius go up or down by group? Select it and color of all elements will change in proportion to its value.
+<li><strong>State of matter slider.</strong> Drag the slider above the nonmetals and the state of matter of each element at that temperature will be updated.
+<li><strong>Dozens of languages.</strong> Element names in dozens of languages, even Asian scripts. Don't read other languages? Admire the pretty fonts!
+<li><strong>Wikipedia integration.</strong> Click any element to pop up a window with its Wikipedia page&hellip;in any language!
+<li><strong><a href="discovery.xml" type="application/rss+xml">Latest new elements <img src="Images/feed-icon-14x14.png" style="border: 0; height: 14px; width: 14px;"></a></strong> The day a new element is discovered or synthesized, we'll have the details for you. We even keep up with new more precise relative atomic masses as IUPAC publishes them.
+<li><strong>Small and fast.</strong> If you have gzip turned on, and most browsers do, the entire page with all the data and interactivity is only 12K!
+<li><strong>Highly accessible.</strong> Low vision? Those who need large fonts will find the table scales as large as necessary while maintaining all contextual information and relative sizing. Despite its picture-like appearance, this table is all text, so visitors with no vision can use software to read or search the page like they would any text document.
+</ul>
 
-     <dt>When?</dt>
-     <dd>September 1997. It was posted on the web October 1, 1997. Element descriptions were added later in December 1997. Descriptions were significantly upgraded in summer 2005 and now use data from Wikipedia in compliance with its license.</dd>
+     <dt>When was it made?</dt>
+     <dd>September 1997 as a piece of HTML artwork, not a reference. It was posted on the web October 1, 1997. Element descriptions were added later in December 1997. Descriptions were significantly upgraded in summer 2005 and now use data from Wikipedia in compliance with its license.</dd>
 
-     <dt>What's the big deal? There are other periodic tables on the web.</dt>
-     <dd>Not only is this one of the very few tables that has all the information on one page, it's quite possibly the <a href="http://slashdot.org/article.pl?sid=99/02/15/2150211&tid=96">most complex use of HTML tables anywhere on the web</a>. This periodic table was made with approximately seven hundred lines of HTML.</dd>
-
-     <dt>How long did it take to make?</dt>
-     <dd>A total of about five hours plus one half hour per month maintenance.</dd>
-
-     <dt>From where was the look of the table taken?</dt>
-     <dd>The color scheme is loosely based on a Frank Schaffer Publications poster. The idea of using white space between elements was taken from the periodic table in the designer's biology book. The gradients are just Web 2.0.</dd>
-
-     <dt>I like your layout. Can I buy a poster?</dt>
+     <dt>Can I buy a poster?</dt>
      <dd>We're currently looking into producing a <a href="periodic-table-poster.html">periodic table poster</a>. First, we'll need some feedback from you on what size, paper, and finish you'd like.</dd>
 
      <dt>Can I print it?</dt>
-     <dd><A HREF="Other/Periodic Table.pdf" title="printable periodic table">Yes</A>, but only for personal or classroom use. Contact me to discuss larger scale distribution.</dd>
+     <dd><A HREF="Other/Periodic Table.pdf" title="printable periodic table">Yes</A>, but only for personal or classroom use. Contact me to discuss larger scale distribution. I'll most likely let you use it for whatever, but request a copy of whatever it's going into. One person wanted to put it on a cake. In that case I only asked for a photo of the cake, but if he lived closer&hellip;</dd>
 
      <dt><big style="color: red;">Will you do my homework?</big></dt>
      <dd>Only if you're a cute girl. Make sure to attach a picture when you <a href="mailto:michael@dayah.com" onClick="alert('Seriously, attach your picture to the e-mail and I\'ll do your homework.')">e-mail me</a>.</dd>
-
-     <dt>What accessibility features does this table feature?</dt>
-     <dd>Visitors with low vision who use large fonts will find that the table scales as large as necessary while maintaining all contextual information and relative sizing. Despite its picture-like appearance, this table is all text, so visitors with no vision can use software to read or search the page like they would any text document.</dd>
 
      <dt>Is there a license agreement I must follow?</dt>
      <dd>Because of the frequent piracy of the periodic table, you are not allowed to redistribute the table electronically in any fashion. That means don't save it and upload it to your own web site. Don't worry about my bandwidth; link directly to my images and PDFs if you desire. Of course, you are allowed to print the table out for your own, personal use. If you would like to print out many copies for a classroom, please tell me. So far, I haven't ask for anything more than a copy of whatever it is used in.</dd>
 
      <dt>Can I link to your periodic table?</dt>
-     <dd>By all means. You can distinguish it from other periodic tables by linking it as &quot;Detailed color printable periodic table&quot;.</dd>
+     <dd>By all means. You can distinguish it from other periodic tables by linking it as &quot;dynamic printable periodic table&quot; or whatever you feel best describes it.</dd>
 
      <dt>How can I get in touch with you?</dt>
-     <dd>The easiest way to reach me is MSN Messenger (lucent@hotmail.com). I'm also on AIM as <img src="http://big.oscar.aol.com/Looseint?on_url=http://www.aol.com/aim/gr/online.gif&off_url=http://www.aol.com/aim/gr/offline.gif" align="absmiddle"> <a href="aim:goim?screenname=Looseint&message=Hi.+I+was+looking+at+your+periodic+table.">Looseint</a>. Lastly, my e-mail address is <A HREF="mailto:michael@dayah.com">michael@dayah.com</A>.</dd>
+     <dd>The easiest way to reach me is MSN Messenger (lucent@hotmail.com). I'm also on AIM as <img src="http://big.oscar.aol.com/Looseint?on_url=http://www.aol.com/aim/gr/online.gif&off_url=http://www.aol.com/aim/gr/offline.gif" align="absmiddle"> <a href="aim:goim?screenname=Looseint&message=Hi.+I+was+looking+at+your+periodic+table.">Looseint</a>. My e-mail address is <A HREF="mailto:michael@dayah.com">michael@dayah.com</A>.</dd>
 
      <dt>Where can I see other sites made by the designer of this table?</dt>
      <dd>The designer's personal web site is <A HREF="/">www.dayah.com</A>. Links to most of his other sites can be found there.</dd>
 
-    </DL>
-   </DT>
-
-   <H2>HTML-Related Questions</FONT></H2>
-
-   <DT>
-    <DL>
-
-     <dt>The table looks distorted or is indecipherable.</dt>
-     <dd>The table was made when CSS was barely implemented in browsers. It wasn't until version 5 that it was fully viewable. There is an old browser compatible version, but it is not kept up to date. If you have a modern browser, perhaps style sheets are disabled.</dd>
-
-     <dt>Which browsers can display the table?</dt>
-     <dd>Though years ahead of its time in 1997, all modern browsers now display it properly. To an extent, the information can even be extracted with Lynx.</dd>
-
-     <dt>What editor was used to make the periodic table?</dt>
-     <dd>Only notepad. No WYSIWYG or enhanced text editors were used. Even four years after its design, no WYSIWYG editors were capable of opening it without clobbering the layout completely.</dd>
-
-     <dt>It could have been done in FrontPage, HotDog, or [insert WYSIWYG HTML editor here].</dt>
-     <dd>Probably not. But if it could, it would not be as cross-browser compatible as it is now and would take up at least twice the markup.</dd>
-
-     <dt>What do you mean by &quot;complex tables&quot;?</dt>
-     <dd>There are four qualities which make a table complex:</dd>
-     <DD>
-      <UL>
-       <LI>The table uses many dependent columns and rows.</LI>
-       <LI>The structure and markup cannot be optimized any further.</LI>
-       <LI>COLSPAN and ROWSPAN are used extensively.</LI>
-       <LI>Removing one cell will likely cause the table to collapse.</LI>
-      </UL>
-     </DD>
-
-     <dt>But table XYZ is more complex.</dt>
-     <dd>If you find a table more complex, please <A HREF="mailto:michael@dayah.com">tell me about it</A>.</dd>
-
-     <dt>What does it look like with table borders turned on?</dt>
-     <dd>Visit the "Show Borders" link from the main page.</dd>
-
-     <dt>How deep are the tables nested?</dt>
-     <dd>There are only two &lt;table&gt;s on the page. The key is nested in the main table.</dd>
-
-     <dt>Are there any images?</dt>
-     <dd>Not any that you'd miss if you saved the page to your computer.</dd>
-
-     <dt>Of which web technologies does the table take advantage?</dt>
-     <dd>HTML 4.0, Cascading Style Sheets (level one and two), and JavaScript.</dd>
-
-    </DL>
-   </DT>
-  </DL>
-<p>My good friend Audrey offers <a href="http://audreymitchell.avonrepresentative.com/">Avon in Cincinnati</a>, Ohio, if you're in the market.</p>
+    </dl>
  </BODY>
 </HTML>

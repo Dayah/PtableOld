@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel>
+		<title>Discovered Elements</title>
+		<link>http://www.dayah.com/periodic/</link>
+		<description>New elements as they're discovered or synthesized.</description>
+		<language>en-us</language>
+		<lastBuildDate>Tue, 10 Jun 2003 09:41:01 GMT</lastBuildDate>
+		<managingEditor>michael@dayah.com</managingEditor>
+		<webMaster>michael@dayah.com</webMaster>
+		<item>
+			<title>118</title>
+			<link>http://link.aps.org/abstract/PRC/v74/e044602</link>
+			<description>Synthesis of the isotopes of elements 118 and 116 in the 249Cf and 245Cm + 48Ca fusion reactions</description>
+			<pubDate>Mon, 09 Oct 2006 00:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>115 &amp; 113</title>
+			<link>http://link.aps.org/abstract/PRC/v72/e034611</link>
+			<description>Synthesis of elements 115 and 113 in the reaction 243Am + 48Ca</description>
+			<pubDate>Thu, 29 Sep 2005 00:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>116</title>
+			<link>http://prola.aps.org/abstract/PRC/v63/i1/e011301</link>
+			<description>Observation of the decay of 292^116</description>
+			<pubDate>Wed, 06 Dec 2000 00:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>114</title>
+			<link>http://prola.aps.org/abstract/PRL/v83/i16/p3154_1</link>
+			<description>Synthesis of Superheavy Nuclei in the 48Ca + 244Pu Reaction</description>
+			<pubDate>Mon, 18 Oct 1999 00:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>112</title>
+			<link>http://www.gsi.de/forschung/kp/kp2/ship/public/sn112-abstract.html</link>
+			<description>The New Element 112</description>
+			<pubDate>Fri, 09 Feb 1996 00:00:00 GMT</pubDate>
+		</item>
+	</channel>
+</rss>
