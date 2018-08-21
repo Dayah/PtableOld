@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML>
+ <HEAD>
+
+  <style type="text/css">
+   A:active, A:hover { background: white; }
+   BODY	{ font-family: sans-serif; }
+
+   H1	{ background-color: #8FF; white-space: nowrap; text-align: center; font-size: 2.5em; margin-top: 0; }
+   H2	{ background: cyan; margin-left: 3em; }
+   H3	{ margin-left: auto; margin-right: auto; text-align: left; text-indent: 3ex; width: 85%; font: normal 1em sans-serif; }
+   P	{ margin-left: 12em; }
+
+   DT	{ font-weight: bold; }
+   DD	{ font-style: italic; }
+
+   .Navigation		{ background-color: #BBB; text-align: center; }
+   .Navigation TD	{ color: black; background-color: #DDD; width: 25%; white-space: nowrap; }
+
+  </STYLE>
+
+  <TITLE>Periodic Table of Elements - Link</TITLE>
+
+ </HEAD>
+ <BODY>
+
+  <h1>Periodic Table of Elements - Link</h1>
+
+  <h3>You are more than welcome to place a link to the periodic table on your web site. No permission is necessary, but a note that you have would be nice. Please only link to the <a href="./">main site</a>. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or just plain HTML.</h3>
+
+  <h2>Text</h2>
+  <p><a href="./" title="Periodic Table of Elements">Periodic Table</a></p>
+  <p><textarea rows=3 cols=60>&lt;a href="http://www.dayah.com/periodic/" title="Periodic Table of Elements"&gt;Periodic Table&lt;/a&gt;</textarea></p>
+
+  <h2>Small Logo</h2>
+  <p><a href="./" title="Periodic Table of Elements"><img src="Images/poster-logo.png" alt="Periodic Table" width=150 border=0></a></p>
+  <p><textarea rows=4 cols=65>&lt;a href="http://www.dayah.com/periodic/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.dayah.com/periodic/Images/poster-logo.png" alt="Periodic Table" width=75 border=0&gt;&lt;/a&gt;</textarea></p>
+
+  <h2>Large Logo</h2>
+  <p><a href="./" title="Printable periodic table of elements"><img src="http://www.dayah.com/periodic/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0></a></p>
+  <p><textarea rows=4 cols=65>&lt;a href="http://www.dayah.com/periodic/" title="Printable periodic table of elements"&gt;&lt;img src="http://www.dayah.com/periodic/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0&gt;&lt;/a&gt;</textarea></p>
+
+ </BODY>
+</HTML>
