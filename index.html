@@ -1,52 +1,52 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <html lang="en">
  <head>
-  <title>Detailed Color Printable Periodic Table</title>
+  <title>Dynamic Periodic Table</title>
 
-  <meta name="description" content="Large printable periodic table of elements with names for homework. Click an element for a full description. Includes PDF and image. Latest new elements.">
-  <meta name="keywords" content="Periodic Table, elements, names, chemistry, printable, homework, pdf, electron configuration">
+  <meta name="description" content="Interactive periodic table with dynamic layouts showing names, sliders, data visualization, and instant search. Click an element for a full description.">
+  <meta name="keywords" content="Periodic Table, dynamic, interactive, element, name, chemistry, printable, homework, pdf, electron configuration">
+  <link rel="alternate" type="application/rss+xml"  href="discovery.xml" title="Discovered elements">
 
-  <style type="text/css" media="screen, print">
+  <style type="text/css" media="screen">
 BODY			{ margin: 0; background-color: white; color: black; font-family: Arial, "Arial Unicode MS", sans-serif; }
 
 /*** Headings ***/
 H1, #Navigation		{ margin: 0.2cm; }
-H1			{ background-color: #5FF; text-align: center; white-space: nowrap; font-size: 3em; margin-bottom: 0; line-height: 1; background-image: url("http://web.utk.edu/~mdayah/h1-gradient.png"); background-repeat: no-repeat;}
+H1			{ color: white; background: rgb(36, 83, 139) url("http://web.utk.edu/~mdayah/h1-gradient.png") repeat-x; font: normal 4em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; margin-bottom: 0; }
 
-#Navigation		{ border: thin inset; padding: 0 0.1em; background-color: ButtonFace; font: caption; margin-top: 1pt; text-align: center; }
-#Navigation A		{ border: thin outset; padding: 0 0.3em; color: ButtonText; text-decoration: none; white-space: nowrap; font-weight: normal; }
-#Navigation A:hover	{ background-color: ButtonHighlight; }
-#Navigation A.active	{ background-color: ButtonShadow; border: thin inset; }
+#Navigation		{ margin-top: 0; text-align: center; font-family: "Trebuchet MS"; font-size: 1em; letter-spacing: -0.04em; border: thin solid rgb(210, 230, 255); }
+#Navigation A		{ padding: 0.15em 0.3em; text-decoration: none; white-space: nowrap; border: 2px solid rgb(210, 230, 255); background-color: rgb(210, 230, 255); }
+#Navigation A:hover	{ background-color: rgb(230, 240, 255); }
+LABEL			{ font-weight: bold; }
 
-#Main			{ border-collapse: separate; border-spacing: 0; font-size: 0.9em; clear: both; }
-.NewGroup		{ text-align: center; vertical-align: bottom; }
-.OldGroup TD		{ text-align: center; vertical-align: middle; color: #A33; }
-#Main TH		{ font-size: 1.2em; text-align: right; font-weight: normal; }
+#Ad			{ text-align: center; margin: 1em 0; }
+#DetailBox, #Print	{ display: none; }
+#Note DIV		{ font-size: 0.8em; width: 14em; line-height: normal; }
+#Stable			{ padding: 1em 3ex; }
 
-#Main, #Key		{ margin-left: auto; margin-right: auto; }
+#Main			{ border-collapse: collapse; font-size: 0.9em; }
+THEAD TD		{ color: rgb(36, 83, 139); font-weight: bold; border-right: 1pt solid #CCF; border-bottom: 7pt solid white; text-align: center; }
+THEAD TD:hover, #DetailBox TH:hover	{ background-color: yellow; cursor: pointer; }
+#Period			{ width: 1.2em; }
 
-H2			{ text-align: justify; font: 12px/14px Verdana; text-indent: 2ex; width: 728px; margin: 1em auto; }
-#Ad			{ margin: 0 auto; }
-#Copyright		{ line-height: 1.5; color: #66F; font-size: 0.7em; text-align: center; }
-#Copyright #Print	{ display: none; }
-#Note			{ font-size: 0.8em; width: 14em; text-align: left; line-height: normal; }
-#Stable			{ line-height: 3; }
+#Main, #Key, #DetailBox	{ margin-left: auto; margin-right: auto; }
 
 /*** Legend ***/
+#Legend			{ border-left: 5pt solid white; }
+#DetailBox TH		{ text-align: right; }
+#DetailBox		{ width: 88%; white-space: nowrap; }
 #Key			{ width: 80%; border-collapse: separate; border-spacing: 0.5em; }
 #Key TH			{ height: 1.8em; width: 1.8em; font-size: 1em; }
 #Key TH, #Key TD	{ vertical-align: middle; }
 #Key TD			{ padding: 0.3em; font-size: 1.2em; white-space: nowrap; }
-#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Synthetic	{ border: thin solid black; text-align: center; }
-#Key .Solid, #Key .Liquid, #Key .Gas, #Key .Synthetic		{ font-weight: bold; }
-#Key TH.Synthetic, .Divider		{ background-color: black; }
-#Key TD.Synthetic, .Undiscovered	{ color: #BBB; }
+#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Unknown	{ border: thin solid black; text-align: center; }
+#Key .Solid, #Key .Liquid, #Key .Gas, #Key .Unknown		{ font-weight: bold; }
+#Key TH.Unknown		{ background-color: black; }
 
-/*** Color scheme ***/
-.Solid			{ color: black; }
-.Liquid			{ color: green; }
-.Gas			{ color: red; }
-.Synthetic		{ color: white; }
+/*** Colors ***/
+.Liquid			{ color: #00D; }
+.Gas			{ color: #A00; }
+.Unknown		{ color: #D8D8D8; }
 .Alkali			{ background-color: #FA0; }
 .Alkaline		{ background-color: #F7F700; }
 .Nonmetal		{ background-color: #00F700; }
@@ -56,77 +56,88 @@ H2			{ text-align: justify; font: 12px/14px Verdana; text-indent: 2ex; width: 72
 .Poor			{ background-color: #0CC; }
 .Noble			{ background-color: #55F7F7; }
 .Hydrogen		{ background-color: #E7E7E7; }
+.Undiscovered		{ background-color: #FFF; }
+TH, LABEL		{ color: rgb(36, 83, 139); }
+
+/*** Borders ***/
+.InnerBorder		{ background-color: #CCF; color: #00F; text-align: center; line-height: 1.4; }
+.OuterBorder		{ background-color: #00F; }
+.BlueLeft		{ border-left: 5pt solid blue; }
+.BlueRight		{ border-right: 5pt solid blue; }
+.BlueTop		{ border-top: 5pt solid blue; }
+.BlueBottom		{ border-bottom: 5pt solid blue; }
+.Element		{ border-top: 5pt solid white; border-left: 5pt solid white; }
+.Electron		{ border-top: 5pt solid white; }
+.DividerR		{ border-right: 5pt solid black; }
+.DividerB		{ border-bottom: 5pt solid black; }
+.Shells			{ border: 5pt solid white; color: gray; }
 
 /*** Element boxes ***/
-BIG, STRONG, EM, SMALL	{ display: block; }
-BIG			{ font-size: 1.5em; font-weight: bold; width: 2.5em; }
-STRONG			{ font-size: 1em; font-weight: normal; }
-EM, DIV			{ font-size: 0.7em; font-style: normal; }
-SMALL			{ font-size: 0.6em; line-height: 1; text-align: right; }
-.Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Poor, .Noble, .Hydrogen
-			{ cursor: pointer; padding: 0.2em 0 0.2em 0.3em; background-image: url("http://web.utk.edu/~mdayah/gradient.png"); background-repeat: no-repeat;}
-.Electron		{ padding: 0.3em 0.3em 0 0.1em; vertical-align: top; background-image: none; }
-.Long			{ font-size: 0.58em; line-height: 1.3; }
-.Shells			{ color: gray; border: thin solid gray; padding-left: 0.3em; }
+#Element		{ padding: 0.2cm; padding-right: 0; text-align: left; width: 1em; }
+#Element STRONG		{ font-size: 2em; font-weight: normal; }
+#Element DIV, #Element EM	{ font-size: 1.4em; font-style: normal; }
+#Element BIG		{ font-size: 3em; font-weight: bold; text-outline: white 1px 1px; width: 2.6em; }
+#Element EM.Long	{ letter-spacing: -0.08em; }
+#Electrons		{ vertical-align: top; text-align: right; font-size: 1.1em; line-height: 1; padding: 0.2cm 0.2cm 0 0; border-right: 1em solid white; }
 
-/*** Other decoratives ***/
-HR			{ border: thin solid #A33; width: 70%; }
-.InnerBorder		{ background-color: #CCF; }
-.OuterBorder		{ background-color: #00F; }
-.Removed		{ color: #00F; text-align: center; vertical-align: middle; font-size: 1em; }
-.RowSpace		{ height: 0.4em; padding-right: 0.4em; font-size: 1em; }
-.RoundTL		{ -moz-border-radius-topleft: 100%; }
-.RoundTR		{ -moz-border-radius-topright: 100%; }
-.RoundBL		{ -moz-border-radius-bottomleft: 100%; }
-.RoundBR		{ -moz-border-radius-bottomright: 100%; }
+BIG, STRONG, EM		{ display: block; }
+BIG			{ font-size: 1.5em; font-weight: bold; width: 2.5em; text-outline: white 1px 1px; }
+STRONG			{ font-size: 1em; font-weight: normal; }
+EM, .Element DIV, #Legend DIV	{ font-size: 0.7em; font-style: normal; }
+.Element EM.Long	{ font-size: 0.58em; line-height: 1.3; }
+.Element		{ cursor: pointer; padding: 0.2em 0 0.2em 0.3em; background-image: url("http://web.utk.edu/~mdayah/gradient.png"); background-repeat: no-repeat;}
+.Electron		{ font-size: 0.7em; line-height: 1; text-align: right; vertical-align: top; }
+.Electron, .Shells	{ padding: 0.3em 0.3em 0 0.1em; vertical-align: top; background-image: none; font-size: 0.6em; line-height: 1; text-align: right; }
 
 /*** Wikipedia iframe ***/
-#ElementBox		{ position: absolute; top: 15%; left: 15%; bottom: 15%; right: 15%; display: none; border: thick outset; filter: alpha(Opacity=90); opacity: 0.90; background-color: white; }
-BODY > DIV#ElementBox	{ position: fixed; }
-#ElementBox > IFRAME	{ position: absolute; top: 2.1em; left: 0; width: 100%; height: 95%; bottom: 0; }
-#ElementBox H1		{ border: thin inset; margin: 0; }
+#WikiBox		{ position: absolute; top: 15%; left: 15%; bottom: 15%; right: 15%; display: none; border: thick outset; filter: alpha(Opacity=90); opacity: 0.90; background-color: white; }
+BODY > DIV#WikiBox	{ position: fixed; }
+#WikiBox > IFRAME	{ position: absolute; top: 2.1em; left: 0; width: 100%; height: 95%; bottom: 0; }
+#WikiBox H1		{ border: thin inset; margin: 0; }
 H1 TABLE		{ width: 100%; font-weight: bold; }
 H1 #Title		{ text-align: left; font-family: Verdana, sans-serif; font-size: small; }
 H1 #Close		{ text-align: right; font-size: medium; width: 1ex; border: 2px outset; cursor: pointer; padding: 0 0.3em; color: ButtonText; background-color: ButtonFace; }
-#Title A		{ font-weight: normal; }
+#Title A		{ color: white; }
+
+/*** Slider ***/
+#SliderTrack		{ width: 214px; margin: 0; text-align: left; padding: 0; font-size: 0; vertical-align: middle; }
+#SliderTrack #SliderSlit{ position: absolute; border: 2px inset; background-color: ButtonShadow; width: 200px; height: 2px; margin: 7px 0 0 5px; line-height: 0; }
+#SliderTrack #SliderBar	{ position: relative; border: 2px outset; background-color: ButtonFace; width: 10px; height: 16px; margin: 0; cursor: pointer; }
+#SliderDisplay		{ text-align: right; float: right; width: 4ex; }
   </style>
-  <style type="text/css" media="screen, print">
-SMALL		{ display: none; }
+  <style type="text/css" media="screen">
+.Electron SPAN	{ display: none; }
 .Shells		{ visibility: hidden; }
 STRONG, EM	{ line-height: 1; }
-BIG, DIV, EM	{ text-align: center; }
-BIG		{ margin-left: auto; margin-right: auto; width: 2.9em; }
-.Long		{ font-size: 0.6em; }
-STRONG		{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; color: black; height: 1em; }
+.Element BIG, #Legend BIG, .Element EM, #Legend EM, .Element DIV, #Legend DIV	{ text-align: center; }
+.Element BIG	{ margin-left: auto; margin-right: auto; width: 2.9em; }
+#Legend BIG	{ letter-spacing: -0.08em; }
+.Element .Long	{ font-size: 0.6em; }
+.Element STRONG	{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; color: black; height: 1em; }
 #Key		{ font-size: 0.9em; }
-Removed	{ font-size: 0.8em; }
-#Note		{ font-size: 0.7em; }
-.Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Poor, .Noble, .Hydrogen
-		{ padding: 0.2em; }
+#Note DIV	{ font-size: 0.7em; }
+.Element	{ padding: 0.2em; }
 .Electron	{ padding: 0; }
   </style>
-  <style type="text/css" media="screen, print">
-SMALL, EM, #Main DIV SPAN	{ display: none; }
-.Shells		{ visibility: hidden; }
-STRONG, DIV	{ line-height: 1; }
-BIG, DIV	{ text-align: center; }
-BIG		{ margin-left: auto; margin-right: auto; width: 2.2em; font-size: 1.3em; }
-STRONG		{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; color: black; height: 0.95em; font-size: 0.8em; }
+  <style type="text/css" media="screen">
+.Element EM, #Legend EM, .Element SPAN, #Legend SPAN, #Print, .Shells SPAN	{ display: none; }
+DIV		{ line-height: 1; }
+BIG		{ font-size: 1.3em; margin-left: auto; margin-right: auto; }
+.Element BIG	{ width: 2.2em; }
+STRONG		{ height: 0.95em; font-size: 0.8em; }
 #Key		{ font-size: 0.7em; width: 90%; }
-.Removed	{ font-size: 0.7em; }
-#Note		{ font-size: 0.6em; width: 13em; }
-.Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Poor, .Noble, .Hydrogen
-		{ padding: 0.2em; }
-.Electron	{ padding: 0; }
-.RowSpace	{ font-size: 0.8em; }
-.OldGroup	{ font-size: 0.8em; }
+.InnerBorder	{ font-size: 0.7em; }
+#Note DIV	{ font-size: 0.6em; width: 13em; }
+#DetailBox	{ font-size: 0.8em; }
+#DetailBox TH	{ font-size: 0.8em; }
   </style>
+
   <!-- <link href="Style/print-default.css" rel="stylesheet" type="text/css" media="print"> -->
 
   <!--[if gte IE 5.5]><![if lt IE 7]>
    <style type="text/css">
-    #ElementBox IFRAME { height: 100%; width: 100%; overflow: auto; }
-    DIV#ElementBox {
+    #WikiBox IFRAME { height: 100%; width: 100%; overflow: auto; }
+    DIV#WikiBox {
     	left: expression((Math.round(getIESze()[0] * 0.15) + getIEScrl()[0]) + "px");
     	top: expression((Math.round(getIESze()[1] * 0.15) + getIEScrl()[1]) + "px");
     	width: expression(Math.round(getIESze()[0] * 0.7) + "px");
@@ -137,778 +148,934 @@ STRONG		{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; col
   <![endif]><![endif]-->
 
   <script type="text/javascript">
-electron = 1;
-names = 2;
+window.onload = function() {
+	n_atomic = 0; n_name = 4; n_symbol = 2; n_mass = 5;
+	sheet_electron = 1; sheet_names = 2;
+
+	if (document.getElementById("names").checked) click_names(document.getElementById("names"));
+	if (document.getElementById("electron").checked) click_electron(document.getElementById("electron"));
+	lastHover = false;
+	prev_temp = false;
+	dataset = "key";
+	if (document.getElementById("wide").checked) insert_rareearths(document.getElementById("wide"));
+	window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
+	init_layout();
+	mass = new Array();
+	for (var i = 1; i <= 118; i++) mass[i] = element_ids[i].childNodes[n_mass].innerHTML;
+	current_colors = new Array();
+	default_colors = new Array();
+	save_colors(default_colors);
+
+	melt = [3825,14.01,0.95,453.69,1560,2349,3825,63.15,54.36,53.53,24.56,370.87,923,933.47,1687,317.3,388.36,171.6,83.80,336.53,1115,1814,1941,2183,2180,1519,1811,1768,1728,1357.7,692.68,302.91,1211.4,1090,494,265.8,115.79,312.46,1050,1799,2128,2750,2896,2430,2607,2237,1825,1234.9,594.2,429.75,505.08,903.78,722.66,386.85,161.4,301.59,1000,1193,1068,1208,1297,1315,1345,1099,1585,1629,1680,1734,1802,1818,1097,1925,2506,3290,3695,3459,3306,2719,2041,1337,234.32,577,600.6,544.7,527,575,202,300,973,1324,2115,1841,1405,910,912.5,1449,1613,1259,1173,1133,1800,1100,1100,1900];
+	boil = [5869,20.28,4.216,1615,2742,4200,5100,77.36,90.20,85.03,27.07,1156,1363,2792,3538,550,717.8,239.11,87.30,1032,1757,3109,3560,3680,2944,2334,3134,3200,3186,2835,1180,2477,3106,887,958,332.0,119.93,961,1655,3609,4682,5017,4912,4538,4423,3968,3236,2435,1040,2345,2875,1860,1261,457.4,165.03,944,2170,3737,3716,3793,3347,3273,2067,1802,3546,3503,2840,2993,3141,2223,1469,3675,4876,5731,5828,5869,5285,4701,4098,3129,629.88,1746,2022,1837,1235,610,211.3,950,2010,3470,5061,4300,4404,4273,3505,2880,3383];
+	spec_electroneg = {"unit": "", "min": 0.7, "max": 4, "startcolor": "FFFF00", "endcolor": "FF0000", "Legend": "<span>Electro</span>neg" };
+	electroneg = [,2.2,,0.98,1.57,2.04,2.55,3.04,3.44,3.98,,0.93,1.31,1.61,1.9,2.19,2.58,3.16,,0.82,1,1.36,1.54,1.63,1.66,1.55,1.83,1.88,1.91,1.9,1.65,1.81,2.01,2.18,2.55,2.96,3,0.82,0.95,1.22,1.33,1.6,2.16,1.9,2.2,2.28,2.2,1.93,1.69,1.78,1.96,2.05,2.1,2.66,2.6,0.79,0.89,1.1,1.12,1.13,1.14,,1.17,,1.2,,1.22,1.23,1.24,1.25,,1.27,1.3,1.5,2.36,1.9,2.2,2.2,2.28,2.54,2,1.62,2.33,2.02,2,2.2,,0.7,0.9,1.1,1.3,1.5,1.38,1.36,1.28,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3];
+	spec_radiusemp = {"unit": " pm", "min": 25, "max": 260, "startcolor": "FFFFFF", "endcolor": "008800", "Legend": "<span>Emp</span> Radius" };
+	radiusemp = [,25,,145,105,85,70,65,60,50,,180,150,125,110,100,100,100,71,220,180,160,140,135,140,140,140,135,135,135,135,130,125,115,115,115,,235,200,180,155,145,145,135,130,135,140,160,155,155,145,145,140,140,,260,215,195,185,185,185,185,185,185,180,175,175,175,175,175,175,175,155,145,135,135,130,135,135,135,150,190,180,160,190,,,,215,195,180,180,175,175,175,175];
+	spec_radiuscalc = {"unit": " pm", "min": 31, "max": 300, "startcolor": "FFFFFF", "endcolor": "000000", "Legend": "<span>Calc</span> Radius" };
+	radiuscalc = [,53,31,167,112,87,67,56,48,42,38,190,145,118,111,98,88,79,71,243,194,184,176,171,166,161,156,152,149,145,142,136,125,114,103,94,88,265,219,212,206,198,190,183,178,173,169,165,161,156,145,133,123,115,108,298,253,,,247,206,205,238,231,233,225,228,,226,222,222,217,208,200,193,188,185,180,177,174,171,156,154,143,135,,120];
+	spec_ionize = {"unit": " kJ/m", "min": 375, "max": 2375, "startcolor": "66FF66", "endcolor": "6666FF", "Legend": "Ion<span>ization</span>" };
+	ionize = [,1312,2372.3,520.2,899.5,800.6,1086.5,1402.3,1313.9,1681,2080.7,495.8,737.7,577.5,786.5,1011.8,999.6,1251.2,1520.6,418.8,589.8,633.1,658.8,650.9,652.9,717.3,762.5,760.4,737.1,745.5,906.4,578.8,762,947,941,1139.9,1350.8,403,549.5,600,640.1,652.1,684.3,702,710.2,719.7,804.4,731,867.8,558.3,708.6,834,869.3,1008.4,1170.4,375.7,502.9,538.1,534.4,527,533.1,540,544.5,547.1,593.4,565.8,573,581,589.3,596.7,603.4,523.5,658.5,761,770,760,840,880,870,890.1,1007.1,589.4,715.6,703,812.1,890,1037,380,509.3,499,587,568,597.6,604.5,584.7,578,581,601,608,619,627,635,642,470,580];
+	spec_discover = {"unit" : "", "min" : 1669, "max" : 2007, "startcolor" : "FFFFFF", "endcolor" : "666600", "Legend": "Discov<span>ery</span>" };
+	discover = [,1766,1868,1817,1828,1808,,1772,1771,1886,1898,1807,1755,1825,1823,1669,,1774,1894,1807,1808,1879,1797,1801,1797,1774,,1732,1751,,,1875,1886,,1817,1826,1898,1860,1793,1794,1789,1801,1778,1937,1844,1803,1803,,1817,1863,,,1782,1811,1898,1860,1808,1840,1803,1885,1885,1945,1879,1901,1880,1843,1886,1879,1843,1879,1878,1907,1923,1802,1783,1925,1803,1803,1741,,,1861,,,1898,1940,1898,1939,1898,1899,1828,1917,1789,1940,1941,1944,1944,1949,1950,1952,1953,1955,1958,1961,1964,1967,1974,1976,1984,1982,1994,1994,1996,2004,1999,2004,2001,,2006];
+	spec_density = {"unit": " g/cm&sup3;", "min": 0, "max": 23, "startcolor": "FFFFFF", "endcolor": "006666", "Legend": "Density" };
+	density = [,0.00008988,0.0001785,0.534,1.85,2.34,2.267,0.0012506,0.001429,0.001696,0.0008999,0.971,1.738,2.698,2.3296,1.82,2.067,0.003214,0.0017837,0.862,1.54,2.989,4.54,6.11,7.15,7.44,7.874,8.86,8.912,8.933,7.134,5.907,5.323,5.776,4.809,3.122,0.003733,1.532,2.64,4.469,6.506,8.57,10.22,11.5,12.37,12.41,12.02,10.501,8.69,7.31,7.287,6.685,6.232,4.93,0.005887,1.873,3.594,6.145,6.77,6.773,7.007,7.26,7.52,5.243,7.895,8.229,8.55,8.795,9.066,9.321,6.965,9.84,13.31,16.654,19.25,21.02,22.61,22.65,21.46,19.282,13.5336,11.85,11.342,9.807,9.32,7,0.00973,1.87,5.5,10.07,11.72,15.37,18.95,20.25,19.84,13.69,13.51,14.79,15.1,13.5,,,,9.84,18.1,,,,,,21.46,19.282,13.5336,11.85,11.342,9.807,9.32];
+	spec_affinity = {"unit": " kJ/m", "min": 0, "max": 350, "startcolor": "FF0000", "endcolor": "00FF00", "Legend": "Affinity" };
+	affinity = {1:72.77,3:59.62,5:26.99,6:121.78,8:141.004,9:328.165,11:52.87,13:41.86,14:134.07,15:72.03,16:200.41,17:349,19:48.38,20:2.37,21:18,22:8.4,23:51,24:65.2,26:14.6,27:64,28:111.6,29:119.24,31:41,32:118.94,33:78.5,34:194.97,35:342.54,37:46.89,38:5.02,39:30,40:41,41:86,42:72.3,44:101,45:110.3,46:54.24,47:125.86,49:39,50:107.3,51:101.06,52:190.16,53:295,55:45.51,56:13.95,57:45,58:92,69:99,71:33,73:31,74:79,76:104,77:150.9,78:205.04,79:222.75,81:36,82:35,83:90.92};
+	spec_thermcond = {"unit": " W/mK", "min": 0, "max": 429, "startcolor": "BBBBBB", "endcolor": "FF0000", "Legend": "<span>Therm</span> Cond" };
+	thermcond = [,0.1815,0.152,84.7,201,27.4,129,0.02598,0.02674,0.0279,0.0493,141,156,237,148,0.235,0.269,0.0089,0.01772,102.4,201,15.8,21.9,30.7,93.7,7.82,80.2,100,90.7,401,116,40.6,59.9,50.2,2.04,0.122,0.00949,58.2,35.3,17.2,22.7,53.7,138,50.6,117,150,71.8,429,96.8,81.6,66.6,24.3,2.35,0.449,0.00569,35.9,18.4,13.5,11.4,12.5,16.5,17.9,13.3,13.9,10.6,11.1,10.7,16.2,14.3,16.8,34.9,16.4,23,57.5,174,47.9,87.6,147,71.6,317,8.34,46.1,35.3,7.87,20,1.7,0.00364,15,18.6,12,54,47,27.6,6.3,6.74,10,10,10,10,10,10,10,10,10,23,58];
+	document.getElementById("names").onclick = function() { click_names(this); };
+	document.getElementById("electron").onclick = function() { click_electron(this); };
+	document.getElementById("wide").onclick = function() { insert_rareearths(this); };
+	searchinput = document.getElementById("SearchInput");
+	searchinput.onkeyup = function(e) { search(this.value); };
+	searchinput.onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
+	document.forms["visualize"].onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
+	searchinput.onfocus = function(e) {
+		on_mouse_over();
+		search_active = true;
+		hideDetails();
+		if (this.value == "# or Name") this.value = "";
+		search(this.value);
+	};
+	searchinput.onblur = function() {
+		this.value = "# or Name";
+		current_colors.length = 0;
+		restore_colors(current_colors);
+		search_active = false;
+		results = 0;
+		on_mouse_over(lastHover);
+	};
+	display = document.getElementById("SliderDisplay");
+	slider = document.getElementById("SliderBar");
+	slider.from = parseFloat(display.getAttribute("from"));
+	slider.xMax = slider.distance = parseInt(slider.getAttribute("distance"));
+	to = parseFloat(display.getAttribute("to"));
+        slider.scale = (to - slider.from) / slider.distance;
+	display.valuecount = slider.distance + 1;
+	slider.onmousedown = startSlide;
+	display.onkeyup = sliderMouseUp;
+	display.onkeydown = slider_arrow;
+	document.onkeydown = keyboard_nav;
+	sliderMouseUp();
+}
+
+function switch_viz() {
+	el = (this || srcElement);
+	for (var i = 0; i < el.length; i++) if (el[i].checked && el[i].value != dataset) {
+		dataset = el[i].value;
+		on_mouse_over();
+		if (dataset == "boil" || dataset == "melt") color_temp(window[dataset]);
+		else color_other(window[dataset], window["spec_" + dataset]);
+		save_colors(current_colors);
+		on_mouse_over(lastHover);
+	}
+}
+
+function init_layout() {
+	save_element_ids();
+	attach_elementhovers();
+	results = 0;
+	search_active = false;
+	document.forms["visualize"].onclick = switch_viz;
+}
 
 function click_names(obj) {
-	document.styleSheets[names].disabled = obj.checked;
+	document.styleSheets[sheet_names].disabled = obj.checked;
 	if (!obj.checked && document.getElementById("electron").checked) document.getElementById("electron").checked = false;
-	document.styleSheets[electron].disabled = document.getElementById("electron").checked;
+	document.styleSheets[sheet_electron].disabled = document.getElementById("electron").checked;
 }
 
 function click_electron(obj) {
-	document.styleSheets[names].disabled = true;
-	if (obj.checked) {
-		document.getElementById("names").checked = true;
-		document.styleSheets[electron].disabled = true;
-	} else document.styleSheets[electron].disabled = !document.getElementById("names").checked;
+	document.styleSheets[sheet_names].disabled = true;
+	if (obj.checked) document.getElementById("names").checked = document.styleSheets[sheet_electron].disabled = true;
+	else document.styleSheets[sheet_electron].disabled = !document.getElementById("names").checked;
 }
 
-function element(element) {
-	if (window.frames["ElementFrame"]) {
-		window.frames["ElementFrame"].location.href = "about:blank";
-		document.getElementById("ElementName").innerHTML = element.childNodes[4].innerHTML;
-		document.getElementById("FullArticle").href = "http://en.wikipedia.org/wiki/" + element.childNodes[4].innerHTML;
-		document.getElementById("ElementBox").style.display = "block";
-		window.frames["ElementFrame"].location.href = "en.wikipedia.org/wiki/" + element.childNodes[4].innerHTML;
+function click_wiki(address) {
+	if (window.frames["WikiFrame"]) {
+		window.frames["WikiFrame"].location.href = "about:blank";
+		document.getElementById("ElementName").innerHTML = address;
+		document.getElementById("ElementName").href = "http://en.wikipedia.org/wiki/" + encodeURIComponent(address);
+		document.getElementById("WikiBox").style.display = "block";
+		window.frames["WikiFrame"].location.href = "en.wikipedia.org/wiki/" + address + ".html";
 	}
 }
 
-function destroy(button) {
-	window.frames["ElementFrame"].location.href = "about:blank";
-	//window.frames["ElementFrame"].document.body.innerHTML = "<h1>Loading&hellip;</h1>";
-	button.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "none";
+function destroy() {
+	window.frames["WikiFrame"].location.href = "about:blank";
+	//window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
+	document.getElementById("WikiBox").style.display = "";
 }
 
-function opacity(element, percent, count) {
-	element.style.filter = (percent != 100) ? "alpha(opacity=" + percent + ")" : "";
-	element.style.opacity = percent / 100;
-	if (count > 1) {
-		element = element.nextSibling;
-		while (element.nodeType != 1) element = element.nextSibling;
-		element.style.filter = (percent != 100) ? "alpha(opacity=" + percent + ")" : "";
-		element.style.opacity = percent / 100;
+function save_colors(colorsarray) {
+	for (var i = 1; i <= 118; i++) {
+		if (element_ids[i].currentStyle)	colorsarray[i] = "#" + element_ids[i].currentStyle.backgroundColor.replace(/#/, "");
+		else if (window.getComputedStyle)	colorsarray[i] = "#" + rgb2hex(document.defaultView.getComputedStyle(element_ids[i], null).getPropertyValue("background-color"));
 	}
 }
 
-// Thanks to Mark "Tarquin" Wilton-Jones of http://www.howtocreate.co.uk/ for help getting around IE's broken position: fixed.
+function restore_colors(colorsarray) {
+	for (var i = 1; i <= 118; i++) set_bgcolor(element_ids[i], (colorsarray.length ? colorsarray[i] : ""), 0);
+}
+
+function restore_mass() {
+	// not if we're slidering the slider
+	for (var i = 1; i <= 118; i++) element_ids[i].childNodes[n_mass].innerHTML = mass[i];
+	document.getElementById("Legend").childNodes[n_mass].innerHTML = "<span>Atomic </span>Mass";
+}
+
+function showDetails(elTarget) {
+	if (!elTarget) return;
+	var atomic = elTarget.childNodes[n_atomic].innerHTML * 1;
+	if (!document.getElementById("wide").checked) document.getElementById("Key").style.display = "none";
+	document.getElementById("Element").innerHTML = "";
+	for (var i = 0; i < elTarget.childNodes.length; i++)
+		document.getElementById("Element").appendChild(elTarget.childNodes[i].cloneNode(true));
+	document.getElementById("Element").childNodes[n_mass].innerHTML = mass[atomic];
+	document.getElementById("Element").childNodes[n_symbol].style.color = "#000";
+	document.getElementById("Element").style.backgroundColor = default_colors[atomic];
+	while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
+	document.getElementById("Electrons").innerHTML = elTarget.nextSibling.innerHTML;
+	document.getElementById("Electrons").style.backgroundColor = document.getElementById("Element").style.backgroundColor;
+	document.getElementById("Melt").innerHTML = melt[atomic] ? melt[atomic] + " K" : "Unknown";
+	document.getElementById("Boil").innerHTML = boil[atomic] ? boil[atomic] + " K" : "Unknown";
+	document.getElementById("RadiusEmp").innerHTML = radiusemp[atomic] ? radiusemp[atomic] + spec_radiusemp["unit"] : "Unknown";
+	document.getElementById("RadiusCalc").innerHTML = radiuscalc[atomic] ? radiuscalc[atomic] + spec_radiuscalc["unit"] : "Unknown";
+	document.getElementById("Electroneg").innerHTML = electroneg[atomic] ? electroneg[atomic] : "Unknown";
+	document.getElementById("Ionize").innerHTML = ionize[atomic] ? ionize[atomic] + spec_ionize["unit"] : "Unknown";
+	document.getElementById("Discover").innerHTML = discover[atomic] ? discover[atomic] : "Unknown";
+	document.getElementById("Density").innerHTML = density[atomic] ? density[atomic] + spec_density["unit"] : "Unknown";
+	document.getElementById("Affinity").innerHTML = affinity[atomic] ? affinity[atomic] + spec_affinity["unit"] : "Unknown";
+	document.getElementById("ThermCond").innerHTML = thermcond[atomic] ? thermcond[atomic] + spec_thermcond["unit"] : "Unknown";
+	document.getElementById("DetailBox").style.display = "block";
+}
+
+function hideDetails() {
+	if (!document.getElementById("wide").checked) document.getElementById("DetailBox").style.display = "";
+	document.getElementById("Key").style.display = "";
+	for (var i = 0; i < document.forms["visualize"].length; i++) document.forms["visualize"][i].checked = false;
+	restore_mass();
+	dataset = "key";
+}
+
+function update_states(background) {
+	var value = display.value * 1;
+	for (var i = 1; i <= 118; i++) {
+		var tempcolor = false;
+		if (prev_temp !== false) {
+			if (value > boil[i] && prev_temp < boil[i])
+				tempcolor = "#A00";
+			else if (value < melt[i] && prev_temp > melt[i])
+				tempcolor = "#000";
+			else if ((value > melt[i] && prev_temp < melt[i]) || (value < boil[i] && prev_temp > boil[i]))
+				tempcolor = "#00D";
+		} else {
+			if (!boil[i] && !melt[i])	tempcolor = "#D8D8D8";
+			else if (value > boil[i])	tempcolor = "#A00";
+			else if (value > melt[i])	tempcolor = "#00D";
+			else				tempcolor = "#000";
+		}
+		if (tempcolor) {
+			if (background)	set_bgcolor(element_ids[i], tempcolor, 0);
+			else		element_ids[i].childNodes[n_symbol].style.color = tempcolor;
+		}
+	}
+	prev_temp = value;
+}
+
+function dec2hex(dec) {
+	var hex = parseInt(String(dec), 10).toString(16);
+	return (hex.length == 1 ? "0" + hex : hex);
+}
+
+function rgb2hex(value) {
+	var hex = "", h;
+	var h = /(\d+)[, ]+(\d+)[, ]+(\d+)/.exec(value);
+	for (var i = 1; i < 4; i++) hex += dec2hex(h[i]);
+	return (hex);
+} 
+
+function calc_color(value, start, end, min, max) {
+	var result = new String;
+	var startRgb = new Array(), endRgb = new Array();
+	start = start.replace(/#/, "");
+	end = end.replace(/#/, "");
+	for (var i = 0; i < 3; i++) {
+		if (start.length == 3)	startRgb[i] = parseInt(start.substr(i, 1) + start.substr(i, 1), 16);
+		else			startRgb[i] = parseInt(start.substr(i * 2, 2), 16);
+		if (end.length == 3)	endRgb[i] = parseInt(end.substr(i, 1) + end.substr(i, 1), 16);
+		else			endRgb[i] = parseInt(end.substr(i * 2, 2), 16);
+		result += "" + dec2hex(Math.round((endRgb[i] - startRgb[i]) * ((value - min) / (max - min)) + startRgb[i]));
+	}
+	return ("#" + result);
+}
+
+function color_temp(temparray) {
+	for (var i = 1; i <= 118; i++) {
+		if (temparray[i] < display.value) {
+			element_ids[i].childNodes[n_mass].innerHTML = Math.round(temparray[i]);
+			set_bgcolor(element_ids[i], calc_color(temparray[i], "6666FF", "FFFFFF", 0, display.value), 0);
+		} else if (temparray[i] >= display.value) {
+			element_ids[i].childNodes[n_mass].innerHTML = Math.round(temparray[i]);
+			set_bgcolor(element_ids[i], calc_color(temparray[i], "FFFFFF", "FF0000", 0, temparray[0]), 0);
+		} else {
+			element_ids[i].childNodes[n_mass].innerHTML = "&nbsp;";
+			set_bgcolor(element_ids[i], "#FFFFFF", 0);
+		}
+	}
+}
+
+function color_other(valueArray, specArray) {
+	for (var i = 1; i <= 118; i++) {
+		if (valueArray[i] != null) {
+			element_ids[i].childNodes[n_mass].innerHTML = String(valueArray[i]).replace(/([\d\.]{6})(\d+)/, "$1<span>$2</span>");
+			set_bgcolor(element_ids[i], calc_color(valueArray[i], specArray["startcolor"], specArray["endcolor"], specArray["min"], specArray["max"]), 0);
+		} else {
+			element_ids[i].childNodes[n_mass].innerHTML = "&nbsp;";
+			set_bgcolor(element_ids[i], "#FFFFFF", 0);
+		}
+	}
+	document.getElementById("Legend").childNodes[n_mass].innerHTML = specArray["Legend"];
+}
+
+function search(searchstring) {
+	results = 0;
+	on_mouse_over();
+	for (var atomic = 1; atomic <= 118; atomic++) {
+		if (!searchstring)
+			search_highlight(atomic, true);
+		else if (searchstring == atomic) {
+			search_highlight(atomic, false);
+			results = 1;
+			winner = element_ids[atomic];
+		} else if (element_ids[atomic].childNodes[n_name].innerHTML.toLowerCase().indexOf(searchstring.toLowerCase()) != -1
+			|| element_ids[atomic].childNodes[n_symbol].innerHTML.toLowerCase().indexOf(searchstring.toLowerCase()) != -1) {
+			search_highlight(atomic, false);
+			results++;
+			winner = element_ids[atomic];
+		} else	search_highlight(atomic, true);
+	}
+	save_colors(current_colors);
+	if (results == 1) on_mouse_over(winner);
+}
+
+function search_highlight(atomic, bright) {
+	if (bright)	set_bgcolor(element_ids[atomic], calc_color(6, default_colors[atomic], "FFFFFF", 0, 10), 0);
+	else		set_bgcolor(element_ids[atomic], calc_color(3, default_colors[atomic], "000000", 0, 10), 0);
+}
+
+// Slider inspired by Tom Hermansson Snickars
+function carpeLeft(el, pos) {
+	if (el.style && (typeof(el.style.left) == "string")) {
+		if (typeof(pos) == "number") el.style.left = pos + "px";
+		else {
+			pos = parseInt(el.style.left);
+			if (isNaN(pos)) pos = 0;
+		}
+	} else if (el.style && el.style.pixelLeft) {
+		if (typeof(pos) == "number") el.style.pixelLeft = pos;
+		else pos = el.style.pixelLeft;
+	}
+	return pos;
+}
+
+function dim_for_states() {
+	hideDetails();
+	for (var i = 1; i <= 118; i++) {
+		element_ids[i].style.color = "#FFF";
+		element_ids[i].childNodes[n_symbol].style.color = "#FFF";
+		var elTarget = element_ids[i];
+		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
+		elTarget.nextSibling.style.color = "#FFF";
+	}
+	var key = document.getElementById("Key");
+	for (var i = 0; i < 4; i++) {
+		if (key.currentStyle)			key.rows[i].cells[4].style.backgroundColor = key.rows[i].cells[5].currentStyle.color;
+		else if (window.getComputedStyle)	key.rows[i].cells[4].style.backgroundColor = document.defaultView.getComputedStyle(key.rows[i].cells[5], null).getPropertyValue("color");
+		for (var j = 0; j < 4; j++) key.rows[i].cells[j].style.visibility = "hidden";
+		key.rows[i].cells[4].style.color = "#FFF";
+	}
+}
+
+function startSlide(evnt) {
+	if (search_active) return;
+	on_mouse_over();
+	save_colors(current_colors);
+	dim_for_states();
+	prev_temp = false;
+	update_states(true);
+
+	if (!evnt) evnt = window.event;
+	slider.startOffsetX = carpeLeft(slider) - evnt.screenX;
+	document.onmousemove = moveSlider;
+	document.onmouseup = sliderMouseUp;
+	slider.onmousedown = null;
+}
+
+function moveSlider(evnt) {
+	var evnt = (!evnt) ? window.event : evnt;
+	var x = Math.max(0, Math.min(slider.startOffsetX + evnt.screenX, slider.xMax));
+	carpeLeft(slider, x);
+	sliderPos = (slider.distance / display.valuecount) * Math.round(display.valuecount * x / slider.distance);
+	display.value = Math.round(sliderPos * slider.scale + slider.from);
+	update_states(true);
+}
+
+function sliderMouseUp() {
+	keyscroll = false;
+	restore_colors(current_colors);
+	on_mouse_over(lastHover);
+	for (var i = 1; i <= 118; i++) {
+		element_ids[i].style.color = "#000";
+		var elTarget = element_ids[i];
+		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
+		elTarget.nextSibling.style.color = "#000";
+	}
+	var key = document.getElementById("Key");
+	for (var i = 0; i < 4; i++) {
+		key.rows[i].cells[4].style.backgroundColor = "";
+		key.rows[i].cells[4].style.color = "";
+		for (var j = 0; j < 4; j++) key.rows[i].cells[j].style.visibility = "";
+	}
+
+	snap_slider();
+	document.onmousemove = null;
+	document.onmouseup = null;
+	prev_temp = false;
+	update_states(false);
+	slider.onmousedown = startSlide;
+}
+
+function snap_slider() {
+	var v = (display.value == parseFloat(display.value)) ? display.value : 0;
+	carpeLeft(slider, Math.max(0, Math.min(slider.xMax, (v - slider.from) / slider.scale)));
+	document.onmousemove = null;
+}
+
+// Thanks to Mark "Tarquin" Wilton-Jones of http://www.howtocreate.co.uk/ for help getting around IE6's broken position: fixed.
 function getIESze() {
 	var de = document.documentElement;
 	var db = document.documentElement;
-	return [
-		(de.clientWidth ? de.clientWidth : db.clientWidth),
-		(de.clientHeight ? de.clientHeight : db.clientHeight)
-	];
+	return [(de.clientWidth ? de.clientWidth : db.clientWidth), (de.clientHeight ? de.clientHeight : db.clientHeight)];
 }
 function getIEScrl() {
 	var de = document.documentElement;
 	var db = document.documentElement;
-	return [
-		(de.scrollLeft ? de.scrollLeft : db.scrollLeft),
-		(de.scrollTop ? de.scrollTop : db.scrollTop)
-	];
+	return [(de.scrollLeft ? de.scrollLeft : db.scrollLeft), (de.scrollTop ? de.scrollTop : db.scrollTop)];
+}
+
+function attach_elementhovers() {
+	for (var i = 1; i <= 118; i++) {
+		element_ids[i].onclick = function() { click_wiki(element_ids[i].childNodes[n_name].innerHTML); };
+		element_ids[i].onmouseover = function() { on_mouse_over(this); };
+	}
+	var groups = document.getElementById("Main").tHead.rows[0].cells;
+	for (var i = 1; i < groups.length; i++) {
+		groups[i].idx = i;
+		groups[i].onclick = function() { click_wiki("Group " + groups[this.idx].innerHTML + " element"); };
+	}
+//	var periods = document.getElementById("Main").tBodies[0].rows;
+//	for (var i = 0; i <= 7; i++) {
+//		periods[i].cells[0].idx = i;
+//		periods[i].cells[0].onclick = function() { click_wiki("Period " + periods[this.idx].cells[0].innerHTML + " element"); };
+//	}
+}
+
+function on_mouse_over(el) {
+	if (lastHover) dark(lastHover);
+	if (el) {
+		dim(el);
+		showDetails(el);
+		lastHover = el;
+	}
+}
+
+function dim(elTarget) {
+	if (results != 1) set_bgcolor(elTarget, calc_color(5, (current_colors.length ? current_colors : default_colors)[elTarget.childNodes[n_atomic].innerHTML], "FFFFFF", 0, 10), 0);
+	highlight(elTarget, "yellow");
+}
+
+function dark(elTarget) {
+	set_bgcolor(elTarget, (current_colors.length ? current_colors : default_colors)[elTarget.childNodes[n_atomic].innerHTML], 0);
+	highlight(elTarget, "");
+}
+
+function set_bgcolor(elTarget, color, stop) {
+	elTarget.style.backgroundColor = color;
+	if (!stop) {
+		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
+		set_bgcolor(elTarget.nextSibling, color, 1);
+	}
+}
+
+function insert_rareearths(el) {
+	var table = document.getElementById("Main").tBodies[0];
+
+	if (el.checked) {
+		document.getElementById("Main").tHead.rows[0].insertCell(3).colSpan = 28;
+
+		table.rows[0].insertCell(5).colSpan = 20;
+		table.rows[0].cells[5].rowSpan = 3;
+
+		table.rows[0].cells[5].appendChild(document.getElementById("visualize"));
+		document.getElementById("Key").style.display = "";
+		document.getElementById("Key").style.fontSize = "1em";
+
+		table.rows[0].cells[4].rowSpan = 4;
+		table.rows[0].cells[4].colSpan = 28;
+
+		table.rows[4].insertCell(5).colSpan = 28;
+		table.rows[4].cells[5].innerHTML = table.rows[7].cells[2].innerHTML;
+		table.rows[4].cells[5].style.textAlign = "center";
+
+		for (var i = 29; i >= 0; i--)
+			for (var j = 5, k = 2; j <= 6; j++, k -= 2)
+				table.rows[j].insertBefore(table.rows[j + 4].cells[i + k], table.rows[j].cells[6]);
+
+		table.rows[5].cells[5].style.display = table.rows[6].cells[5].style.display = "none";
+		for (var i = 10; i >= 7; i--) table.rows[i].style.display = "none";
+	} else {
+		document.getElementById("Main").tHead.rows[0].deleteCell(3);
+
+		table.rows[0].cells[4].appendChild(document.getElementById("visualize"));
+		if (document.getElementById("DetailBox").style.display == "block")
+			document.getElementById("Key").style.display = "none";
+		document.getElementById("Key").style.fontSize = "";
+
+		table.rows[5].cells[5].style.display = table.rows[6].cells[5].style.display = "";
+		for (var i = 10; i >= 7; i--) table.rows[i].style.display = "";
+
+		for (var i = 0; i < 30; i++) {
+			table.rows[9].insertBefore(table.rows[5].cells[35 - i], table.rows[9].cells[2]);
+			table.rows[10].appendChild(table.rows[6].cells[6]);
+		}
+
+		table.rows[0].deleteCell(5); table.rows[4].deleteCell(5);
+		table.rows[0].cells[4].colSpan = 20;
+		table.rows[0].cells[4].rowSpan = 3;
+	}
+}
+
+function save_element_ids() {
+	element_ids = new Array();
+	var length = document.getElementsByTagName("td").length;
+	for (var i = 0; i < length; i++) {
+		var current = document.getElementsByTagName("td")[i];
+		if (current.className.indexOf("Element") != -1) {
+			var atomic = current.childNodes[n_atomic].innerHTML * 1;
+			if (!element_ids[atomic]) element_ids[atomic] = current;
+		}
+	}
+}
+
+function slider_arrow(e) {
+	if (!e) e = event;
+	if (e.keyCode == 38 || e.keyCode == 40) {
+		if (isNaN(display.value)) display.value = 0;
+		display.value = Math.min(6000, Math.max(0, (display.value * 1) + 10 * (39 - e.keyCode))) + "";
+		if (!keyscroll) {
+			dim_for_states();
+			prev_temp = false;
+		}
+		update_states(true);
+		snap_slider();
+		keyscroll = true;
+	}
+	if (e.keyCode >= 37 && e.keyCode <= 40) {
+		e.cancelBubble = true;
+		if (e.stopPropagation) e.stopPropagation();
+	}
+}
+
+function keyboard_nav(e) {
+	if (!e) e = event;
+	if (e.keyCode == 13 && lastHover) { click_wiki(lastHover.childNodes[n_name].innerHTML); return false; }
+	if (e.keyCode == 27 && document.getElementById("WikiBox").style.display == "block") { destroy(); return false; }
+	if (e.keyCode >= 37 && e.keyCode <= 40) {
+		if (!lastHover) on_mouse_over(element_ids[1]);
+
+		if (e.keyCode == 37 || e.keyCode == 39)
+			var newElement = element_ids[Math.max(1, Math.min(118, lastHover.childNodes[n_atomic].innerHTML * 1 - 38 + e.keyCode))];
+		else {
+			var count = 0;
+			var pos = lastHover.childNodes[n_atomic].innerHTML * 1;
+			if (e.keyCode == 40) {
+				if (document.getElementById("wide").checked) { if (lastHover.parentNode.rowIndex > 6) return false; }
+				else if (lastHover.parentNode.rowIndex > 10 || pos == 39 || pos == 87 || pos == 88) return false;
+				if (!document.getElementById("wide").checked) {
+					if ((pos > 39 && pos < 57) || (pos > 71 && pos < 89)) pos += 15;
+					else if (pos >= 57 && pos <= 71) pos += 17;
+					else if (pos >= 104) pos -= 47;
+				}
+			} else {
+				if (pos <= 2 || (pos >= 4 && pos <= 9) || (pos >= 21 && pos <= 30)) return false;
+				if (document.getElementById("wide").checked && pos >= 57 && pos <= 70) return false;
+				if (!document.getElementById("wide").checked) {
+					if ((pos > 71 && pos < 89) || (pos > 103 && pos <= 118)) pos -= 15;
+					else if (pos >= 89 && pos <= 103) pos -= 17;
+					else if (pos > 57 && pos <= 71) pos += 62;
+					else if (pos == 57) pos += 47;
+				}
+			}
+			var row = document.getElementById("Main").tBodies[0].rows[lastHover.parentNode.rowIndex - (20 - e.keyCode / 2 + (lastHover.cellIndex < 4 ? 1 : 0))];
+			for (var i = 0; i < row.cells.length; i++) if (row.cells[i].className.indexOf("Element") != -1) count += e.keyCode - 39;
+			var newElement = element_ids[pos + count];
+		}
+		on_mouse_over(newElement);
+		return false;
+	}
+}
+
+function highlight(el, color) {
+	var period = el.parentNode.rowIndex - 1;
+	document.getElementById("Main").tBodies[0].rows[period > 7 ? period - 4 : period].cells[0].style.backgroundColor = color;
+	if (period > 7) return;
+
+	var row = document.getElementById("Main").tBodies[0].rows[period];
+	if (el.cellIndex < 4) {
+		var i = 0, count = -1;
+		while (el != row.cells[i++]) count++;
+	} else {
+		var i = row.cells.length - 1, count = 36;
+		while (el != row.cells[i--]) count--;
+		if (document.getElementById("wide").checked && (count += 2) < 6) return;
+	}
+	document.getElementById("Main").tHead.rows[0].cells[count / 2 + 1].style.backgroundColor = color;
 }
   </script>
-<!--  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-99745-1"; urchinTracker();</script> -->
 
   <link rel="shortcut icon" href="favicon.ico">
 
  </head>
- <body onLoad="window.frames['ElementFrame'].document.body.innerHTML = '<h1>Loading&hellip;</h1>';">
+ <body>
 
   <h1>Periodic Table of Elements</h1>
-
-  <div id="Navigation">
+  <div id="Navigation" class="InnerBorder">
    <a href="Other/Periodic Table.pdf" title="US paper size (8.5&times;11 in) printable PDF">PDF (Letter)</a>
    <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5&times;14 in) printable PDF">PDF (Legal)</a>
    <a href="Images/periodic table.png" title="Periodic Table image">Periodic Table PNG</a>
-   <a href="key.html" onClick="window.open('key.html', 'keyWindow', 'height=144,width=374'); return false;" title="Legend for the periodic table">Key</a>
-   <input type="checkbox" id="names" name="names" onClick="click_names(this);"> <label for="names">Names</label> <input type="checkbox" id="electron" name="electron" onClick="click_electron(this);"> <label for="electron">Electrons</label>
-   <a href="feedback.html" title="Use a form to send a message to the designer of this table">Contact</a>
-   <a href="link.php?lang=en" title="Images and text for use in linking to this site">Link</a>
-   <a href="questions.html" title="Questions and answers about this particular periodic table">FAQ</a>
+   <input type="checkbox" id="names" name="names"> <label for="names" title="Show element names">Names</label>
+   <input type="checkbox" id="electron" name="electron"> <label for="electron" title="Show electron configurations">Electrons</label>
+   <input type="checkbox" id="wide" name="wide"> <label for="wide" title="Show rare earth elements inline">Wide</label>
+   <a href="about.html" title="Contact info and questions about this particular periodic table">About</a>
+<!--   <a href="link.php?lang=en" title="Images and text for use in linking to this site">Link</a> -->
    <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
-   <form name="language" style="display: inline;" method="get" action="./"><select name="lang" onChange="this.form.submit();"><option value="af">Afrikaans<option value="ar">العربية<option value="bg">Български<option value="da">Dansk<option value="de">Deutsch<option value="el">Ελληνικά<option value="en" selected>English (US)<option value="en_gb">English (UK)<option value="eo">Esperanto<option value="es">Español<option value="fi">Suomi<option value="fr">Français<option value="he">עברית<option value="is">Íslenska<option value="it">Italiano<option value="ja">日本語<option value="ko">한국어<option value="nl">Nederlands<option value="no">Norsk<option value="pl">Polski<option value="pt">Português<option value="ru">Русский<option value="sv">Svenska<option value="sw">Kiswahili<option value="th">ไทย<option value="tr">Türkçe<option value="zh">中文 (简)<option value="zh_tw">中文 (繁)</select></form>
+   <form name="language" style="display: inline;" method="get" action="./"><select name="lang" onChange="this.form.submit();"><option value="af">Afrikaans<option value="ar">العربية<option value="bg">Български<option value="bn">বাংলা<option value="da">Dansk<option value="de">Deutsch<option value="el">Ελληνικά<option value="en" selected>English (US)<option value="en_gb">English (UK)<option value="eo">Esperanto<option value="es">Español<option value="fi">Suomi<option value="fr">Français<option value="he">עברית<option value="is">Íslenska<option value="it">Italiano<option value="ja">日本語<option value="ko">한국어<option value="nl">Nederlands<option value="no">Norsk<option value="pl">Polski<option value="pt">Português<option value="ru">Русский<option value="sv">Svenska<option value="sw">Kiswahili<option value="th">ไทย<option value="tr">Türkçe<option value="zh">中文 (简)<option value="zh_tw">中文 (繁)</select></form>
   </div>
 
-  <h2>This color-coded printable periodic table of elements (or periodic chart or table of chemical elements) has all important information (atomic number, chemical symbol, element name, atomic weight, electron configuration, phase of matter at 298 K, manmade vs. natural, and class) on one page. <span style="color: black; background-color: yellow;">Use the check boxes above to turn on element names</span>/electron configurations. Click an element for a full description. <a href="periodic-table-poster.html" title="Buy a periodic table wall chart">Buy a poster</a>.</h2>
+<table id="Main" summary="periodic table" border=0 cellspacing=0>
+ <col id="Period">
+ <thead>
+ <tr>
 
+  <td></td>
+
+  <td colspan=2>1</td>
+  <td colspan=2>2</td>
+  <td colspan=2>3</td>
+  <td colspan=2>4</td>
+  <td colspan=2>5</td>
+  <td colspan=2>6</td>
+  <td colspan=2>7</td>
+  <td colspan=2>8</td>
+  <td colspan=2>9</td>
+  <td colspan=2>10</td>
+  <td colspan=2>11</td>
+  <td colspan=2>12</td>
+  <td colspan=2>13</td>
+  <td colspan=2>14</td>
+  <td colspan=2>15</td>
+  <td colspan=2>16</td>
+  <td colspan=2>17</td>
+  <td colspan=2>18</td>
+
+ </tr>
+ </thead><tbody>
+ <tr id="White">
+  <th>1</th>
+
+  <td class="Element Hydrogen"><strong>1</strong> <big>H</big> <em>Hydrogen</em><div>1.0079<span>4</span></div></td><td class="Electron Hydrogen"><span>1</span></td>
+
+  <td id="Legend" colspan=2><strong>Atomic<span> #</span></strong> <big>Sym<span>bol</span></big> <em>Name</em><div><span>Atomic </span>Mass</div></td>
+
+  <td colspan=20 rowspan=3 style="position: relative;">
+<!--   <div style="position: absolute; top: 0; border: 2px outset; right: 1ex; height: 0.8em; width: 0.8em; font-size: 2em; background-color: ButtonShadow; text-align: center; vertical-align: middle;">&times;</div>-->
+   <table id="Key" cellspacing=10>
+    <col width="5%">
+    <col width="33%">
+    <col width="5%">
+    <col width="34%">
+    <col width="5%">
+    <col width="18%">
+    <tr>
+
+     <th class="Alkali"></th>
+     <td>Alkali metals</td>
+
+     <th class="Actinide"></th>
+     <td>Actinide series</td>
+
+     <th class="Solid">C</th>
+     <td class="Solid">Solid</td>
+
+    </tr>
+    <tr>
+
+     <th class="Alkaline"></th>
+     <td>Alkaline earth metals</td>
+
+     <th class="Poor"></th>
+     <td>Poor metals</td>
+
+     <th class="Liquid">Br</th>
+     <td class="Liquid">Liquid</td>
+
+    </tr>
+    <tr>
+
+     <th class="Transition"></th>
+     <td>Transition metals</td>
+
+     <th class="Nonmetal"></th>
+     <td>Nonmetals</td>
+
+     <th class="Gas">H</th>
+     <td class="Gas">Gas</td>
+
+    </tr>
+    <tr>
+
+     <th class="Lanthanide"></th>
+     <td>Lanthanide series</td>
+
+     <th class="Noble"></th>
+     <td>Noble gases</td>
+
+     <th class="Unknown">Rf</th>
+     <td class="Unknown">Unknown</td>
+
+    </tr>
+   </table>
+
+   <form name="visualize" id="visualize">
+   <table id="DetailBox" cellspacing=0>
+    <tr>
+     <td id="Element" rowspan=5></td>
+     <td id="Electrons" rowspan=5></td>
+
+     <td><input type="radio" name="visualize" id="t_melt" value="melt"></td>
+     <th><label for="t_melt">Melting Point</label>:</th><td id="Melt""></td>
+
+     <td><input type="radio" name="visualize" id="t_radiuscalc" value="radiuscalc"></td>
+     <th><label for="t_radiuscalc">Radius (calc)</label>:</th><td id="RadiusCalc"></td>
+    </tr><tr>
+     <td><input type="radio" name="visualize" id="t_boil" value="boil"></td>
+     <th><label for="t_boil">Boiling Point</label>:</th><td id="Boil"></td>
+
+     <td><input type="radio" name="visualize" id="t_radiusemp" value="radiusemp"></td>
+     <th><label for="t_radiusemp">Radius (emp)</label>:</th><td id="RadiusEmp"></td>
+    </tr><tr>
+     <td><input type="radio" name="visualize" id="t_electroneg" value="electroneg"></td>
+     <th><label for="t_electroneg">Electronegativity</label>:</th><td id="Electroneg"></td>
+
+     <td><input type="radio" name="visualize" id="t_ionize" value="ionize"></td>
+     <th><label for="t_ionize">1st Ionization</label>:</th><td id="Ionize"></td>
+    </tr><tr>
+     <td><input type="radio" name="visualize" id="t_discover" value="discover"></td>
+     <th><label for="t_discover">Discovered</label>:</th><td id="Discover"></td>
+
+     <td><input type="radio" name="visualize" id="t_density" value="density"></td>
+     <th><label for="t_density">Density</label>:</th><td id="Density"></td>
+    </tr><tr>
+     <td><input type="radio" name="visualize" id="t_affinity" value="affinity"></td>
+     <th><label for="t_affinity">Electron Affinity</label>:</th><td id="Affinity"></td>
+
+     <td><input type="radio" name="visualize" id="t_thermcond" value="thermcond"></td>
+     <th><label for="t_thermcond">Thermal Cond.</lable>:</th><td id="ThermCond"></td>
+    </tr>
+   </table>
+   </form>
+  </td>
+
+  <td colspan=10><label style="float: right; line-height: 1.4;" for="SliderDisplay">K</label><input id="SliderDisplay" type="text" from="0" to="6000" value="273"><div id="SliderTrack"><div id="SliderSlit">&nbsp;</div><div id="SliderBar" distance="200" display="SliderDisplay">&nbsp;</div></div></td>
+
+  <td class="Element Noble"><strong>2</strong> <big>He</big> <em>Helium</em><div>4.0026<span>02</span></div></td><td class="Electron Noble"><span>2</span></td>
+
+  <td class="Shells"><span>K</span></td>
+
+ </tr>
+ <tr>
+  <th>2</th>
+
+  <td class="Element Alkali"><strong>3</strong> <big>Li</big> <em>Lithium</em><div>6.941</div></td><td class="Electron Alkali"><span>2<br>1</span></td>
+  <td class="Element Alkaline"><strong>4</strong> <big>Be</big> <em>Beryllium</em><div>9.0121<span>82</span></div></td><td class="Electron Alkaline"><span>2<br>2</span></td>
+  <td class="Element Nonmetal DividerB"><strong>5</strong> <big>B</big> <em>Boron</em><div>10.811</div></td><td class="Electron Nonmetal DividerB"><span>2<br>3</span></td>
+  <td class="Element Nonmetal"><strong>6</strong> <big>C</big> <em>Carbon</em><div>12.010<span>7</span></div></td><td class="Electron Nonmetal"><span>2<br>4</span></td>
+  <td class="Element Nonmetal"><strong>7</strong> <big>N</big> <em>Nitrogen</em><div>14.006<span>7</span></div></td><td class="Electron Nonmetal"><span>2<br>5</span></td>
+  <td class="Element Nonmetal"><strong>8</strong> <big>O</big> <em>Oxygen</em><div>15.999<span>4</span></div></td><td class="Electron Nonmetal"><span>2<br>6</span></td>
+  <td class="Element Nonmetal"><strong>9</strong> <big>F</big> <em>Fluorine</em><div>18.998<span>4032</span></div></td><td class="Electron Nonmetal"><span>2<br>7</span></td>
+  <td class="Element Noble"><strong>10</strong> <big>Ne</big> <em>Neon</em><div>20.179<span>7</span></div></td><td class="Electron Noble"><span>2<br>8</span></td>
+
+  <td class="Shells"><span>K<br>L</span></td>
+
+ </tr>
+ <tr>
+
+  <th>3</th>
+
+  <td class="Element Alkali"><strong>11</strong> <big>Na</big> <em>Sodium</em><div>22.989<span>76928</span></div></td><td class="Electron Alkali"><span>2<br>8<br>1</span></td>
+  <td class="Element Alkaline"><strong>12</strong> <big>Mg</big> <em>Magnesium</em><div>24.305<span>0</span></div></td><td class="Electron Alkaline"><span>2<br>8<br>2</span></td>
+
+
+  <td class="Element Poor"><strong>13</strong> <big>Al</big> <em>Aluminum</em><div>26.981<span>5386</span></div></td><td class="Electron Poor DividerR"><span>2<br>8<br>3</span></td>
+  <td class="Element Nonmetal DividerB"><strong>14</strong> <big>Si</big> <em>Silicon</em><div>28.085<span>5</span></div></td><td class="Electron Nonmetal DividerB"><span>2<br>8<br>4</span></td>
+  <td class="Element Nonmetal"><strong>15</strong> <big>P</big> <em>Phosphorus</em><div>30.973<span>762</span></div></td><td class="Electron Nonmetal"><span>2<br>8<br>5</span></td>
+  <td class="Element Nonmetal"><strong>16</strong> <big>S</big> <em>Sulfur</em><div>32.065</div></td><td class="Electron Nonmetal"><span>2<br>8<br>6</span></td>
+  <td class="Element Nonmetal"><strong>17</strong> <big>Cl</big> <em>Chlorine</em><div>35.453</div></td><td class="Electron Nonmetal"><span>2<br>8<br>7</span></td>
+  <td class="Element Noble"><strong>18</strong> <big>Ar</big> <em>Argon</em><div>39.948</div></td><td class="Electron Noble"><span>2<br>8<br>8</span></td>
+
+  <td class="Shells"><span>K<br>L<br>M</span></td>
+
+ </tr>
+ <tr>
+  <th>4</th>
+
+  <td class="Element Alkali"><strong>19</strong> <big>K</big> <em>Potassium</em><div>39.098<span>3</span></div></td><td class="Electron Alkali"><span>2<br>8<br>8<br>1</span></td>
+  <td class="Element Alkaline"><strong>20</strong> <big>Ca</big> <em>Calcium</em><div>40.078</div></td><td class="Electron Alkaline"><span>2<br>8<br>8<br>2</span></td>
+  <td class="Element Transition"><strong>21</strong> <big>Sc</big> <em>Scandium</em><div>44.955<span>912</span></div></td><td class="Electron Transition"><span>2<br>8<br>9<br>2</span></td>
+  <td class="Element Transition"><strong>22</strong> <big>Ti</big> <em>Titanium</em><div>47.867</div></td><td class="Electron Transition"><span>2<br>8<br>10<br>2</span></td>
+  <td class="Element Transition"><strong>23</strong> <big>V</big> <em>Vanadium</em><div>50.941<span>5</span></div></td><td class="Electron Transition"><span>2<br>8<br>11<br>2</span></td>
+  <td class="Element Transition"><strong>24</strong> <big>Cr</big> <em>Chromium</em><div>51.996<span>1</span></div></td><td class="Electron Transition"><span>2<br>8<br>13<br>1</span></td>
+  <td class="Element Transition"><strong>25</strong> <big>Mn</big> <em>Manganese</em><div>54.938<span>045</span></div></td><td class="Electron Transition"><span>2<br>8<br>13<br>2</span></td>
+  <td class="Element Transition"><strong>26</strong> <big>Fe</big> <em>Iron</em><div>55.845</div></td><td class="Electron Transition"><span>2<br>8<br>14<br>2</span></td>
+  <td class="Element Transition"><strong>27</strong> <big>Co</big> <em>Cobalt</em><div>58.933<span>195</span></div></td><td class="Electron Transition"><span>2<br>8<br>15<br>2</span></td>
+  <td class="Element Transition"><strong>28</strong> <big>Ni</big> <em>Nickel</em><div>58.693<span>4</span></div></td><td class="Electron Transition"><span>2<br>8<br>16<br>2</span></td>
+  <td class="Element Transition"><strong>29</strong> <big>Cu</big> <em>Copper</em><div>63.546</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>1</span></td>
+  <td class="Element Transition"><strong>30</strong> <big>Zn</big> <em>Zinc</em><div>65.409</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>2</span></td>
+  <td class="Element Poor"><strong>31</strong> <big>Ga</big> <em>Gallium</em><div>69.723</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>3</span></td>
+  <td class="Element Poor"><strong>32</strong> <big>Ge</big> <em>Germanium</em><div>72.64</div></td><td class="Electron Poor DividerR"><span>2<br>8<br>18<br>4</span></td>
+  <td class="Element Nonmetal DividerB"><strong>33</strong> <big>As</big> <em>Arsenic</em><div>74.921<span>60</span></div></td><td class="Electron Nonmetal DividerB"><span>2<br>8<br>18<br>5</span></td>
+  <td class="Element Nonmetal"><strong>34</strong> <big>Se</big> <em>Selenium</em><div>78.96</div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>6</span></td>
+  <td class="Element Nonmetal"><strong>35</strong> <big>Br</big> <em>Bromine</em><div>79.904</div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>7</span></td>
+  <td class="Element Noble"><strong>36</strong> <big>Kr</big> <em>Krypton</em><div>83.798</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>8</span></td>
+
+  <td class="Shells"><span>K<br>L<br>M<br>N</span></td>
+
+ </tr>
+ <tr>
+  <th>5</th>
+
+  <td class="Element Alkali"><strong>37</strong> <big>Rb</big> <em>Rubidium</em><div>85.467<span>8</span></div></td><td class="Electron Alkali"><span>2<br>8<br>18<br>8<br>1</span></td>
+  <td class="Element Alkaline"><strong>38</strong> <big>Sr</big> <em>Strontium</em><div>87.62</div></td><td class="Electron Alkaline"><span>2<br>8<br>18<br>8<br>2</span></td>
+  <td class="Element Transition"><strong>39</strong> <big>Y</big> <em>Yttrium</em><div>88.905<span>85</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>9<br>2</span></td>
+  <td class="Element Transition"><strong>40</strong> <big>Zr</big> <em>Zirconium</em><div>91.224</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>10<br>2</span></td>
+  <td class="Element Transition"><strong>41</strong> <big>Nb</big> <em>Niobium</em><div>92.906<span>38</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>12<br>1</span></td>
+  <td class="Element Transition"><strong>42</strong> <big>Mo</big> <em class="Long">Molybdenum</em><div>95.94</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>13<br>1</span></td>
+  <td class="Element Transition"><strong>43</strong> <big>Tc</big> <em>Technetium</em><div>(97.907<span>2</span>)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>14<br>1</span></td>
+  <td class="Element Transition"><strong>44</strong> <big>Ru</big> <em>Ruthenium</em><div>101.07</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>15<br>1</span></td>
+  <td class="Element Transition"><strong>45</strong> <big>Rh</big> <em>Rhodium</em><div>102.90<span>550</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>16<br>1</span></td>
+  <td class="Element Transition"><strong>46</strong> <big>Pd</big> <em>Palladium</em><div>106.42</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>18<br>0</span></td>
+  <td class="Element Transition"><strong>47</strong> <big>Ag</big> <em>Silver</em><div>107.86<span>82</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>18<br>1</span></td>
+  <td class="Element Transition"><strong>48</strong> <big>Cd</big> <em>Cadmium</em><div>112.41<span>1</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>18<br>2</span></td>
+  <td class="Element Poor"><strong>49</strong> <big>In</big> <em>Indium</em><div>114.81<span>8</span></div></td><td class="Electron Poor"><span>2<br>8<br>18<br>18<br>3</span></td>
+  <td class="Element Poor"><strong>50</strong> <big>Sn</big> <em>Tin</em><div>118.71<span>0</span></div></td><td class="Electron Poor"><span>2<br>8<br>18<br>18<br>4</span></td>
+  <td class="Element Poor"><strong>51</strong> <big>Sb</big> <em>Antimony</em><div>121.76<span>0</span></div></td><td class="Electron Poor DividerR"><span>2<br>8<br>18<br>18<br>5</span></td>
+  <td class="Element Nonmetal DividerB"><strong>52</strong> <big>Te</big> <em>Tellurium</em><div>127.60</div></td><td class="Electron Nonmetal DividerB"><span>2<br>8<br>18<br>18<br>6</span></td>
+  <td class="Element Nonmetal"><strong>53</strong> <big>I</big> <em>Iodine</em><div>126.90<span>447</span></div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>18<br>7</span></td>
+  <td class="Element Noble"><strong>54</strong> <big>Xe</big> <em>Xenon</em><div>131.29<span>3</span></div></td><td class="Electron Noble"><span>2<br>8<br>18<br>18<br>8</span></td>
+
+  <td class="Shells"><span>K<br>L<br>M<br>N<br>O</span></td>
+
+ </tr>
+ <tr>
+  <th>6</th>
+
+  <td class="Element Alkali"><strong>55</strong> <big>Cs</big> <em>Cesium</em><div>132.90<span>54519</span></div></td><td class="Electron Alkali"><span>2<br>8<br>18<br>18<br>8<br>1</span></td>
+  <td class="Element Alkaline"><strong>56</strong> <big>Ba</big> <em>Barium</em><div>137.32<span>7</span></div></td><td class="Electron Alkaline"><span>2<br>8<br>18<br>18<br>8<br>2</span></td>
+
+  <td class="InnerBorder BlueLeft BlueTop BlueRight" colspan=2>57&ndash;71</td>
+
+  <td class="Element Transition"><strong>72</strong> <big>Hf</big> <em>Hafnium</em><div>178.49</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>10<br>2</span></td>
+  <td class="Element Transition"><strong>73</strong> <big>Ta</big> <em>Tantalum</em><div>180.94<span>788</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>11<br>2</span></td>
+  <td class="Element Transition"><strong>74</strong> <big>W</big> <em>Tungsten</em><div>183.84</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>12<br>2</span></td>
+  <td class="Element Transition"><strong>75</strong> <big>Re</big> <em>Rhenium</em><div>186.20<span>7</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>13<br>2</span></td>
+  <td class="Element Transition"><strong>76</strong> <big>Os</big> <em>Osmium</em><div>190.23</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>14<br>2</span></td>
+  <td class="Element Transition"><strong>77</strong> <big>Ir</big> <em>Iridium</em><div>192.21<span>7</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>15<br>2</span></td>
+  <td class="Element Transition"><strong>78</strong> <big>Pt</big> <em>Platinum</em><div>195.08<span>4</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>17<br>1</span></td>
+  <td class="Element Transition"><strong>79</strong> <big>Au</big> <em>Gold</em><div>196.96<span>6569</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>18<br>1</span></td>
+  <td class="Element Transition"><strong>80</strong> <big>Hg</big> <em>Mercury</em><div>200.59</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>18<br>2</span></td>
+  <td class="Element Poor"><strong>81</strong> <big>Tl</big> <em>Thallium</em><div>204.38<span>33</span></div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>18<br>3</span></td>
+  <td class="Element Poor"><strong>82</strong> <big>Pb</big> <em>Lead</em><div>207.2</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>18<br>4</span></td>
+  <td class="Element Poor"><strong>83</strong> <big>Bi</big> <em>Bismuth</em><div>208.98<span>040</span></div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>18<br>5</span></td>
+  <td class="Element Poor"><strong>84</strong> <big>Po</big> <em>Polonium</em><div>(208.98<span>24</span>)</div></td><td class="Electron Poor DividerR"><span>2<br>8<br>18<br>32<br>18<br>6</span></td>
+  <td class="Element Nonmetal"><strong>85</strong> <big>At</big> <em>Astatine</em><div>(209.98<span>71</span>)</div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>32<br>18<br>7</span></td>
+  <td class="Element Noble"><strong>86</strong> <big>Rn</big> <em>Radon</em><div>(222.01<span>76</span>)</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>32<br>18<br>8</span></td>
+
+  <td class="Shells"><span>K<br>L<br>M<br>N<br>O<br>P</span></td>
+
+ </tr>
+ <tr>
+  <th>7</th>
+
+  <td class="Element Alkali"><strong>87</strong> <big>Fr</big> <em>Francium</em><div>(223)</div></td><td class="Electron Alkali"><span>2<br>8<br>18<br>32<br>18<br>8<br>1</span></td>
+  <td class="Element Alkaline"><strong>88</strong> <big>Ra</big> <em>Radium</em><div>(226)</div></td><td class="Electron Alkaline"><span>2<br>8<br>18<br>32<br>18<br>8<br>2</span></td>
+
+  <td class="InnerBorder BlueLeft BlueRight" colspan=2>89&ndash;103</td>
+
+  <td class="Element Transition"><strong>104</strong> <big>Rf</big> <em class="Long">Rutherfordium</em><div>(261)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>10<br>2</span></td>
+  <td class="Element Transition"><strong>105</strong> <big>Db</big> <em>Dubnium</em><div>(262)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>11<br>2</span></td>
+  <td class="Element Transition"><strong>106</strong> <big>Sg</big> <em>Seaborgium</em><div>(266)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>12<br>2</span></td>
+  <td class="Element Transition"><strong>107</strong> <big>Bh</big> <em>Bohrium</em><div>(264)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>13<br>2</span></td>
+  <td class="Element Transition"><strong>108</strong> <big>Hs</big> <em>Hassium</em><div>(277)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>14<br>2</span></td>
+  <td class="Element Transition"><strong>109</strong> <big>Mt</big> <em>Meitnerium</em><div>(268)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>15<br>2</span></td>
+  <td class="Element Transition"><strong>110</strong> <big>Ds</big> <em class="Long">Darmstadtium</em><div>(271)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>17<br>1</span></td>
+  <td class="Element Transition"><strong>111</strong> <big>Rg</big> <em class="Long">Roentgenium</em><div>(272)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>18<br>1</span></td>
+  <td class="Element Transition"><strong>112</strong> <big>Uub</big> <em>Ununbium</em><div>(285)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>18<br>2</span></td>
+  <td class="Element Poor"><strong>113</strong> <big>Uut</big> <em>Ununtrium</em><div>(284)</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>32<br>18<br>3</span></td>
+  <td class="Element Poor"><strong>114</strong> <big>Uuq</big> <em class="Long">Ununquadium</em><div>(289)</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>32<br>18<br>4</span></td>
+  <td class="Element Poor"><strong>115</strong> <big>Uup</big> <em class="Long">Ununpentium</em><div>(288)</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>32<br>18<br>5</span></td>
+  <td class="Element Poor"><strong>116</strong> <big>Uuh</big> <em class="Long">Ununhexium</em><div>(292)</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>32<br>18<br>6</span></td>
+  <td class="Element Undiscovered"><strong>117</strong> <big>Uus</big> <em class="Long">Ununseptium</em><div>&nbsp;</div></td><td class="Electron Undiscovered"><span></span></td>
+  <td class="Element Noble"><strong>118</strong> <big>Uuo</big> <em>Ununoctium</em><div>(294)</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>32<br>32<br>18<br>8</span></td>
+
+  <td class="Shells"><span>K<br>L<br>M<br>N<br>O<br>P<br>Q</span></td>
+
+ </tr>
+ <tr style="background-color: white;">
+
+  <td colspan=5 rowspan=2 style="text-align: center;"><label for="SearchInput">Search</label><br><input id="SearchInput" type="text" style="width: 10ex;" value="# or Name"></td>
+  <td class="InnerBorder BlueLeft BlueRight" colspan=2></td>
+  <td id="Stable" colspan=30>For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
+
+ </tr>
+ <tr>
+
+  <td class="InnerBorder BlueLeft" colspan=2></td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan=30>Design and Interface Copyright &copy; 1997 <a href="about.html">Michael Dayah</a><span id="Print"> (michael@dayah.com). http://www.dayah.com/periodic/</span>. Last Updated: June 02, 2007</td>
+  <td class="InnerBorder BlueTop BlueRight"></td>
+
+ </tr>
+ <tr>
+
+  <td id="Note" colspan=5 rowspan=2><div>The subgroup numbers 1-18 were adopted in 1984 by the International Union of Pure and Applied Chemistry. The names of elements 112-118 are the Latin equivalents of those numbers.</div></td>
+  <td class="InnerBorder BlueLeft BlueRight BlueBottom" colspan=2 rowspan=2></td>
+
+  <td class="Element Lanthanide"><strong>57</strong> <big>La</big> <em>Lanthanum</em><div>138.90<span>547</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>18<br>9<br>2</span></td>
+  <td class="Element Lanthanide"><strong>58</strong> <big>Ce</big> <em>Cerium</em><div>140.11<span>6</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>19<br>9<br>2</span></td>
+  <td class="Element Lanthanide"><strong>59</strong> <big>Pr</big> <em class="Long">Praseodymium</em><div>140.90<span>765</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>21<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>60</strong> <big>Nd</big> <em>Neodymium</em><div>144.24<span>2</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>22<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>61</strong> <big>Pm</big> <em>Promethium</em><div>(145)</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>23<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>62</strong> <big>Sm</big> <em>Samarium</em><div>150.36</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>24<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>63</strong> <big>Eu</big> <em>Europium</em><div>151.96<span>4</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>25<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>64</strong> <big>Gd</big> <em>Gadolinium</em><div>157.25</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>25<br>9<br>2</span></td>
+  <td class="Element Lanthanide"><strong>65</strong> <big>Tb</big> <em>Terbium</em><div>158.92<span>535</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>27<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>66</strong> <big>Dy</big> <em>Dysprosium</em><div>162.50<span>0</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>28<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>67</strong> <big>Ho</big> <em>Holmium</em><div>164.93<span>032</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>29<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>68</strong> <big>Er</big> <em>Erbium</em><div>167.25<span>9</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>30<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>69</strong> <big>Tm</big> <em>Thulium</em><div>168.93<span>421</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>31<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>70</strong> <big>Yb</big> <em>Ytterbium</em><div>173.04</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>32<br>8<br>2</span></td>
+  <td class="Element Lanthanide"><strong>71</strong> <big>Lu</big> <em>Lutetium</em><div>174.96<span>7</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>32<br>9<br>2</span></td>
+
+  <td rowspan=2 class="InnerBorder BlueRight BlueBottom BlueLeft"></td>
+
+ </tr>
+ <tr>
+
+  <td class="Element Actinide"><strong>89</strong> <big>Ac</big> <em>Actinium</em><div>(227)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>18<br>9<br>2</span></td>
+  <td class="Element Actinide"><strong>90</strong> <big>Th</big> <em>Thorium</em><div>232.03<span>806</span></div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>18<br>10<br>2</span></td>
+  <td class="Element Actinide"><strong>91</strong> <big>Pa</big> <em class="Long">Protactinium</em><div>231.03<span>588</span></div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>20<br>9<br>2</span></td>
+  <td class="Element Actinide"><strong>92</strong> <big>U</big> <em>Uranium</em><div>238.02<span>891</span></div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>21<br>9<br>2</span></td>
+  <td class="Element Actinide"><strong>93</strong> <big>Np</big> <em>Neptunium</em><div>(237)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>22<br>9<br>2</span></td>
+  <td class="Element Actinide"><strong>94</strong> <big>Pu</big> <em>Plutonium</em><div>(244)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>24<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>95</strong> <big>Am</big> <em>Americium</em><div>(243)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>25<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>96</strong> <big>Cm</big> <em>Curium</em><div>(247)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>25<br>9<br>2</span></td>
+  <td class="Element Actinide"><strong>97</strong> <big>Bk</big> <em>Berkelium</em><div>(247)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>27<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>98</strong> <big>Cf</big> <em>Californium</em><div>(251)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>28<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>99</strong> <big>Es</big> <em>Einsteinium</em><div>(252)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>29<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>100</strong> <big>Fm</big> <em>Fermium</em><div>(257)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>30<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>101</strong> <big>Md</big> <em class="Long">Mendelevium</em><div>(258)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>31<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>102</strong> <big>No</big> <em>Nobelium</em><div>(259)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>32<br>8<br>2</span></td>
+  <td class="Element Actinide"><strong>103</strong> <big>Lr</big> <em class="Long">Lawrencium</em><div>(262)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>32<br>9<br>2</span></td>
+
+ </tr>
+ <!--[if gte IE 5.5]><![if lt IE 7]>
+  <tr><td></td></tr>
+ <![endif]><![endif]-->
+
+ </tbody>
+</table>
+<!--
   <div id="Ad">
 <script type="text/javascript">google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.dayah.com/periodic/collapse.html"; google_ad_width = 728; google_ad_height = 90; google_ad_format = "728x90_as"; google_ad_type = "text_image"; google_color_border = "FFFFFF"; google_color_bg = "FFFFFF"; google_color_link = "0000FF"; google_color_url = "000000"; google_color_text = "000000"; google_ad_channel = "3111509862";</script>
 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
   </div>
-
-  <table id="Main" summary="printable periodic table" cellspacing=0>
-   <tr>
-
-    <td colspan=2 rowspan=2></td>
-
-    <td class="NewGroup" colspan=2>1</td>
-
-    <td class="RowSpace" rowspan=18></td>
-
-    <td class="NewGroup" colspan=3 style="text-align: left;">New</td>
-
-    <td colspan=29 rowspan=7>
-     <table id="Key" cellspacing=10>
-      <col width="5%">
-      <col width="33%">
-      <col width="5%">
-      <col width="34%">
-      <col width="5%">
-      <col width="18%">
-      <tr>
-
-       <th class="Alkali"></th>
-       <td>Alkali metals</td>
-
-       <th class="Actinide"></th>
-       <td>Actinide series</td>
-
-       <th class="Solid">C</th>
-       <td class="Solid">Solid</td>
-
-      </tr>
-      <tr>
-
-       <th class="Alkaline"></th>
-       <td>Alkaline earth metals</td>
-
-       <th class="Poor"></th>
-       <td>Poor metals</td>
-
-       <th class="Liquid">Br</th>
-       <td class="Liquid">Liquid</td>
-
-      </tr>
-      <tr>
-
-       <th class="Transition"></th>
-       <td>Transition metals</td>
-
-       <th class="Nonmetal"></th>
-       <td>Nonmetals</td>
-
-       <th class="Gas">H</th>
-       <td class="Gas">Gas</td>
-
-      </tr>
-      <tr>
-
-       <th class="Lanthanide"></th>
-       <td>Lanthanide series</td>
-
-       <th class="Noble"></th>
-       <td>Noble gases</td>
-
-       <th class="Synthetic">Tc</th>
-       <td class="Synthetic">Synthetic</td>
-
-      </tr>
-     </table>
-     </td>
-
-    <td class="RowSpace" rowspan=25></td>
-
-    <td colspan=15 rowspan=2></td>
-
-    <td class="NewGroup" colspan=2>18</td>
-
-   </tr>
-   <tr class="OldGroup">
-
-    <td colspan=2>IA</td>
-
-    <td colspan=3 style="text-align: left;">Original</td>
-
-    <td colspan=2>VIIIA</td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace"></td>
-
-   </tr>
-   <tr>
-
-    <th rowspan=2>1</th>
-    <td class="RowSpace" rowspan=15></td>
-
-    <td class="Hydrogen" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>1</strong> <big class="Gas">H</big> <em>Hydrogen</em> <div>1.0079<span>4</span></div></td>
-    <td class="Hydrogen Electron" rowspan=2><small>1</small></td>
-
-    <td class="NewGroup" colspan=2>2</td>
-    <td class="RowSpace" rowspan=11></td>
-
-    <td class="NewGroup" colspan=2>13</td>
-    <td class="RowSpace" rowspan=5></td>
-
-    <td class="NewGroup" colspan=2>14</td>
-    <td class="RowSpace" rowspan=7></td>
-
-    <td class="NewGroup" colspan=2>15</td>
-    <td class="RowSpace" rowspan=9></td>
-
-    <td class="NewGroup" colspan=2>16</td>
-    <td class="RowSpace" rowspan=11></td>
-
-    <td class="NewGroup" colspan=2>17</td>
-    <td class="RowSpace" rowspan=22></td>
-
-    <td class="Noble" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>2</strong> <big class="Gas">He</big> <em>Helium</em> <div>4.0026<span>02</span></div></td>
-    <td class="Noble Electron" rowspan=2><small>2</small></td>
-
-    <td class="RowSpace" rowspan=15></td>
-
-    <td class="Electron Shells" rowspan=2><small>K</small></td>
-
-   </tr>
-   <tr class="OldGroup">
-
-    <td colspan=2>IIA</td>
-    <td colspan=2>IIIA</td>
-    <td colspan=2>IVA</td>
-    <td colspan=2>VA</td>
-    <td colspan=2>VIA</td>
-    <td colspan=2>VIIA</td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace"></td>
-
-   </tr>
-   <tr>
-
-    <th>2</th>
-
-    <td class="Alkali" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>3</strong> <big>Li</big> <em>Lithium</em> <div>6.941</div></td>
-    <td class="Alkali Electron"><small>2<br>1</small></td>
-
-    <td class="Alkaline" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>4</strong> <big>Be</big> <em>Beryllium</em> <div>9.0121<span>82</span></div></td>
-    <td class="Alkaline Electron"><small>2<br>2</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>5</strong> <big>B</big> <em>Boron</em> <div>10.811</div></td>
-    <td class="Nonmetal Electron"><small>2<br>3</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>6</strong> <big>C</big> <em>Carbon</em> <div>12.010<span>7</span></div></td>
-    <td class="Nonmetal Electron"><small>2<br>4</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>7</strong> <big class="Gas">N</big> <em>Nitrogen</em> <div>14.006<span>7</span></div></td>
-    <td class="Nonmetal Electron"><small>2<br>5</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>8</strong> <big class="Gas">O</big> <em>Oxygen</em> <div>15.999<span>4</span></div></td>
-    <td class="Nonmetal Electron"><small>2<br>6</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>9</strong> <big class="Gas">F</big> <em>Fluorine</em> <div>18.998<span>4032</span></div></td>
-    <td class="Nonmetal Electron"><small>2<br>7</small></td>
-
-    <td class="Noble" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>10</strong> <big class="Gas">Ne</big> <em>Neon</em> <div>20.179<span>7</span></div></td>
-    <td class="Noble Electron"><small>2<br>8</small></td>
-
-    <td class="Electron Shells"><small>K<br>L</small></td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace" colspan=37></td>
-    <td class="Divider RoundTR" colspan=3></td>
-
-   </tr>
-   <tr>
-
-    <th rowspan=2>3</th>
-
-    <td class="Alkali" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>11</strong> <big>Na</big> <em>Sodium</em> <div>22.989<span>76928</span></div></td>
-    <td class="Alkali Electron" rowspan=2><small>2<br>8<br>1</small></td>
-
-    <td class="Alkaline" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>12</strong> <big>Mg</big> <em>Magnesium</em> <div>24.305<span>0</span></div></td>
-    <td class="Alkaline Electron" rowspan=2><small>2<br>8<br>2</small></td>
-
-    <td class="NewGroup" colspan=2>3</td>
-    <td class="RowSpace" rowspan=6></td>
-
-    <td class="NewGroup" colspan=2>4</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>5</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>6</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>7</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>8</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>9</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>10</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>11</td>
-    <td class="RowSpace" rowspan=17></td>
-
-    <td class="NewGroup" colspan=2>12</td>
-
-    <td class="Poor" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>13</strong> <big>Al</big> <em>Aluminum</em> <div>26.981<span>5386</span></div></td>
-    <td class="Poor Electron" rowspan=2><small>2<br>8<br>3</small></td>
-
-    <td class="Divider RoundBL" rowspan=3></td>
-
-    <td class="Nonmetal" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>14</strong> <big>Si</big> <em>Silicon</em> <div>28.085<span>5</span></div></td>
-    <td class="Nonmetal Electron" rowspan=2><small>2<br>8<br>4</small></td>
-
-    <td class="Nonmetal" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>15</strong> <big>P</big> <em>Phosphorus</em> <div>30.973<span>762</span></div></td>
-    <td class="Nonmetal Electron" rowspan=2><small>2<br>8<br>5</small></td>
-
-    <td class="Nonmetal" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>16</strong> <big>S</big> <em>Sulfur</em> <div>32.065</div></td>
-    <td class="Nonmetal Electron" rowspan=2><small>2<br>8<br>6</small></td>
-
-    <td class="Nonmetal" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>17</strong> <big class="Gas">Cl</big> <em>Chlorine</em> <div>35.453</div></td>
-    <td class="Nonmetal Electron" rowspan=2><small>2<br>8<br>7</small></td>
-
-    <td class="Noble" rowspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>18</strong> <big class="Gas">Ar</big> <em>Argon</em> <div>39.948</div></td>
-    <td class="Noble Electron" rowspan=2><small>2<br>8<br>8</small></td>
-
-    <td class="Electron Shells" rowspan=2><small>K<br>L<br>M</small></td>
-
-   </tr>
-   <tr class="OldGroup">
-
-    <td colspan=2>IIIB</td>
-    <td colspan=2>IVB</td>
-    <td colspan=2>VB</td>
-    <td colspan=2>VIB</td>
-    <td colspan=2>VIIB</td>
-    <td colspan=2 style="text-align: right;"><HR></td>
-    <td colspan=2>VIIIB</td>
-    <td colspan=2 style="text-align: left;"><HR></td>
-    <td colspan=2>IB</td>
-    <td colspan=2>IIB</td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace" colspan=40></td>
-    <td class="Divider RoundTR" colspan=3></td>
-
-   </tr>
-   <tr>
-
-    <th>4</th>
-
-    <td class="Alkali" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>19</strong> <big>K</big> <em>Potassium</em> <div>39.098<span>3</span></div></td>
-    <td class="Alkali Electron"><small>2<br>8<br>8<br>1</small></td>
-
-    <td class="Alkaline" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>20</strong> <big>Ca</big> <em>Calcium</em> <div>40.078</div></td>
-    <td class="Alkaline Electron"><small>2<br>8<br>8<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>21</strong> <big>Sc</big> <em>Scandium</em> <div>44.955<span>912</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>9<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>22</strong> <big>Ti</big> <em>Titanium</em> <div>47.867</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>10<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>23</strong> <big>V</big> <em>Vanadium</em> <div>50.941<span>5</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>11<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>24</strong> <big>Cr</big> <em>Chromium</em> <div>51.996<span>1</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>13<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>25</strong> <big>Mn</big> <em>Manganese</em> <div>54.938<span>045</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>13<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>26</strong> <big>Fe</big> <em>Iron</em> <div>55.845</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>14<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>27</strong> <big>Co</big> <em>Cobalt</em> <div>58.933<span>195</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>15<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>28</strong> <big>Ni</big> <em>Nickel</em> <div>58.693<span>4</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>16<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>29</strong> <big>Cu</big> <em>Copper</em> <div>63.546</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>30</strong> <big>Zn</big> <em>Zinc</em> <div>65.409</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>2</small></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>31</strong> <big>Ga</big> <em>Gallium</em> <div>69.723</div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>3</small></td>
-
-    <td rowspan=14></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>32</strong> <big>Ge</big> <em>Germanium</em> <div>72.64</div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>4</small></td>
-
-    <td class="Divider RoundBL" rowspan=2></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>33</strong> <big>As</big> <em>Arsenic</em> <div>74.921<span>60</span></div></td>
-    <td class="Nonmetal Electron"><small>2<br>8<br>18<br>5</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>34</strong> <big>Se</big> <em>Selenium</em> <div>78.96</div></td>
-    <td class="Nonmetal Electron"><small>2<br>8<br>18<br>6</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>35</strong> <big class="Liquid">Br</big> <em>Bromine</em> <div>79.904</div></td>
-    <td class="Nonmetal Electron"><small>2<br>8<br>18<br>7</small></td>
-
-    <td class="Noble" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>36</strong> <big class="Gas">Kr</big> <em>Krypton</em> <div>83.798</div></td>
-    <td class="Noble Electron"><small>2<br>8<br>18<br>8</small></td>
-
-    <td class="Electron Shells"><small>K<br>L<br>M<br>N</small></td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace" colspan=43></td>
-    <td class="Divider RoundTR" colspan=3></td>
-
-   </tr>
-   <tr>
-
-    <th>5</th>
-
-    <td class="Alkali" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>37</strong> <big>Rb</big> <em>Rubidium</em> <div>85.467<span>8</span></div></td>
-    <td class="Alkali Electron"><small>2<br>8<br>18<br>8<br>1</small></td>
-
-    <td class="Alkaline" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>38</strong> <big>Sr</big> <em>Strontium</em> <div>87.62</div></td>
-    <td class="Alkaline Electron"><small>2<br>8<br>18<br>8<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>39</strong> <big>Y</big> <em>Yttrium</em> <div>88.905<span>85</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>9<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>40</strong> <big>Zr</big> <em>Zirconium</em> <div>91.224</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>10<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>41</strong> <big>Nb</big> <em>Niobium</em> <div>92.906<span>38</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>12<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>42</strong> <big>Mo</big> <em>Molybdenum</em> <div>95.94</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>13<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>43</strong> <big class="Synthetic">Tc</big> <em>Technetium</em> <div>(97.907<span>2</span>)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>13<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>44</strong> <big>Ru</big> <em>Ruthenium</em> <div>101.07</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>15<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>45</strong> <big>Rh</big> <em>Rhodium</em> <div>102.90<span>550</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>16<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>46</strong> <big>Pd</big> <em>Palladium</em> <div>106.42</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>18<br>0</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>47</strong> <big>Ag</big> <em>Silver</em> <div>107.86<span>82</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>18<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>48</strong> <big>Cd</big> <em>Cadmium</em> <div>112.41<span>1</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>18<br>2</small></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>49</strong> <big>In</big> <em>Indium</em> <div>114.81<span>8</span></div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>18<br>3</small></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>50</strong> <big>Sn</big> <em>Tin</em> <div>118.71<span>0</span></div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>18<br>4</small></td>
-
-    <td rowspan=12></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>51</strong> <big>Sb</big> <em>Antimony</em> <div>121.76<span>0</span></div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>18<br>5</small></td>
-
-    <td class="Divider RoundBL" rowspan=2></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>52</strong> <big>Te</big> <em>Tellurium</em> <div>127.60</div></td>
-    <td class="Nonmetal Electron"><small>2<br>8<br>18<br>18<br>6</small></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>53</strong> <big>I</big> <em>Iodine</em> <div>126.90<span>447</span></div></td>
-    <td class="Nonmetal Electron"><small>2<br>8<br>18<br>18<br>7</small></td>
-
-    <td class="Noble" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>54</strong> <big class="Gas">Xe</big> <em>Xenon</em> <div>131.29<span>3</span></div></td>
-    <td class="Noble Electron"><small>2<br>8<br>18<br>18<br>8</small></td>
-
-    <td class="Electron Shells"><small>K<br>L<br>M<br>N<br>O</small></td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace" colspan=7></td>
-    <td class="OuterBorder RoundTL RoundTR" colspan=4></td>
-    <td colspan=35></td>
-    <td class="Divider RoundTR" colspan=3></td>
-
-   </tr>
-   <tr>
-
-    <th>6</th>
-
-    <td class="Alkali" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>55</strong> <big>Cs</big> <em>Cesium</em> <div>132.90<span>54519</span></div></td>
-    <td class="Alkali Electron"><small>2<br>8<br>18<br>18<br>8<br>1</small></td>
-
-    <td class="Alkaline" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>56</strong> <big>Ba</big> <em>Barium</em> <div>137.32<span>7</span></div></td>
-    <td class="Alkaline Electron"><small>2<br>8<br>18<br>18<br>8<br>2</small></td>
-
-    <td class="OuterBorder" rowspan=10></td>
-    <td class="InnerBorder Removed" colspan=2>57&ndash;71</td>
-    <td class="OuterBorder" rowspan=4></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>72</strong> <big>Hf</big> <em>Hafnium</em> <div>178.49</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>10<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>73</strong> <big>Ta</big> <em>Tantalum</em> <div>180.94<span>788</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>11<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>74</strong> <big>W</big> <em>Tungsten</em> <div>183.84</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>12<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>75</strong> <big>Re</big> <em>Rhenium</em> <div>186.20<span>7</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>13<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>76</strong> <big>Os</big> <em>Osmium</em> <div>190.23</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>14<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>77</strong> <big>Ir</big> <em>Iridium</em> <div>192.21<span>7</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>15<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>78</strong> <big>Pt</big> <em>Platinum</em> <div>195.08<span>4</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>17<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>79</strong> <big>Au</big> <em>Gold</em> <div>196.96<span>6569</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>18<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>80</strong> <big class="Liquid">Hg</big> <em>Mercury</em> <div>200.59</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>18<br>2</small></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>81</strong> <big>Tl</big> <em>Thallium</em> <div>204.38<span>33</span></div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>32<br>18<br>3</small></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>82</strong> <big>Pb</big> <em>Lead</em> <div>207.2</div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>32<br>18<br>4</small></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>83</strong> <big>Bi</big> <em>Bismuth</em> <div>208.98<span>040</span></div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>32<br>18<br>5</small></td>
-
-    <td rowspan=10></td>
-
-    <td class="Poor" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>84</strong> <big>Po</big> <em>Polonium</em> <div>(208.98<span>24</span>)</div></td>
-    <td class="Poor Electron"><small>2<br>8<br>18<br>32<br>18<br>6</small></td>
-
-    <td class="Divider"></td>
-
-    <td class="Nonmetal" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>85</strong> <big>At</big> <em>Astatine</em> <div>(209.98<span>71</span>)</div></td>
-    <td class="Nonmetal Electron"><small>2<br>8<br>18<br>32<br>18<br>7</small></td>
-
-    <td class="Noble" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>86</strong> <big class="Gas">Rn</big> <em>Radon</em> <div>(222.01<span>76</span>)</div></td>
-    <td class="Noble Electron"><small>2<br>8<br>18<br>32<br>18<br>8</small></td>
-
-    <td class="Electron Shells"><small>K<br>L<br>M<br>N<br>O<br>P</small></td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace" colspan=7></td>
-    <td class="InnerBorder" colspan=2></td>
-    <td colspan=38></td>
-
-   </tr>
-   <tr>
-
-    <th>7</th>
-
-    <td class="Alkali" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>87</strong> <big>Fr</big> <em>Francium</em> <div>(223)</div></td>
-    <td class="Alkali Electron"><small>2<br>8<br>18<br>32<br>18<br>8<br>1</small></td>
-
-    <td class="Alkaline" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>88</strong> <big>Ra</big> <em>Radium</em> <div>(226)</div></td>
-    <td class="Alkaline Electron"><small>2<br>8<br>18<br>32<br>18<br>8<br>2</small></td>
-
-    <td class="InnerBorder Removed" colspan=2>89&ndash;103</td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>104</strong> <big class="Synthetic">Rf</big> <em class="Long">Rutherfordium</em> <div>(261)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>10<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>105</strong> <big class="Synthetic">Db</big> <em>Dubnium</em> <div>(262)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>11<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>106</strong> <big class="Synthetic">Sg</big> <em>Seaborgium</em> <div>(266)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>12<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>107</strong> <big class="Synthetic">Bh</big> <em>Bohrium</em> <div>(264)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>13<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>108</strong> <big class="Synthetic">Hs</big> <em>Hassium</em> <div>(277)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>14<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>109</strong> <big class="Synthetic">Mt</big> <em>Meitnerium</em> <div>(268)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>15<br>2</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>110</strong> <big class="Synthetic">Ds</big> <em class="Long">Darmstadtium</em> <div>(271)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>17<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>111</strong> <big class="Synthetic">Rg</big> <em class="Long">Roentgenium</em> <div>(272)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>18<br>1</small></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>112</strong> <big class="Synthetic">Uub</big> <em>Ununbium</em> <div>(285)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>32<br>18<br>2</small></td>
-
-    <td class="Poor" colspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 1);" onMouseOut="opacity(this, 100, 1);"><strong>113</strong> <big class="Synthetic">Uut</big> <em>Ununtrium</em> <div>(284)</div></td>
-
-    <td class="Poor" colspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 1);" onMouseOut="opacity(this, 100, 1);"><strong>114</strong> <big class="Synthetic">Uuq</big> <em class="Long">Ununquadium</em> <div>(289)</div></td>
-
-    <td class="Poor" colspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 1);" onMouseOut="opacity(this, 100, 1);"><strong>115</strong> <big class="Synthetic">Uup</big> <em>Ununpentium</em> <div>(288)</div></td>
-
-    <td class="Poor" colspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 1);" onMouseOut="opacity(this, 100, 1);"><strong>116</strong> <big class="Synthetic">Uuh</big> <em>Ununhexium</em> <div>(292)</div></td>
-
-    <td rowspan=8></td>
-
-    <td class="" colspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 1);" onMouseOut="opacity(this, 100, 1);"><strong>117</strong> <big class="Undiscovered">Uus</big> <em>Ununseptium</em> <div>&nbsp;</div></td>
-
-    <td class="Noble" colspan=2 onClick="element(this);" onMouseOver="opacity(this, 50, 1);" onMouseOut="opacity(this, 100, 1);"><strong>118</strong> <big class="Gas">Uuo</big> <em>Ununoctium</em> <div>(294)</div></td>
-
-    <td class="Electron Shells"><small>K<br>L<br>M<br>N<br>O<br>P<br>Q</small></td>
-
-   </tr>
-   <tr>
-
-    <td colspan=7 rowspan=4></td>
-    <td class="InnerBorder" colspan=2 rowspan=7></td>
-    <td></td>
-    <td id="Stable" colspan=43>For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace OuterBorder RoundBL RoundTR" colspan=48></td>
-
-   </tr>
-   <tr>
-
-    <td class="InnerBorder" colspan=47 id="Copyright">Design Copyright &copy; 1997 <a href="mailto:michael@dayah.com">Michael Dayah</a><span id="Print"> (michael@dayah.com). http://www.dayah.com/periodic/</span><span class="Web">. Last Modified: April 28, 2007</span></td>
-    <td class="RowSpace OuterBorder" rowspan=5></td>
-
-   </tr>
-   <tr>
-
-    <td class="OuterBorder RoundTL RoundTR" colspan=46></td>
-    <td class="RowSpace InnerBorder"></td>
-
-   </tr>
-   <tr>
-
-    <td colspan=7 rowspan=3><div id="Note">The subgroup numbers 1-18 were adopted in 1984 by the International Union of Pure and Applied Chemistry. The names of elements 112-118 are the Latin equivalents of those numbers.</div></td>
-
-    <td class="OuterBorder" rowspan=3></td>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>57</strong> <big>La</big> <em>Lanthanum</em> <div>138.90<span>547</span></div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>18<br>9<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>58</strong> <big>Ce</big> <em>Cerium</em> <div>140.11<span>6</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>19<br>9<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>59</strong> <big>Pr</big> <em class="Long">Praseodymium</em> <div>140.90<span>765</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>21<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>60</strong> <big>Nd</big> <em>Neodymium</em> <div>144.24<span>2</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>22<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>61</strong> <big class="Synthetic">Pm</big> <em>Promethium</em> <div>(145)</div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>23<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>62</strong> <big>Sm</big> <em>Samarium</em> <div>150.36</div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>24<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>63</strong> <big>Eu</big> <em>Europium</em> <div>151.96<span>4</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>25<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>64</strong> <big>Gd</big> <em>Gadolinium</em> <div>157.25</div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>25<br>9<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>65</strong> <big>Tb</big> <em>Terbium</em> <div>158.92<span>535</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>27<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>66</strong> <big>Dy</big> <em>Dysprosium</em> <div>162.50<span>0</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>28<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>67</strong> <big>Ho</big> <em>Holmium</em> <div>164.93<span>032</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>29<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>68</strong> <big>Er</big> <em>Erbium</em> <div>167.25<span>9</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>30<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>69</strong> <big>Tm</big> <em>Thulium</em> <div>168.93<span>421</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>31<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>70</strong> <big>Yb</big> <em>Ytterbium</em> <div>173.04</div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>32<br>8<br>2</small></td>
-
-    <td class="Lanthanide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>71</strong> <big>Lu</big> <em>Lutetium</em> <div>174.96<span>7</span></div></td>
-    <td class="Lanthanide Electron"><small>2<br>8<br>18<br>32<br>9<br>2</small></td>
-
-    <td class="OuterBorder" rowspan=3></td>
-    <td class="InnerBorder" rowspan=3></td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace"></td>
-
-   </tr>
-   <tr>
-
-    <td class="Transition" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>89</strong> <big>Ac</big> <em>Actinium</em> <div>(227)</div></td>
-    <td class="Transition Electron"><small>2<br>8<br>18<br>32<br>18<br>9<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>90</strong> <big>Th</big> <em>Thorium</em> <div>232.03<span>806</span></div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>18<br>10<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>91</strong> <big>Pa</big> <em>Protactinium</em> <div>231.03<span>588</span></div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>20<br>9<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>92</strong> <big>U</big> <em>Uranium</em> <div>238.02<span>891</span></div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>21<br>9<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>93</strong> <big class="Synthetic">Np</big> <em>Neptunium</em> <div>(237)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>22<br>9<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>94</strong> <big class="Synthetic">Pu</big> <em>Plutonium</em> <div>(244)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>24<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>95</strong> <big class="Synthetic">Am</big> <em>Americium</em> <div>(243)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>25<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>96</strong> <big class="Synthetic">Cm</big> <em>Curium</em> <div>(247)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>25<br>9<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>97</strong> <big class="Synthetic">Bk</big> <em>Berkelium</em> <div>(247)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>27<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>98</strong> <big class="Synthetic">Cf</big> <em>Californium</em> <div>(251)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>28<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>99</strong> <big class="Synthetic">Es</big> <em>Einsteinium</em> <div>(252)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>29<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>100</strong> <big class="Synthetic">Fm</big> <em>Fermium</em> <div>(257)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>30<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>101</strong> <big class="Synthetic">Md</big> <em class="Long">Mendelevium</em> <div>(258)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>31<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>102</strong> <big class="Synthetic">No</big> <em>Nobelium</em> <div>(259)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>32<br>8<br>2</small></td>
-
-    <td class="Actinide" onClick="element(this);" onMouseOver="opacity(this, 50, 2);" onMouseOut="opacity(this, 100, 2);"><strong>103</strong> <big class="Synthetic">Lr</big> <em>Lawrencium</em> <div>(262)</div></td>
-    <td class="Actinide Electron"><small>2<br>8<br>18<br>32<br>32<br>9<br>2</small></td>
-
-   </tr>
-   <tr>
-
-    <td class="RowSpace" colspan=7></td>
-    <td class="OuterBorder RoundBL RoundBR" colspan=4></td>
-    <td colspan=44></td>
-    <td class="OuterBorder RoundBL RoundBR" colspan=3></td>
-
-   </tr>
-  </table>
-
-  <div id="ElementBox">
-   <h1><table><tr><td id="Title"><span id="ElementName">Loading</span> - Periodic Table - <a id="FullArticle" href="http://en.wikipedia.org/">Open Wikipedia article in full screen</a></td><td id="Close" onClick="destroy(this);">&times;</td></tr></table></h1>
-   <iframe id="ElementFrame" name="ElementFrame" frameborder=0 security="restricted"></iframe>
+-->
+  <div id="WikiBox">
+   <h1><table><tr><td id="Title"><a href="http://en.wikipedia.org/" id="ElementName">Loading</a> - Periodic Table</td><td id="Close" onClick="destroy();">&times;</td></tr></table></h1>
+   <iframe id="WikiFrame" name="WikiFrame" frameborder=0 security="restricted"></iframe>
   </div>
 
-<!--  <p>Other periodic tables: <a href="http://www.webelements.com/">WebElements</a>, <a href="http://periodic.lanl.gov/">Los Alamos</a>, <a href="http://www.chemsoc.org/viselements/">Visual Elements</a>, <a href="http://chemlab.pc.maricopa.edu/periodic/periodic.html">Alternate layouts</a>. 92.8ms</p> -->
-
+<!-- 98.6ms -->
  </body>
 </html>
