@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
  <head>
   <title>Dynamic Periodic Table</title>
 
@@ -79,7 +79,7 @@ lang_strings = {
    <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
    <a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a>
 <!--   <a href="http://del.icio.us/post?url=www.ptable.com;title=Periodic+Table+of+Elements;notes=Interactive+Web+2.0+periodic+table+with+dynamic+layouts+showing+names%2C+electrons%2C+trend+visualization%2C+orbitals%2C+isotopes%2C+search.+Full+descriptions.">+del.icio.us</a> -->
-   <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh_tw">中文 (繁)</option></select><input type="submit" value="Go" style="width: 2em;"/></form>
+   <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go" style="width: 2em;"/></form>
   </div>
 
 <!--
@@ -104,7 +104,7 @@ lang_strings = {
    <img src="http://www.eehtpc.com/ptable/bevel-right.png" style="position: absolute; top: -13px; right: 0; height: 24px; width: 12px;" alt=""/>
   </div>
 
-<table class="Alkali Alkaline Nonmetal Transition Lanthanoid Actinoid Poor Noble Undiscovered" id="Main" summary="periodic table" border="0" cellspacing="0">
+<table class="Alkali Alkaline Nonmetal Transition Lanthanoid Actinoid Poor Noble" id="Main" summary="periodic table" border="0" cellspacing="0">
  <col id="Period"/>
  <thead>
  <tr>
@@ -322,12 +322,12 @@ lang_strings = {
   </tr>
  </tbody></table>
 
- <table id="Block" class="Block" cellspacing="5" cellpadding="0" align="right">
+ <table id="Block" class="Block" cellspacing="5" cellpadding="0" align="right"><tbody>
   <tr><th class="s">s</th></tr>
   <tr><th class="p">p</th></tr>
   <tr><th class="d">d</th></tr>
   <tr><th class="f">f</th></tr>
- </table>
+ </tbody></table>
 
  <table id="DecayModes" cellspacing="5" align="right">
   <tr>
@@ -468,7 +468,7 @@ lang_strings = {
   <td class="Element Poor p"><strong>114</strong> <big>Uuq</big> <em class="Long">Ununquadium</em><div>(289)</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>4</span></td>
   <td class="Element Poor p"><strong>115</strong> <big>Uup</big> <em class="Long">Ununpentium</em><div>(288)</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>5</span></td>
   <td class="Element Poor p"><strong>116</strong> <big>Uuh</big> <em>Ununhexium</em><div>(292)</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>6</span></td>
-  <td class="Element Undiscovered p"><strong>117</strong> <big>Uus</big> <em class="Long">Ununseptium</em><div>&nbsp;</div></td><td class="Electron Undiscovered p"><span></span></td>
+  <td class="Element Undiscovered "><strong>117</strong> <big>Uus</big> <em class="Long">Ununseptium</em><div>&nbsp;</div></td><td class="Electron Undiscovered "><span></span></td>
   <td class="Element Noble p"><strong>118</strong> <big>Uuo</big> <em>Ununoctium</em><div>(294)</div></td><td class="Electron Noble p"><span>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>8</span></td>
   <td class="Shells"><span>K<br/>L<br/>M<br/>N<br/>O<br/>P<br/>Q</span></td>
  </tr>
@@ -481,12 +481,12 @@ lang_strings = {
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30">Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: February 28, 2008</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30">Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 03, 2008</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
  <tr>
-  <td colspan="5" rowspan="2"><a href="link.php?lang=en"><img src="Images/ptable-logo.png" alt="Ptable.com" id="Logo"/></a></td>
+  <td colspan="5" rowspan="2"><a href="link.php?lang=en"><img src="http://www.eehtpc.com/ptable/ptable-logo.png" alt="Ptable.com" id="Logo"/></a></td>
   <td class="InnerBorder BlueLeft BlueRight BlueBottom" colspan="2" rowspan="2"></td>
   <td class="Element Lanthanoid f"><strong>57</strong> <big>La</big> <em>Lanthanum</em><div>138.90<span>547</span></div></td><td class="Electron Lanthanoid f"><span>2<br/>8<br/>18<br/>18<br/>9<br/>2</span></td>
   <td class="Element Lanthanoid f"><strong>58</strong> <big>Ce</big> <em>Cerium</em><div>140.11<span>6</span></div></td><td class="Electron Lanthanoid f"><span>2<br/>8<br/>18<br/>19<br/>9<br/>2</span></td>
@@ -532,6 +532,6 @@ lang_strings = {
    <iframe id="WikiFrame" name="WikiFrame" frameborder="0" title="Wikipedia article on element" onload="if (typeof(throbber) !== 'undefined') if (throb_atomic) finish_throb(throb_atomic, throbber);" security="restricted"><h1>Loading&hellip;</h1></iframe>
   </div>
 
-  <noscript><p style="font-size: x-small;"><a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fa">جدول تناوبی</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=la">Systema Periodicum</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh_tw">元素週期表</a> | </p></noscript>
+  <noscript><p style="font-size: x-small;"><a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fa">جدول تناوبی</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=la">Systema Periodicum</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh-tw">元素週期表</a> | </p></noscript>
  </body>
 </html>

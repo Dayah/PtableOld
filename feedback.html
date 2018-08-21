@@ -32,22 +32,23 @@
 
   <form enctype="multipart/form-data" action="/cgi-bin/mail/mail.cgi" method="post">
    <input type="hidden" name="fileuploads" value="attach">
+   <input type="hidden" name="subject" value="[FORM] Periodic table feedback">
 
    <fieldset style="width: 25em;">
 <legend>All fields are optional</legend>
+<!--
 <label for="subject">Subject:</label>
 <select name="subject">
 <OPTION>Suggestion</OPTION>
-<OPTION>Criticism</OPTION>
 <OPTION>Review</OPTION>
 <OPTION>Homework</OPTION>
 <OPTION>Technical</OPTION>
-<OPTION>Report bug</OPTION>
 <OPTION>Translation</OPTION>
 <OPTION>Printing</OPTION>
 <OPTION>Advertising</OPTION>
 <OPTION>Other</OPTION>
 </SELECT><br>
+-->
 <!--
 <label for="realname">Name:</label>
 <input type="text" name="realname"><br>
@@ -59,9 +60,9 @@
 <input type="file" name="attach"><br>
 
 <label for="Comments">Comments:</label>
-<textarea name="Comments" rows=8></textarea><br>
+<textarea name="Comments" rows=10></textarea><br>
 
-<input type="submit">
+<input type="submit" value="Send">
 
   </form>
 
