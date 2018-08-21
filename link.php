@@ -19,26 +19,26 @@
 
   </STYLE>
 
-  <TITLE>Periodic Table of Elements - Link</TITLE>
+  <TITLE>Periodic Table of Elements - </TITLE>
 
  </HEAD>
  <BODY>
 
-  <h1>Periodic Table of Elements - Link</h1>
+  <h1>Periodic Table of Elements - </h1>
 
-  <h3>You are more than welcome to place a link to the periodic table on your web site. No permission is necessary, but a note that you have would be nice. Please only link to the <a href="./">main site</a>. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or just plain HTML.</h3>
+  <h3>You are more than welcome to place a link to the periodic table on your web site. No permission is necessary, but a note that you have would be nice. Please only link to the <a href="/">main site</a>. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or just plain HTML.</h3>
 
   <h2>Text</h2>
-  <p><a href="./" title="Periodic Table of Elements">Periodic Table</a></p>
-  <p><textarea rows=3 cols=60>&lt;a href="http://www.dayah.com/periodic/" title="Periodic Table of Elements"&gt;Periodic Table&lt;/a&gt;</textarea></p>
+  <p><a href="/" title="Periodic Table of Elements">Periodic Table</a></p>
+  <p><textarea rows=3 cols=60>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;Periodic Table&lt;/a&gt;</textarea></p>
 
   <h2>Small Logo</h2>
-  <p><a href="./" title="Periodic Table of Elements"><img src="Images/poster-logo.png" alt="Periodic Table" width=150 border=0></a></p>
-  <p><textarea rows=4 cols=65>&lt;a href="http://www.dayah.com/periodic/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.dayah.com/periodic/Images/poster-logo.png" alt="Periodic Table" width=75 border=0&gt;&lt;/a&gt;</textarea></p>
+  <p><a href="/" title="Periodic Table of Elements"><img src="Images/poster-logo.png" alt="Periodic Table" width=150 border=0></a></p>
+  <p><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/poster-logo.png" alt="Periodic Table" width=75 border=0&gt;&lt;/a&gt;</textarea></p>
 
   <h2>Large Logo</h2>
-  <p><a href="./" title="Printable periodic table of elements"><img src="http://www.dayah.com/periodic/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0></a></p>
-  <p><textarea rows=4 cols=65>&lt;a href="http://www.dayah.com/periodic/" title="Printable periodic table of elements"&gt;&lt;img src="http://www.dayah.com/periodic/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0&gt;&lt;/a&gt;</textarea></p>
+  <p><a href="/" title="Printable periodic table of elements"><img src="http://www.ptable.com/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0></a></p>
+  <p><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Printable periodic table of elements"&gt;&lt;img src="http://www.ptable.com/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0&gt;&lt;/a&gt;</textarea></p>
 
  </BODY>
 </HTML>
