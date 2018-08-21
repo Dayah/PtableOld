@@ -56,9 +56,6 @@ if (top != self) top.location.replace(self.location.href);
 language = "en";
 scheme = "day";
 throb_atomic = false;
-lang_strings = {
-	"Group": "Group % element"
-};
   //]]>
   </script>
   <script type="text/javascript" src="Script/interactivity.js" defer="defer"></script>
@@ -79,7 +76,7 @@ lang_strings = {
 <!--   <a href="link.php?lang=en" title="Link to this site">Link</a> -->
    <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
    <a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a>
-   <a href="#" onclick="load_demo(); return false;" title="Short demonstration of Ptable's features">Demo</a>
+   <a href="#" onclick="return load_demo();" title="Short demonstration of Ptable's features">Demo</a>
 <!--   <a href="http://del.icio.us/post?url=www.ptable.com;title=Periodic+Table+of+Elements;notes=Interactive+Web+2.0+periodic+table+with+dynamic+layouts+showing+names%2C+electrons%2C+trend+visualization%2C+orbitals%2C+isotopes%2C+search.+Full+descriptions.">+del.icio.us</a> -->
    <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go" style="width: 2em;"/></form>
   </div>
@@ -107,34 +104,33 @@ lang_strings = {
   </div>
 
 <table class="Alkali Alkaline Nonmetal Transition Lanthanoid Actinoid Poor Noble" id="Main" summary="periodic table" border="0" cellspacing="0">
- <col id="Period"/>
  <thead>
  <tr>
   <td></td>
-  <td colspan="2">1</td>
-  <td colspan="2">2</td>
-  <td colspan="2">3</td>
-  <td colspan="2">4</td>
-  <td colspan="2">5</td>
-  <td colspan="2">6</td>
-  <td colspan="2">7</td>
-  <td colspan="2">8</td>
-  <td colspan="2">9</td>
-  <td colspan="2">10</td>
-  <td colspan="2">11</td>
-  <td colspan="2">12</td>
-  <td colspan="2">13</td>
-  <td colspan="2">14</td>
-  <td colspan="2">15</td>
-  <td colspan="2">16</td>
-  <td colspan="2">17</td>
-  <td colspan="2">18</td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 1 element">1</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 2 element">2</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 3 element">3</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 4 element">4</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 5 element">5</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 6 element">6</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 7 element">7</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 8 element">8</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 9 element">9</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 10 element">10</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 11 element">11</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 12 element">12</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 13 element">13</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 14 element">14</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 15 element">15</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 16 element">16</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 17 element">17</a></td>
+  <td colspan="2"><a href="http://en.wikipedia.org/wiki/Group 18 element">18</a></td>
  </tr>
  </thead>
 
  <tbody>
  <tr id="White">
-  <th>1</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 1 element">1</a></th>
   <td class="Element  s"><strong>1</strong> <big>H</big> <em>Hydrogen</em><div>1.0079<span>4</span></div></td><td class="Electron  s"><span>1</span></td>
 
   <td id="Legend" colspan="2"><strong>Atomic<span> #</span></strong> <big>Sym<span>bol</span></big> <em>Name</em><div><span>Atomic </span>Mass</div></td>
@@ -349,15 +345,15 @@ lang_strings = {
 </td></tr></tbody></table>
   </td>
 
-  <td colspan="8"><div id="SliderTrack"><div id="SliderSlit"></div><div id="SliderBar"></div></div></td>
-  <td colspan="2"><input id="SliderDisplay" type="text" value="0"/></td>
+  <td colspan="8"><div id="SliderTrack" tabIndex="1"><div id="SliderSlit"></div><div id="SliderBar"></div></div></td>
+  <td colspan="2"><input id="SliderDisplay" type="text" value="0" tabIndex="2"/></td>
 
   <td class="Element Noble s"><strong>2</strong> <big>He</big> <em>Helium</em><div>4.0026<span>02</span></div></td><td class="Electron Noble s"><span>2</span></td>
   <td class="Shells"><span>K</span></td>
  </tr>
 
  <tr>
-  <th>2</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 2 element">2</a></th>
   <td class="Element Alkali s"><strong>3</strong> <big>Li</big> <em>Lithium</em><div>6.941</div></td><td class="Electron Alkali s"><span>2<br/>1</span></td>
   <td class="Element Alkaline s"><strong>4</strong> <big>Be</big> <em>Beryllium</em><div>9.0121<span>82</span></div></td><td class="Electron Alkaline s"><span>2<br/>2</span></td>
   <td class="Element Nonmetal p"><strong>5</strong> <big>B</big> <em>Boron</em><div>10.811</div></td><td class="Electron Nonmetal p"><span>2<br/>3</span></td>
@@ -370,7 +366,7 @@ lang_strings = {
  </tr>
 
  <tr>
-  <th>3</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 3 element">3</a></th>
   <td class="Element Alkali s"><strong>11</strong> <big>Na</big> <em>Sodium</em><div>22.989<span>76928</span></div></td><td class="Electron Alkali s"><span>2<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>12</strong> <big>Mg</big> <em>Magnesium</em><div>24.305<span>0</span></div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>2</span></td>
   <td class="Element Poor p"><strong>13</strong> <big>Al</big> <em>Aluminium</em><div>26.981<span>5386</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>3</span></td>
@@ -383,7 +379,7 @@ lang_strings = {
  </tr>
 
  <tr>
-  <th>4</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 4 element">4</a></th>
   <td class="Element Alkali s"><strong>19</strong> <big>K</big> <em>Potassium</em><div>39.098<span>3</span></div></td><td class="Electron Alkali s"><span>2<br/>8<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>20</strong> <big>Ca</big> <em>Calcium</em><div>40.078</div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>8<br/>2</span></td>
   <td class="Element Transition d"><strong>21</strong> <big>Sc</big> <em>Scandium</em><div>44.955<span>912</span></div></td><td class="Electron Transition d"><span>2<br/>8<br/>9<br/>2</span></td>
@@ -406,7 +402,7 @@ lang_strings = {
  </tr>
 
  <tr>
-  <th>5</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 5 element">5</a></th>
   <td class="Element Alkali s"><strong>37</strong> <big>Rb</big> <em>Rubidium</em><div>85.467<span>8</span></div></td><td class="Electron Alkali s"><span>2<br/>8<br/>18<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>38</strong> <big>Sr</big> <em>Strontium</em><div>87.62</div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>18<br/>8<br/>2</span></td>
   <td class="Element Transition d"><strong>39</strong> <big>Y</big> <em>Yttrium</em><div>88.905<span>85</span></div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>9<br/>2</span></td>
@@ -429,7 +425,7 @@ lang_strings = {
  </tr>
 
  <tr>
-  <th>6</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 6 element">6</a></th>
   <td class="Element Alkali s"><strong>55</strong> <big>Cs</big> <em>Caesium</em><div>132.90<span>54519</span></div></td><td class="Electron Alkali s"><span>2<br/>8<br/>18<br/>18<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>56</strong> <big>Ba</big> <em>Barium</em><div>137.32<span>7</span></div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>18<br/>18<br/>8<br/>2</span></td>
   <td class="InnerBorder BlueLeft BlueTop BlueRight" colspan="2">57–71</td>
@@ -452,7 +448,7 @@ lang_strings = {
  </tr>
 
  <tr>
-  <th>7</th>
+  <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 7 element">7</a></th>
   <td class="Element Alkali s"><strong>87</strong> <big>Fr</big> <em>Francium</em><div>(223)</div></td><td class="Electron Alkali s"><span>2<br/>8<br/>18<br/>32<br/>18<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>88</strong> <big>Ra</big> <em>Radium</em><div>(226)</div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>18<br/>32<br/>18<br/>8<br/>2</span></td>
   <td class="InnerBorder BlueLeft BlueRight" colspan="2">89–103</td>
@@ -482,7 +478,7 @@ lang_strings = {
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 12, 2008</span>&nbsp;</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 20, 2008</span>&nbsp;</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
