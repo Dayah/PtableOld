@@ -1,88 +1,108 @@
-BODY			{ margin: 0; background-color: white; color: black; font-family: Arial, Arial Unicode MS, sans-serif; }
-IMG			{ border: 0; }
+BODY			{ margin: 0; background-color: white; color: black; font-family: Arial, "Arial Unicode MS", sans-serif; }
 
 /*** Headings ***/
-H1, #Navigation		{ margin: 0.2cm; }
-H1			{ text-align: center; white-space: nowrap; font-size: 3em; border: thin outset; }
-H2, FORM P		{ text-align: justify; text-indent: 3ex; width: 85%; font: normal 11px/12px Verdana, sans-serif; margin-bottom: 0; }
-#Navigation		{ border: thin outset; padding: 0 0.1em; background-color: ButtonFace; font: caption; text-align: center; }
-#Navigation A		{ border: thin outset; padding: 0.1em 0.3em; color: ButtonText; text-decoration: none; white-space: nowrap; line-height: 1.9; font-weight: normal; }
-#Navigation A:hover	{ background-color: ButtonHighlight; }
-#Navigation A.active	{ background-color: ButtonShadow; border: thin inset; left: 1px; top: 1px; }
+H1			{ color: white; background: rgb(36, 83, 139) url("http://web.utk.edu/~mdayah/h1-gradient.png") repeat-x; font: normal 4em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; margin: 0.2cm 0.2cm 0; }
 
-#Main			{ border-collapse: separate; border-spacing: 0; font-size: 0.9em; }
-.NewGroup		{ text-align: center; vertical-align: bottom; }
-.OldGroup TD		{ text-align: center; vertical-align: middle; color: #A33; }
-#Main TH		{ font-size: 1.2em; text-align: right; font-weight: normal; }
+#Navigation		{ margin: 0 0.2cm 0.2cm; text-align: center; font-family: "Trebuchet MS"; font-size: 1em; letter-spacing: -0.04em; border: thin solid rgb(210, 230, 255); }
+#Navigation A		{ padding: 0.15em 0.3em; text-decoration: none; white-space: nowrap; border: medium solid rgb(210, 230, 255); background-color: rgb(210, 230, 255); }
+#Navigation A:hover	{ background-color: rgb(230, 240, 255); }
+LABEL			{ font-weight: bold; }
 
-#Main, #Key, H2, P	{ margin-left: auto; margin-right: auto; }
+#Ad			{ text-align: center; margin: 0 auto; }
+#visualize, #Print, #ElectronBox	{ display: none; }
+#Note DIV		{ font-size: 0.8em; width: 14em; line-height: normal; }
+#Stable			{ padding: 1em 3ex; }
 
-#TopAd			{ background-color: black; text-align: center; }
-#Ad			{ margin: 1em 7.5%; }
-#Copyright		{ line-height: 1.5; color: #66F; font-size: 0.7em; text-align: center; }
-#Copyright #Print	{ display: none; }
-#Note			{ font-size: 0.8em; width: 14em; }
-#Stable			{ line-height: 3; }
-#HideEC			{ color: blue; text-decoration: underline; text-align: center; cursor: pointer; }
+#Main			{ border-collapse: collapse; font-size: 0.9em; }
+THEAD TD		{ color: rgb(36, 83, 139); font-weight: bold; border-right: 1pt solid #CCCCFF; border-bottom: 7pt solid white; text-align: center; }
+THEAD TD:hover		{ background-color: yellow; }
+#Period			{ width: 1.2em; }
+
+#Main, #Key, #PropertyBox	{ margin: 0 auto; }
 
 /*** Legend ***/
-#Key			{ width: 80%; border-collapse: separate; border-spacing: 0.5em; }
-#Key TH			{ height: 1.8em; width: 1.8em; font-size: 1em; }
-#Key TH, #Key TD	{ vertical-align: middle; }
+.Clean, #Legend		{ border-left: 5pt solid white; }
+.KeyRegion		{ vertical-align: top; }
+#PropertyBox TH		{ text-align: right; }
+#PropertyBox		{ width: 88%; white-space: nowrap; }
+#Key			{ width: 80%; border-collapse: separate; border-spacing: 5px; }
+#Key TH			{ height: 1.8em; width: 1.8em; }
 #Key TD			{ padding: 0.3em; font-size: 1.2em; white-space: nowrap; }
-#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Synthetic	{ border: thin solid black; text-align: center; }
-#Key .Solid, #Key .Liquid, #Key .Gas, #Key .Synthetic		{ font-weight: bold; }
-#Key TH.Synthetic	{ background-color: black; }
-#Key TD.Synthetic	{ color: #BBB; }
+#Key TH, #Key TD	{ vertical-align: middle; }
+#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Unknown	{ border: thin solid black; text-align: center; }
+#Key .Solid, #Key .Liquid, #Key .Gas, #Key .Unknown		{ font-weight: bold; }
+#Key TH.Unknown		{ background-color: black; }
+UL			{ list-style-type: none; border-bottom: thin solid #AAAAFF; text-align: center; margin: 0.5ex 2em 1ex 2em; font-size: 1.4em; }
+LI			{ display: inline; border: thin solid #AAAAFF; background-color: rgb(210, 230, 255); padding: 0 1em; margin: 0 1ex; cursor: pointer; }
+LI.Active		{ border-bottom-color: white; background-color: white; cursor: auto; }
+LI:hover		{ border-bottom-color: white; cursor: pointer; }
+#Hund TABLE		{ border: 0; padding: 0; }
+#Hund TD TD		{ border: 1px solid blue; }
+#Hund TD TD SPAN	{ visibility: hidden; }
+#Hund TABLE TR 		{ font-size: 0.8em; }
 
-/*** Color scheme ***/
-H1			{ background-color: #5FF; }
-.Solid			{ color: black; }
-.Liquid			{ color: green; }
-.Gas			{ color: red; }
-.Synthetic		{ color: white; }
-.Undiscovered		{ color: #BBB; }
-.Alkali			{ background-color: #FA0; }
+/*** Colors ***/
+.Solid BIG		{ color: #000000; }
+.InvertState .Solid	{ background-color: #000000; }
+.Liquid BIG		{ color: #0000DD; }
+.InvertState .Liquid	{ background-color: #0000DD; }
+.Gas BIG		{ color: #AA0000; }
+.InvertState .Gas	{ background-color: #AA0000; }
+.Unknown BIG		{ color: #D8D8D8; }
+.InvertState .Unknown	{ background-color: #D8D8D8; }
+.InvertState .Element, .InvertState .Electron, .InvertState .Element BIG, .InvertState #Key BIG	{ color: white; }
+
+.Alkali			{ background-color: #FFAA00; }
 .Alkaline		{ background-color: #F7F700; }
 .Nonmetal		{ background-color: #00F700; }
-.Transition		{ background-color: #F79; }
-.Lanthanide		{ background-color: #FA8; }
-.Actinide		{ background-color: #DAC; }
-.Poor			{ background-color: #0CC; }
+.Transition		{ background-color: #FF7799; }
+.Lanthanide		{ background-color: #FFAA88; }
+.Actinide		{ background-color: #DDAACC; }
+.Poor			{ background-color: #00CCCC; }
 .Noble			{ background-color: #55F7F7; }
 .Hydrogen		{ background-color: #E7E7E7; }
+.Undiscovered		{ background-color: #FFFFFF; }
+TH, LABEL		{ color: rgb(36, 83, 139); }
+
+/*** Borders ***/
+.InnerBorder		{ background-color: #CCCCFF; color: #0000FF; text-align: center; line-height: 1.4; }
+.OuterBorder		{ background-color: #0000FF; }
+.BlueLeft		{ border-left: 5pt solid blue; }
+.BlueRight		{ border-right: 5pt solid blue; }
+.BlueTop		{ border-top: 5pt solid blue; }
+.BlueBottom		{ border-bottom: 5pt solid blue; }
+.Element		{ border-top: 5pt solid white; border-left: 5pt solid white; }
+.Electron		{ border-top: 5pt solid white; }
+.DividerR		{ border-right: 5pt solid black; }
+.DividerB		{ border-bottom: 5pt solid black; }
+.Shells			{ border: 5pt solid white; color: gray; }
 
 /*** Element boxes ***/
-BIG, STRONG, EM, SMALL	{ display: block; }
-BIG			{ font-size: 1.5em; font-weight: bold; width: 2.5em; }
-STRONG			{ font-size: 1em; font-weight: normal; }
-EM, DIV			{ font-size: 0.7em; font-style: normal; }
-SMALL			{ font-size: 0.6em; line-height: 1; text-align: right; }
-.Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Poor, .Noble, .Hydrogen
-			{ cursor: pointer; padding: 0.2em 0 0.2em 0.3em; }
-.Electron		{ padding: 0.3em 0.3em 0 0.1em; vertical-align: top; }
-.Long			{ font-size: 0.58em; line-height: 1.3; }
-.Shells			{ color: gray; border: thin solid gray; padding-left: 0.3em; }
+#CloseupElement		{ padding: 0.2cm; padding-right: 0; width: 1em; font-size: 2em; }
+#CloseupElectron	{ vertical-align: top; text-align: right; font-size: 1.1em; line-height: 1; padding: 0.2cm 0.2cm 0 0; }
 
-/*** Other decoratives ***/
-.Divider		{ background-color: black; }
-HR			{ border: thin solid #A33; width: 70%; }
-.InnerBorder		{ background-color: #CCF; }
-.OuterBorder		{ background-color: #00F; }
-.Removed		{ color: #00F; text-align: center; vertical-align: middle; font-size: 1em; }
-.RowSpace		{ height: 0.4em; padding-right: 0.4em; font-size: 1em; }
-.RoundTL		{ -moz-border-radius-topleft: 100%; }
-.RoundTR		{ -moz-border-radius-topright: 100%; }
-.RoundBL		{ -moz-border-radius-bottomleft: 100%; }
-.RoundBR		{ -moz-border-radius-bottomright: 100%; }
+BIG, STRONG, EM		{ display: block; }
+.Element BIG, #CloseupElement BIG, #Legend BIG	{ font-size: 1.5em; font-weight: bold; width: 2.5em; text-outline: white 1px 1px; }
+STRONG			{ font-size: 1em; font-weight: normal; }
+EM, .Element DIV, #CloseupElement DIV, #Legend DIV	{ font-size: 0.7em; font-style: normal; }
+EM.Long			{ letter-spacing: -0.06em; }
+.Element		{ cursor: pointer; padding: 0.2em 0 0.2em 0.3em; background-image: url("http://web.utk.edu/~mdayah/gradient.png"); background-repeat: no-repeat; }
+.Electron		{ font-size: 0.7em; line-height: 1; text-align: right; vertical-align: top; }
+.Electron, .Shells	{ padding: 0.3em 0.3em 0 0.1em; vertical-align: top; background-image: none; font-size: 0.6em; line-height: 1; text-align: right; }
 
 /*** Wikipedia iframe ***/
-#ElementBox		{ position: absolute; top: 15%; left: 15%; bottom: 15%; right: 15%; display: none; border: thick outset; filter: alpha(Opacity=90); opacity: 0.90; background-color: white; }
-BODY > DIV#ElementBox	{ position: fixed; }
-#ElementBox IFRAME	{ height: 100%; width: 100%; overflow: auto; }
-#ElementBox > IFRAME	{ height: auto; width: auto; position: absolute; top: 2.1em; left: 0; right: 0; bottom: 0; }
-#ElementBox H1		{ border: thin inset; margin: 0; }
+#WikiBox		{ position: absolute; top: 15%; left: 15%; bottom: 15%; right: 15%; display: none; border: thick outset; filter: alpha(Opacity=90); opacity: 0.90; background-color: white; }
+BODY > DIV#WikiBox	{ position: fixed; }
+#WikiBox > IFRAME	{ position: absolute; top: 2.1em; left: 0; width: 100%; height: 95%; bottom: 0; }
+#WikiBox H1		{ border: thin inset; margin: 0; }
 H1 TABLE		{ width: 100%; font-weight: bold; }
 H1 #Title		{ text-align: left; font-family: Verdana, sans-serif; font-size: small; }
-H1 #Close		{ text-align: right; font: caption; width: 2em; border: 2px outset; cursor: pointer; padding: 0.1em 0.3em; color: ButtonText; background-color: ButtonFace; }
-#Title A		{ font-weight: normal; }
+H1 #Close		{ text-align: right; font-size: medium; width: 1ex; border: 2px outset; cursor: pointer; padding: 0 0.3em; color: ButtonText; background-color: ButtonFace; }
+#Title A		{ color: white; }
+
+/*** Slider ***/
+#SliderTrack		{ width: 100%; position: relative; height: auto; border: 1px solid white; }
+#SliderTrack #SliderSlit{ border: 2px inset; background-color: ButtonFace; height: 2px; font-size: 0; margin: 9px 6px; }
+#SliderTrack #SliderBar	{ position: absolute; top: 0; border: 2px outset; background-color: ButtonFace; width: 10px; height: 20px; cursor: pointer; }
+
+#SliderDisplay		{ text-align: right; width: 6ex; }

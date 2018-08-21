@@ -7,109 +7,13 @@
   <meta name="keywords" content="Periodic Table, dynamic, interactive, element, name, chemistry, printable, homework, pdf, electron configuration">
   <link rel="alternate" type="application/rss+xml"  href="discovery.xml" title="Discovered elements">
 
-  <style type="text/css" media="screen">
-BODY			{ margin: 0; background-color: white; color: black; font-family: Arial, "Arial Unicode MS", sans-serif; }
-
-/*** Headings ***/
-H1			{ color: white; background: rgb(36, 83, 139) url("http://web.utk.edu/~mdayah/h1-gradient.png") repeat-x; font: normal 4em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; margin: 0.2cm 0.2cm 0; }
-
-#Navigation		{ margin: 0 0.2cm 0.2cm; text-align: center; font-family: "Trebuchet MS"; font-size: 1em; letter-spacing: -0.04em; border: thin solid rgb(210, 230, 255); }
-#Navigation A		{ padding: 0.15em 0.3em; text-decoration: none; white-space: nowrap; border: 2px solid rgb(210, 230, 255); background-color: rgb(210, 230, 255); }
-#Navigation A:hover	{ background-color: rgb(230, 240, 255); }
-LABEL			{ font-weight: bold; }
-
-#Ad			{ text-align: center; margin: 0 auto; }
-#DetailBox, #Print	{ display: none; }
-#Note DIV		{ font-size: 0.8em; width: 14em; line-height: normal; }
-#Stable			{ padding: 1em 3ex; }
-
-#Main			{ border-collapse: collapse; font-size: 0.9em; }
-THEAD TD		{ color: rgb(36, 83, 139); font-weight: bold; border-right: 1pt solid #CCF; border-bottom: 7pt solid white; text-align: center; }
-THEAD TD:hover, #DetailBox TH:hover	{ background-color: yellow; }
-#Period			{ width: 1.1em; }
-
-#Main, #Key, #DetailBox	{ margin: 0 auto; }
-
-/*** Legend ***/
-.Clean, #Legend		{ border-left: 5pt solid white; }
-.KeyRegion		{ vertical-align: top; }
-#DetailBox TH		{ text-align: right; }
-#DetailBox		{ width: 88%; white-space: nowrap; }
-#Key			{ width: 80%; border-collapse: separate; border-spacing: 5px; }
-#Key TH			{ height: 1.8em; width: 1.8em; font-size: 1em; }
-#Key TD			{ padding: 0.3em; font-size: 1.2em; white-space: nowrap; }
-#Key TH, #Key TD	{ vertical-align: middle; }
-#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Unknown	{ border: thin solid black; text-align: center; }
-#Key .Solid, #Key .Liquid, #Key .Gas, #Key .Unknown		{ font-weight: bold; }
-#Key TH.Unknown		{ background-color: black; }
-UL			{ list-style-type: none; border-bottom: thin solid #AAF; text-align: center; margin: 1ex 2em 1ex 2em; font-size: 1.4em; }
-LI			{ display: inline; border: thin solid #AAF; background-color: #CCF; padding: 0 1em; margin: 0 1em; cursor: pointer; }
-LI.Active		{ border-bottom-color: white; background-color: white; cursor: auto; }
-
-/*** Colors ***/
-.Liquid			{ color: #00D; }
-.Gas			{ color: #A00; }
-.Unknown		{ color: #D8D8D8; }
-.Alkali			{ background-color: #FA0; }
-.Alkaline		{ background-color: #F7F700; }
-.Nonmetal		{ background-color: #00F700; }
-.Transition		{ background-color: #F79; }
-.Lanthanide		{ background-color: #FA8; }
-.Actinide		{ background-color: #DAC; }
-.Poor			{ background-color: #0CC; }
-.Noble			{ background-color: #55F7F7; }
-.Hydrogen		{ background-color: #E7E7E7; }
-.Undiscovered		{ background-color: #FFF; }
-TH, LABEL		{ color: rgb(36, 83, 139); }
-
-/*** Borders ***/
-.InnerBorder		{ background-color: #CCF; color: #00F; text-align: center; line-height: 1.4; }
-.OuterBorder		{ background-color: #00F; }
-.BlueLeft		{ border-left: 5pt solid blue; }
-.BlueRight		{ border-right: 5pt solid blue; }
-.BlueTop		{ border-top: 5pt solid blue; }
-.BlueBottom		{ border-bottom: 5pt solid blue; }
-.Element		{ border-top: 5pt solid white; border-left: 5pt solid white; }
-.Electron		{ border-top: 5pt solid white; }
-.DividerR		{ border-right: 5pt solid black; }
-.DividerB		{ border-bottom: 5pt solid black; }
-.Shells			{ border: 5pt solid white; color: gray; }
-
-/*** Element boxes ***/
-#Element		{ padding: 0.2cm; padding-right: 0; width: 1em; font-size: 2em; }
-#Electrons		{ vertical-align: top; text-align: right; font-size: 1.1em; line-height: 1; padding: 0.2cm 0.2cm 0 0; border-right: 1em solid white; }
-
-BIG, STRONG, EM		{ display: block; }
-BIG			{ font-size: 1.5em; font-weight: bold; width: 2.5em; text-outline: white 1px 1px; }
-STRONG			{ font-size: 1em; font-weight: normal; }
-EM, .Element DIV, #Element DIV, #Legend DIV	{ font-size: 0.7em; font-style: normal; }
-EM.Long			{ letter-spacing: -0.06em; }
-.Element		{ cursor: pointer; padding: 0.2em 0 0.2em 0.3em; background-image: url("http://web.utk.edu/~mdayah/gradient.png"); background-repeat: no-repeat;}
-.Electron		{ font-size: 0.7em; line-height: 1; text-align: right; vertical-align: top; }
-.Electron, .Shells	{ padding: 0.3em 0.3em 0 0.1em; vertical-align: top; background-image: none; font-size: 0.6em; line-height: 1; text-align: right; }
-
-/*** Wikipedia iframe ***/
-#WikiBox		{ position: absolute; top: 15%; left: 15%; bottom: 15%; right: 15%; display: none; border: thick outset; filter: alpha(Opacity=90); opacity: 0.90; background-color: white; }
-BODY > DIV#WikiBox	{ position: fixed; }
-#WikiBox > IFRAME	{ position: absolute; top: 2.1em; left: 0; width: 100%; height: 95%; bottom: 0; }
-#WikiBox H1		{ border: thin inset; margin: 0; }
-H1 TABLE		{ width: 100%; font-weight: bold; }
-H1 #Title		{ text-align: left; font-family: Verdana, sans-serif; font-size: small; }
-H1 #Close		{ text-align: right; font-size: medium; width: 1ex; border: 2px outset; cursor: pointer; padding: 0 0.3em; color: ButtonText; background-color: ButtonFace; }
-#Title A		{ color: white; }
-
-/*** Slider ***/
-#SliderTrack		{ width: 214px; margin: 0; text-align: left; padding: 0; font-size: 0; vertical-align: middle; }
-#SliderTrack #SliderSlit{ position: absolute; border: 2px inset; background-color: ButtonShadow; width: 200px; height: 2px; margin: 7px 0 0 5px; line-height: 0; }
-#SliderTrack #SliderBar	{ position: relative; border: 2px outset; background-color: ButtonFace; width: 10px; height: 16px; margin: 0; cursor: pointer; }
-#SliderDisplay		{ text-align: right; float: right; width: 6ex; }
-  </style>
+  <link href="Style/screen-default.css" rel="stylesheet" type="text/css" media="screen">
   <style type="text/css" media="screen">
 .Electron SPAN	{ display: none; }
 .Shells		{ visibility: hidden; }
 STRONG, EM	{ line-height: 1; }
 .Element BIG, #Legend BIG, .Element EM, #Legend EM, .Element DIV, #Legend DIV	{ text-align: center; }
-BIG		{ width: 2.9em; }
+.Element BIG, #Element BIG, #Legend BIG { width: 2.9em; }
 #Legend BIG	{ letter-spacing: -0.08em; }
 .Element STRONG	{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; color: black; height: 1em; }
 #KeyRegion	{ font-size: 0.9em; }
@@ -120,7 +24,7 @@ BIG		{ width: 2.9em; }
   <style type="text/css" media="screen">
 .Element EM, #Legend EM, .Element SPAN, #Legend SPAN, #Print, .Shells SPAN	{ display: none; }
 .Element, #Legend	{ font-size: 0.9em; line-height: 1.1; }
-BIG		{ width: 2.1em; }
+.Element BIG, #Element BIG, #Legend BIG	{ width: 2.1em; }
 #Element BIG	{ width: 2.8em; }
 .KeyRegion	{ font-size: 0.7em; }
 .InnerBorder	{ font-size: 0.7em; }
@@ -131,6 +35,7 @@ BIG		{ width: 2.1em; }
 
   <!--[if gte IE 5.5]><![if lt IE 7]>
    <style type="text/css">
+    .Element { background-image: none; }
     #WikiBox IFRAME { height: 100%; width: 100%; overflow: auto; }
     DIV#WikiBox {
     	left: expression((Math.round(getIESze()[0] * 0.15) + getIEScrl()[0]) + "px");
@@ -142,663 +47,8 @@ BIG		{ width: 2.1em; }
    </style>
   <![endif]><![endif]-->
 
-  <script type="text/javascript">
-window.onload = function() {
-	n_atomic = 0; n_name = 4; n_symbol = 2; n_mass = 5;
-	sheet_electron = 1; sheet_names = 2;
-
-	if (document.getElementById("names").checked) click_names(document.getElementById("names"));
-	if (document.getElementById("electron").checked) click_electron(document.getElementById("electron"));
-	lastHover = false;
-	waiting = false;
-	firstTime = true;
-	snapto = false;
-	dataset = "key";
-	widecheck = document.getElementById("wide");
-	detail = document.getElementById("Element");
-	wholetable = document.getElementById("Main");
-
-	detailelectrons = document.getElementById("Electrons");
-	melt_id = document.getElementById("Melt");
-	boil_id = document.getElementById("Boil");
-	radius_id = document.getElementById("Radius");
-	electroneg_id = document.getElementById("Electroneg");
-	ionize_id = document.getElementById("Ionize");
-	discover_id = document.getElementById("Discover");
-	density_id = document.getElementById("Density");
-	affinity_id = document.getElementById("Affinity");
-	conduct_id = document.getElementById("Conductivity");
-	details = document.getElementById("DetailBox");
-
-	if (widecheck.checked) insert_rareearths(widecheck);
-	window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
-	init_layout();
-	mass = new Array();
-	for (var i = 1; i <= 118; i++) mass[i] = element_ids[i].childNodes[n_mass].innerHTML;
-	current_colors = new Array();
-	default_colors = new Array();
-	save_colors(default_colors);
-
-	melt = [[3823,14.01,0.95,453.69,1560,2348,3823,63.05,54.8,53.5,24.56,370.87,923,933.47,1687,317.3,388.36,171.6,83.8,336.53,1115,1814,1941,2183,2180,1519,1811,1768,1728,1357.77,692.68,302.91,1211.4,1090,494,265.8,115.79,312.46,1050,1799,2128,2750,2896,2430,2607,2237,1828.05,1234.93,594.22,429.75,505.08,903.78,722.66,386.85,161.3,301.59,1000,1193,1071,1204,1294,1373,1345,1095,1586,1629,1685,1747,1770,1818,1092,1936,2506,3290,3695,3459,3306,2739,2041.4,1337.33,234.32,577,600.61,544.4,527,575,202,300,973,1323,2023,1845,1408,917,913,1449,1618,1323,1173,1133,1800,1100,1100,1900]];
-	boil = [[5869,20.28,4.22,1615,2743,4273,4300,77.36,90.2,85.03,27.07,1156,1363,2792,3173,553.6,717.87,239.11,87.3,1032,1757,3103,3560,3680,2944,2334,3134,3200,3186,3200,1180,2477,3093,887,958,332,119.93,961,1655,3618,4682,5017,4912,4538,4423,3968,3236,2435,1040,2345,2875,1860,1261,457.4,165.1,944,2143,3737,3633,3563,3373,3273,2076,1800,3523,3503,2840,2973,3141,2223,1469,3675,4876,5731,5828,5869,5285,4701,4098,3129,629.88,1746,2022,1837,1235,610,211.3,950,2010,3473,5093,4273,4200,4273,3503,2284,3383]];
-
-	spec_melt = {"slidermin": 0, "slidermax": 6000, "default": 273, "Legend": "Kelvin"};
-	spec_boil = {"slidermin": 0, "slidermax": 6000, "default": 273, "Legend": "Kelvin"};
-	spec_electroneg = {"unit": "", "startcolor": "FFFF00", "endcolor": "FF0000", "default": "FFFFFF", "Legend": "Pauling", "scale": "log"};
-	spec_radius = {"unit": " pm", "startcolor": "FFFFFF", "endcolor": "008800", "default": "FFFFFF", "Legend": ["pm","pm","pm"], "values":["Calc","Real","Coval."]};
-	spec_ionize = {"unit": " kJ/mol", "startcolor": "66FF66", "endcolor": "6666FF", "default": "FFFFFF", "Legend": ["kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol"], "values":["1st","2nd","3rd","4th","5th",6,7,8,9,10,11,12,13,14,15]};
-	spec_discover = {"slidermin": 1730, "slidermax": 2007, "default": 2007, "unit" : "", "startcolor" : "FFFFFF", "endcolor" : "666600", "default": "FFFFFF", "Legend": "Year"};
-	spec_density = {"unit": " kg/m&sup3;", "startcolor": "FFFFFF", "endcolor": "006666", "default": "006666", "Legend": "kg/m&sup3;", "values":["Solid","Liquid"]};
-	spec_affinity = {"unit": " kJ/mol", "startcolor": "FF0000", "endcolor": "00FF00", "default": "FFFFFF", "Legend": "kJ/mol"};
-	spec_conduct = {"unit": [" W/mK"," S/m"], "startcolor": "BBBBBB", "endcolor": "FF0000", "default": "FFFFFF", "Legend":["W/mK","S/m"], "values":["Therm.","Elect."]};
-	spec_key = {"slidermin": 0, "slidermax": 6000, "default": 273};
-
-	document.getElementById("names").onclick = function() { click_names(this); };
-	document.getElementById("electron").onclick = function() { click_electron(this); };
-	widecheck.onclick = function() { insert_rareearths(this); };
-	document.getElementById("LegendTab").onclick = function() { hideDetails(true); };
-	document.getElementById("DetailTab").onclick = function() { if (!lastHover) on_mouse_over(element_ids[1]); else on_mouse_over(lastHover); };
-	searchinput = document.getElementById("SearchInput");
-	searchinput.onkeyup = function(e) { search(this.value); };
-	searchinput.onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
-	document.forms["visualize"].onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
-	searchinput.onfocus = function(e) {
-		on_mouse_over();
-		search_active = true;
-		hideDetails(true);
-		if (this.value == "# or Name") this.value = "";
-		search(this.value);
-	};
-	searchinput.onblur = function() {
-		this.value = "# or Name";
-		current_colors.length = 0;
-		restore_colors(current_colors);
-		search_active = false;
-		results = 0;
-		on_mouse_over(lastHover);
-	};
-	display = document.getElementById("SliderDisplay");
-	slider = document.getElementById("SliderBar");
-	display.onkeyup = sliderMouseUp;
-	display.onkeydown = slider_arrow;
-	document.onkeydown = keyboard_nav;
-	slider.onmousedown = startSlide;
-	display.value = 273;
-	init_slider();
-}
-
-function switch_viz() {
-	el = (this || srcElement);
-	for (var i = 0; i < el.length; i++) if (el[i].checked && el[i].value != dataset) {
-		dataset = el[i].value;
-		subset = 0;
-		on_mouse_over();
-		populate_mass(window[dataset][subset], window["spec_" + dataset]["Legend"][subset]);
-
-		if (dataset == "boil" || dataset == "melt") color_temp(window[dataset][subset]);
-		else if (dataset == "discover") discover_gradient(window[dataset][subset]);
-		else color_other(window[dataset][subset], window["spec_" + dataset]);
-
-		init_slider();
-		save_colors(current_colors);
-		on_mouse_over(lastHover);
-	}
-}
-
-function init_layout() {
-	save_element_ids();
-	attach_elementhovers();
-	results = 0;
-	search_active = false;
-	document.forms["visualize"].onclick = switch_viz;
-}
-
-function click_names(obj) {
-	document.styleSheets[sheet_names].disabled = obj.checked;
-	if (!obj.checked && document.getElementById("electron").checked) document.getElementById("electron").checked = false;
-	document.styleSheets[sheet_electron].disabled = document.getElementById("electron").checked;
-}
-
-function click_electron(obj) {
-	document.styleSheets[sheet_names].disabled = true;
-	if (obj.checked) document.getElementById("names").checked = document.styleSheets[sheet_electron].disabled = true;
-	else document.styleSheets[sheet_electron].disabled = !document.getElementById("names").checked;
-}
-
-function click_wiki(address) {
-	if (window.frames["WikiFrame"]) {
-		window.frames["WikiFrame"].location.href = "about:blank";
-		document.getElementById("ElementName").innerHTML = address;
-		document.getElementById("ElementName").href = "http://en.wikipedia.org/wiki/" + encodeURIComponent(address);
-		document.getElementById("WikiBox").style.display = "block";
-		window.frames["WikiFrame"].location.href = "en.wikipedia.org/wiki/" + address + ".html";
-	}
-}
-
-function destroy() {
-	window.frames["WikiFrame"].location.href = "about:blank";
-	//window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
-	document.getElementById("WikiBox").style.display = "";
-}
-
-function save_colors(colorsarray) {
-	for (var i = 1; i <= 118; i++) {
-		if (element_ids[i].currentStyle)	colorsarray[i] = "#" + element_ids[i].currentStyle.backgroundColor.replace(/#/, "");
-		else if (window.getComputedStyle)	colorsarray[i] = "#" + rgb2hex(document.defaultView.getComputedStyle(element_ids[i], null).getPropertyValue("background-color"));
-	}
-}
-
-function restore_colors(colorsarray) {
-	for (var i = 1; i <= 118; i++) set_bgcolor(element_ids[i], (colorsarray.length ? colorsarray[i] : ""), 0);
-}
-
-function showDetails(elTarget) {
-	if (elTarget) {
-		var atomic = elTarget.childNodes[n_atomic].innerHTML * 1;
-		detail.innerHTML = "";
-		for (var i = 0; i < elTarget.childNodes.length; i++)
-			detail.appendChild(elTarget.childNodes[i].cloneNode(true));
-		detail.childNodes[n_mass].innerHTML = mass[atomic];
-		detail.childNodes[n_symbol].style.color = "#000";
-		detail.style.backgroundColor = default_colors[atomic];
-		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
-		detailelectrons.innerHTML = elTarget.nextSibling.innerHTML;
-		detailelectrons.style.backgroundColor = detail.style.backgroundColor;
-		melt_id.innerHTML = melt[0][atomic] ? melt[0][atomic] + " K" : "Unknown";
-		boil_id.innerHTML = boil[0][atomic] ? boil[0][atomic] + " K" : "Unknown";
-		radius_id.innerHTML = radius[0][atomic] ? radius[0][atomic] + spec_radius["unit"] : "Unknown";
-		electroneg_id.innerHTML = electroneg[0][atomic] ? electroneg[0][atomic] : "Unknown";
-		ionize_id.innerHTML = ionize[0][atomic] ? ionize[0][atomic] + spec_ionize["unit"] : "Unknown";
-		discover_id.innerHTML = discover[0][atomic] ? discover[0][atomic] : "Unknown";
-		density_id.innerHTML = density[0][atomic] ? density[0][atomic] + spec_density["unit"] : "Unknown";
-		affinity_id.innerHTML = affinity[0][atomic] ? affinity[0][atomic] + spec_affinity["unit"] : "Unknown";
-		conduct_id.innerHTML = conduct[0][atomic] ? conduct[0][atomic] + spec_conduct["unit"][0] : "Unknown";
-	} else if (!lastHover) on_mouse_over(element_ids[1]);
-	document.getElementById("DetailTab").className = "Active";
-	document.getElementById("LegendTab").className = "";
-	if (!widecheck.checked) document.getElementById("Key").style.display = "none";
-	details.style.display = "block";
-}
-
-function hideDetails(full) {
-	if (!widecheck.checked) {
-		if (full) {
-			for (var i = 0; i < document.forms["visualize"].length; i++) document.forms["visualize"][i].checked = false;
-			dataset = "key";
-			init_slider();
-			populate_mass(mass, "<span>Atomic </span>Mass");
-			on_mouse_over();
-			lastHover = false;
-			current_colors = new Array();
-			restore_colors(current_colors);
-		}
-		details.style.display = "";
-		document.getElementById("Key").style.display = "";
-		document.getElementById("DetailTab").className = "";
-		document.getElementById("LegendTab").className = "Active";
-	}
-}
-
-function update_states(background) {
-	var value = display.value * 1;
-	for (var i = 1; i <= 118; i++) {
-		if (!boil[0][i] && !melt[0][i])	tempcolor = "#D8D8D8";
-		else if (value > boil[0][i])	tempcolor = "#A00";
-		else if (value > melt[0][i])	tempcolor = "#00D";
-		else				tempcolor = "#000";
-		if (background)	set_bgcolor(element_ids[i], tempcolor, 0);
-		else		element_ids[i].childNodes[n_symbol].style.color = tempcolor;
-	}
-}
-
-function dec2hex(dec) {
-	var hex = parseInt(String(dec), 10).toString(16);
-	return (hex.length == 1 ? "0" + hex : hex);
-}
-
-function rgb2hex(value) {
-	var hex = "", h = /(\d+)[, ]+(\d+)[, ]+(\d+)/.exec(value);
-	for (var i = 1; i <= 3; i++) hex += dec2hex(h[i]);
-	return (hex);
-} 
-
-function calc_color(value, start, end, min, max) {
-	var result = new String;
-	var startRgb = new Array(), endRgb = new Array();
-	start = start.replace(/#/, "");
-	end = end.replace(/#/, "");
-	for (var i = 0; i < 3; i++) {
-		if (start.length == 3)	startRgb[i] = parseInt(start.substr(i, 1) + start.substr(i, 1), 16);
-		else			startRgb[i] = parseInt(start.substr(i * 2, 2), 16);
-		if (end.length == 3)	endRgb[i] = parseInt(end.substr(i, 1) + end.substr(i, 1), 16);
-		else			endRgb[i] = parseInt(end.substr(i * 2, 2), 16);
-		result += "" + dec2hex(Math.round((endRgb[i] - startRgb[i]) * ((value - min) / (max - min)) + startRgb[i]));
-	}
-	return ("#" + result);
-}
-
-function color_temp(temparray) {
-	for (var i = 1; i <= 118; i++) {
-		if (temparray[i] < display.value)
-			set_bgcolor(element_ids[i], calc_color(temparray[i], "6666FF", "FFFFFF", 0, display.value), 0);
-		else if (temparray[i] >= display.value)
-			set_bgcolor(element_ids[i], calc_color(temparray[i], "FFFFFF", "FF0000", display.value, temparray[0]), 0);
-		else	set_bgcolor(element_ids[i], "FFFFFF", 0);
-	}
-}
-
-function temp_gradient(temparray) {
-	var value = display.value * 1;
-	for (var i = 1; i <= 118; i++) {
-		if (temparray[i] < value)	set_bgcolor(element_ids[i], calc_color(temparray[i], "6666FF", "FFFFFF", 0, value), 0);
-		else if (temparray[i] >= value)	set_bgcolor(element_ids[i], calc_color(temparray[i], "FFFFFF", "FF0000", value, temparray[0]), 0);
-		else				set_bgcolor(element_ids[i], "FFFFFF", 0);
-	}
-	update_states(false);
-}
-
-function discover_gradient(discarray) {
-	var value = display.value * 1;
-	for (var i = 1; i <= 118; i++) {
-		if (discarray[i] < value || !discarray[i]) set_bgcolor(element_ids[i], "", 0);
-		else set_bgcolor(element_ids[i], "FFFFFF", 0);
-	}
-}
-
-function color_other(valueArray, specArray) {
-	var min = Math.min.apply(Math, valueArray);
-	var max = Math.max.apply(Math, valueArray);
-	for (var i = 1; i <= 118; i++) {
-		if (valueArray[i])	set_bgcolor(element_ids[i], calc_color(valueArray[i], specArray["startcolor"], specArray["endcolor"], min, max), 0);
-		else			set_bgcolor(element_ids[i], specArray["default"], 0);
-	}
-}
-
-function populate_mass(valueArray, legendtext) {
-	for (var i = 1; i <= 118; i++)
-		if (valueArray[i])	element_ids[i].childNodes[n_mass].innerHTML = String(valueArray[i]).replace(/([\d\.]{7})(\d+)/, "$1<span>$2</span>");
-		else			element_ids[i].childNodes[n_mass].innerHTML = "&nbsp;";
-	document.getElementById("Legend").childNodes[n_mass].innerHTML = legendtext;
-}
-
-function search(searchstring) {
-	results = 0;
-	on_mouse_over();
-	for (var atomic = 1; atomic <= 118; atomic++) {
-		if (!searchstring)
-			search_highlight(atomic, true);
-		else if (searchstring == atomic) {
-			search_highlight(atomic, false);
-			results = 1;
-			winner = element_ids[atomic];
-		} else if (element_ids[atomic].childNodes[n_name].innerHTML.toLowerCase().indexOf(searchstring.toLowerCase()) != -1
-			|| element_ids[atomic].childNodes[n_symbol].innerHTML.toLowerCase().indexOf(searchstring.toLowerCase()) != -1) {
-			search_highlight(atomic, false);
-			results++;
-			winner = element_ids[atomic];
-		} else	search_highlight(atomic, true);
-	}
-	save_colors(current_colors);
-	if (results == 1) on_mouse_over(winner);
-}
-
-function search_highlight(atomic, bright) {
-	if (bright)	set_bgcolor(element_ids[atomic], calc_color(6, default_colors[atomic], "FFFFFF", 0, 10), 0);
-	else		set_bgcolor(element_ids[atomic], calc_color(3, default_colors[atomic], "000000", 0, 10), 0);
-}
-
-// Slider inspired by Tom Hermansson Snickars
-function carpeLeft(el, pos) {
-	if (el.style && (typeof(el.style.left) == "string")) {
-		if (typeof(pos) == "number") el.style.left = pos + "px";
-		else {
-			pos = parseInt(el.style.left);
-			if (isNaN(pos)) pos = 0;
-		}
-	} else if (el.style && el.style.pixelLeft) {
-		if (typeof(pos) == "number") el.style.pixelLeft = pos;
-		else pos = el.style.pixelLeft;
-	}
-	return pos;
-}
-
-function dim_for_states() {
-	hideDetails(false);
-	for (var i = 1; i <= 118; i++) {
-		element_ids[i].style.color = "#FFF";
-		element_ids[i].childNodes[n_symbol].style.color = "#FFF";
-		var elTarget = element_ids[i];
-		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
-		elTarget.nextSibling.style.color = "#FFF";
-	}
-	var key = document.getElementById("Key");
-	for (var i = 0; i < 4; i++) {
-		if (key.currentStyle)			key.rows[i].cells[4].style.backgroundColor = key.rows[i].cells[5].currentStyle.color;
-		else if (window.getComputedStyle)	key.rows[i].cells[4].style.backgroundColor = document.defaultView.getComputedStyle(key.rows[i].cells[5], null).getPropertyValue("color");
-		for (var j = 0; j < 4; j++) key.rows[i].cells[j].style.visibility = "hidden";
-		key.rows[i].cells[4].style.color = "#FFF";
-	}
-}
-
-function init_slider() {
-	slider.from = window["spec_" + dataset]["slidermin"];
-	slider.to = window["spec_" + dataset]["slidermax"];
-	slider.xMax = 200;
-	if (window["spec_" + dataset]["values"]) {
-		slider.intervals = window["spec_" + dataset]["values"].length;
-		slider.intervalW = slider.xMax / (slider.intervals - 1);
-	} else	slider.intervals = false;
-	display.valuecount = slider.xMax + 1;
-	slider.scale = (slider.to - slider.from) / slider.xMax;
-//	if (dataset == "discover") discover_gradient(window[dataset][subset]);
-//	else update_states(false);
-}
-
-function startSlide(evnt) {
-	if (search_active) return;
-	on_mouse_over();
-	if (!window["spec_" + dataset]["values"]) {
-		save_colors(current_colors);
-		dim_for_states();
-		update_states(true);
-	}
-	if (!evnt) evnt = window.event;
-	slider.startOffsetX = carpeLeft(slider) - evnt.screenX;
-	document.onmousemove = moveSlider;
-	document.onmouseup = sliderMouseUp;
-	slider.onmousedown = null;
-}
-
-function moveSlider(evnt) {
-	var evnt = (!evnt) ? window.event : evnt;
-	var x = Math.max(0, Math.min(slider.startOffsetX + evnt.screenX, slider.xMax));
-	if (slider.intervals) {
-		if (subset != Math.round(x / slider.intervalW)) {
-			subset = Math.round(x / slider.intervalW);
-			display.value = window["spec_" + dataset]["values"][subset];
-			carpeLeft(slider, subset * slider.intervalW);
-			populate_mass(window[dataset][subset], window["spec_" + dataset]["Legend"][subset]);
-			color_other(window[dataset][subset], window["spec_" + dataset]);
-		}
-	} else {
-		if (dataset == "melt" || dataset == "boil") temp_gradient(window[dataset][subset]);
-		else if (dataset == "discover") discover_gradient(window[dataset][subset])
-		else update_states(true);
-		display.value = Math.round((slider.xMax / display.valuecount) * Math.round(display.valuecount * x / slider.xMax) * slider.scale + slider.from);
-		carpeLeft(slider, x);
-	}
-}
-
-function sliderMouseUp() {
-	keyscroll = false;
-	if (!window["spec_" + dataset]["values"]) restore_colors(current_colors);
-	else save_colors(current_colors);
-	on_mouse_over(lastHover);
-	for (var i = 1; i <= 118; i++) {
-		element_ids[i].style.color = "#000";
-		var elTarget = element_ids[i];
-		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
-		elTarget.nextSibling.style.color = "#000";
-	}
-	var key = document.getElementById("Key");
-	for (var i = 0; i < 4; i++) {
-		key.rows[i].cells[4].style.backgroundColor = "";
-		key.rows[i].cells[4].style.color = "";
-		for (var j = 0; j < 4; j++) key.rows[i].cells[j].style.visibility = "";
-	}
-
-	snap_slider();
-	document.onmousemove = null;
-	document.onmouseup = null;
-	if (dataset != "discover") update_states(false);
-	slider.onmousedown = startSlide;
-}
-
-function snap_slider() {
-	var v = (display.value == parseFloat(display.value)) ? display.value : 0;
-	carpeLeft(slider, Math.max(0, Math.min(slider.xMax, (v - slider.from) / slider.scale)));
-	document.onmousemove = null;
-}
-
-// Thanks to Mark "Tarquin" Wilton-Jones of http://www.howtocreate.co.uk/ for help getting around IE6's broken position: fixed.
-function getIESze() {
-	var de = document.documentElement;
-	var db = document.documentElement;
-	return [(de.clientWidth ? de.clientWidth : db.clientWidth), (de.clientHeight ? de.clientHeight : db.clientHeight)];
-}
-function getIEScrl() {
-	var de = document.documentElement;
-	var db = document.documentElement;
-	return [(de.scrollLeft ? de.scrollLeft : db.scrollLeft), (de.scrollTop ? de.scrollTop : db.scrollTop)];
-}
-
-function attach_elementhovers() {
-	for (var i = 1; i <= 118; i++) {
-		element_ids[i].idx = i;
-		element_ids[i].onclick = function() { click_wiki(element_ids[this.idx].childNodes[n_name].innerHTML); };
-		element_ids[i].onmouseover = function() { on_mouse_over(this); };
-	}
-	var groups = wholetable.tHead.rows[0].cells;
-	for (var i = 1; i < groups.length; i++) {
-		groups[i].idx = i;
-		groups[i].onclick = function() { click_wiki("Group " + groups[this.idx].innerHTML + " element"); };
-	}
-}
-
-function on_mouse_over(el) {
-	if (firstTime) {
-		preload_details();
-		lastHover = el
-		return;
-	}
-	if (lastHover) dark(lastHover);
-	if (el) {
-		dim(el);
-		showDetails(el);
-		lastHover = el;
-	}
-}
-
-function dim(elTarget) {
-	if (results != 1) set_bgcolor(elTarget, calc_color(5, (current_colors.length ? current_colors : default_colors)[elTarget.childNodes[n_atomic].innerHTML], "FFFFFF", 0, 10), 0);
-	highlight(elTarget, "yellow");
-}
-
-function dark(elTarget) {
-	set_bgcolor(elTarget, (current_colors.length ? current_colors : default_colors)[elTarget.childNodes[n_atomic].innerHTML], 0);
-	highlight(elTarget, "");
-}
-
-function set_bgcolor(elTarget, color, stop) {
-	elTarget.style.backgroundColor = (color.charAt(0) == "#" || color.charAt(0) == "") ? color : "#" + color;
-	if (!stop) {
-		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
-		set_bgcolor(elTarget.nextSibling, color, 1);
-	}
-}
-
-function insert_rareearths(el) {
-	var table = wholetable.tBodies[0];
-
-	if (el.checked) {
-		wholetable.tHead.rows[0].insertCell(3).colSpan = 28;
-
-		table.rows[0].insertCell(5).colSpan = 20;
-		table.rows[0].cells[5].rowSpan = 3;
-		table.rows[0].cells[5].className = "KeyRegion";
-
-		table.rows[0].cells[5].appendChild(document.getElementById("visualize"));
-		document.getElementById("Key").style.display = "";
-		document.getElementById("Key").style.fontSize = "1.5em";
-		document.getElementById("Key").parentNode.style.verticalAlign = "middle";
-		document.getElementById("LegendTab").parentNode.style.display = "none";
-
-		table.rows[0].cells[4].rowSpan = 4;
-		table.rows[0].cells[4].colSpan = 28;
-
-		table.rows[4].insertCell(5).colSpan = 28;
-		table.rows[4].cells[5].innerHTML = table.rows[7].cells[2].innerHTML;
-		table.rows[4].cells[5].style.textAlign = "center";
-		table.rows[4].cells[5].className = "Clean";
-
-		for (var i = 29; i >= 0; i--)
-			for (var j = 5, k = 2; j <= 6; j++, k -= 2)
-				table.rows[j].insertBefore(table.rows[j + 4].cells[i + k], table.rows[j].cells[6]);
-
-		table.rows[5].cells[5].style.display = table.rows[6].cells[5].style.display = "none";
-		for (var i = 10; i >= 7; i--) table.rows[i].style.display = "none";
-	} else {
-		wholetable.tHead.rows[0].deleteCell(3);
-
-		table.rows[0].cells[4].appendChild(document.getElementById("visualize"));
-		if (document.getElementById("DetailBox").style.display == "block")
-			document.getElementById("Key").style.display = "none";
-		document.getElementById("Key").style.fontSize = "";
-		document.getElementById("Key").parentNode.style.verticalAlign = "";
-		document.getElementById("LegendTab").parentNode.style.display = "";
-
-		table.rows[5].cells[5].style.display = table.rows[6].cells[5].style.display = "";
-		for (var i = 10; i >= 7; i--) table.rows[i].style.display = "";
-
-		for (var i = 0; i < 30; i++) {
-			table.rows[9].insertBefore(table.rows[5].cells[6], table.rows[9].cells[i + 2]);
-			table.rows[10].appendChild(table.rows[6].cells[6]);
-		}
-
-		table.rows[0].deleteCell(5); table.rows[4].deleteCell(5);
-		table.rows[0].cells[4].colSpan = 20;
-		table.rows[0].cells[4].rowSpan = 3;
-	}
-}
-
-function save_element_ids() {
-	element_ids = new Array();
-	var length = document.getElementsByTagName("td").length;
-	for (var i = 0; i < length; i++) {
-		var current = document.getElementsByTagName("td")[i];
-		if (current.className.indexOf("Element") != -1) {
-			var atomic = current.childNodes[n_atomic].innerHTML * 1;
-			if (!element_ids[atomic]) element_ids[atomic] = current;
-		}
-	}
-}
-
-function slider_arrow(e) {
-	if (!e) e = event;
-	if (e.keyCode == 38 || e.keyCode == 40) {
-		if (isNaN(display.value)) display.value = 0;
-		display.value = Math.min(6000, Math.max(0, (display.value * 1) + 10 * (39 - e.keyCode))) + "";
-		if (!keyscroll) dim_for_states();
-		update_states(true);
-		snap_slider();
-		keyscroll = true;
-	}
-	if (e.keyCode >= 37 && e.keyCode <= 40) {
-		e.cancelBubble = true;
-		if (e.stopPropagation) e.stopPropagation();
-	}
-}
-
-function keyboard_nav(e) {
-	if (!e) e = event;
-	if (e.keyCode == 13 && lastHover) { click_wiki(lastHover.childNodes[n_name].innerHTML); return false; }
-	if (e.keyCode == 27 && document.getElementById("WikiBox").style.display == "block") { destroy(); return false; }
-	if (e.keyCode >= 37 && e.keyCode <= 40) {
-		if (!lastHover) on_mouse_over(element_ids[1]);
-
-		if (e.keyCode == 37 || e.keyCode == 39)
-			var newElement = element_ids[Math.max(1, Math.min(118, lastHover.childNodes[n_atomic].innerHTML * 1 - 38 + e.keyCode))];
-		else {
-			var count = 0;
-			var pos = lastHover.childNodes[n_atomic].innerHTML * 1;
-			if (e.keyCode == 40) {
-				if (widecheck.checked) { if (lastHover.parentNode.rowIndex > 6) return false; }
-				else if (lastHover.parentNode.rowIndex > 10 || pos == 39 || pos == 87 || pos == 88) return false;
-				if (!widecheck.checked) {
-					if ((pos > 39 && pos < 57) || (pos > 71 && pos < 89)) pos += 15;
-					else if (pos >= 57 && pos <= 71) pos += 17;
-					else if (pos >= 104) pos -= 47;
-				}
-			} else {
-				if (pos <= 2 || (pos >= 4 && pos <= 9) || (pos >= 21 && pos <= 30)) return false;
-				if (widecheck.checked && pos >= 57 && pos <= 70) return false;
-				if (!widecheck.checked) {
-					if ((pos > 71 && pos < 89) || (pos > 103 && pos <= 118)) pos -= 15;
-					else if (pos >= 89 && pos <= 103) pos -= 17;
-					else if (pos > 57 && pos <= 71) pos += 62;
-					else if (pos == 57) pos += 47;
-				}
-			}
-			var row = wholetable.tBodies[0].rows[lastHover.parentNode.rowIndex - (20 - e.keyCode / 2 + (lastHover.cellIndex < 4 ? 1 : 0))];
-			for (var i = 0; i < row.cells.length; i++) if (row.cells[i].className.indexOf("Element") != -1) count += e.keyCode - 39;
-			var newElement = element_ids[pos + count];
-		}
-		on_mouse_over(newElement);
-		return false;
-	}
-}
-
-function highlight(el, color) {
-	var period = el.parentNode.rowIndex - 1;
-	wholetable.tBodies[0].rows[period > 7 ? period - 4 : period].cells[0].style.backgroundColor = color;
-	if (period > 7) return;
-
-	var row = wholetable.tBodies[0].rows[period];
-	if (el.cellIndex < 4) var count = (el.cellIndex + 1) / 2;
-	else {
-		var count = 20 - Math.ceil((row.cells.length - el.cellIndex) / 2);
-		if (widecheck.checked && (count += 1) < 4) return;
-	}
-	wholetable.tHead.rows[0].cells[count].style.backgroundColor = color;
-}
-
-function getAJAXobj() {
-	var xmlhttp, complete = false;
-	try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); }
-	catch (e) { try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
-	catch (e) { try { xmlhttp = new XMLHttpRequest(); }
-	catch (e) { xmlhttp = false; }}}
-	if (!xmlhttp) return null;
-	this.connect = function(sURL, sVars, fnDone) {
-		if (!xmlhttp) return false;
-		complete = false;
-		try {
-			xmlhttp.open("GET", sURL + "?" + sVars, true);
-			sVars = "";
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && !complete) {
-					complete = true;
-					fnDone(xmlhttp);
-				}
-			};
-			xmlhttp.send(sVars);
-		}
-		catch(z) { return false; }
-		return true;
-	};
-	return this;
-}
-
-function preload_details() {
-	if (!waiting) {
-		waiting = true;
-		var conn = new getAJAXobj();
-		conn.connect("data.php", "set=electroneg,ionize,radius,discover,density,affinity,conduct", parse_into_arrays);
-	}
-}
-
-function parse_into_arrays(oXML) {
-	var returned_data = oXML.responseText.split("\n");
-	for (sets in returned_data) {
-		temp = new Array();
-		arrays = returned_data[sets].split("=")[1].split(":");
-		for (element in arrays) temp.push(arrays[element].split(","));
-		window[returned_data[sets].split("=")[0]] = temp;
-	}
-	firstTime = false;
-	on_mouse_over(lastHover);
-};
-  </script>
+  <script type="text/javascript">language = "en";</script>
+  <script type="text/javascript" src="Script/interactivity.js"></script>
 
   <link rel="shortcut icon" href="Images/favicon.ico">
 
@@ -806,7 +56,7 @@ function parse_into_arrays(oXML) {
  <body>
 
   <h1>Periodic Table of Elements</h1>
-<a href="about.html"><img src="http://daringfireball.net/misc/2006/11/buggy.png" style="border: 0; position: absolute; top: 0; right: 0;"></a>
+
   <div id="Navigation" class="InnerBorder">
    <a href="Other/Periodic Table.pdf" title="US paper size (8.5&times;11 in) printable PDF">PDF (Letter)</a>
    <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5&times;14 in) printable PDF">PDF (Legal)</a>
@@ -816,13 +66,14 @@ function parse_into_arrays(oXML) {
    <input type="checkbox" id="wide" name="wide"> <label for="wide" title="Show rare earth elements inline">Wide</label>
    <a href="about.html" title="Contact info and questions about this particular periodic table">About</a>
    <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
-   <form name="language" style="display: inline;" method="get" action="./"><select name="lang" onChange="this.form.submit();"><option value="af">Afrikaans<option value="ar">العربية<option value="bg">Български<option value="bn">বাংলা<option value="da">Dansk<option value="de">Deutsch<option value="el">Ελληνικά<option value="en" selected>English (US)<option value="en_gb">English (UK)<option value="eo">Esperanto<option value="es">Español<option value="fi">Suomi<option value="fr">Français<option value="he">עברית<option value="is">Íslenska<option value="it">Italiano<option value="ja">日本語<option value="ko">한국어<option value="nl">Nederlands<option value="no">Norsk<option value="pl">Polski<option value="pt">Português<option value="ru">Русский<option value="sv">Svenska<option value="sw">Kiswahili<option value="th">ไทย<option value="tr">Türkçe<option value="zh">中文 (简)<option value="zh_tw">中文 (繁)</select><noscript><input type="submit" value="Go"></noscript></form>
+   <form name="language" style="display: inline;" method="get" action="/periodic/"><select name="lang" onChange="this.form.submit();"><option value="en" selected>English (US)<option value="af">Afrikaans<option value="ar">العربية<option value="bg">Български<option value="bn">বাংলা<option value="da">Dansk<option value="de">Deutsch<option value="el">Ελληνικά<option value="en_gb">English (UK)<option value="eo">Esperanto<option value="es">Español<option value="fi">Suomi<option value="fr">Français<option value="he">עברית<option value="is">Íslenska<option value="it">Italiano<option value="ja">日本語<option value="ko">한국어<option value="nl">Nederlands<option value="no">Norsk<option value="pl">Polski<option value="pt">Português<option value="ru">Русский<option value="sv">Svenska<option value="sw">Kiswahili<option value="th">ไทย<option value="tr">Türkçe<option value="zh">中文 (简)<option value="zh_tw">中文 (繁)</select><noscript><input type="submit" value="Go"></noscript></form>
   </div>
+
 <!--
   <div id="Ad">
-<script type="text/javascript">google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.dayah.com/periodic/collapse.html"; google_ad_width = 468; google_ad_height = 60; google_ad_format = "468x60_as"; google_ad_type = "text_image"; google_color_border = "FFFFFF"; google_color_bg = "FFFFFF"; google_color_link = "0000FF"; google_color_url = "000000"; google_color_text = "000000"; google_ad_channel = "3111509862";</script>
+<script type="text/javascript">google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.ptable.com/collapse.html"; google_ad_width = 468; google_ad_height = 60; google_ad_format = "468x60_as"; google_ad_type = "text_image"; google_color_border = "FFFFFF"; google_color_bg = "FFFFFF"; google_color_link = "0000FF"; google_color_url = "000000"; google_color_text = "000000"; google_ad_channel = "3111509862";</script>
 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-<script type="text/javascript">google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.dayah.com/periodic/collapse.html"; google_ad_width = 468; google_ad_height = 60; google_ad_format = "468x60_as"; google_ad_type = "text_image"; google_color_border = "FFFFFF"; google_color_bg = "FFFFFF"; google_color_link = "0000FF"; google_color_url = "000000"; google_color_text = "000000"; google_ad_channel = "3111509862";</script>
+<script type="text/javascript">google_ad_client = "pub-1899956715581914"; google_alternate_ad_url = "http://www.ptable.com/collapse.html"; google_ad_width = 468; google_ad_height = 60; google_ad_format = "468x60_as"; google_ad_type = "text_image"; google_color_border = "FFFFFF"; google_color_bg = "FFFFFF"; google_color_link = "0000FF"; google_color_url = "000000"; google_color_text = "000000"; google_ad_channel = "3111509862";</script>
 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
   </div>
 -->
@@ -830,9 +81,7 @@ function parse_into_arrays(oXML) {
  <col id="Period">
  <thead>
  <tr>
-
   <td></td>
-
   <td colspan=2>1</td>
   <td colspan=2>2</td>
   <td colspan=2>3</td>
@@ -851,120 +100,160 @@ function parse_into_arrays(oXML) {
   <td colspan=2>16</td>
   <td colspan=2>17</td>
   <td colspan=2>18</td>
-
  </tr>
- </thead><tbody>
+ </thead>
+
+ <tbody>
  <tr id="White">
   <th>1</th>
-
   <td class="Element Hydrogen"><strong>1</strong> <big>H</big> <em>Hydrogen</em><div>1.00794</div></td><td class="Electron Hydrogen"><span>1</span></td>
 
   <td id="Legend" colspan=2><strong>Atomic<span> #</span></strong> <big>Sym<span>bol</span></big> <em>Name</em><div><span>Atomic </span>Mass</div></td>
 
   <td class="KeyRegion Clean" colspan=20 rowspan=3>
-   <ul><li id="LegendTab" class="Active">Chemical Series</li><li id="DetailTab">Detailed Data</li></ul>
+<ul>
+ <li id="SeriesTab" class="Active">Series</li>
+ <li id="PropertyTab">Properties</li>
+ <li id="ElectronTab">Electrons</li>
+ <li id="IsotopeTab">Isotopes</li>
+</ul>
 
-   <table id="Key" cellspacing=5>
-    <col width="5%">
-    <col width="33%">
-    <col width="5%">
-    <col width="34%">
-    <col width="5%">
-    <col width="18%">
-    <tr>
-     <th class="Alkali"></th>
-     <td>Alkali metals</td>
+<table id="Key" cellspacing=5>
+ <col width="5%">
+ <col width="33%">
+ <col width="5%">
+ <col width="34%">
+ <col width="5%">
+ <col width="18%">
+ <tr>
+  <th class="Alkali"></th>
+  <td>Alkali metals</td>
 
-     <th class="Actinide"></th>
-     <td>Actinide series</td>
+  <th class="Actinide"></th>
+  <td>Actinide series</td>
 
-     <th class="Solid">C</th>
-     <td class="Solid">Solid</td>
+  <th class="Solid"><big>C</big></th>
+  <td class="Solid">Solid</td>
+ </tr><tr>
+  <th class="Alkaline"></th>
+  <td>Alkaline earth metals</td>
 
-    </tr><tr>
+  <th class="Poor"></th>
+  <td>Poor metals</td>
 
-     <th class="Alkaline"></th>
-     <td>Alkaline earth metals</td>
+  <th class="Liquid"><big>Br</big></th>
+  <td class="Liquid">Liquid</td>
+ </tr><tr>
+  <th class="Transition"></th>
+  <td>Transition metals</td>
 
-     <th class="Poor"></th>
-     <td>Poor metals</td>
+  <th class="Nonmetal"></th>
+  <td>Nonmetals</td>
 
-     <th class="Liquid">Br</th>
-     <td class="Liquid">Liquid</td>
+  <th class="Gas"><big>H</big></th>
+  <td class="Gas">Gas</td>
+ </tr><tr>
+  <th class="Lanthanide"></th>
+  <td>Lanthanide series</td>
 
-    </tr><tr>
+  <th class="Noble"></th>
+  <td>Noble gases</td>
 
-     <th class="Transition"></th>
-     <td>Transition metals</td>
+  <th class="Unknown"><big>Rf</big></th>
+  <td class="Unknown">Unknown</td>
+ </tr>
+</table>
 
-     <th class="Nonmetal"></th>
-     <td>Nonmetals</td>
+<form name="visualize" id="visualize">
+ <table id="PropertyBox" cellspacing=0 cellpadding=0>
+  <tr>
+   <td>
+    <table cellspacing=0 cellpadding=0>
+     <tr>
+      <td id="Element"></td>
+      <td id="Electrons"></td>
+     </tr>
+     <tr><td id="ELECTRONSTRING" colspan=2 style="text-align: center;"></td></tr>
+    </table>
 
-     <th class="Gas">H</th>
-     <td class="Gas">Gas</td>
+   </td><td>
 
-    </tr><tr>
+    <table cellspacing=0 cellpadding=0>
+     <tr>
+      <th><label for="t_state" id="l_state">State at <span></span></label></th>
+      <td><input type="radio" name="visualize" id="t_state" value="state"></td>
+      <td id="STATE"></td>
+     </tr><tr>
+      <th><label for="t_melt">Melting Point</label></th>
+      <td><input type="radio" name="visualize" id="t_melt" value="melt"></td>
+      <td id="MELT"></td>
+     </tr><tr>
+      <th><label for="t_boil">Boiling Point</label></th>
+      <td><input type="radio" name="visualize" id="t_boil" value="boil"></td>
+      <td id="BOIL"></td>
+     </tr><tr>
+      <th><label for="t_electroneg">Electronegativity</label></th>
+      <td><input type="radio" name="visualize" id="t_electroneg" value="electroneg"></td>
+      <td id="ELECTRONEG"></td>
+     </tr><tr>
+      <th><label for="t_affinity">Electron Affinity</label></th>
+      <td><input type="radio" name="visualize" id="t_affinity" value="affinity"></td>
+      <td id="AFFINITY"></td>
+     </tr><tr>
+      <th><label for="t_ionize" id="l_ionize"><span></span> Ionization</label></th>
+      <td><input type="radio" name="visualize" id="t_ionize" value="ionize"></td>
+      <td id="IONIZE"></td>
+     </tr>
+    </table>
 
-     <th class="Lanthanide"></th>
-     <td>Lanthanide series</td>
+   </td><td>
 
-     <th class="Noble"></th>
-     <td>Noble gases</td>
+    <table cellspacing=0 cellpadding=0>
+     <tr>
+      <th><label for="t_radius" id="l_radius"><span></span> Radius</label></th>
+      <td><input type="radio" name="visualize" id="t_radius" value="radius"></td>
+      <td id="RADIUS"></td>
+     </tr><tr>
+      <th><label for="t_density" id="l_density"><span></span> Density</label></th>
+      <td><input type="radio" name="visualize" id="t_density" value="density"></td>
+      <td id="DENSITY"></td>
+     </tr><tr>
+      <th><label for="t_conduct" id="l_conduct"><span></span> Conduct.</label></th>
+      <td><input type="radio" name="visualize" id="t_conduct" value="conduct"></td>
+      <td id="CONDUCT"></td>
+     </tr><tr>
+      <th><label for="t_heat" id="l_heat"><span></span> Heat</label></th>
+      <td><input type="radio" name="visualize" id="t_heat" value="heat"></td>
+      <td id="HEAT"></td>
+     </tr><tr>
+      <th><label for="t_abundance" id="l_abundance"><span></span> Abundance</label></th>
+      <td><input type="radio" name="visualize" id="t_abundance" value="abundance"></td>
+      <td id="ABUNDANCE"></td>
+     </tr><tr>
+      <th><label for="t_discover">Discovered</label></th>
+      <td><input type="radio" name="visualize" id="t_discover" value="discover"></td>
+      <td id="DISCOVER"></td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+ </table>
+</form>
 
-     <th class="Unknown">Rf</th>
-     <td class="Unknown">Unknown</td>
-
-    </tr>
-   </table>
-
-   <form name="visualize" id="visualize" style="display: inline;">
-   <table id="DetailBox" cellspacing=0 cellpadding=0>
-    <tr>
-     <td id="Element" rowspan=5></td>
-     <td id="Electrons" rowspan=5></td>
-
-     <td><input type="radio" name="visualize" id="t_melt" value="melt"></td>
-     <th><label for="t_melt">Melting Point</label>:</th><td id="Melt"></td>
-
-     <td style="border-left: thin solid #CCF;"><input type="radio" name="visualize" id="t_radius" value="radius"></td>
-     <th><label for="t_radius">Radius</label>:</th><td id="Radius"></td>
-    </tr><tr>
-     <td><input type="radio" name="visualize" id="t_boil" value="boil"></td>
-     <th><label for="t_boil">Boiling Point</label>:</th><td id="Boil"></td>
-
-    </tr><tr>
-     <td><input type="radio" name="visualize" id="t_electroneg" value="electroneg"></td>
-     <th><label for="t_electroneg">Electronegativity</label>:</th><td id="Electroneg"></td>
-
-     <td style="border-left: thin solid #CCF;"><input type="radio" name="visualize" id="t_ionize" value="ionize"></td>
-     <th><label for="t_ionize">Ionization Energy</label>:</th><td id="Ionize"></td>
-    </tr><tr>
-     <td><input type="radio" name="visualize" id="t_discover" value="discover"></td>
-     <th><label for="t_discover">Discovered</label>:</th><td id="Discover"></td>
-
-     <td style="border-left: thin solid #CCF;"><input type="radio" name="visualize" id="t_density" value="density"></td>
-     <th><label for="t_density">Density</label>:</th><td id="Density"></td>
-    </tr><tr>
-     <td><input type="radio" name="visualize" id="t_affinity" value="affinity"></td>
-     <th><label for="t_affinity">Electron Affinity</label>:</th><td id="Affinity"></td>
-
-     <td style="border-left: thin solid #CCF;"><input type="radio" name="visualize" id="t_conduct" value="conduct"></td>
-     <th><label for="t_conduct">Conductivity</label>:</th><td id="Conductivity"></td>
-    </tr>
-   </table>
-   </form>
+<table id="Isotopes" cellspacing=5>
+ <tr><td>Coming soon</td></tr>
+</table>
   </td>
 
-  <td colspan=10><input id="SliderDisplay" type="text" value="0"><div id="SliderTrack"><div id="SliderSlit">&nbsp;</div><div id="SliderBar" display="SliderDisplay">&nbsp;</div></div></td>
+  <td colspan=8><div id="SliderTrack"><div id="SliderSlit"></div><div id="SliderBar"></div></div></td>
+  <td colspan=2><input id="SliderDisplay" type="text" value="0"></td>
 
   <td class="Element Noble"><strong>2</strong> <big>He</big> <em>Helium</em><div>4.00260<span>2</span></div></td><td class="Electron Noble"><span>2</span></td>
-
   <td class="Shells"><span>K</span></td>
-
  </tr>
+
  <tr>
   <th>2</th>
-
   <td class="Element Alkali"><strong>3</strong> <big>Li</big> <em>Lithium</em><div>6.941</div></td><td class="Electron Alkali"><span>2<br>1</span></td>
   <td class="Element Alkaline"><strong>4</strong> <big>Be</big> <em>Beryllium</em><div>9.01218<span>2</span></div></td><td class="Electron Alkaline"><span>2<br>2</span></td>
   <td class="Element Nonmetal DividerB"><strong>5</strong> <big>B</big> <em>Boron</em><div>10.811</div></td><td class="Electron Nonmetal DividerB"><span>2<br>3</span></td>
@@ -973,30 +262,24 @@ function parse_into_arrays(oXML) {
   <td class="Element Nonmetal"><strong>8</strong> <big>O</big> <em>Oxygen</em><div>15.9994</div></td><td class="Electron Nonmetal"><span>2<br>6</span></td>
   <td class="Element Nonmetal"><strong>9</strong> <big>F</big> <em>Fluorine</em><div>18.9984<span>032</span></div></td><td class="Electron Nonmetal"><span>2<br>7</span></td>
   <td class="Element Noble"><strong>10</strong> <big>Ne</big> <em>Neon</em><div>20.1797</div></td><td class="Electron Noble"><span>2<br>8</span></td>
-
   <td class="Shells"><span>K<br>L</span></td>
-
  </tr>
+
  <tr>
   <th>3</th>
-
   <td class="Element Alkali"><strong>11</strong> <big>Na</big> <em>Sodium</em><div>22.9897<span>6928</span></div></td><td class="Electron Alkali"><span>2<br>8<br>1</span></td>
   <td class="Element Alkaline"><strong>12</strong> <big>Mg</big> <em>Magnesium</em><div>24.3050</div></td><td class="Electron Alkaline"><span>2<br>8<br>2</span></td>
-
-
   <td class="Element Poor"><strong>13</strong> <big>Al</big> <em>Aluminum</em><div>26.9815<span>386</span></div></td><td class="Electron Poor DividerR"><span>2<br>8<br>3</span></td>
   <td class="Element Nonmetal DividerB"><strong>14</strong> <big>Si</big> <em>Silicon</em><div>28.0855</div></td><td class="Electron Nonmetal DividerB"><span>2<br>8<br>4</span></td>
   <td class="Element Nonmetal"><strong>15</strong> <big>P</big> <em>Phosphorus</em><div>30.9737<span>62</span></div></td><td class="Electron Nonmetal"><span>2<br>8<br>5</span></td>
   <td class="Element Nonmetal"><strong>16</strong> <big>S</big> <em>Sulfur</em><div>32.065</div></td><td class="Electron Nonmetal"><span>2<br>8<br>6</span></td>
   <td class="Element Nonmetal"><strong>17</strong> <big>Cl</big> <em>Chlorine</em><div>35.453</div></td><td class="Electron Nonmetal"><span>2<br>8<br>7</span></td>
   <td class="Element Noble"><strong>18</strong> <big>Ar</big> <em>Argon</em><div>39.948</div></td><td class="Electron Noble"><span>2<br>8<br>8</span></td>
-
   <td class="Shells"><span>K<br>L<br>M</span></td>
-
  </tr>
+
  <tr>
   <th>4</th>
-
   <td class="Element Alkali"><strong>19</strong> <big>K</big> <em>Potassium</em><div>39.0983</div></td><td class="Electron Alkali"><span>2<br>8<br>8<br>1</span></td>
   <td class="Element Alkaline"><strong>20</strong> <big>Ca</big> <em>Calcium</em><div>40.078</div></td><td class="Electron Alkaline"><span>2<br>8<br>8<br>2</span></td>
   <td class="Element Transition"><strong>21</strong> <big>Sc</big> <em>Scandium</em><div>44.9559<span>12</span></div></td><td class="Electron Transition"><span>2<br>8<br>9<br>2</span></td>
@@ -1015,13 +298,11 @@ function parse_into_arrays(oXML) {
   <td class="Element Nonmetal"><strong>34</strong> <big>Se</big> <em>Selenium</em><div>78.96</div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>6</span></td>
   <td class="Element Nonmetal"><strong>35</strong> <big>Br</big> <em>Bromine</em><div>79.904</div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>7</span></td>
   <td class="Element Noble"><strong>36</strong> <big>Kr</big> <em>Krypton</em><div>83.798</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>8</span></td>
-
   <td class="Shells"><span>K<br>L<br>M<br>N</span></td>
-
  </tr>
+
  <tr>
   <th>5</th>
-
   <td class="Element Alkali"><strong>37</strong> <big>Rb</big> <em>Rubidium</em><div>85.4678</div></td><td class="Electron Alkali"><span>2<br>8<br>18<br>8<br>1</span></td>
   <td class="Element Alkaline"><strong>38</strong> <big>Sr</big> <em>Strontium</em><div>87.62</div></td><td class="Electron Alkaline"><span>2<br>8<br>18<br>8<br>2</span></td>
   <td class="Element Transition"><strong>39</strong> <big>Y</big> <em>Yttrium</em><div>88.9058<span>5</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>9<br>2</span></td>
@@ -1040,18 +321,14 @@ function parse_into_arrays(oXML) {
   <td class="Element Nonmetal DividerB"><strong>52</strong> <big>Te</big> <em>Tellurium</em><div>127.60</div></td><td class="Electron Nonmetal DividerB"><span>2<br>8<br>18<br>18<br>6</span></td>
   <td class="Element Nonmetal"><strong>53</strong> <big>I</big> <em>Iodine</em><div>126.904<span>47</span></div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>18<br>7</span></td>
   <td class="Element Noble"><strong>54</strong> <big>Xe</big> <em>Xenon</em><div>131.293</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>18<br>8</span></td>
-
   <td class="Shells"><span>K<br>L<br>M<br>N<br>O</span></td>
-
  </tr>
+
  <tr>
   <th>6</th>
-
   <td class="Element Alkali"><strong>55</strong> <big>Cs</big> <em>Cesium</em><div>132.905<span>4519</span></div></td><td class="Electron Alkali"><span>2<br>8<br>18<br>18<br>8<br>1</span></td>
   <td class="Element Alkaline"><strong>56</strong> <big>Ba</big> <em>Barium</em><div>137.327</div></td><td class="Electron Alkaline"><span>2<br>8<br>18<br>18<br>8<br>2</span></td>
-
   <td class="InnerBorder BlueLeft BlueTop BlueRight" colspan=2>57&ndash;71</td>
-
   <td class="Element Transition"><strong>72</strong> <big>Hf</big> <em>Hafnium</em><div>178.49</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>10<br>2</span></td>
   <td class="Element Transition"><strong>73</strong> <big>Ta</big> <em>Tantalum</em><div>180.947<span>88</span></div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>11<br>2</span></td>
   <td class="Element Transition"><strong>74</strong> <big>W</big> <em>Tungsten</em><div>183.84</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>12<br>2</span></td>
@@ -1067,18 +344,14 @@ function parse_into_arrays(oXML) {
   <td class="Element Poor"><strong>84</strong> <big>Po</big> <em>Polonium</em><div>(208.982<span>4</span>)</div></td><td class="Electron Poor DividerR"><span>2<br>8<br>18<br>32<br>18<br>6</span></td>
   <td class="Element Nonmetal"><strong>85</strong> <big>At</big> <em>Astatine</em><div>(209.987<span>1</span>)</div></td><td class="Electron Nonmetal"><span>2<br>8<br>18<br>32<br>18<br>7</span></td>
   <td class="Element Noble"><strong>86</strong> <big>Rn</big> <em>Radon</em><div>(222.017<span>6</span>)</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>32<br>18<br>8</span></td>
-
   <td class="Shells"><span>K<br>L<br>M<br>N<br>O<br>P</span></td>
-
  </tr>
+
  <tr>
   <th>7</th>
-
   <td class="Element Alkali"><strong>87</strong> <big>Fr</big> <em>Francium</em><div>(223)</div></td><td class="Electron Alkali"><span>2<br>8<br>18<br>32<br>18<br>8<br>1</span></td>
   <td class="Element Alkaline"><strong>88</strong> <big>Ra</big> <em>Radium</em><div>(226)</div></td><td class="Electron Alkaline"><span>2<br>8<br>18<br>32<br>18<br>8<br>2</span></td>
-
   <td class="InnerBorder BlueLeft BlueRight" colspan=2>89&ndash;103</td>
-
   <td class="Element Transition"><strong>104</strong> <big>Rf</big> <em class="Long">Rutherfordium</em><div>(261)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>10<br>2</span></td>
   <td class="Element Transition"><strong>105</strong> <big>Db</big> <em>Dubnium</em><div>(262)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>11<br>2</span></td>
   <td class="Element Transition"><strong>106</strong> <big>Sg</big> <em>Seaborgium</em><div>(266)</div></td><td class="Electron Transition"><span>2<br>8<br>18<br>32<br>32<br>12<br>2</span></td>
@@ -1094,29 +367,24 @@ function parse_into_arrays(oXML) {
   <td class="Element Poor"><strong>116</strong> <big>Uuh</big> <em class="Long">Ununhexium</em><div>(292)</div></td><td class="Electron Poor"><span>2<br>8<br>18<br>32<br>32<br>18<br>6</span></td>
   <td class="Element Undiscovered"><strong>117</strong> <big>Uus</big> <em class="Long">Ununseptium</em><div>&nbsp;</div></td><td class="Electron Undiscovered"><span></span></td>
   <td class="Element Noble"><strong>118</strong> <big>Uuo</big> <em>Ununoctium</em><div>(294)</div></td><td class="Electron Noble"><span>2<br>8<br>18<br>32<br>32<br>18<br>8</span></td>
-
   <td class="Shells"><span>K<br>L<br>M<br>N<br>O<br>P<br>Q</span></td>
-
  </tr>
- <tr style="background-color: white;">
 
+ <tr style="background-color: white;">
   <td colspan=5 rowspan=2 style="text-align: center;"><label for="SearchInput">Search</label><br><input id="SearchInput" type="text" style="width: 10ex;" value="# or Name"></td>
   <td class="InnerBorder BlueLeft BlueRight" colspan=2></td>
   <td id="Stable" colspan=30>For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
-
  </tr>
- <tr>
 
+ <tr>
   <td class="InnerBorder BlueLeft" colspan=2></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan=30>Design and Interface Copyright &copy; 1997 <a href="about.html">Michael Dayah</a><span id="Print"> (michael@dayah.com). http://www.dayah.com/periodic/</span>. Last updated: June 12, 2007</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan=30>Design and Interface Copyright &copy; 1997 <a href="about.html">Michael Dayah</a><span id="Print"> (michael@dayah.com). http://www.ptable.com/</span>. Last updated: June 22, 2007</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
-
  </tr>
- <tr>
 
+ <tr>
   <td id="Note" colspan=5 rowspan=2><div>The subgroup numbers 1-18 were adopted in 1984 by the International Union of Pure and Applied Chemistry. The names of elements 112-118 are the Latin equivalents of those numbers.</div></td>
   <td class="InnerBorder BlueLeft BlueRight BlueBottom" colspan=2 rowspan=2></td>
-
   <td class="Element Lanthanide"><strong>57</strong> <big>La</big> <em>Lanthanum</em><div>138.905<span>47</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>18<br>9<br>2</span></td>
   <td class="Element Lanthanide"><strong>58</strong> <big>Ce</big> <em>Cerium</em><div>140.116</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>19<br>9<br>2</span></td>
   <td class="Element Lanthanide"><strong>59</strong> <big>Pr</big> <em class="Long">Praseodymium</em><div>140.907<span>65</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>21<br>8<br>2</span></td>
@@ -1132,12 +400,10 @@ function parse_into_arrays(oXML) {
   <td class="Element Lanthanide"><strong>69</strong> <big>Tm</big> <em>Thulium</em><div>168.934<span>21</span></div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>31<br>8<br>2</span></td>
   <td class="Element Lanthanide"><strong>70</strong> <big>Yb</big> <em>Ytterbium</em><div>173.04</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>32<br>8<br>2</span></td>
   <td class="Element Lanthanide"><strong>71</strong> <big>Lu</big> <em>Lutetium</em><div>174.967</div></td><td class="Electron Lanthanide"><span>2<br>8<br>18<br>32<br>9<br>2</span></td>
-
   <td rowspan=2 class="InnerBorder BlueRight BlueBottom BlueLeft"></td>
-
  </tr>
- <tr>
 
+ <tr>
   <td class="Element Actinide"><strong>89</strong> <big>Ac</big> <em>Actinium</em><div>(227)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>18<br>9<br>2</span></td>
   <td class="Element Actinide"><strong>90</strong> <big>Th</big> <em>Thorium</em><div>232.038<span>06</span></div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>18<br>10<br>2</span></td>
   <td class="Element Actinide"><strong>91</strong> <big>Pa</big> <em class="Long">Protactinium</em><div>231.035<span>88</span></div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>20<br>9<br>2</span></td>
@@ -1153,8 +419,8 @@ function parse_into_arrays(oXML) {
   <td class="Element Actinide"><strong>101</strong> <big>Md</big> <em class="Long">Mendelevium</em><div>(258)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>31<br>8<br>2</span></td>
   <td class="Element Actinide"><strong>102</strong> <big>No</big> <em>Nobelium</em><div>(259)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>32<br>8<br>2</span></td>
   <td class="Element Actinide"><strong>103</strong> <big>Lr</big> <em class="Long">Lawrencium</em><div>(262)</div></td><td class="Electron Actinide"><span>2<br>8<br>18<br>32<br>32<br>9<br>2</span></td>
-
  </tr>
+
  <!--[if gte IE 5.5]><![if lt IE 7]>
   <tr><td></td></tr>
  <![endif]><![endif]-->
@@ -1167,6 +433,6 @@ function parse_into_arrays(oXML) {
    <iframe id="WikiFrame" name="WikiFrame" frameborder=0 security="restricted"></iframe>
   </div>
 
-  <p style="font-size: x-small;"><a href="./?lang=af">Periodieke Tabel</a> | <a href="./?lang=ar">جدول دوري</a> | <a href="./?lang=bg">Периодична Система</a> | <a href="./?lang=bn">পর্যায় সারণী</a> | <a href="./?lang=da">Periodiske System</a> | <a href="./?lang=de">Periodensystem</a> | <a href="./?lang=el">Περιοδικός Πίνακας</a> | <a href="./?lang=en_gb">Periodic Chart</a> | <a href="./?lang=eo">Perioda Tabelo</a> | <a href="./?lang=es">Tabla Periódica</a> | <a href="./?lang=fi">Jaksollinen Järjestelmä</a> | <a href="./?lang=fr">Tableau Périodique</a> | <a href="./?lang=he">הטבלה המחזורית</a> | <a href="./?lang=is">Lotukerfið</a> | <a href="./?lang=it">Tavola Periodica</a> | <a href="./?lang=ja">周期表</a> | <a href="./?lang=ko">주기율표</a> | <a href="./?lang=nl">Periodiek Systeem</a> | <a href="./?lang=no">Periodesystemet</a> | <a href="./?lang=pl">Układ Okresowy</a> | <a href="./?lang=pt">Tabela Periódica</a> | <a href="./?lang=ru">Периодическая Система</a> | <a href="./?lang=sv">Periodiska Systemet</a> | <a href="./?lang=sw">Jedwali la Elementi</a> | <a href="./?lang=th">ตารางธาตุ</a> | <a href="./?lang=tr">Periyodik Tablo</a> | <a href="./?lang=zh">元素周期表</a> | <a href="./?lang=zh_tw">元素週期表</a> | 131.3ms</p>
+  <p style="font-size: x-small;"><a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/?lang=en_gb">Periodic Chart</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh_tw">元素週期表</a> | 84.5ms</p>
  </body>
 </html>
