@@ -16,7 +16,7 @@
  <body>
 
   <h1>Link to the Periodic Table</h1>
-  <div style="position: relative; height: 12px;">
+  <div style="position: relative; height: 12px; margin-left: 0;">
    <img src="http://web.utk.edu/~mdayah/bevel-left.png" style="position: absolute; top: -13px; left: 0; height: 24px; width: 12px;" alt="">
    <img src="http://web.utk.edu/~mdayah/bevel-right.png" style="position: absolute; top: -13px; right: 0; height: 24px; width: 12px;" alt="">
   </div>
@@ -27,13 +27,9 @@
   <div><a href="/periodic/" title="Periodic Table of Elements">Periodic Table</a></div>
   <div><textarea rows=3 cols=60>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;Periodic Table&lt;/a&gt;</textarea></div>
 
-  <h2>Small Logo</h2>
-  <div><a href="/periodic/" title="Periodic Table of Elements"><img src="Images/poster-logo.png" alt="Periodic Table" width=150 border=0></a></div>
-  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/poster-logo.png" alt="Periodic Table" width=75 border=0&gt;&lt;/a&gt;</textarea></div>
-
-  <h2>Large Logo</h2>
-  <div><a href="/periodic/" title="Printable periodic table of elements"><img src="http://www.ptable.com/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0></a></div>
-  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Printable periodic table of elements"&gt;&lt;img src="http://www.ptable.com/Images/ptable-logo.png" alt="Periodic table" height=150 width=240 border=0&gt;&lt;/a&gt;</textarea></div>
+  <h2>Logo</h2>
+  <div><a href="/periodic/" title="Periodic Table of Elements"><img src="Images/ptable-logo.png" alt="Periodic Table" height=60 width=120 border=0></a></div>
+  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/poster-logo.png" alt="Ptable.com" height=60 width=120 border=0&gt;&lt;/a&gt;</textarea></div>
 
  </body>
 </html>
