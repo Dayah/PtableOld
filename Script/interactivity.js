@@ -1,18 +1,25 @@
 window.onload = function() {
 	n_atomic = 0; n_name = (language == "zh") ? 2 : 4; n_symbol = 2; n_mass = 5;
-	sheet_electron = 1; sheet_names = 2;
+	i_neutrons = 0, i_isomass = 1, i_binding = 2, i_masscontrib = 3, i_halflife = 4, i_decaymode = 5, i_width = 6;
 
+	lastIsotope = false;
+	oldYellow = false;
 	lastHover = false;
+	lastOrbital = false;
 	waiting = false;
 	keyscroll = false;
 	dataset = "series";
-	tab = "Property";
+	tab = "Series";
+
 	widecheck = document.getElementById("wide");
 	wholetable = document.getElementById("Main");
 	detail = document.getElementById("CloseupElement");
 	detailelectrons = document.getElementById("CloseupElectron");
-	key_id = document.getElementById("Key");
-	properties = document.getElementById("PropertyBox");
+	key_id = document.getElementById("SeriesBox");
+	display = document.getElementById("SliderDisplay");
+	slider = document.getElementById("SliderBar");
+	searchinput = document.getElementById("SearchInput");
+	aufbau = document.getElementById("Hund").tBodies[0].getElementsByTagName("th");
 
 	window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
 	init_layout();
@@ -23,42 +30,56 @@ window.onload = function() {
 		while (element_ids[i].nextSibling.nodeType != 1) element_ids[i] = element_ids[i].nextSibling;
 		element_ids[i].nextSibling.className += " Solid";
 	}
-	current_colors = new Array();
-	default_colors = new Array();
+	current_colors = [], default_colors = [];
 	save_colors(default_colors);
 
 	melt = [[3823,14.01,0.95,453.69,1560,2348,3823,63.05,54.8,53.5,24.56,370.87,923,933.47,1687,317.3,388.36,171.6,83.8,336.53,1115,1814,1941,2183,2180,1519,1811,1768,1728,1357.77,692.68,302.91,1211.4,1090,494,265.8,115.79,312.46,1050,1799,2128,2750,2896,2430,2607,2237,1828.05,1234.93,594.22,429.75,505.08,903.78,722.66,386.85,161.3,301.59,1000,1193,1071,1204,1294,1373,1345,1095,1586,1629,1685,1747,1770,1818,1092,1936,2506,3290,3695,3459,3306,2739,2041.4,1337.33,234.32,577,600.61,544.4,527,575,202,300,973,1323,2023,1845,1408,917,913,1449,1618,1323,1173,1133,1800,1100,1100,1900]];
-	boil = [[5869,20.28,4.22,1615,2743,4273,4300,77.36,90.2,85.03,27.07,1156,1363,2792,3173,553.6,717.87,239.11,87.3,1032,1757,3103,3560,3680,2944,2334,3134,3200,3186,3200,1180,2477,3093,887,958,332,119.93,961,1655,3618,4682,5017,4912,4538,4423,3968,3236,2435,1040,2345,2875,1860,1261,457.4,165.1,944,2143,3737,3633,3563,3373,3273,2076,1800,3523,3503,2840,2973,3141,2223,1469,3675,4876,5731,5828,5869,5285,4701,4098,3129,629.88,1746,2022,1837,1235,610,211.3,950,2010,3473,5093,4273,4200,4273,3503,2284,3383]];
-	maxsubshell = {"s": 2, "p": 6, "d": 10, "f": 14};
+	boil = [[5870,20.28,4.22,1615,2743,4273,4300,77.36,90.2,85.03,27.07,1156,1363,2792,3173,553.6,717.87,239.11,87.3,1032,1757,3103,3560,3680,2944,2334,3134,3200,3186,3200,1180,2477,3093,887,958,332,119.93,961,1655,3618,4682,5017,4912,4538,4423,3968,3236,2435,1040,2345,2875,1860,1261,457.4,165.1,944,2143,3737,3633,3563,3373,3273,2076,1800,3523,3503,2840,2973,3141,2223,1469,3675,4876,5731,5828,5869,5285,4701,4098,3129,629.88,1746,2022,1837,1235,610,211.3,950,2010,3473,5093,4273,4200,4273,3503,2284,3383]];
+	isotope = [[0,3,2,2,3,2,3,3,3,2,3,2,3,2,4,3,5,3,7,3,9,5,6,4,5,4,7,5,8,2,7,2,7,3,9,2,9,5,9,5,8,5,9,5,10,5,9,6,11,2,11,3,11,3,13,4,8,3,8,3,7,3,8,4,7,3,8,5,11,5,11,4,8,7,7,2,11,7,9,5,11,3,6,3,3,1,2,3,4,3,6,6,6,3,6,3,8,5,7,4,4,3,3,1,1,1,1,2,2,1,1,1,1,1,1,1,0,0,0],[1,7,9,10,12,14,15,16,17,18,19,20,22,22,23,23,24,24,24,24,24,25,26,26,26,26,28,29,31,29,30,31,32,33,30,31,32,32,33,33,33,33,33,34,34,34,34,38,38,39,39,37,38,37,38,40,40,39,39,39,38,38,38,38,36,36,36,36,35,35,35,35,36,36,35,35,35,36,37,37,40,37,38,36,33,31,34,34,33,31,30,29,26,20,20,19,20,20,20,19,19,18,17,16,16,16,16,16,15,15,15,12,9,5,5,5,4,2,1]];
+	property = series;
+	orbital = [[0,1,0,1,2,3,4,3,2,1,0,1,2,3,4,5,6,5,0,1,2,3,4,5,6,4,3,4,4,2,2,3,4,5,6,7,4,1,2,3,4,5,6,7,6,6,4,4,2,3,4,5,6,7,6,3,2,3,4,4,3,3,3,3,3,4,3,3,3,3,3,3,4,5,6,7,7,6,6,7,2,3,4,5,6,7,6,3,2,3,4,5,6,6,6,4,4,4,4,4,3,3,3,3,4,5,6,7,,,,,,,,,,,6]];
 
-	datasets = ["melt","boil","electroneg","discover","affinity","heat","radius","abundance","ionize","density","conduct","electronstring"];
+	shellL = {"s": 0, "p": 1, "d": 2, "f": 3};
+
+	datasets = {"Property": ["melt", "boil", "electroneg", "discover", "affinity", "heat", "radius", "abundance", "ionize", "density", "conduct", "electronstring"],
+		"Isotope": ["isomass", "binding", "masscontrib", "halflife", "width", "neutrons"]};
 	spec_state = {"unit": [" K"], "slidermin": 0, "slidermax": 6000, "default": 273, "Legend": ["State"]};
 	spec_series = {"unit": [" K"], "slidermin": 0, "slidermax": 6000, "default": 273, "Legend": ["<span>Atomic </span>Mass"], "replace": [,], "subset": 0};
+	spec_property = spec_series;
+	spec_orbital = spec_series;
+	spec_isotope = {"unit": ["isotopes"], "Legend": ["Isotopes","Isotopes"], "values": ["Select", "All"], "subset": 0};
+
 	spec_melt = {"unit": [" K"], "startcolor": "#6666FF", "endcolor": "#FF0000", "defaultcolor": "#FFFFFF", "slidermin": 0, "slidermax": 6000, "default": 273, "Legend": ["Kelvin"], "replace": [,], "subset": 0};
 	spec_boil = {"unit": [" K"], "startcolor": "#6666FF", "endcolor": "#FF0000", "defaultcolor": "#FFFFFF", "slidermin": 0, "slidermax": 6000, "default": 273, "Legend": ["Kelvin"], "replace": [,], "subset": 0};
 	spec_electroneg = {"unit": [""], "startcolor": "#FFFF66", "endcolor": "#FF0000", "defaultcolor": "#FFFFFF", "Legend": ["Pauling"], "scale": "linear", "replace": [,], "subset": 0};
-	spec_radius = {"unit": [" pm"," pm"," pm"], "startcolor": "#FFFFFF", "endcolor": "#008800", "defaultcolor": "#FFFFFF", "Legend": ["pm","pm","pm"], "values":["Calc","Emp.","Coval."], "scale": "linear", "replace": [,], "subset": 0};
-	spec_ionize = {"unit": [" kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"], "startcolor": "#66FF66", "endcolor": "#6666FF", "defaultcolor": "#FFFFFF", "Legend": ["kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol"], "values":["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd","24th","25th","26th","27th","28th","29th","30th"], "scale": "log", "replace": [,], "subset": 0};
+	spec_radius = {"unit": [" pm"," pm"," pm"], "startcolor": "#FFFFFF", "endcolor": "#008800", "defaultcolor": "#FFFFFF", "Legend": ["pm","pm","pm"], "values": ["Calc","Emp.","Coval."], "scale": "linear", "replace": [,], "subset": 0};
+	spec_ionize = {"unit": [" kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"," kJ/mol"], "startcolor": "#66FF66", "endcolor": "#6666FF", "defaultcolor": "#FFFFFF", "Legend": ["kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol","kJ/mol"], "values": ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd","24th","25th","26th","27th","28th","29th","30th"], "scale": "log", "replace": [,], "subset": 0};
 	spec_discover = {"unit" : [""], "slidermin": 1730, "slidermax": 2007, "default": 2007, "startcolor" : "#FFFFFF", "endcolor" : "#666600", "defaultcolor": "#FFFFFF", "Legend": ["Year"], "replace": [,], "subset": 0};
-	spec_density = {"unit": [" kg/m&sup3;"," kg/m&sup3;"], "startcolor": "#FFFFFF", "endcolor": "#006666", "defaultcolor": "#FFFFFF", "Legend": ["kg/m&sup3;","kg/m&sup3;"], "values":["STP","Liquid"], "scale": "linear", "replace": [,], "subset": 0};
+	spec_density = {"unit": [" kg/m&sup3;"," kg/m&sup3;"], "startcolor": "#FFFFFF", "endcolor": "#006666", "defaultcolor": "#FFFFFF", "Legend": ["kg/m&sup3;","kg/m&sup3;"], "values": ["STP","Liquid"], "scale": "linear", "replace": [,], "subset": 0};
 	spec_affinity = {"unit": [" kJ/mol"], "startcolor": "#006600", "endcolor": "#FFFFFF", "defaultcolor": "#CCCCCC", "Legend": ["kJ/mol"], "scale": "log", "replace": [,], "subset": 0};
-	spec_abundance = {"unit": ["%","%","%","%","%","%"], "startcolor": "#FFFFFF", "endcolor": "#3333FF", "defaultcolor": "#CCCCCC", "Legend": ["%","%","%","%","%","%"], "values":["Universe","Solar","Meteor","Crust","Ocean","Human"], "scale": "log", "replace": [/e(.*)/, "&times;10<sup>$1<\/sup>"], "subset": 0};
-	spec_heat = {"unit": [" J/kgK"," kJ/mol"," kJ/mol"], "startcolor": "#FFFFFF", "endcolor": "#FF0000", "defaultcolor": "#CCCCCC", "Legend": [" J/kgK"," kJ/mol"," kJ/mol"], "values":["Specific","Vapor","Fusion"], "scale": "log", "replace": [,], "subset": 0};
-	spec_conduct = {"unit": [" W/mK"," MS/m"], "startcolor": "#FFFFFF", "endcolor": "#880000", "defaultcolor": "#BBBBBB", "Legend":["W/mK","MS/m"], "values":["Therm.","Elect."], "scale": "log", "replace": [,], "subset": 0};
+	spec_abundance = {"unit": ["%","%","%","%","%","%"], "startcolor": "#FFFFFF", "endcolor": "#3333FF", "defaultcolor": "#CCCCCC", "Legend": ["%","%","%","%","%","%"], "values": ["Universe","Solar","Meteor","Crust","Ocean","Human"], "scale": "log", "replace": [/e(.*)/, "&times;10<sup>$1<\/sup>"], "subset": 0};
+	spec_heat = {"unit": [" J/kgK"," kJ/mol"," kJ/mol"], "startcolor": "#FFFFFF", "endcolor": "#FF0000", "defaultcolor": "#CCCCCC", "Legend": [" J/kgK"," kJ/mol"," kJ/mol"], "values": ["Specific","Vapor","Fusion"], "scale": "log", "replace": [,], "subset": 0};
+	spec_conduct = {"unit": [" W/mK"," MS/m"], "startcolor": "#FFFFFF", "endcolor": "#880000", "defaultcolor": "#BBBBBB", "Legend":["W/mK","MS/m"], "values": ["Therm.","Elect."], "scale": "log", "replace": [,], "subset": 0};
 	spec_electronstring = {"unit": [""], "replace": [/(\d+)(\d[spdf]|$)/g, "<sup>$1<\/sup> $2"], "subset": 0};
 
-	document.getElementById("names").onclick = function() { click_names(this); };
-	document.getElementById("electrons").onclick = function() { click_electron(this); };
-	widecheck.onclick = function() { insert_rareearths(this); };
+	spec_masscontrib = {"unit": ["%"], "startcolor": "#FEFEFE", "endcolor": "#FE0101", "defaultcolor": "#CCCCCC", "Legend": ["%"], "scale": "lin", "replace": [,], "subset": 0};
+	spec_isomass = {"unit": [""], "startcolor": "#FEFEFE", "endcolor": "#FE0101", "defaultcolor": "#CCCCCC", "Legend": [""], "scale": "lin", "replace": [,], "subset": 0};
+	spec_halflife = {"unit": ["Time"], "startcolor": "#FEFEFE", "endcolor": "#010101", "defaultcolor": "#010101", "scale": "log", "subset": 0};
+	spec_binding = {"unit": [""], "startcolor": "#FEFEFE", "endcolor": "#01FE01", "defaultcolor": "#CCCCCC", "scale": "lin", "subset": 0};
+	spec_isomass = {"unit": [""], "startcolor": "#FEFEFE", "endcolor": "#0101FE", "defaultcolor": "#CCCCCC", "scale": "lin", "subset": 0};
+	spec_width = {"unit": [""], "startcolor": "#FEFEFE", "endcolor": "#01FEFE", "defaultcolor": "#CCCCCC", "scale": "lin", "subset": 0};
+
+	document.getElementById("names").onclick = function() { click_checkbox("names", this); };
+	document.getElementById("electrons").onclick = function() { click_checkbox("electrons", this); };
+	widecheck.onclick = function() { click_checkbox("wide", this); };
 	document.getElementById("SeriesTab").onclick = function() { activeTab("Series", true); };
 	document.getElementById("PropertyTab").onclick = function() { activeTab("Property", true); };
 	document.getElementById("IsotopeTab").onclick = function() { activeTab("Isotope", true); }
-	document.getElementById("ElectronTab").onclick = function() { activeTab("Electron", true); }
-	searchinput = document.getElementById("SearchInput");
-	searchinput.onkeyup = function(e) { search(this.value); };
+	document.getElementById("OrbitalTab").onclick = function() { activeTab("Orbital", true); }
+	searchinput.onkeyup = function() { search(this.value); };
 	searchinput.onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
 	document.forms["visualize"].onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
-	searchinput.onfocus = function(e) {
+	searchinput.onfocus = function() {
 		activeTab("Series", true);
 		search_active = true;
 		if (this.value == "# or Name") this.value = "";
@@ -71,18 +92,17 @@ window.onload = function() {
 		activeTab("Series", true);
 		on_mouse_over(lastHover);
 	};
-	display = document.getElementById("SliderDisplay");
-	slider = document.getElementById("SliderBar");
 	document.getElementById("SliderTrack").onmousedown = slider_skip;
 	document.getElementById("SliderTrack").onmouseup = sliderMouseUp;
 	display.onkeyup = sliderMouseUp;
 	display.onkeydown = slider_arrow;
 	document.onkeydown = keyboard_nav;
 	slider.onmousedown = startSlide;
+
 	if (!language.match(/en|zh/) || document.referrer.indexOf("name") != -1) document.getElementById("names").checked = true;
-	if (document.getElementById("names").checked) click_names(document.getElementById("names"));
-	if (document.getElementById("electrons").checked) click_electron(document.getElementById("electrons"));
-	if (widecheck.checked) insert_rareearths(widecheck);
+	if (document.getElementById("names").checked) click_checkbox("names", document.getElementById("names"));
+	if (document.getElementById("electrons").checked) click_checkbox("electrons", document.getElementById("electrons"));
+	if (widecheck.checked) click_checkbox("wide", widecheck);
 	init_slider();
 }
 
@@ -97,10 +117,21 @@ function switch_viz(newset) {
 	dataset = newset;
 	on_mouse_over();
 	if (dataset == "series") { lastHover = false; restore_colors(default_colors); }
-	if (dataset != "state") wholetable.className = "";
+	if (dataset != "state" && dataset != "isotope") wholetable.className = "";
+	if (tab == "Property" && dataset != "property" && dataset != "orbital") {
+		if (oldYellow) yellowize(oldYellow, "");
+		yellowize(dataset, "yellow");
+		oldYellow = dataset;
+	}
 	init_slider();
 	save_colors(current_colors);
 	on_mouse_over(lastHover);
+}
+
+function yellowize(el, color) {
+	document.getElementById("l_" + el).parentNode.style.backgroundColor = color;
+	document.getElementById("t_" + el).parentNode.style.backgroundColor = color;
+	document.getElementById(el.toUpperCase()).style.backgroundColor = color;
 }
 
 function colorize_and_mass(includemass) {
@@ -110,7 +141,7 @@ function colorize_and_mass(includemass) {
 		if (dataset == "state")
 			for (var i = 1; i <= 118; i++)
 				element_ids[i].childNodes[n_mass].innerHTML = element_ids[i].className.replace(/.*(Solid|Liquid|Gas|Unknown).*/, "$1");
-		else {
+		else if (tab != "Isotope" && dataset != "isotope") {
 			for (var i = 1; i <= 118; i++)
 				if (typeof(attr[spec["subset"]][i]) != "undefined") element_ids[i].childNodes[n_mass].innerHTML = String(attr[spec["subset"]][i]).replace(/([\d\.]{7})(\d+)/, "$1<span>$2</span>");
 				else element_ids[i].childNodes[n_mass].innerHTML = "&nbsp;";
@@ -118,13 +149,32 @@ function colorize_and_mass(includemass) {
 		}
 	}
 
-	if (dataset == "boil" || dataset == "melt") color_temp(attr[0], spec);
+	if (tab == "Isotope" && dataset != "isotope") color_isotope(attr.concat(), spec);
+	else if (dataset == "boil" || dataset == "melt") color_temp(attr[0], spec);
 	else if (dataset == "discover") discover_gradient(attr[0]);
-	else if (dataset != "series" && dataset != "state") color_other(attr[spec["subset"]].concat(), spec);
+	else if (dataset != "series" && dataset != "state" && dataset != "isotope" && dataset != "property" && dataset != "orbital") color_other(attr[spec["subset"]].concat(), spec);
+}
+
+function color_isotope(valueArray, specArray) {
+	var min = 10000000000, max = 0;
+	for (var x = 1; x < valueArray.length; x++) {
+		valueArray[x] *= 1;
+		switch(specArray["scale"]) {
+			case "log":	valueArray[x] = Math.log(valueArray[x]); break;
+			case "inverse":	valueArray[x] = 1 / valueArray[x]; break;
+		}
+		if (valueArray[x] < min && valueArray[x] != -Infinity && !isNaN(valueArray[x])) min = valueArray[x];
+		if (valueArray[x] > max && valueArray[x] != -Infinity && !isNaN(valueArray[x])) max = valueArray[x];
+	}
+	for (var i = 1; i < valueArray.length; i++) {
+		if (!isNaN(valueArray[i]))
+			set_bgcolor(document.getElementById("isotopeholder").childNodes[i - 1], calc_color(valueArray[i] == -Infinity ? min : valueArray[i], specArray["startcolor"], specArray["endcolor"], min, max), true);
+		else	set_bgcolor(document.getElementById("isotopeholder").childNodes[i - 1], specArray["defaultcolor"], true);
+	}
 }
 
 function init_layout() {
-	element_ids = new Array();
+	element_ids = [];
 	var tags = document.getElementsByTagName("td");
 	for (var i = 0; i < tags.length; i++) {
 		var current = tags[i];
@@ -133,46 +183,54 @@ function init_layout() {
 			if (!element_ids[atomic]) element_ids[atomic] = current;
 		}
 	}
-	attach_elementhovers();
+	attach("wiki");
 	results = 0;
 	search_active = false;
 	document.forms["visualize"].onclick = dataset_changed;
+	document.forms["isotopes"].onclick = dataset_changed;
 }
 
-function click_names(obj) {
-	document.styleSheets[sheet_names].disabled = obj.checked;
-	if (!obj.checked && document.getElementById("electrons").checked) document.getElementById("electrons").checked = false;
-	document.styleSheets[sheet_electron].disabled = document.getElementById("electrons").checked;
-	init_slider();
-}
-
-function click_electron(obj) {
-	document.styleSheets[sheet_names].disabled = true;
-	if (obj.checked) document.getElementById("names").checked = document.styleSheets[sheet_electron].disabled = true;
-	else document.styleSheets[sheet_electron].disabled = !document.getElementById("names").checked;
-	init_slider();
+function click_checkbox(name, obj) {
+	var sheet_electron = 1; sheet_names = 2;
+	switch (name) {
+		case "names":
+			document.styleSheets[sheet_names].disabled = obj.checked;
+			if (!obj.checked && document.getElementById("electrons").checked) document.getElementById("electrons").checked = false;
+			document.styleSheets[sheet_electron].disabled = document.getElementById("electrons").checked;
+			init_slider();
+			break;
+		case "electrons":
+			document.styleSheets[sheet_names].disabled = true;
+			if (obj.checked) document.getElementById("names").checked = document.styleSheets[sheet_electron].disabled = true;
+			else document.styleSheets[sheet_electron].disabled = !document.getElementById("names").checked;
+			init_slider();
+			break;
+		case "wide":
+			insert_rareearths(obj);
+			break;
+	}
+	var checkbox_ids = ["names", "electrons", "wide"];
+	for (x in checkbox_ids) document.getElementById(checkbox_ids[x]).parentNode.className = (document.getElementById(checkbox_ids[x]).checked) ? "Active" : "";
 }
 
 function click_wiki(address) {
 	var wiki = window.frames["WikiFrame"];
-	if (wiki) {
-		wiki.location.href = "about:blank";
-		document.getElementById("ElementName").innerHTML = address;
-		document.getElementById("ElementName").href = "http://" + language + ".wikipedia.org/wiki/" + encodeURIComponent(address);
-		document.getElementById("WikiBox").style.display = "block";
-		if (navigator.userAgent.match(/MSIE [67]/))
-			wiki.location.href = "http://" + language + ".wikipedia.org/w/index.php?title=" + encodeURIComponent(address) + "&printable=yes";
-		else if (language == "en")
-			wiki.location.href = "en.wikipedia.org/wiki/" + address + ".html";
-		else
-			wiki.document.body.innerHTML = "Internet Explorer 6+ required to view multilingual element descriptions due to frame security issues.";
-	}
+	wiki.location.href = "about:blank";
+	document.getElementById("ElementName").innerHTML = address;
+	document.getElementById("WikiBox").style.display = "block";
+	document.getElementById("ElementName").href = "http://" + language + ".wikipedia.org/wiki/" + encodeURIComponent(address);
+	if (navigator.userAgent.match(/MSIE [67]/))
+		wiki.location.href = "http://" + language + ".wikipedia.org/w/index.php?title=" + encodeURIComponent(address) + "&printable=yes";
+	else if (language == "en")
+		wiki.location.href = language + ".wikipedia.org/wiki/" + address + ".html";
+	else
+		wiki.document.body.innerHTML = "Internet Explorer 6+ required to view multilingual element descriptions due to frame security issues.";
 }
 
 function destroy() {
 	window.frames["WikiFrame"].location.href = "about:blank";
-	//window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
 	document.getElementById("WikiBox").style.display = "";
+//	window.frames["WikiFrame"].document.body.innerHTML = "<h1>Loading&hellip;<\/h1>";
 }
 
 function save_colors(colorsarray) {
@@ -187,38 +245,49 @@ function restore_colors(colorsarray) {
 }
 
 function activeTab(name, full) {
-	var tabs = ["Series","Property","Isotope","Electron"];
-	for (x in tabs) document.getElementById(tabs[x] + "Tab").className = (name == tabs[x] ? "Active" : "");
-	if (full) switchTab(name);
-}
-
-function switchTab(name) {
-	if (tab == "Electron") color_spdf(false);
-	switch(name) {
-		case "Series":
-		case "Isotope":
-			tab = name;
-			switch_viz("series");
-			hideDetails(true);
-			document.getElementById("ElectronBox").style.display = "";
-			break;
-		case "Property":
-			tab = name;
-			if (!lastHover) on_mouse_over(element_ids[1]);
-			else on_mouse_over(lastHover);
-			break;
-		case "Electron":
-			if (typeof(electronstring) == "undefined") {
-				load_details(["electronstring"]);
-				return;
-			}
-			tab = name;
-			color_spdf(true);
-			document.getElementById("ElectronBox").style.display = "block";
-			document.getElementById("visualize").style.display = "";
-			key_id.style.display = "none";
-			break;
+	var tabs = ["Series", "Property", "Orbital", "Isotope"];
+	if (full) {
+		if (tab == "Orbital") move_helium(false);
+		switch (name) {
+			case "Series":
+				tab = name;
+				switch_viz("series");
+				break;
+			case "Property":
+				tab = name;
+				if (typeof(conduct) == "undefined") load_details(datasets[tab]);
+				switch_viz("property");
+				attach("wiki");
+				document.getElementById("Closeup").style.display = "";
+				document.getElementById("PropertyBox").appendChild(document.getElementById("Closeup"));
+				break;
+			case "Orbital":
+				if (typeof(electronstring) == "undefined") {
+					load_details(["electronstring"]);
+					return;
+				}
+				switch_viz("orbital");
+				tab = name;
+				move_helium(true);
+				attach("orbitals");
+				break;
+			case "Isotope":
+				tab = name;
+//				if (typeof(electronstring) == "undefined")
+//					load_details(["electronstring"]);
+				document.getElementById("IsotopeBox").appendChild(document.getElementById("Closeup"));
+				document.getElementById("IsotopeForm").style.display = "none";
+				switch_viz("isotope");
+				attach("isotopes");
+				break;
+		}
 	}
+	for (x in tabs) {
+		document.getElementById(tabs[x] + "Box").style.display = (name == tabs[x]) ? "block" : "none";
+		if (widecheck.checked) key_id.style.display = "";
+		document.getElementById(tabs[x] + "Tab").className = (document.getElementById(tabs[x] + "Box").style.display != "none") ? "Active" : "";
+	}
+	return false;
 }
 
 function findSymbol(m, sym) {
@@ -227,25 +296,76 @@ function findSymbol(m, sym) {
 			return electronstring[0][i];
 }
 
-function tab_electron(elTarget) {
-	var shells = new Array();
-	var elecstr = electronstring[0][elTarget.childNodes[n_atomic].innerHTML];
+function tab_electron(atomic) {
+	var shellcoeff = {"s": 0, "p": 0.75, "d": 1.5, "f": 2.25}, max = [0, 0], shells = [], elecstr = electronstring[0][atomic];
 	while (elecstr.match(/\[.*\]/)) elecstr = elecstr.replace(/\[(.*)\]/, findSymbol);
 	var parts = elecstr.replace(/(\d+)(\d[spdf]|$)/g, "$1 $2").split(" ");
-	wholetable.tBodies[0].rows[0].cells[7].innerHTML = elecstr.replace(spec_electronstring["replace"][0], spec_electronstring["replace"][1]);
-	var aufbau = document.getElementById("Hund").tBodies[0].getElementsByTagName("th");
-	for (var x = 0; x < parts.length - 1; x++)
-		shells[parts[x].substr(0,2)] = parts[x].match(/[spdf](\d+)$/)[1];
+	wholetable.tBodies[0].rows[0].cells[wholetable.tBodies[0].rows[0].cells.length - 4].innerHTML = elecstr.replace(spec_electronstring["replace"][0], spec_electronstring["replace"][1]);
+	for (var x = 0; x < parts.length - 1; x++) {
+		shells[parts[x].substr(0, 2)] = parts[x].match(/[spdf](\d+)$/)[1];
+		if (Number(parts[x].charAt(0)) + shellcoeff[parts[x].charAt(1)] > max[1])
+			max = [parts[x].substr(0, 2), Number(parts[x].charAt(0)) + shellcoeff[parts[x].charAt(1)], shells[parts[x].substr(0, 2)]];
+	}
 	for (var x = 0; x < aufbau.length; x++) {
-		var max = maxsubshell[aufbau[x].innerHTML.charAt(1)];
-		for (var y = 1; y <= max; y++)
-			aufbau[x].parentNode.cells[y <= max / 2 ? y : y - max / 2].childNodes[y <= max / 2 ? 0 : 1].style.visibility = (y <= (aufbau[x].innerHTML.substr(0,2) in shells ? shells[aufbau[x].innerHTML.substr(0,2)] : 0) ? "visible" : "hidden");
+		var len = aufbau[x].parentNode.cells.length - 1;
+		for (var y = 1; y <= len * 2; y++)
+			aufbau[x].parentNode.cells[y <= len ? y : y - len].childNodes[y <= len ? 0 : 1].style.visibility = (y <= (aufbau[x].innerHTML.substr(0, 2) in shells ? shells[aufbau[x].innerHTML.substr(0, 2)] : 0) ? "visible" : "hidden");
+	}
+	hover_orbital(max[0].charAt(1), max[2] - 1, max[0].charAt(0) - shellL[max[0].charAt(1)] - 1);
+}
+
+function hover_orbital(l, m, n) {
+	if (lastOrbital) lastOrbital.className = "";
+	document.getElementById("Orbital").style.backgroundImage = "url(\"Images/orbitals-" + l + ".png\")";
+	document.getElementById("Orbital").style.backgroundPosition = "-" + 108 * m + "px -" + 108 * n + "px";
+	var row = document.getElementById("Hund").rows[0].cells[shellL[l]].getElementsByTagName("table");
+	cell = row[row.length - n - 1].rows[0].cells;
+	lastOrbital = cell[m + 1 >= cell.length ? m - (cell.length - 2) : m + 1];
+	document.getElementById("lmn").rows[0].cells[2].innerHTML = shellL[l];
+	document.getElementById("lmn").rows[1].cells[2].innerHTML = (m + 1 >= cell.length ? m - (cell.length - 1) : m) - shellL[l];
+	document.getElementById("lmn").rows[2].cells[2].innerHTML = n + shellL[l] + 1;
+	lastOrbital.className = "HoverOrbital";
+}
+
+function attach(what) {
+	switch (what) {
+		case "orbitals":
+			var hund = document.getElementById("Hund").getElementsByTagName("table");
+			for (var i = 0; i < hund.length; i++) {
+				var temp = hund[i].getElementsByTagName("td");
+				for (var j = 0; j < temp.length; j++) {
+					temp[j].l = temp[j].parentNode.cells[0].innerHTML.charAt(1);
+					temp[j].n = temp[j].parentNode.cells[0].innerHTML.charAt(0) - 1 - shellL[temp[j].l];
+					temp[j].m = temp[j].cellIndex - 1;
+					temp[j].onmouseover = function() { hover_orbital(this.l, this.m, this.n); };
+				}
+			}
+			break;
+		case "isotopes":
+			for (var i = 1; i <= 118; i++) {
+				element_ids[i].idx = i;
+				element_ids[i].onmouseover = function() { on_mouse_over(this.idx); };
+				element_ids[i].onclick = function() { load_isotope(this.idx); };
+			}
+			break;
+		case "wiki":
+			for (var i = 1; i <= 118; i++) {
+				element_ids[i].idx = i;
+				element_ids[i].onmouseover = function() { on_mouse_over(this.idx); };
+				element_ids[i].onclick = function() { click_wiki(element_ids[this.idx].childNodes[n_name].innerHTML); };
+			}
+		case "groups":
+			var groups = wholetable.tHead.rows[0].cells;
+			for (var i = 1; i < groups.length; i++) {
+				groups[i].idx = i;
+				groups[i].onclick = function() { click_wiki("Group " + groups[this.idx].innerHTML + " element"); };
+			}
+			break;
 	}
 }
 
-function showDetails(elTarget) {
-	activeTab("Property", false);
-	var atomic = elTarget.childNodes[n_atomic].innerHTML * 1;
+function showDetails(atomic) {
+	elTarget = element_ids[atomic];
 	detail.innerHTML = "";
 	for (var i = 0; i < elTarget.childNodes.length; i++)
 		detail.appendChild(elTarget.childNodes[i].cloneNode(true));
@@ -254,25 +374,11 @@ function showDetails(elTarget) {
 	detailelectrons.innerHTML = elTarget.nextSibling.innerHTML;
 	detail.style.backgroundColor = detailelectrons.style.backgroundColor = default_colors[atomic];
 	document.getElementById("STATE").innerHTML = element_ids[atomic].className.replace(/.*(Solid|Liquid|Gas|Unknown).*/, "$1");
-	for (attribute in datasets) {
-		var attr = window[datasets[attribute]];
-		var spec = window["spec_" + datasets[attribute]];
+	for (attribute in datasets["Property"]) {
+		var attr = window[datasets["Property"][attribute]];
+		var spec = window["spec_" + datasets["Property"][attribute]];
 		var subset = spec["subset"];
-		document.getElementById(datasets[attribute].toUpperCase()).innerHTML = typeof(attr[subset][atomic]) != "undefined" ? String(attr[subset][atomic]).replace(spec["replace"][0], spec["replace"][1]) + spec["unit"][subset] : "Unknown";
-	}
-	if (!widecheck.checked) key_id.style.display = "none";
-	document.getElementById("ElectronBox").style.display = "";
-	document.getElementById("visualize").style.display = "inline";
-}
-
-function hideDetails(full) {
-	if (!widecheck.checked) {
-		if (full) {
-			for (var i = 0; i < document.forms["visualize"].length; i++) document.forms["visualize"][i].checked = false;
-			switch_viz("series");
-		}
-		document.getElementById("visualize").style.display = "";
-		key_id.style.display = "";
+		document.getElementById(datasets["Property"][attribute].toUpperCase()).innerHTML = typeof(attr[subset][atomic]) != "undefined" ? String(attr[subset][atomic]).replace(spec["replace"][0], spec["replace"][1]) + spec["unit"][subset] : "Unknown";
 	}
 }
 
@@ -303,7 +409,7 @@ function calc_color(value, start, end, min, max) {
 	var r = Math.round(((e >> 16) - (s >> 16)) * n) + (s >> 16);
 	var g = Math.round((((e >> 8) & 0xFF) - ((s >> 8) & 0xFF)) * n) + ((s >> 8) & 0xFF);
 	var b = Math.round(((e & 0xFF) - (s & 0xFF)) * n) + (s & 0xFF);
-
+// bug here with #00 F F
 	return ((r & 0xF0) ? "#" : ((r & 0x0F) ? "#0" : "#00")) + ((r << 16) + (g << 8) + b).toString(16);
 }
 
@@ -362,16 +468,19 @@ function search(searchstring) {
 		else if (searchstring == atomic) {
 			search_highlight(atomic, false);
 			results = 1;
-			winner = element_ids[atomic];
+			winner = atomic;
 		} else if (element_ids[atomic].childNodes[n_name].innerHTML.toLowerCase().indexOf(searchstring.toLowerCase()) != -1
 			|| element_ids[atomic].childNodes[n_symbol].innerHTML.toLowerCase().indexOf(searchstring.toLowerCase()) != -1) {
 			search_highlight(atomic, false);
 			results++;
-			winner = element_ids[atomic];
+			winner = atomic;
 		} else	search_highlight(atomic, true);
 	}
 	save_colors(current_colors);
-	if (results == 1) on_mouse_over(winner);
+	if (results == 1) {
+		activeTab("Property", true);
+		on_mouse_over(winner);
+	}
 }
 
 function search_highlight(atomic, bright) {
@@ -386,9 +495,12 @@ function setLeft(el, pos) {
 
 function dim_for_states() {
 	on_mouse_over();
-	hideDetails(false);
+	if (tab == "Property") {
+		document.getElementById("Closeup").style.display = "none";
+		document.getElementById("PropertyBox").appendChild(document.getElementById("MatterState"));
+	}
 	wholetable.className += " InvertState";
-	current_colors = new Array();
+	current_colors = [];
 	restore_colors(current_colors);
 }
 
@@ -410,35 +522,39 @@ function init_slider() {
 }
 
 function startSlide(e) {
-	e = e || window.event;
+	e = e || event;
 	on_mouse_over();
 	if (search_active) return;
-	if (dataset == "series") dim_for_states();
+	if (dataset == "series" || dataset == "property") dim_for_states();
 	slider.startOffsetX = setLeft(slider) - e.screenX;
 	document.onmousemove = moveSlider;
 	document.onmouseup = sliderMouseUp;
 	slider.onmousedown = null;
 	e.cancelBubble = true;
 	if (e.stopPropagation) e.stopPropagation();
+	return false;
 }
 
 function slider_skip(e) {
-	e = e || window.event;
+	e = e || event;
 	on_mouse_over();
-	var offset = (e.offsetX - setLeft(slider) || e.pageX - findPos(slider, 0, 0)[0]) < 0 ? -1 : 1;
+	var offset = (e.offsetX - setLeft(slider) || findPos(slider, [e.pageX, 0])[0]) < 0 ? -1 : 1;
 	if ("values" in window["spec_" + dataset])
 		snap_slider(Math.min(slider.xMax, Math.max(0, setLeft(slider) + slider.scale * offset)), false);
 	else	snap_slider(Math.min(slider.xMax, Math.max(0, (display.value * 1 - slider.from) * slider.scale + (slider.xMax / 10) * offset)), false);
+	return false;
 }
 
-function moveSlider(evnt) {
-	evnt = evnt || window.event;
-	snap_slider(Math.max(0, Math.min(slider.startOffsetX + evnt.screenX, slider.xMax)), false);
+function moveSlider(e) {
+	snap_slider(Math.max(0, Math.min(slider.startOffsetX + (e || event).screenX, slider.xMax)), false);
+	return false;
 }
 
 function sliderMouseUp() {
 	keyscroll = false;
 	if (dataset != "state") wholetable.className = "";
+	document.getElementById("SeriesBox").appendChild(document.getElementById("MatterState"));
+	if (tab != "Isotope") document.getElementById("Closeup").style.display = "";
 	save_colors(current_colors);
 	on_mouse_over(lastHover);
 	document.onmousemove = null;
@@ -456,7 +572,7 @@ function snap_slider(x, force) {
 		if (spec["subset"] != pos || force) {
 			spec["subset"] = pos;
 			display.value = spec["values"][pos];
-			document.getElementById("l_" + dataset).getElementsByTagName("span")[0].innerHTML = " " + display.value + " ";
+			if (dataset != "isotope") document.getElementById("l_" + dataset).getElementsByTagName("span")[0].innerHTML = " " + display.value + " ";
 // update number in detailbox too
 			colorize_and_mass(true);
 		}
@@ -464,66 +580,44 @@ function snap_slider(x, force) {
 		display.value = pos;
 		if (dataset == "state") document.getElementById("l_" + dataset).getElementsByTagName("span")[0].innerHTML = display.value + " K";
 		if (spec["unit"][0] == " K") state_classes();
-		colorize_and_mass(force || dataset == "state");
+		colorize_and_mass((force && dataset != "isotope") || dataset == "state");
 	}
 }
 
-// Thanks to Mark "Tarquin" Wilton-Jones of http://www.howtocreate.co.uk/ for help getting around IE6's broken position: fixed.
-function getIESze() {
-	var de = document.documentElement;
-	var db = document.documentElement;
-	return [(de.clientWidth ? de.clientWidth : db.clientWidth), (de.clientHeight ? de.clientHeight : db.clientHeight)];
-}
-function getIEScrl() {
-	var de = document.documentElement;
-	var db = document.documentElement;
-	return [(de.scrollLeft ? de.scrollLeft : db.scrollLeft), (de.scrollTop ? de.scrollTop : db.scrollTop)];
-}
-
-function attach_elementhovers() {
-	for (var i = 1; i <= 118; i++) {
-		element_ids[i].idx = i;
-		element_ids[i].onclick = function() { click_wiki(element_ids[this.idx].childNodes[n_name].innerHTML); };
-		element_ids[i].onmouseover = function() { on_mouse_over(this); };
-	}
-	var groups = wholetable.tHead.rows[0].cells;
-	for (var i = 1; i < groups.length; i++) {
-		groups[i].idx = i;
-		groups[i].onclick = function() { click_wiki("Group " + groups[this.idx].innerHTML + " element"); };
-	}
-}
-
-function on_mouse_over(el) {
+function on_mouse_over(atomic) {
 	if (lastHover) dark(lastHover);
-	if (el) {
-		dim(el);
+	if (atomic) {
+		dim(atomic);
 		switch (tab) {
-			case "Series": break;
-			case "Property":
-				if (typeof(conduct) == "undefined") load_details(datasets);
-				else showDetails(el);
+			case "Series":
 				break;
-			case "Electron":
-				if (typeof(electronstring) == "undefined") load_details(["electronstring"])
-				else tab_electron(el);
+			case "Property":
+				if (typeof(conduct) == "undefined") load_details(datasets[tab]);
+				else showDetails(atomic);
+				break;
+			case "Orbital":
+				tab_electron(atomic);
+				break;
+			case "Isotope":
+				if (typeof(conduct) == "undefined") load_details(datasets["Property"]);
+				else showDetails(atomic);
 				break;
 		}
-		lastHover = el;
+		lastHover = atomic;
 	}
 }
 
-function dim(elTarget) {
-	if (results != 1) set_bgcolor(elTarget, calc_color(5, (current_colors.length ? current_colors : default_colors)[elTarget.childNodes[n_atomic].innerHTML], "#FFFFFF", 0, 10), false);
-	highlight(elTarget, "yellow");
+function dim(atomic) {
+	if (results != 1) set_bgcolor(element_ids[atomic], calc_color(1, (current_colors.length ? current_colors : default_colors)[atomic], "#FFFFFF", 0, 2), false);
+	group_period(element_ids[atomic], "yellow");
 }
 
-function dark(elTarget) {
-	set_bgcolor(elTarget, (current_colors.length ? current_colors : default_colors)[elTarget.childNodes[n_atomic].innerHTML], false);
-	highlight(elTarget, "");
+function dark(atomic) {
+	set_bgcolor(element_ids[atomic], (current_colors.length ? current_colors : default_colors)[atomic], false);
+	group_period(element_ids[atomic], "");
 }
 
 function set_bgcolor(elTarget, color, stop) {
-//	elTarget.style.backgroundColor = (color.charAt(0) == "#" || color.charAt(0) == "") ? color : "#" + color;
 	elTarget.style.backgroundColor = color;
 	if (!stop) {
 		while (elTarget.nextSibling.nodeType != 1) elTarget = elTarget.nextSibling;
@@ -540,69 +634,59 @@ function set_stateclass(elTarget, stateclass, stop) {
 	}
 }
 
-function color_spdf(convert) {
+function move_helium(convert) {
 	if (convert) {
 		with (wholetable.tBodies[0].rows[0]) {
-			insertBefore(cells[7], cells[3]);
-			insertBefore(cells[8], cells[4]);
-			insertCell(7).colSpan = 12;
-			cells[7].className = "ElectronString";
-			cells[5].style.display = cells[8].style.display = cells[9].style.display = "none";
+			insertBefore(element_ids[2].nextSibling, cells[3]);
+			insertBefore(element_ids[2], cells[3]);
+			var inserted = document.getElementById("PropertyBox").parentNode.cellIndex + 1;
+			insertCell(inserted).colSpan = 12;
+			cells[inserted].className = "ElectronString";
+			cells[5].style.display = cells[cells.length - 2].style.display = cells[cells.length - 3].style.display = "none";
 		}
-		var shellcoeff = {"s": 0, "p": 0.75, "d": 1.5, "f": 2.25};
-		var shellcolor = {"s": "#FF6699", "p": "#99CCFF", "d": "#CCFF99", "f": "#66FFCC"};
-		for (var i = 1; i <= 118; i++) {
-			var max = [0, 0];
-			var elecstr = electronstring[0][i];
-			while (elecstr.match(/\[.*\]/)) elecstr = elecstr.replace(/\[(.*)\]/, findSymbol);
-			var parts = elecstr.replace(/(\d+)(\d[spdf]|$)/g, "$1 $2").split(" ");
-			for (var x = 0; x < parts.length - 1; x++)
-				if (Number(parts[x].charAt(0)) + shellcoeff[parts[x].charAt(1)] > max[1])
-					max = [parts[x].substr(0,2), Number(parts[x].charAt(0)) + shellcoeff[parts[x].charAt(1)]]
-			set_bgcolor(element_ids[i], shellcolor[max[0].charAt(1)], false)
-		}
+		restore_colors([]);
+		wholetable.className += " Blocks";
 		save_colors(current_colors);
 	} else {
 		with (wholetable.tBodies[0].rows[0]) {
-			cells[5].style.display = cells[8].style.display = cells[9].style.display = "";
-			deleteCell(7);
-			insertBefore(cells[3], cells[9]);
-			insertBefore(cells[3], cells[9]);
+			cells[5].style.display = cells[cells.length - 2].style.display = cells[cells.length - 3].style.display = "";
+			var inserted = document.getElementById("PropertyBox").parentNode.cellIndex + 1;
+			deleteCell(inserted);
+			insertBefore(cells[3], cells[cells.length - 1]);
+			insertBefore(cells[3], cells[cells.length - 1]);
 		}
-		current_colors = new Array();
+		wholetable.className = "";
+		current_colors = [];
 		restore_colors(current_colors);
 	}
 }
 
 function insert_rareearths(obj) {
 	var table = wholetable.tBodies[0].rows;
+	var key_index = key_id.parentNode.cellIndex;
 
 	if (obj.checked) {
 		wholetable.tHead.rows[0].insertCell(3).colSpan = 28;
 
-		with (table[0]) {
-alert(key_id.cellIndex);
-			insertCell(5).colSpan = 20;
-			cells[5].rowSpan = 3;
-			cells[5].className = "KeyRegion";
-			cells[5].style.verticalAlign = "middle";
-			cells[5].appendChild(document.getElementById("visualize"));
-		}
+		key_id.parentNode.rowSpan = 4;
+		key_id.parentNode.colSpan = 28;
+
+		table[0].insertCell(key_index + 1).colSpan = 20;
+		var next = key_id.parentNode.nextSibling;
+		while (next.nodeType != 1) next = next.nextSibling;
+		next.rowSpan = 3;
+		next.className = "KeyRegion";
+
+		next.appendChild(document.getElementById("PropertyBox")); next.appendChild(document.getElementById("OrbitalBox")); next.appendChild(document.getElementById("IsotopeBox"));
 
 		key_id.style.display = "";
-		key_id.style.fontSize = "1.5em";
-		key_id.parentNode.style.verticalAlign = "middle";
-		document.getElementById("SeriesTab").parentNode.style.display = "none";
-
-		table[0].cells[4].rowSpan = 4;
-		table[0].cells[4].colSpan = 28;
-
+		key_id.parentNode.style.fontSize = "1em";
 
 		with (table[4]) {
 			insertCell(5).colSpan = 28;
 			cells[5].innerHTML = table[7].cells[2].innerHTML;
 			cells[5].style.textAlign = "center";
-			cells[5].className = "Clean";
+			cells[5].className = "Clean Paren";
 		}
 
 		for (var i = 29; i >= 0; i--)
@@ -614,11 +698,10 @@ alert(key_id.cellIndex);
 	} else {
 		wholetable.tHead.rows[0].deleteCell(3);
 
-		table[0].cells[4].appendChild(document.getElementById("visualize"));
-		if (document.getElementById("visualize").style.display == "inline") key_id.style.display = "none";
-		key_id.style.fontSize = "";
-		key_id.parentNode.style.verticalAlign = "";
-		document.getElementById("SeriesTab").parentNode.style.display = "";
+		key_id.parentNode.appendChild(document.getElementById("PropertyBox")); key_id.parentNode.appendChild(document.getElementById("OrbitalBox")); key_id.parentNode.appendChild(document.getElementById("IsotopeBox"));
+		if (document.getElementById("PropertyBox").style.display == "block" || document.getElementById("OrbitalBox").style.display == "block" || document.getElementById("IsotopeBox").style.display == "block")
+			key_id.style.display = "none";
+		key_id.parentNode.style.fontSize = "";
 
 		table[5].cells[5].style.display = table[6].cells[5].style.display = "";
 		for (var i = 10; i >= 7; i--) table[i].style.display = "";
@@ -628,14 +711,14 @@ alert(key_id.cellIndex);
 			table[10].appendChild(table[6].cells[6]);
 		}
 
-		table[0].deleteCell(5); table[4].deleteCell(5);
-		table[0].cells[4].colSpan = 20;
-		table[0].cells[4].rowSpan = 3;
+		table[0].deleteCell(key_index + 1); table[4].deleteCell(5);
+		key_id.parentNode.colSpan = 20;
+		key_id.parentNode.rowSpan = 3;
 	}
 }
 
 function slider_arrow(e) {
-	if (!e) e = event;
+	e = e || event;
 	if (e.keyCode == 38 || e.keyCode == 40) {
 		if (!keyscroll) on_mouse_over();
 		if ("values" in window["spec_" + dataset])
@@ -654,25 +737,25 @@ function slider_arrow(e) {
 }
 
 function keyboard_nav(e) {
-	if (!e) e = event;
+	e = e || event;
 	switch (e.keyCode) {
 		case 13:
-			if (lastHover) { click_wiki(lastHover.childNodes[n_name].innerHTML); return false; }
+			if (lastHover) { click_wiki(element_ids[lastHover].childNodes[n_name].innerHTML); return false; }
 			return;
 		case 27:
 			if (document.getElementById("WikiBox").style.display == "block") { destroy(); return false; }
 			return;
 	}
 	if (e.keyCode >= 37 && e.keyCode <= 40) {
-		if (!lastHover) on_mouse_over(element_ids[1]);
+		if (!lastHover) on_mouse_over(1);
 		switch (e.keyCode) {
 			case 37: case 39:
-				var newElement = element_ids[Math.max(1, Math.min(118, lastHover.childNodes[n_atomic].innerHTML * 1 - 38 + e.keyCode))];
+				var newElement = Math.max(1, Math.min(118, lastHover - 38 + e.keyCode));
 				break;
 			case 38: case 40:
 				var count = 0;
-				var pos = lastHover.childNodes[n_atomic].innerHTML * 1;
-				var rowind = lastHover.parentNode.rowIndex;
+				var pos = lastHover;
+				var rowind = element_ids[lastHover].parentNode.rowIndex;
 				if (e.keyCode == 40) {
 					if (widecheck.checked) { if (rowind == 7) return false; }
 					else {
@@ -691,24 +774,24 @@ function keyboard_nav(e) {
 						else if (pos == 57) pos += 47;
 					}
 				}
-				var row = wholetable.tBodies[0].rows[rowind - (20 - e.keyCode / 2 + (lastHover.cellIndex < 4 ? 1 : 0))];
+				var row = wholetable.tBodies[0].rows[rowind - (20 - e.keyCode / 2 + (element_ids[lastHover].cellIndex < 4 ? 1 : 0))];
 				for (var i = 0; i < row.cells.length; i++) if (row.cells[i].className.indexOf("Element") != -1) count += e.keyCode - 39;
-				var newElement = element_ids[pos + count];
+				var newElement = pos + count;
 				break;
 		}
 		on_mouse_over(newElement);
 	}
 }
 
-function highlight(el, color) {
+function group_period(el, color) {
 	var period = el.parentNode.rowIndex - 1;
 	wholetable.tBodies[0].rows[period > 7 ? period - 4 : period].cells[0].style.backgroundColor = color;
 	if (period > 7) return;
 
-	var row = wholetable.tBodies[0].rows[period];
-	if (el.cellIndex < 4) var count = (el.cellIndex + 1) / 2;
+	if (el.cellIndex < 4)
+		var count = (el.cellIndex + 1) / 2;
 	else {
-		var count = 20 - Math.ceil((row.cells.length - el.cellIndex) / 2);
+		var count = 20 - Math.ceil((wholetable.tBodies[0].rows[period].cells.length - el.cellIndex) / 2);
 		if (widecheck.checked && (count += 1) < 4) return;
 	}
 	wholetable.tHead.rows[0].cells[count].style.backgroundColor = color;
@@ -725,7 +808,7 @@ function getAJAXobj() {
 		if (!xmlhttp) return false;
 		complete = false;
 		try {
-			xmlhttp.open("GET", sURL + "?set=" + sVars, true);
+			xmlhttp.open("GET", sURL + sVars, true);
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && !complete) {
 					complete = true;
@@ -743,30 +826,106 @@ function getAJAXobj() {
 function load_details(arrays) {
 	if (!waiting) {
 		waiting = true;
-		var conn = new getAJAXobj();
-		var list = new Array();
+		var conn = new getAJAXobj(), list = [];
 		for (set in arrays) {
 			if (window[arrays[set]]) continue;
 			if ("values" in window["spec_" + arrays[set]])
 				list.push(arrays[set] + "-" + window["spec_" + arrays[set]]["values"].join(":").toLowerCase().replace(/\./g, ""));
 			else	list.push(arrays[set]);
 		}
-		conn.connect("http://www.dayah.com/periodic/data.php", list.join(","), parse_into_arrays);
+		conn.connect("data.php?set=", list.join(","), parse_into_arrays);
 	}
 }
 
 function parse_into_arrays(oXML, sVars) {
 	var returned_data = oXML.responseText.split("\n");
 	for (sets in returned_data) {
-		temp = new Array();
+		temp = [];
 		arrays = returned_data[sets].split("=")[1].split(":");
 		for (element in arrays) temp.push(eval("[" + arrays[element] + "]"));
 		window[returned_data[sets].split("=")[0]] = temp;
 	}
-	if (sVars == "electronstring") activeTab("Electron", true);
-	else on_mouse_over(lastHover);
+	if (sVars == "electronstring") activeTab("Orbital", true);
+	else if (lastHover) on_mouse_over(lastHover); else on_mouse_over(1);
 }
 
-function findPos(obj, left, top) {
-	return (obj ? findPos(obj.offsetParent, left + obj.offsetLeft, top + obj.offsetTop) : [left, top]);
+function load_isotope(atomic) {
+	var conn = new getAJAXobj();
+	conn.connect("isotope.php?all=" + Boolean(spec_isotope["subset"]) + "&set=", atomic, click_isotope);
+}
+
+function click_isotope(oXML, atomic) {
+	document.getElementById("Closeup").style.display = "none";
+	document.getElementById("IsotopeForm").style.display = "";
+	var returned_data = oXML.responseText.split("\n");
+	halflife = [], binding = [], masscontrib = [], isomass = [], neutrons = [], width = [];
+	document.getElementById("isotopeholder").innerHTML = "";
+	for (var sets in returned_data)
+		draw_isotope(atomic, +sets+1, returned_data[sets].split(","));
+	document.getElementById("ISONAME").childNodes[0].innerHTML = element_ids[atomic].childNodes[n_name].innerHTML;
+	document.getElementById("ISONAME").childNodes[1].innerHTML = "";
+}
+
+function draw_isotope(atomic, inc, specs) {
+	for (i in datasets["Isotope"]) window[datasets["Isotope"][i]][inc] = specs[window["i_" + datasets["Isotope"][i]]];
+	nuclide = document.createElement("div");
+	nuclide.onmouseover = function() {
+		if (lastIsotope) lastIsotope.style.zIndex = lastIsotope.zind;
+		this.style.zIndex = 100;
+		isotopeDetails(this, inc);
+		lastIsotope = this;
+	}
+	nuclide.className = element_ids[atomic].className;
+//	nuclide.className += " " + specs[i_decaymode];
+	nuclide.style.borderWidth = "medium";
+	nuclide.style.borderStyle = (specs[i_decaymode].match(/^Two|^Double/)) ? "double" : (specs[i_decaymode] == "ElectronCapture") ? "dashed" : (specs[i_decaymode] == "SpontaneousFission") ? "dotted" : "solid";
+	nuclide.style.borderColor = (specs[i_decaymode].match(/BetaPlus|ElectronCapture/)) ? "purple" : (specs[i_decaymode].indexOf("Beta") != -1) ? "blue" : (specs[i_decaymode].indexOf("Alpha") != -1) ? "orange" : (specs[i_decaymode].indexOf("Neutron") != -1) ? "green" : (specs[i_decaymode].indexOf("Proton") != -1) ? "red" : "black";
+	nuclide.style.lineHeight = "normal";
+	nuclide.appendChild(element_ids[atomic].childNodes[n_symbol].cloneNode(true));
+	nuclide.appendChild(element_ids[atomic].childNodes[n_name].cloneNode(true));
+	nuclide.appendChild(element_ids[atomic].childNodes[n_mass].cloneNode(true));
+	nuclide.childNodes[0].innerHTML = "<sup>" + specs[i_neutrons] + "<\/sup>" + element_ids[atomic].childNodes[n_symbol].innerHTML;
+	nuclide.childNodes[1].innerHTML += "-" + specs[i_neutrons];
+	nuclide.childNodes[2].innerHTML = String(isomass[inc]).replace(/([\d\.]{7})(\d+)/, "$1<span>$2</span>");
+	document.getElementById("isotopeholder").appendChild(nuclide);
+	nuclide.style.position = "absolute";
+	var position = findPos(element_ids[atomic], [-findPos(nuclide, [0, 0])[0], -findPos(nuclide, [0, 0])[1]]);
+	nuclide.style.left = -position[0] + 20 * inc + "px";
+	nuclide.style.top = -position[1] + 20 * inc + "px";
+	nuclide.style.zIndex = nuclide.zind = inc + 1;
+}
+
+function isotopeDetails(obj, inc) {
+	document.getElementById("HALFLIFE").innerHTML = timeunits(halflife[inc]);
+	document.getElementById("ISONAME").childNodes[1].innerHTML = "-" + neutrons[inc];
+	document.getElementById("ISOMASS").innerHTML = isomass[inc];
+	document.getElementById("BINDING").innerHTML = (binding[inc] === "") ? "Unknown" : binding[inc];
+	document.getElementById("MASSCONTRIB").innerHTML = masscontrib[inc] + "%";
+	document.getElementById("WIDTH").innerHTML = width[inc];
+}
+
+function timeunits(seconds) {
+	var period_name = ["y", "d", "h", "s", "ms", "&micro;s", "ns", "ps"];
+	var period_secs = [31556926, 86400, 3600, 1, 1e-3, 1e-6, 1e-9, 1e-12];
+
+	if (seconds === "0")
+		return "Stable";
+	else if (seconds === "")
+		return "Unknown";
+	else for (i in period_name)
+		if (seconds > period_secs[i])
+			return scinot((seconds / period_secs[i]).toPrecision(countsigfig(seconds))) + " " + period_name[i];
+	return scinot((seconds / period_secs.pop()).toPrecision(countsigfig(seconds))) + " " + period_name.pop();
+}
+
+function countsigfig(num) {
+	return num.replace(/^0.0*/, "").replace(/\.|e.+$/g, "").length;
+}
+
+function scinot(num) {
+	return num.replace(/e[+]*(-)*(\d*)$/, "&times;10<sup>$1$2<\/sup>");
+}
+
+function findPos(obj, lefttop) {
+	return (obj ? findPos(obj.offsetParent, [lefttop[0] - obj.offsetLeft, lefttop[1] - obj.offsetTop]) : lefttop);
 }

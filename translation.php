@@ -26,7 +26,7 @@
    <input type="hidden" name="subject" value="[FORM] Translation">
    <input type="hidden" name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT">
    <input type="hidden" name="title" value="Thank you for helping! Your translation will be online within a day.">
-   <input type="hidden" name="return_link_url" value="http://www.dayah.com/periodic/">
+   <input type="hidden" name="return_link_url" value="http://www.ptable.com/">
    <input type="hidden" name="return_link_title" value="Return to the Periodic Table">
 
 <br style="clear: both;">
@@ -34,6 +34,6 @@
    <input type="submit" value="Save Translation" style="margin-left: 31em;">
   </form>
 <br>
-<p>Return to <a href="/periodic/?lang=" title=""></a>.</p>
+<p>Return to <a href="/periodic/?lang=" title=""></a> or <a href="/periodic/">Periodic Table</a>.</p>
  </body>
 </html>
