@@ -72,10 +72,10 @@ window.onload = function() {
 	document.getElementById("names").onclick = function() { click_checkbox("names", this); };
 	document.getElementById("electrons").onclick = function() { click_checkbox("electrons", this); };
 	widecheck.onclick = function() { click_checkbox("wide", this); };
-	document.getElementById("SeriesTab").onclick = function() { activeTab("Series", true); };
-	document.getElementById("PropertyTab").onclick = function() { activeTab("Property", true); };
-	document.getElementById("IsotopeTab").onclick = function() { activeTab("Isotope", true); }
-	document.getElementById("OrbitalTab").onclick = function() { activeTab("Orbital", true); }
+	document.getElementById("SeriesTab").onclick = function() { activeTab("Series", true); return false; };
+	document.getElementById("PropertyTab").onclick = function() { activeTab("Property", true); return false; };
+	document.getElementById("IsotopeTab").onclick = function() { activeTab("Isotope", true); return false; }
+	document.getElementById("OrbitalTab").onclick = function() { activeTab("Orbital", true); return false; }
 	searchinput.onkeyup = function() { search(this.value); };
 	searchinput.onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
 	document.forms["visualize"].onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
@@ -104,6 +104,8 @@ window.onload = function() {
 	if (document.getElementById("electrons").checked) click_checkbox("electrons", document.getElementById("electrons"));
 	if (widecheck.checked) click_checkbox("wide", widecheck);
 	init_slider();
+
+//document.getElementsByTagName("h1")[0].onmouseover = function() { this.getElementsByTagName("span")[0].style.visibility = "hidden"; };
 }
 
 function dataset_changed() {
@@ -287,7 +289,6 @@ function activeTab(name, full) {
 		if (widecheck.checked) key_id.style.display = "";
 		document.getElementById(tabs[x] + "Tab").className = (document.getElementById(tabs[x] + "Box").style.display != "none") ? "Active" : "";
 	}
-	return false;
 }
 
 function findSymbol(m, sym) {
@@ -850,8 +851,17 @@ function parse_into_arrays(oXML, sVars) {
 }
 
 function load_isotope(atomic) {
+	if (typeof(throbber) != "undefined") clearInterval(throbber);
+	throb_atomic = atomic;
+	throb_value = 0;
+	throbber = setInterval(throb_isotope, 50);
 	var conn = new getAJAXobj();
 	conn.connect("isotope.php?all=" + Boolean(spec_isotope["subset"]) + "&set=", atomic, click_isotope);
+}
+
+function throb_isotope() {
+	var x = throb_value++;
+	set_bgcolor(element_ids[throb_atomic], calc_color(x % 10 <= 5 ? x % 10 : 10 - x % 10, default_colors[throb_atomic], "FFFFFF", 0, 5), true);
 }
 
 function click_isotope(oXML, atomic) {
@@ -864,6 +874,7 @@ function click_isotope(oXML, atomic) {
 		draw_isotope(atomic, +sets+1, returned_data[sets].split(","));
 	document.getElementById("ISONAME").childNodes[0].innerHTML = element_ids[atomic].childNodes[n_name].innerHTML;
 	document.getElementById("ISONAME").childNodes[1].innerHTML = "";
+	clearInterval(throbber);
 }
 
 function draw_isotope(atomic, inc, specs) {
