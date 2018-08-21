@@ -1,12 +1,12 @@
 <html>
  <head>
-  <title>Help Translate This Site to Your Language</title>
+  <title>Help Translate This Site to </title>
   <style>
    H1, H2 { border-bottom: thin solid black; }
    H1 { letter-spacing: -0.05em; font-family: Verdana, sans-serif; }
    H2 { letter-spacing: 0.05em; font-family: sans-serif; margin-left: 2em; }
    FORM { margin-left: 2em; }
-   INPUT, TEXTAREA { display: block; width: 30em; float: left; margin-bottom: 1em; margin-left: 2em; }
+   .Forms, INPUT, TEXTAREA { display: block; width: 30em; float: left; margin-bottom: 1em; margin-left: 2em; }
    BR { clear: left; }
    LEGEND { font-family: Verdana, sans-serif; color: gray; border: thick groove gray; border-top: none; border-left: none; }
    FIELDSET { border: thick dashed gray; padding: 1em; clear: both; margin-bottom: 1em; }
@@ -14,7 +14,7 @@
  </head>
  <body>
   <img src="Images/poster-logo.png" height=183 width=300 style="float: right;" alt="Periodic Table">
-  <h1>Translate This Site to Your Language</h1>
+  <h1>Translate This Site to </h1>
 
   <p dir="ltr">Please add or correct any translations below by entering the <b></b> translation on the right of the English text on the left. If you can only do a few, that's fine. No machine translation, please. <strong>This is not Wiki. Your changes are e-mailed to me first.</strong></p>
   <br>
@@ -30,6 +30,9 @@
 
 <br style="clear: both;">
 <input type="text" value="" readonly style="border: none; text-align: center; font-weight: bold;"> <input type="text" name="EnglishName" value="" readonly style="border: none; text-align: center; font-weight: bold;"><br>
+   <input type="checkbox" value="NotMachine" id="nomachine" style="width: auto; margin-left: 30em;"> <label for="nomachine">This is not a machine translation</label>
+   <p class="Forms">Take a sentence or two to describe who you are and your expertise in this language so I can differentiate your translation from a random person clicking submit.</p>
+   <textarea name="Who" rows=3></textarea>
    <input type="submit" value="Save Translation" style="margin-left: 31em;">
   </form>
 <br>
