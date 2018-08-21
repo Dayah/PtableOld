@@ -38,11 +38,11 @@ strong						{ font-size: 0.9em; }
 .KeyRegion					{ font-size: 0.4em; }
 .Paren						{ font-size: 0.7em; }
 .ElectronString				{ font-size: 0.7em; }
-#rbital					{ height: 50px; width: 50px; }
+#rbital					{ height: 64px; width: 64px; }
 #Properties, #IsotopeForm	{ font-size: 1.3em; }
 .KeyRegion input			{ height: 12pt; margin-top: 0; margin-bottom: 0; }
 #Logo						{ height: 45px; width: 90px; }
-label#Search				{ font-size: 1.2em; }
+#Search						{ font-size: 1.2em; }
 #SearchInput				{ width: 9ex; font-size: 1em; }
 #SliderDisplay				{ font-size: 0.7em; width: 5ex; }
 .InnerBorder				{ font-size: 0.5em; }
@@ -54,6 +54,7 @@ label#Search				{ font-size: 1.2em; }
   //<![CDATA[
 if (top != self) top.location.replace(self.location.href);
 language = "en";
+scheme = "day";
 throb_atomic = false;
 lang_strings = {
 	"Group": "Group % element"
@@ -201,19 +202,18 @@ lang_strings = {
 
  <table id="Series" class="Series" cellspacing="4" align="right">
   <tbody><tr>
-   <th colspan="6"><a href="http://en.wikipedia.org/wiki/Metals">Metals</a></th>
+   <th colspan="5"><a href="http://en.wikipedia.org/wiki/Metals">Metals</a></th>
    <th colspan="2"><a href="http://en.wikipedia.org/wiki/Nonmetals">Nonmetals</a></th>
   </tr><tr>
    <td class="Alkali" rowspan="2"><a href="http://en.wikipedia.org/wiki/Alkali metals">Alkali metals</a></td>
    <td class="Alkaline" rowspan="2"><a href="http://en.wikipedia.org/wiki/Alkaline earth metals">Alkaline earth metals</a></td>
-   <th style="border: none; font-weight: normal; letter-spacing: -0.05em;" colspan="2"><a href="http://en.wikipedia.org/wiki/Inner transition">Inner transition</a></th>
+   <td class="Lanthanoid" style="writing-mode: lr-tb;"><a href="http://en.wikipedia.org/wiki/Lanthanoids">Lanthanoids</a></td>
    <td class="Transition" rowspan="2"><a href="http://en.wikipedia.org/wiki/Transition metals">Transition metals</a></td>
-   <td class="Poor" rowspan="2"><a href="http://en.wikipedia.org/wiki/Other metals">Other metals</a></td>
+   <td class="Poor" rowspan="2"><a href="http://en.wikipedia.org/wiki/Poor metals">Poor metals</a></td>
    <td class="Nonmetal" rowspan="2"><a href="http://en.wikipedia.org/wiki/Other nonmetals">Other nonmetals</a></td>
    <td class="Noble" rowspan="2"><a href="http://en.wikipedia.org/wiki/Noble gases">Noble gases</a></td>
   </tr><tr>
-   <td class="Lanthanoid"><a href="http://en.wikipedia.org/wiki/Lanthanoids">Lanthanoids</a></td>
-   <td class="Actinoid"><a href="http://en.wikipedia.org/wiki/Actinoids">Actinoids</a></td>
+   <td class="Actinoid" style="writing-mode: lr-tb;"><a href="http://en.wikipedia.org/wiki/Actinoids">Actinoids</a></td>
   </tr></tbody>
  </table>
 
@@ -359,7 +359,7 @@ lang_strings = {
   <th>2</th>
   <td class="Element Alkali s"><strong>3</strong> <big>Li</big> <em>Lithium</em><div>6.941</div></td><td class="Electron Alkali s"><span>2<br/>1</span></td>
   <td class="Element Alkaline s"><strong>4</strong> <big>Be</big> <em>Beryllium</em><div>9.0121<span>82</span></div></td><td class="Electron Alkaline s"><span>2<br/>2</span></td>
-  <td class="Element Nonmetal p DividerB"><strong>5</strong> <big>B</big> <em>Boron</em><div>10.811</div></td><td class="Electron Nonmetal p DividerB"><span>2<br/>3</span></td>
+  <td class="Element Nonmetal p"><strong>5</strong> <big>B</big> <em>Boron</em><div>10.811</div></td><td class="Electron Nonmetal p"><span>2<br/>3</span></td>
   <td class="Element Nonmetal p"><strong>6</strong> <big>C</big> <em>Carbon</em><div>12.010<span>7</span></div></td><td class="Electron Nonmetal p"><span>2<br/>4</span></td>
   <td class="Element Nonmetal p"><strong>7</strong> <big>N</big> <em>Nitrogen</em><div>14.006<span>7</span></div></td><td class="Electron Nonmetal p"><span>2<br/>5</span></td>
   <td class="Element Nonmetal p"><strong>8</strong> <big>O</big> <em>Oxygen</em><div>15.999<span>4</span></div></td><td class="Electron Nonmetal p"><span>2<br/>6</span></td>
@@ -372,8 +372,8 @@ lang_strings = {
   <th>3</th>
   <td class="Element Alkali s"><strong>11</strong> <big>Na</big> <em>Sodium</em><div>22.989<span>76928</span></div></td><td class="Electron Alkali s"><span>2<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>12</strong> <big>Mg</big> <em>Magnesium</em><div>24.305<span>0</span></div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>2</span></td>
-  <td class="Element Poor p"><strong>13</strong> <big>Al</big> <em>Aluminium</em><div>26.981<span>5386</span></div></td><td class="Electron Poor p DividerR"><span>2<br/>8<br/>3</span></td>
-  <td class="Element Nonmetal p DividerB"><strong>14</strong> <big>Si</big> <em>Silicon</em><div>28.085<span>5</span></div></td><td class="Electron Nonmetal p DividerB"><span>2<br/>8<br/>4</span></td>
+  <td class="Element Poor p"><strong>13</strong> <big>Al</big> <em>Aluminium</em><div>26.981<span>5386</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>3</span></td>
+  <td class="Element Nonmetal p"><strong>14</strong> <big>Si</big> <em>Silicon</em><div>28.085<span>5</span></div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>4</span></td>
   <td class="Element Nonmetal p"><strong>15</strong> <big>P</big> <em>Phosphorus</em><div>30.973<span>762</span></div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>5</span></td>
   <td class="Element Nonmetal p"><strong>16</strong> <big>S</big> <em>Sulfur</em><div>32.065</div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>6</span></td>
   <td class="Element Nonmetal p"><strong>17</strong> <big>Cl</big> <em>Chlorine</em><div>35.453</div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>7</span></td>
@@ -396,8 +396,8 @@ lang_strings = {
   <td class="Element Transition d"><strong>29</strong> <big>Cu</big> <em>Copper</em><div>63.546</div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>1</span></td>
   <td class="Element Poor d"><strong>30</strong> <big>Zn</big> <em>Zinc</em><div>65.38</div></td><td class="Electron Poor d"><span>2<br/>8<br/>18<br/>2</span></td>
   <td class="Element Poor p"><strong>31</strong> <big>Ga</big> <em>Gallium</em><div>69.723</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>3</span></td>
-  <td class="Element Poor p"><strong>32</strong> <big>Ge</big> <em>Germanium</em><div>72.64</div></td><td class="Electron Poor p DividerR"><span>2<br/>8<br/>18<br/>4</span></td>
-  <td class="Element Nonmetal p DividerB"><strong>33</strong> <big>As</big> <em>Arsenic</em><div>74.921<span>60</span></div></td><td class="Electron Nonmetal p DividerB"><span>2<br/>8<br/>18<br/>5</span></td>
+  <td class="Element Poor p"><strong>32</strong> <big>Ge</big> <em>Germanium</em><div>72.64</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>4</span></td>
+  <td class="Element Nonmetal p"><strong>33</strong> <big>As</big> <em>Arsenic</em><div>74.921<span>60</span></div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>18<br/>5</span></td>
   <td class="Element Nonmetal p"><strong>34</strong> <big>Se</big> <em>Selenium</em><div>78.96</div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>18<br/>6</span></td>
   <td class="Element Nonmetal p"><strong>35</strong> <big>Br</big> <em>Bromine</em><div>79.904</div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>18<br/>7</span></td>
   <td class="Element Noble p"><strong>36</strong> <big>Kr</big> <em>Krypton</em><div>83.798</div></td><td class="Electron Noble p"><span>2<br/>8<br/>18<br/>8</span></td>
@@ -420,8 +420,8 @@ lang_strings = {
   <td class="Element Poor d"><strong>48</strong> <big>Cd</big> <em>Cadmium</em><div>112.41<span>1</span></div></td><td class="Electron Poor d"><span>2<br/>8<br/>18<br/>18<br/>2</span></td>
   <td class="Element Poor p"><strong>49</strong> <big>In</big> <em>Indium</em><div>114.81<span>8</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>18<br/>3</span></td>
   <td class="Element Poor p"><strong>50</strong> <big>Sn</big> <em>Tin</em><div>118.71<span>0</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>18<br/>4</span></td>
-  <td class="Element Poor p"><strong>51</strong> <big>Sb</big> <em>Antimony</em><div>121.76<span>0</span></div></td><td class="Electron Poor p DividerR"><span>2<br/>8<br/>18<br/>18<br/>5</span></td>
-  <td class="Element Nonmetal p DividerB"><strong>52</strong> <big>Te</big> <em>Tellurium</em><div>127.60</div></td><td class="Electron Nonmetal p DividerB"><span>2<br/>8<br/>18<br/>18<br/>6</span></td>
+  <td class="Element Poor p"><strong>51</strong> <big>Sb</big> <em>Antimony</em><div>121.76<span>0</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>18<br/>5</span></td>
+  <td class="Element Nonmetal p"><strong>52</strong> <big>Te</big> <em>Tellurium</em><div>127.60</div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>18<br/>18<br/>6</span></td>
   <td class="Element Nonmetal p"><strong>53</strong> <big>I</big> <em>Iodine</em><div>126.90<span>447</span></div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>18<br/>18<br/>7</span></td>
   <td class="Element Noble p"><strong>54</strong> <big>Xe</big> <em>Xenon</em><div>131.29<span>3</span></div></td><td class="Electron Noble p"><span>2<br/>8<br/>18<br/>18<br/>8</span></td>
   <td class="Shells"><span>K<br/>L<br/>M<br/>N<br/>O</span></td>
@@ -444,7 +444,7 @@ lang_strings = {
   <td class="Element Poor p"><strong>81</strong> <big>Tl</big> <em>Thallium</em><div>204.38<span>33</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>18<br/>3</span></td>
   <td class="Element Poor p"><strong>82</strong> <big>Pb</big> <em>Lead</em><div>207.2</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>18<br/>4</span></td>
   <td class="Element Poor p"><strong>83</strong> <big>Bi</big> <em>Bismuth</em><div>208.98<span>040</span></div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>18<br/>5</span></td>
-  <td class="Element Poor p"><strong>84</strong> <big>Po</big> <em>Polonium</em><div>(208.98<span>24</span>)</div></td><td class="Electron Poor p DividerR"><span>2<br/>8<br/>18<br/>32<br/>18<br/>6</span></td>
+  <td class="Element Poor p"><strong>84</strong> <big>Po</big> <em>Polonium</em><div>(208.98<span>24</span>)</div></td><td class="Electron Poor p"><span>2<br/>8<br/>18<br/>32<br/>18<br/>6</span></td>
   <td class="Element Nonmetal p"><strong>85</strong> <big>At</big> <em>Astatine</em><div>(209.98<span>71</span>)</div></td><td class="Electron Nonmetal p"><span>2<br/>8<br/>18<br/>32<br/>18<br/>7</span></td>
   <td class="Element Noble p"><strong>86</strong> <big>Rn</big> <em>Radon</em><div>(222.01<span>76</span>)</div></td><td class="Electron Noble p"><span>2<br/>8<br/>18<br/>32<br/>18<br/>8</span></td>
   <td class="Shells"><span>K<br/>L<br/>M<br/>N<br/>O<br/>P</span></td>
@@ -473,7 +473,7 @@ lang_strings = {
   <td class="Shells"><span>K<br/>L<br/>M<br/>N<br/>O<br/>P<br/>Q</span></td>
  </tr>
 
- <tr style="background-color: white;">
+ <tr>
   <td colspan="5" rowspan="2" style="text-align: center; vertical-align: bottom;"><label id="Search" for="SearchInput">Search</label><br/><input id="SearchInput" type="text" value="# or Name"/></td>
   <td class="InnerBorder BlueLeft BlueRight" colspan="2"></td>
   <td class="Paren" colspan="31">For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
@@ -481,7 +481,7 @@ lang_strings = {
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30">Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 03, 2008</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30">Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 06, 2008</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
