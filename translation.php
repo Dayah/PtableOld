@@ -20,12 +20,11 @@
   <br>
 
   <form action="/cgi-bin/formmail/FormMail.pl" method="post">
-   <input type="hidden" name="recipient" value="michael@dayah.com">
    <input type="hidden" name="email" value="translation@dayah.com">
    <input type="hidden" name="realname" value="">
    <input type="hidden" name="subject" value="[FORM] Translation">
    <input type="hidden" name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT">
-   <input type="hidden" name="title" value="Thank you for helping! Your translation will be online within a day.">
+   <input type="hidden" name="title" value="Thank you for helping! Your translation will be online within a week.">
    <input type="hidden" name="return_link_url" value="http://www.ptable.com/">
    <input type="hidden" name="return_link_title" value="Return to the Periodic Table">
 

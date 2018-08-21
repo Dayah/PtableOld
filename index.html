@@ -28,7 +28,7 @@ STRONG, em		{ line-height: 1; }
 .Element big, #Legend big		{ width: 2.15em; }
 .KeyRegion, .InnerBorder		{ font-size: 0.63em; }
 .Paren							{ font-size: 0.9em; }
-.ElectronString					{ font-size: 1em; }
+#OrbitalString					{ font-size: 1em; }
   </style>
   <style type="text/css" media="screen, print">
 #Legend strong				{ letter-spacing: -0.1em; }
@@ -37,7 +37,7 @@ strong						{ font-size: 0.9em; }
 .Element big, #Legend big	{ width: 1.7em; font-size: 1.3em; letter-spacing: -0.09em; }
 .KeyRegion					{ font-size: 0.4em; }
 .Paren						{ font-size: 0.7em; }
-.ElectronString				{ font-size: 0.7em; }
+#OrbitalString				{ font-size: 0.7em; }
 #rbital					{ height: 64px; width: 64px; }
 #Properties, #IsotopeForm	{ font-size: 1.3em; }
 .KeyRegion input			{ height: 12pt; margin-top: 0; margin-bottom: 0; }
@@ -71,7 +71,7 @@ lang_strings = {
 
   <div id="Navigation">
    <a href="Other/Periodic Table.pdf" title="US paper size (8.5×11 in) printable PDF">PDF (Letter)</a>
-   <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5×14 in) printable PDF">PDF (Legal)</a>
+<!--   <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5×14 in) printable PDF">PDF (Legal)</a> -->
    <a href="Other/A4 Periodic Table.pdf" title="European paper size (210×297 mm) printable PDF">PDF (A4)</a>
    <a href="Images/periodic table.png" title="Periodic Table image">Periodic Table PNG</a>
    <a href="about.html" title="Questions about this particular periodic table">About</a>
@@ -79,6 +79,7 @@ lang_strings = {
 <!--   <a href="link.php?lang=en" title="Link to this site">Link</a> -->
    <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
    <a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a>
+   <a href="#" onclick="load_demo(); return false;" title="Short demonstration of Ptable's features">Demo</a>
 <!--   <a href="http://del.icio.us/post?url=www.ptable.com;title=Periodic+Table+of+Elements;notes=Interactive+Web+2.0+periodic+table+with+dynamic+layouts+showing+names%2C+electrons%2C+trend+visualization%2C+orbitals%2C+isotopes%2C+search.+Full+descriptions.">+del.icio.us</a> -->
    <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go" style="width: 2em;"/></form>
   </div>
@@ -481,7 +482,7 @@ lang_strings = {
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30">Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 08, 2008</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 12, 2008</span>&nbsp;</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
