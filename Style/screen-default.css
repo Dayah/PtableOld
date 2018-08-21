@@ -4,9 +4,9 @@ IMG			{ border: 0; }
 /*** Headings ***/
 H1, #Navigation		{ margin: 0.2cm; }
 H1			{ text-align: center; white-space: nowrap; font-size: 3em; border: thin outset; }
-H2, FORM P		{ text-align: justify; text-indent: 3ex; width: 85%; font: 10px/12px medium, Verdana; margin-bottom: 0; }
+H2, FORM P		{ text-align: justify; text-indent: 3ex; width: 85%; font: normal 11px/12px Verdana, sans-serif; margin-bottom: 0; }
 #Navigation		{ border: thin outset; padding: 0 0.1em; background-color: ButtonFace; font: caption; text-align: center; }
-#Navigation A		{ border: thin outset; padding: 0.1em 0.3em; color: ButtonText; text-decoration: none; white-space: nowrap; line-height: 1.9; }
+#Navigation A		{ border: thin outset; padding: 0.1em 0.3em; color: ButtonText; text-decoration: none; white-space: nowrap; line-height: 1.9; font-weight: normal; }
 #Navigation A:hover	{ background-color: ButtonHighlight; }
 #Navigation A.active	{ background-color: ButtonShadow; border: thin inset; left: 1px; top: 1px; }
 

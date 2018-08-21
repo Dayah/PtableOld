@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html>
+ <head>
+  <title>Buy a Periodic Table Poster</title>
+  <style>
+   H1, H2 {  border-bottom: thin solid black; }
+   H1 { letter-spacing: -0.05em; font-family: Verdana, sans-serif; }
+   H2 { letter-spacing: 0.05em; font-family: sans-serif; margin-left: 2em; }
+   P { margin-left: 3em; }
+   FORM { margin-left: 5em; }
+   LABEL, INPUT { display: block; width: 15em; float: left; margin-bottom: 1em; }
+   LABEL { text-align: right; width: 5em; padding-right: 1em; font-weight: bold; }
+   BR { clear: left; }
+   LEGEND { font-family: Verdana, sans-serif; color: gray; }
+   FIELDSET { border: thick double gray; padding: 1em; clear: both; }
+  </style>
+ </head>
+ <body>
+  <img src="Images/poster-logo.png" style="float: right;">
+  <h1>Periodic Table Poster</h1>
+
+  <p style="margin-right: 2em;">We will soon begin offering posters for sale of this periodic table. Before we begin, we'd like your feedback on the size and materials of the poster you'd prefer. We'll contact you as soon as we begin shipping.</p>
+
+  <form action="/cgi-bin/formmail/FormMail.pl" method="post">
+   <input type="hidden" name="recipient" value="michael@dayah.com">
+   <input type="hidden" name="subject" value="[FORM] Poster interest">
+   <input type="hidden" name="required" value="email">
+   <input type="hidden" name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT">
+   <input type="hidden" name="title" value="Thanks for your interest.">
+   <input type="hidden" name="return_link_url" value="http://www.dayah.com/periodic/">
+   <input type="hidden" name="return_link_title" value="Return to the Periodic Table">
+
+<fieldset style="width: 25em;">
+<legend>How would you like your poster?</legend>
+
+<label for="Size">Size</label>
+<select name="Size">
+ <option value="">No preference
+ <option value="40x60">40 &times; 60 inches</option>
+ <option value="36x48">36 &times; 48 inches</option>
+ <option value="27x41">27 &times; 41 inches "One sheet"</option>
+ <option value="24x36">24 &times; 36 inches "A1"</option>
+ <option value="18x24">18 &times; 24 inches</option>
+</select><br>
+
+<label for="Paper">Paper</label>
+<select name="Paper">
+ <option value="">No preference
+ <option value="Thin">Movie poster paper (thin)</option>
+ <option value="Thick">Postcard paper (thick)</option>
+</select><br>
+
+<label for="Finish">Finish</label>
+<select name="Finish">
+ <option value="">No preference
+ <option>Matte</option>
+ <option>Glossy</option>
+</select><br>
+
+<label for="Number">Quantity</label>
+<select name="Number">
+ <option value="1">1
+ <option value="2-5">2 to 5
+ <option value="6-10">6 to 10
+ <option value="11+">11 or more
+</select><br>
+
+<label for="Layout">Layout</label>
+<select name="Layout">
+ <option value="">No preference
+ <option value="Simple">Simple and clean, just like the web site
+ <option value="Detailed">Add more data/make full use of the poster
+</select><br>
+
+<label for="Other">Special requests</label>
+<textarea name="Other"></textarea><br>
+</fieldset>
+
+<fieldset style="width: 25em;">
+<legend>We'll e-mail you when we begin shipping</legend>
+<label for="realname">Name</label>
+<input type="text" name="realname"><br>
+
+<label for="email" style="color: red;">E-mail</label>
+<input type="text" name="email"><br>
+<p><input type="submit" value="Register my interest with no obligation" style="width: auto;"></p>
+</fieldset>
+  </form><br>
+  <p>Return to <a href="./">the periodic table</a>.</p>
+
+ </body>
+</html>
