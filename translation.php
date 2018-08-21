@@ -1,0 +1,38 @@
+<html>
+ <head>
+  <title>Help Translate This Site to Your Language</title>
+  <style>
+   H1, H2 {  border-bottom: thin solid black; }
+   H1 { letter-spacing: -0.05em; font-family: Verdana, sans-serif; }
+   H2 { letter-spacing: 0.05em; font-family: sans-serif; margin-left: 2em; }
+   FORM { margin-left: 2em; }
+   LABEL, INPUT, TEXTAREA { display: block; width: 30em; float: left; margin-bottom: 1em; margin-left: 2em; }
+   LABEL { text-align: right; width: 10em; padding-right: 1em; font-weight: bold; }
+   BR { clear: left; }
+   LEGEND { font-family: Verdana, sans-serif; color: gray; border: thick groove gray; border-top: none; border-left: none; }
+   FIELDSET { border: thick dashed gray; padding: 1em; clear: both; margin-bottom: 1em; }
+ </style>
+ </head>
+ <body>
+  <img src="Images/poster-logo.png" height=183 width=300 style="float: right;" alt="Periodic Table">
+  <h1>Translate This Site to Your Language</h1>
+
+  <form method="get">
+   <p dir="ltr">Please add or correct any translations below by substituting any English words below for their <b>American English</b> equivalent. If you can only do a few, that's fine. Choose another language to translate? <select name="lang"><option value="af">Afrikaans<option value="ar">العربية<option value="bg">Български<option value="da">Dansk<option value="de">Deutsch<option value="el">Ελληνικά<option value="en" selected>English (US)<option value="en_gb">English (UK)<option value="eo">Esperanto<option value="es">Español<option value="fi">Suomi<option value="fr">Français<option value="he">עברית<option value="it">Italiano<option value="ja">日本語<option value="ko">한국어<option value="nl">Nederlands<option value="no">Norsk<option value="pl">Polski<option value="pt">Português<option value="ru">Русский<option value="sv">Svenska<option value="sw">Kiswahili<option value="th">ไทย<option value="tr">Türkçe<option value="zh">中文 (简)<option value="zh_tw">中文 (繁)</select> <input type="submit" value="Go" style="width: auto; display: inline; float: none; margin: 0;"></p>
+  </form><br>
+
+  <form action="/cgi-bin/formmail/FormMail.pl" method="post">
+   <input type="hidden" name="recipient" value="michael@dayah.com">
+   <input type="hidden" name="realname" value="American English">
+   <input type="hidden" name="subject" value="[FORM] Translation">
+   <input type="hidden" name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT">
+   <input type="hidden" name="title" value="Thank you for helping! Your translation will be online within a day.">
+   <input type="hidden" name="return_link_url" value="http://www.dayah.com/periodic/">
+   <input type="hidden" name="return_link_title" value="Return to the Periodic Table">
+
+<p>Thank you, but as I am a native speaker, this language is already translated fully. If you speak any other languages, please select them from the box above and replace the English text with your own.</p>
+  </form>
+<br>
+<p>Return to <a href="./" title="Periodic Table of Elements">Periodic Table</a>.</p>
+ </body>
+</html>
