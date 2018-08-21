@@ -60,26 +60,11 @@ throb_atomic = false;
   </script>
   <script type="text/javascript" src="Script/interactivity.js" defer="defer"></script>
 
-  <link rel="shortcut icon" href="favicon.ico"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"/>
 
  </head>
- <body>
+ <body><div id="NonFooter">
   <h1>Periodic Table of Elements</h1>
-
-  <div id="Navigation">
-   <a href="Other/Periodic Table.pdf" title="US paper size (8.5×11 in) printable PDF">PDF (Letter)</a>
-<!--   <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5×14 in) printable PDF">PDF (Legal)</a> -->
-   <a href="Other/A4 Periodic Table.pdf" title="European paper size (210×297 mm) printable PDF">PDF (A4)</a>
-   <a href="Images/periodic table.png" title="Periodic Table image">Periodic Table PNG</a>
-   <a href="about.html" title="Questions about this particular periodic table">About</a>
-   <a href="feedback.html" title="Contact the designer">Contact</a>
-<!--   <a href="link.php?lang=en" title="Link to this site">Link</a> -->
-   <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
-   <a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a>
-   <a href="#" onclick="return load_demo();" title="Short demonstration of Ptable's features">Demo</a>
-<!--   <a href="http://del.icio.us/post?url=www.ptable.com;title=Periodic+Table+of+Elements;notes=Interactive+Web+2.0+periodic+table+with+dynamic+layouts+showing+names%2C+electrons%2C+trend+visualization%2C+orbitals%2C+isotopes%2C+search.+Full+descriptions.">+del.icio.us</a> -->
-   <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go" style="width: 2em;"/></form>
-  </div>
 
 <!--
   <div id="Ad">
@@ -88,7 +73,9 @@ throb_atomic = false;
   </div>
 -->
 
-  <div id="Tabs">
+  <div style="position: relative;" id="Tabs">
+   <div class="Bevel" style="position: absolute; left: 0; bottom: 0; background-position: 0 -20px;"></div>
+   <div class="Bevel" style="position: absolute; right: 0; bottom: 0; background-position: -20px -20px;"></div>
    <span id="SeriesTab">Wikipedia</span>
    <span id="PropertyTab">Properties</span>
    <span id="OrbitalTab">Orbitals</span>
@@ -97,10 +84,6 @@ throb_atomic = false;
    <a><input type="checkbox" id="names" name="names"/><label for="names" title="Show element names">Names</label></a>
    <a><input type="checkbox" id="electrons" name="electrons"/><label for="electrons" title="Show electron configurations">Electrons</label></a>
    <a><input type="checkbox" id="wide" name="wide"/><label for="wide" title="Show rare earth elements inline">Wide</label></a>
-  </div>
-  <div style="position: relative; margin: 0 0.5cm; height: 12px;">
-   <img src="http://www.eehtpc.com/ptable/bevel-left.png" style="position: absolute; top: -13px; left: 0; height: 24px; width: 12px;" alt=""/>
-   <img src="http://www.eehtpc.com/ptable/bevel-right.png" style="position: absolute; top: -13px; right: 0; height: 24px; width: 12px;" alt=""/>
   </div>
 
 <table class="Alkali Alkaline Nonmetal Transition Lanthanoid Actinoid Poor Noble" id="Main" summary="periodic table" border="0" cellspacing="0">
@@ -227,6 +210,10 @@ throb_atomic = false;
     <td><input type="radio" name="visualize" id="t_radius" value="radius"/></td>
     <td id="RADIUS"></td>
    </tr><tr>
+    <th><label for="t_hardness" id="l_hardness"><span></span> Hardness</label></th>
+    <td><input type="radio" name="visualize" id="t_hardness" value="hardness"/></td>
+    <td id="HARDNESS"></td>
+   </tr><tr>
     <th><label for="t_density" id="l_density"><span></span> Density</label></th>
     <td><input type="radio" name="visualize" id="t_density" value="density"/></td>
     <td id="DENSITY"></td>
@@ -250,6 +237,10 @@ throb_atomic = false;
   </table>
   <table cellspacing="0" cellpadding="0">
    <tr>
+    <th><label for="t_chemical" id="l_chemical">Chemical Series</label></th>
+    <td><input type="radio" name="visualize" id="t_chemical" value="chemical" checked="checked"/></td>
+    <td id="CHEMICAL"></td>
+   </tr><tr>
     <th><label for="t_state" id="l_state">State at <span></span></label></th>
     <td><input type="radio" name="visualize" id="t_state" value="state"/></td>
     <td id="STATE"></td>
@@ -478,7 +469,7 @@ throb_atomic = false;
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. <a href="http://www.ptable.com/">http://www.ptable.com/</a> Last updated: March 20, 2008</span>&nbsp;</td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: March 30, 2008</span>&nbsp;</td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
@@ -524,11 +515,30 @@ throb_atomic = false;
  </tbody>
 </table>
 
+  <noscript><p style="font-size: x-small;"><a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fa">جدول تناوبی</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=la">Systema Periodicum</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh-tw">元素週期表</a> | </p></noscript>
+  <div style="border-bottom: 3em solid transparent;"></div>
+</div>
+
+  <div id="Navigation">
+   <div class="Bevel" style="float: left; background-position: 0 0;"></div>
+   <div class="Bevel" style="float: right; background-position: -20px 0;"></div>
+   <a href="Other/Periodic Table.pdf" title="US paper size (8.5×11 in) printable PDF">PDF (Letter)</a>
+   <a href="Other/Legal Periodic Table.pdf" title="US wide paper size (8.5×14 in) printable PDF">PDF (Legal)</a>
+   <a href="Other/A4 Periodic Table.pdf" title="European paper size (210×297 mm) printable PDF">PDF (A4)</a>
+   <a href="Images/periodic table.png" title="Periodic Table image">Periodic Table PNG</a>
+   <a href="about.html" title="Questions about this particular periodic table">About</a>
+   <a href="feedback.html" title="Contact the designer">Contact</a>
+<!--   <a href="link.php?lang=en" title="Link to this site">Link</a> -->
+   <a href="advertise-to-students.php" title="Advertise to students on this site">Advertise</a>
+<!--   <a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a> -->
+   <a href="#" onclick="return load_demo();" title="Short demonstration of Ptable's features">Demo</a>
+<!--   <a href="http://del.icio.us/post?url=www.ptable.com;title=Periodic+Table+of+Elements;notes=Interactive+Web+2.0+periodic+table+with+dynamic+layouts+showing+names%2C+electrons%2C+trend+visualization%2C+orbitals%2C+isotopes%2C+search.+Full+descriptions.">+del.icio.us</a> -->
+   <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go"/></form>
+  </div>
+
   <div id="WikiBox">
    <h1 id="WikiTitle"><input type="button" onclick="destroy();" value="×"/> Wikipedia - <a href="http://en.wikipedia.org/" id="ElementName">Loading</a> - Periodic Table</h1>
    <div id="WikiFrameBox"><iframe id="WikiFrame" name="WikiFrame" frameborder="0" title="Wikipedia article on element" security="restricted"><h1>Loading&hellip;</h1></iframe></div>
   </div>
-
-  <noscript><p style="font-size: x-small;"><a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fa">جدول تناوبی</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=la">Systema Periodicum</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh-tw">元素週期表</a> | </p></noscript>
  </body>
 </html>
