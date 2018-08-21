@@ -6,7 +6,7 @@
    BODY	{ margin: 0 0.5cm 1em; font-family: sans-serif; }
    H1	{ margin: 0; color: white; background: rgb(36, 83, 139) url("http://web.utk.edu/~mdayah/h1-gradient.png") repeat-x; font: normal 3em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; border-bottom: 1px solid #00C; }
    H2	{ margin-left: 3em; margin-right: 60%; border-bottom: thin solid blue; border-right: thin solid blue; }
-   P	{ margin: 0 1em; color: rgb(36, 83, 139); font-weight: bold; text-align: justify; }
+   P	{ margin: 0 1em; text-align: justify; }
    DIV	{ margin-left: 5cm; }
   </style>
 
@@ -21,7 +21,7 @@
    <img src="http://web.utk.edu/~mdayah/bevel-right.png" style="position: absolute; top: -13px; right: 0; height: 24px; width: 12px;" alt="">
   </div>
 
-  <p>Consider placing a link to this <a href="/periodic/">periodic table</a> on your web site if you believe it to be the best. Please only link to the main site. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or the dynamic HTML site.</p>
+  <p>Consider placing a link to this <a href="/periodic/">periodic table</a> on your web site. Links help more people find the site as well as increase its ranking in search engines. Please don't place it in a slew of dozens of links to periodic tables. This isn't 1996 and if your visitors want a list of links to periodic tables, they'll visit Google. Exercise your editorial judgement as a webmaster and send them to the resource you believe is best.</p>
 
   <h2>Text</h2>
   <div><a href="/periodic/" title="Periodic Table of Elements">Periodic Table</a></div>
@@ -30,6 +30,8 @@
   <h2>Logo</h2>
   <div><a href="/periodic/" title="Periodic Table of Elements"><img src="Images/ptable-logo.png" alt="Periodic Table" height=60 width=120 border=0></a></div>
   <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/ptable-logo.png" alt="Ptable.com" height=60 width=120 border=0&gt;&lt;/a&gt;</textarea></div>
+
+  <p>Please only link to the main site. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or the full interactive experience.</p>
 
  </body>
 </html>
