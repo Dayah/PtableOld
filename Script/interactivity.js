@@ -79,6 +79,7 @@ window.onload = function() {
 	searchinput.onkeyup = function() { search(this.value); };
 	searchinput.onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
 	document.forms["visualize"].onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
+	document.getElementById("langswitch").onkeydown = function(e) { e = e || event; e.cancelBubble = true; };
 	searchinput.onfocus = function() {
 		activeTab("Series", true);
 		search_active = true;
