@@ -121,7 +121,7 @@ function switch_viz(newset) {
 	dataset = newset;
 	on_mouse_over();
 	if (dataset == "series") { lastHover = false; restore_colors(default_colors); }
-	if (dataset != "state" && dataset != "isotope") wholetable.className = "";
+	if (dataset != "state" && dataset != "isotope") wholetable.className = wholetable.className.replace(" InvertState", "");
 	if (tab == "Property" && dataset != "property" && dataset != "orbital") {
 		if (oldYellow) yellowize(oldYellow, "");
 		yellowize(dataset, "yellow");
@@ -584,7 +584,7 @@ function moveSlider(e) {
 
 function sliderMouseUp() {
 	keyscroll = false;
-	if (dataset != "state") wholetable.className = "";
+	if (dataset != "state") wholetable.className = wholetable.className.replace(" InvertState", "");
 	document.getElementById("SeriesBox").appendChild(document.getElementById("MatterState"));
 	if (tab != "Isotope") document.getElementById("Closeup").style.display = "";
 	save_colors(current_colors);
@@ -687,7 +687,7 @@ function move_helium(convert) {
 			insertBefore(cells[3], cells[cells.length - 1]);
 			insertBefore(cells[3], cells[cells.length - 1]);
 		}
-		wholetable.className = "";
+		wholetable.className = wholetable.className.replace(" Blocks", "");
 		current_colors = [];
 		restore_colors(current_colors);
 	}
