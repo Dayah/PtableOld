@@ -16,7 +16,8 @@ STRONG, em		{ line-height: 1; }
 .Element big, #Legend big	{ width: 2.8em; }
 #CloseupElement big	{ width: 2.5em; }
 #Legend big		{ letter-spacing: -0.08em; }
-.Element strong	{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; color: black; height: 1em; }
+.Element strong	{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; height: 1em; }
+.InvertState .Element strong	{ filter: alpha(Opacity=100); opacity: 1; background-color: transparent; }
 .Element		{ padding: 0.2em; }
 .Electron		{ padding: 0; }
   </style>
@@ -35,6 +36,7 @@ STRONG, em		{ line-height: 1; }
 strong						{ font-size: 0.9em; }
 .Element div, #Legend div	{ display: none; }
 .Element big, #Legend big	{ width: 1.7em; font-size: 1.3em; letter-spacing: -0.09em; }
+.Element strong				{ opacity: 1; background-color: transparent; text-align: center; height: auto; }
 .KeyRegion					{ font-size: 0.4em; }
 .Paren						{ font-size: 0.7em; }
 #OrbitalString				{ font-size: 0.7em; }
@@ -465,7 +467,7 @@ throb_atomic = false;
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: August 19, 2008</span> </td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: August 28, 2008</span> </td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
