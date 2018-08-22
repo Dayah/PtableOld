@@ -16,8 +16,8 @@
   <script type="text/javascript">
   //<![CDATA[
 if (top != self && document.referrer.indexOf("images.google") === -1 && document.referrer.indexOf("stumbleupon.com") === -1) top.location.replace(self.location.href);
-language = "en"; scheme = "day"; rtl = ""; throb_atomic = false;
-microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height="60"; microsoft_adunit_legacy="false";
+var language = "en", scheme = "day", rtl = "";
+var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_height="60", microsoft_adunit_legacy="false";
   //]]>
   </script>
 
@@ -47,7 +47,7 @@ microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height
    <button onclick="this.parentNode.style.display = 'none'; set_cookie('hideads', 1);" style="position: absolute; top: 0; right: 0;">×</button>
 <!-- This periodic table is far more featureful and interactive than even the most complex standalone applications. <b>Please take a moment to <a href="#" onclick="return load_script('demo');">watch a demo</a></b> or <a href="about.html#unique">read about its unique features</a>.-->
    <script type="text/javascript" src="http://adsyndication.msn.com/delivery/getads.js"></script>
-   <script type="text/javascript">microsoft_adunitid="3851"; microsoft_adunit_width="468"; microsoft_adunit_height="60"; microsoft_adunit_legacy="false";</script>
+   <script type="text/javascript">var microsoft_adunitid="3851", microsoft_adunit_width="468", microsoft_adunit_height="60", microsoft_adunit_legacy="false";</script>
    <script type="text/javascript" src="http://adsyndication.msn.com/delivery/getads.js"></script>
   </div>
 
@@ -286,7 +286,7 @@ microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height
   <tr><th id="f" class="f">f</th></tr>
  </tbody></table>
 
- <table id="DecayModes" class="AlphaEmission ProtonEmission TwoProtonEmission NeutronEmission TwoNeutronEmission SpontaneousFission BetaDecay DoubleBetaDecay BetaPlusDecay DoubleBetaPlusDecay ElectronCapture Stable" cellspacing="5" align="right">
+ <table id="DecayModes" class="AlphaEmission ProtonEmission TwoProtonEmission NeutronEmission TwoNeutronEmission SpontaneousFission BetaDecay DoubleBetaDecay BetaPlusDecay DoubleBetaPlusDecay ElectronCapture Stable" cellspacing="4" cellpadding="1" border="0" align="right" style="border: none;">
   <tr>
    <th class="AlphaEmission">α</th> <td>Alpha decay</td>
    <th class="DoubleBetaDecay BetaDecay">β</th> <td>Beta decay</td>
@@ -307,10 +307,11 @@ microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height
 
   <td colspan="5" id="SliderCell">
    <div style="position: relative; width: 100%; height: 2.5em; overflow: hidden;">
-    <div style="position: absolute; top: 0; width: 100%; height: 100%;">
+    <div style="position: absolute; width: 100%; height: 100%;">
      <div style="width: 100%; height: 100%;">
       <div id="SliderTrack" class="SliderTrack"><div id="SliderSlit" class="SliderSlit"></div><button id="SliderBar" class="SliderBar"></button></div>
       <input id="SliderDisplay" class="SliderDisplay" type="text" value="0"/>
+      <select id="SliderSelect" class="SliderSelect"></select>
      </div>
     </div>
    </div>
@@ -441,12 +442,12 @@ microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height
  <tr>
   <td id="SearchArea" colspan="3" rowspan="2"><label id="Search" for="SearchInput">Search</label><br/><input id="SearchInput" type="text" value="# or Name"/></td>
   <td class="InnerBorder BlueLeft BlueRight"></td>
-  <td class="Paren" colspan="16">For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
+  <td class="Paren" id="Paren" colspan="16">For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
  </tr>
 
  <tr>
   <td class="InnerBorder BlueLeft"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: December 22, 2008</span> </td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: January 04, 2009</span> </td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
@@ -492,7 +493,7 @@ microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height
  </tbody>
 </table>
 
-  <noscript><p style="font-size: x-small;"><a href="./?lang=af">Periodieke Tabel</a> | <a href="./?lang=ar">جدول دوري</a> | <a href="./?lang=bg">Периодична Система</a> | <a href="./?lang=bn">পর্যায় সারণী</a> | <a href="./?lang=da">Periodiske System</a> | <a href="./?lang=de">Periodensystem</a> | <a href="./?lang=ca">Taula Periòdica</a> | <a href="./?lang=el">Περιοδικός Πίνακας</a> | <a href="./">Periodic Table</a> | <a href="./?lang=eo">Perioda Tabelo</a> | <a href="./?lang=es">Tabla Periódica</a> | <a href="./?lang=fa">جدول تناوبی</a> | <a href="./?lang=fi">Jaksollinen Järjestelmä</a> | <a href="./?lang=fr">Tableau Périodique</a> | <a href="./?lang=he">הטבלה המחזורית</a> | <a href="./?lang=hi">आवर्त सारणी</a> | <a href="./?lang=is">Lotukerfið</a> | <a href="./?lang=it">Tavola Periodica</a> | <a href="./?lang=ja">周期表</a> | <a href="./?lang=ko">주기율표</a> | <a href="./?lang=la">Systema Periodicum</a> | <a href="./?lang=nl">Periodiek Systeem</a> | <a href="./?lang=no">Periodesystemet</a> | <a href="./?lang=pl">Układ Okresowy</a> | <a href="./?lang=pt">Tabela Periódica</a> | <a href="./?lang=ro">Tabelul Periodic</a> | <a href="./?lang=ru">Периодическая Система</a> | <a href="./?lang=sv">Periodiska Systemet</a> | <a href="./?lang=sw">Jedwali la Elementi</a> | <a href="./?lang=th">ตารางธาตุ</a> | <a href="./?lang=tr">Periyodik Tablo</a> | <a href="./?lang=zh">元素周期表</a> | <a href="./?lang=zh-tw">元素週期表</a> |   <a href="http://www.webelements.com/">WebElements</a> | <a href="http://www.touchspin.com/chem/DisplayTable.html">Touchspin</a> | <a href="http://www.periodicvideos.com/">Videos</a> | <a href="http://old.iupac.org/reports/periodic_table/">IUPAC</a> | <a href="http://www.bookrags.com/periodictable/">BookRags</a> | <a href="http://www.meta-synthesis.com/webbook/35_pt/pt.html">Alternate layouts</a> | <a href="http://www.johnpratt.com/atomic/periodic.html">Mnemonics</a> | <a href="http://www.rsc.org/chemsoc/visualelements/pages/periodic_table.html">Royal Society</a></p></noscript>
+  <noscript><p style="font-size: x-small;"><a href="./?lang=af">Periodieke Tabel</a> | <a href="./?lang=ar">جدول دوري</a> | <a href="./?lang=bg">Периодична Система</a> | <a href="./?lang=bn">পর্যায় সারণী</a> | <a href="./?lang=da">Periodiske System</a> | <a href="./?lang=de">Periodensystem</a> | <a href="./?lang=ca">Taula Periòdica</a> | <a href="./?lang=el">Περιοδικός Πίνακας</a> | <a href="./">Periodic Table</a> | <a href="./?lang=eo">Perioda Tabelo</a> | <a href="./?lang=es">Tabla Periódica</a> | <a href="./?lang=fa">جدول تناوبی</a> | <a href="./?lang=fi">Jaksollinen Järjestelmä</a> | <a href="./?lang=fr">Tableau Périodique</a> | <a href="./?lang=he">הטבלה המחזורית</a> | <a href="./?lang=hi">आवर्त सारणी</a> | <a href="./?lang=is">Lotukerfið</a> | <a href="./?lang=it">Tavola Periodica</a> | <a href="./?lang=ja">周期表</a> | <a href="./?lang=ko">주기율표</a> | <a href="./?lang=la">Systema Periodicum</a> | <a href="./?lang=nl">Periodiek Systeem</a> | <a href="./?lang=no">Periodesystemet</a> | <a href="./?lang=pl">Układ Okresowy</a> | <a href="./?lang=pt">Tabela Periódica</a> | <a href="./?lang=ro">Tabelul Periodic</a> | <a href="./?lang=ru">Периодическая Система</a> | <a href="./?lang=sv">Periodiska Systemet</a> | <a href="./?lang=sw">Mfumo Radidia</a> | <a href="./?lang=th">ตารางธาตุ</a> | <a href="./?lang=tr">Periyodik Tablo</a> | <a href="./?lang=zh">元素周期表</a> | <a href="./?lang=zh-tw">元素週期表</a> |   <a href="http://www.webelements.com/">WebElements</a> | <a href="http://www.touchspin.com/chem/DisplayTable.html">Touchspin</a> | <a href="http://www.periodicvideos.com/">Videos</a> | <a href="http://old.iupac.org/reports/periodic_table/">IUPAC</a> | <a href="http://www.bookrags.com/periodictable/">BookRags</a> | <a href="http://www.meta-synthesis.com/webbook/35_pt/pt.html">Alternate layouts</a> | <a href="http://www.johnpratt.com/atomic/periodic.html">Mnemonics</a> | <a href="http://www.rsc.org/chemsoc/visualelements/pages/periodic_table.html">Royal Society</a></p></noscript>
   <div id="FooterPad"></div>
 </div>
 
@@ -508,7 +509,7 @@ microsoft_adunitid="3834"; microsoft_adunit_width="468"; microsoft_adunit_height
    <h1 id="WikiTitle"><button onclick="setTimeout(destroy, Math.floor(Math.random() * 3) || document.getElementById('Ad').style.display == 'none' ? 0 : 500);">×</button> Wikipedia - <a href="http://en.wikipedia.org/" id="ElementName">Loading</a> - Periodic Table</h1>
    <div id="WikiFrameBox"><iframe id="WikiFrame" name="WikiFrame" frameborder="0" title="Wikipedia article on element" security="restricted"><h1>Loading…</h1></iframe></div>
   </div><div id="Overlay"></div>
-  <script type="text/javascript" src="Script/interactivity.js"></script>
+  <script type="text/javascript" src="Script/interactivity.js" defer="defer"></script>
 <!--  <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
   <script type="text/javascript">var pageTracker = _gat._getTracker("UA-99745-1"); pageTracker._trackPageview();</script>
   <script type="text/javascript" src="http://www.dayah.com/clickheat/js/clickheat.js"></script>
