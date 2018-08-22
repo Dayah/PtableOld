@@ -13,7 +13,7 @@
   <h1>Advertise to college students</h1>
 
 
-  <p>Internet banner advertising is a mess. When my <a href="/periodic/">periodic table</a> first went live in 1997, web banner advertising was not a few pennies per click. It was often a penny or more per <strong>impression</strong>. And for good reason: an agency knew its audience and a publisher only provided one spot to one agency. It was a relationship.</p>
+  <p>Internet banner advertising is a mess. When my <a href="http://www.ptable.com/">periodic table</a> first went live in 1997, web banner advertising was not a few pennies per click. It was often a penny or more per <strong>impression</strong>. And for good reason: an agency knew its audience and a publisher only provided one spot to one agency. It was a relationship.</p>
 
   <h2>What went wrong?</h2>
   <p>Large middleman ad agencies and an overabundance of publishers. If Google AdWords, Burst, and Fastclick can promise advertisers your site will be advertised on sites that contain your keywords while simultaneously promising publishers that if they have sites with your keywords, they will make money, what do you think will happen? Publishers will churn out sites with your keywords and put up a dozen banners. You have no control over it and half your money is going to the agency rather than the publisher.</p>
@@ -38,7 +38,7 @@
 
   <p>The specific CPM (cost per thousand impressions) or CPC (cost per click) is negotiable, though rates start at <strong>$5 CPM or $0.50 CPC</strong> depending on whether you're running a branding or sales campaign respectively. Compare the price to taking out an ad in a college newspaper for a day. At a huge college, maybe 10,000 people will see your message&hellip;for how much? I am a web developer, not a businessman or an ad agency; <strong>offer me what you believe to be a fair rate for your advertising campaign and show me you are an honorable company and I will accept it.</strong></p>
 
-  <p><a href="feedback.html">Make a proposal</a> or <a href="/periodic/" title="periodic table">finish your homework</a>.</p>
+  <p><a href="feedback.html">Make a proposal</a> or <a href="http://www.ptable.com/" title="periodic table">finish your homework</a>.</p>
 
  </body>
 </html>
