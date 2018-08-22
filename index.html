@@ -9,28 +9,36 @@
 
   <link href="Style/screen-default.css" rel="stylesheet" type="text/css" media="screen, print"/>
   <style type="text/css" media="screen, print">
-small			{ display: none; }
+small, .Element span, #Legend span, .Shells	{ display: none; }
 #Closeup small	{ display: inline-block; font-size: 60%; }
 #CloseupElement	{ width: 4.6em; }
-strong, em		{ line-height: 1; }
+strong, em, acronym	{ line-height: 1; }
 .Element acronym, #Legend acronym, .Element em, #Legend em, .Element div, #Legend div	{ text-align: center; }
-.Element acronym, #Legend acronym	{ width: 2.8em; }
+.Element acronym, #Legend acronym	{ width: 2.6em; }
 #CloseupElement acronym	{ width: 2.5em; }
 #Legend acronym	{ letter-spacing: -0.08em; }
+.Element		{ padding: 0.1em; }
+.Element, .Clean, #Legend	{ border-width: 2pt; }
+.BlueTop, .BlueLeft, .BlueRight, .BlueBottom	{ border-width: 2pt; }
+.KeyRegion, .InnerBorder	{ font-size: 0.7em; }
+.Paren			{ font-size: 1.2em; }
+.Hide			{ display: none; }
+#Logo			{ height: 45px; width: 90px; }
+#OrbitalString	{ font-size: 1em; }
 /*.Element strong	{ display: block; filter: alpha(Opacity=50); opacity: 0.50; backgrund-color: white; }
 .InvertState .Element strong	{ filter: alpha(Opacity=100); opacity: 1; background-color: transparent; }*/
-.Element		{ padding: 0.2em; }
   </style>
   <style type="text/css" media="screen, print">
 #Main						{ font-size: 1em; }
 #CloseupElement				{ width: 4.5em; }
-.Element em, #Legend em, .Element span, #Legend span, #Print, .Shells span	{ display: none; }
-.Element, #Legend			{ font-size: 0.8em; line-height: 1.1; }
+.Element em, #Legend em		{ display: none; }
+.Element, #Legend			{ font-size: 0.8em; line-height: 1; }
 .Element div, #Legend div	{ font-size: 0.8em; line-height: 1; }
-.Element acronym, #Legend acronym	{ width: 2.15em; }
+.Element acronym, #Legend acronym	{ width: 2.1em; }
+.Element					{ padding: 0.2em; padding-bottom: 0.15em; border-width: 5pt; }
 .KeyRegion, .InnerBorder	{ font-size: 0.63em; }
 .Paren						{ font-size: 0.9em; }
-#OrbitalString				{ font-size: 1em; }
+.BlueTop, .BlueLeft, .BlueRight, .BlueBottom	{ border-width: 5pt; }
   </style>
   <style type="text/css" media="screen, print">
 #Legend strong				{ letter-spacing: -0.1em; }
@@ -45,7 +53,6 @@ strong						{ font-size: 0.9em; }
 #rbital					{ height: 64px; width: 64px; }
 #Properties, #IsotopeForm	{ font-size: 1.3em; }
 .KeyRegion input			{ height: 12pt; margin-top: 0; margin-bottom: 0; }
-#Logo						{ height: 45px; width: 90px; }
 #Search						{ font-size: 1.2em; }
 #SearchInput				{ width: 9ex; font-size: 1em; }
 #SliderDisplay				{ font-size: 0.7em; width: 5ex; }
@@ -60,6 +67,7 @@ if (top != self && document.referrer.indexOf("images.google") === -1) top.locati
 language = "en";
 scheme = "day";
 throb_atomic = false;
+microsoft_adunitid="3597"; microsoft_adunit_width="728"; microsoft_adunit_height="90"; microsoft_adunit_legacy="false";
   //]]>
   </script>
 
@@ -76,8 +84,8 @@ throb_atomic = false;
    <span id="PropertyTab">Properties</span>
    <span id="OrbitalTab">Orbitals</span>
    <span id="IsotopeTab">Isotopes</span>
-   <a><input type="checkbox" id="masses" name="masses"/><label for="masses" title="Show atomic masses">Mass</label></a>
-   <a><input type="checkbox" id="names" name="names"/><label for="names" title="Show element names">Names</label></a>
+   <a><input type="checkbox" id="masses" name="masses" checked="checked"/><label for="masses" title="Show atomic masses">Mass</label></a>
+   <a><input type="checkbox" id="names" name="names" checked="checked"/><label for="names" title="Show element names">Names</label></a>
    <a><input type="checkbox" id="electrons" name="electrons"/><label for="electrons" title="Show electron configurations">Electrons</label></a>
    <a><input type="checkbox" id="wide" name="wide"/><label for="wide" title="Show rare earth elements inline">Wide</label></a>
   </div>
@@ -85,11 +93,7 @@ throb_atomic = false;
   <div id="Ad">
    <input type="button" onclick="this.parentNode.style.display = 'none'; document.cookie = 'ad=1; expires=Tue, 21 Oct 2008 04:29:00 GMT';" style="font-size: 1.2em; position: absolute; top: 0; right: 0;" value="×"/>
 <!-- This periodic table is far more featureful and interactive than even the most complex standalone applications. <b>Please take a moment to <a href="#" onclick="return load_script('demo');">watch a demo</a></b> or <a href="about.html#unique">read about its unique features</a>.-->
-   <script type="text/javascript">
-    //<![CDATA[
-     microsoft_adunitid="3331"; microsoft_adunit_width="728"; microsoft_adunit_height="90"; microsoft_adunit_legacy="false";
-    //]]>
-   </script>
+<script> microsoft_adunitid="3597"; microsoft_adunit_width="728"; microsoft_adunit_height="90"; microsoft_adunit_legacy="false";</script>
    <script type="text/javascript" src="http://adsyndication.msn.com/delivery/getads.js"></script>
   </div>
 
@@ -126,7 +130,7 @@ throb_atomic = false;
   <td id="Legend"><big><strong>Atomic<span> #</span></strong> <acronym>Sym<span>bol</span></acronym> <em>Name</em><div><span>Atomic </span>Mass</div></big></td>
 
   <td class="Clean KeyRegion" colspan="10" rowspan="3">
-   <table id="KeyContainer"><tbody><tr><td style="width: 13em;">
+   <table id="KeyContainer"><tbody><tr><td id="CloseupHolder">
 
  <div id="Closeup"><div id="CloseupElement"></div><div id="ELECTRONSTRING" style="text-align: center;"></div></div>
 
@@ -470,7 +474,7 @@ throb_atomic = false;
 
  <tr>
   <td class="InnerBorder BlueLeft"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: September 22, 2008</span> </td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: September 28, 2008</span> </td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
