@@ -27,7 +27,7 @@
 
   <img src="Images/blackmesa.jpg" title="This periodic table will be an in-game graphic in the upcoming Half-Life TC Black Mesa Source" style="float: right; margin-left: 1em; width: 320px;" alt="Half Life in game graphic">
 
-  <p><img src="Images/ptable-logo.png" alt="Ptable.com" style="float: left; margin-right: 1em;" height=60 width=120> If you have a question about this <a href="/periodic/">periodic table</a> that's not on this page or you would like to follow up on one of the below questions, <a href="feedback.html">contact me</a>. For general chemistry (homework) questions, visit the <a href="http://forum.ptable.com/">chemistry forum</a>.</p>
+  <p><img src="Images/ptable-logo.png" alt="Ptable.com" style="float: left; margin-right: 1em;" height=60 width=120> If you have a question about this <a href="http://www.ptable.com/">periodic table</a> that's not on this page or you would like to follow up on one of the below questions, <a href="feedback.html">contact me</a>. For general chemistry (homework) questions, visit the <a href="http://forum.ptable.com/">chemistry forum</a>.</p>
 
   <dl>
 <!--
@@ -47,7 +47,7 @@
    <dd>Roman numerals for groups were scrapped in 1984 when Reagan defeated Mondale.</dd>
 
    <dt>New address?</dt>
-   <dd>The old address, dayah.com/periodic, will always work. The new domain <strong>Ptable.com</strong> is just to give you, the regular visitor, something easy to spell, type, and remember. Please link to it instead, even though it temporarily redirects here.</dd>
+   <dd>The old address, dayah.com/periodic, will always work. The new domain <strong>Ptable.com</strong> is just to give you, the regular visitor, something easy to spell, type, and remember.</dd>
 
    <dt id="unique">What makes this periodic table different?</dt>
 <dd>
@@ -59,7 +59,7 @@
 <dt>Instantly swap data.</dt> <dd>Only want to see one piece of data at a time, like electronegativity? Whatever you choose <b>appears in place of atomic weight</b> while symbol and atomic number stay visible. Or, maximize and select names and/or electron configs to accompany the dataset you choose.
 <dt>Visualize trends.</dt> <dd>Does atomic radius go up or down by group? Select it and the <b>color of all elements will change in proportion</b> to their values.
 <dt>Reliable source data.</dt> <dd>Our data doesn't come from secondary sources. When important values disagree with <a href="http://www.webelements.com/">WebElements</a>, which also uses primary sources, we discuss who might be wrong and why, perhaps even leaving our data mismatched so you get the chance to make your own analysis. Significant digits are preserved in readouts whenever space permits. Translations and foreign element names, however, should be considered no more reliable than Wikipedia.
-<dt>State of matter slider.</dt> <dd><b>Drag the slider</b> above the nonmetals and see the state of matter each element is in at that temperature.
+<dt>State of matter slider.</dt> <dd><b>Drag the slider</b> above the nonmetals and see the state of matter of each element at that temperature.
 <dt>Time machine.</dt> <dd>After selecting discovery year in Properties, use the slider to go back in time and <b>display only the elements discovered by that year</b>.
 <dt>Data subsets.</dt> <dd>Once you've selected a dataset, the slider reveals related properties. Sliding after selecting radius, for example, reveals covalent, empirical, and calculated radii. All told, the <b>slider exposes another 13 properties</b> in addition to the 13 shown, not including the first 30 ionization energies, allowing efficiency functioning on multiple levels and in multiple dimensions.
 <dt>Orbitals.</dt> <dd>Complete orbital readout for each element's ground state, quantum numbers, valence, and <b>diagram following Hund's rules</b>. Hover over each electron pair for a <b>3-D view of that orbital</b> or hover over the element to view its highest energy level electron pair.
@@ -69,10 +69,11 @@
 <dt>Instant search.</dt> <dd>Can't seem to find an element? Type its name, symbol, or atomic number into the box below the alkalis and it will <b>instantly highlight</b>.
 <dt><img src="Images/ajax.png" alt="Ajax" align="absbottom"> data retrieval.</dt> <dd>Detailed data is retrieved using Ajax only when you request it.
 <dt>Never reloads.</dt> <dd>Whether you're changing layouts, visualizing data, boiling and freezing elements, searching, or browsing Wikipedia, the site will never interrupt your session by reloading, opening new windows, or resizing your window. Quite the contrary; the site will show you as much as possible without horizontal scrolling as you resize, so <b>try maximizing</b>.
+<dt>Persistence.</dt> <dd>Revisit with the same browser and the site will remember the tab you were using, the dataset you were visualizing, your layout options, and even the temperature you last set.</dd>
 <dt>Printable.</dt> <dd>Print any view or visualization you can see. The print style sheet will take care of removing extraneous clutter and lightening up the colors to improve contrast. Just remember to print background colors (<a href="http://www.microsoft.com/enable/training/ie6/background.aspx">Internet Explorer</a>, <a href="http://support.mozilla.com/en-US/kb/Using+Firefox#Using_Page_Setup">Firefox</a>), select landscape, and minimize the margins. The navigation bar at the bottom also offers links to PDFs in American and European paper sizes as well as a large image.
 <dt><a href="http://www.ptable.com/discovery.xml" type="application/rss+xml">Latest new elements <img src="Images/feed-icon-14x14.png" style="border: 0; height: 14px; width: 14px;"></a></dt> <dd>The day a new element is discovered or synthesized, we'll have the details for you. We even keep up with new, more precise relative atomic weights as IUPAC publishes them.
 <dt>Small and fast.</dt> <dd>Built from the ground up to be extremely fast and efficient, the total amount of JavaScript powering Ptable.com is smaller than MooTools, jQuery, or Prototype and is extensively stateful and modal (like vi).
-<dt>Keyboard accessible.</dt> <dd>Can't or don't want to use the mouse? Your keyboard's tab and arrow <b>keys expose the full functionality of the site</b>. Enter and Escape open and close the Wikipedia window, just like you'd expect. The up/down arrows also manipulate the slider when inside its text box.
+<dt>Keyboard accessible.</dt> <dd>Can't or don't want to use the mouse? Your keyboard's tab and arrow <b>keys expose the full functionality of the site</b>. Enter and Escape open and close the Wikipedia window, just like you'd expect. Arrow keys, PgUp/PgDn, and Home/End also manipulate the slider when activated.
 <dt>Flexible interface.</dt> <dd>Whether you prefer to hover around or click to view data, the site accommodates you by offering a <b>click-to-lock interface</b> in the Properties and Orbitals tabs. Hovering accesses most of the interactivity until the first click, which locks whatever element you're viewing in place until another is clicked or the same element is clicked again to revert to hover mode.
 </dl>
 </dd>
@@ -87,18 +88,17 @@
     <dd><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=203686">203686 (collapse code abandoned)</a>
     <dd><a href="http://wiki.mozilla.org/Gecko:Border_collapse#Discussion:_No_compromise_on_corners">corner conflict resolution discussion</a>
    <dt>Internet Explorer 8</dt>
-    <dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=364115">364115 (show/hide absolute containing absolute loses origin)</a>
-    <dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=364101">364101 (scrollWidth returns wrong value)</a>
     <dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=364079">364079 (writing-mode stretches cells to 100% height)</a>
-	<dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=365450">365450 (reflow not triggered on cell content change)</a>
-	<dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=333972">333972 (border-collapse corners interrupt colinearity)</a>
+    <dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=365450">365450 (reflow not triggered on cell content change)</a>
+    <dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=333972">333972 (border-collapse corners interrupt colinearity)</a>
+    <dd><a href="https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=387059">387059 (can't shrink radio button gutter)</a>
    <dt>Safari/Chrome (WebKit)</dt>
     <dd><a href="https://bugs.webkit.org/show_bug.cgi?id=17819">17819 (border-collapse corners interrupt colinearity)</a>
     <dd><a href="https://bugs.webkit.org/show_bug.cgi?id=20840">20840 (border-collapse edges follow appendChild)</a>
     <dd><a href="https://bugs.webkit.org/show_bug.cgi?id=20606">20606 (letter-spacing ignores fractional values)</a>
    </dl></dd>
    <dt>When was it made?</dt>
-   <dd>Ptable has a rich history stretching back to September 1997, a year before the founding of Google. It was introduced as a piece of HTML artwork and published to the web October 1, 1997. Simple dictionary element descriptions were added later in December. A version utilizing HTML 4 and CSS was introduced March 1999 and replaced the original version September 2004. Wikipedia integration and the addition of other languages came in August 2005. The first dynamic layout switching came later in September. The first low-resolution friendly layout (no names) came in October 2006. Interactivity was radically enhanced throughout summer 2007 and continues into the present day. The color scheme was tweaked to be friendly to non-deuteranomalous individuals with interactive assistance from <a href="http://photos-950.ll.facebook.com/photos-ll-sf2p/v233/204/102/832174950/n832174950_790754_2015.jpg">Kasey and Heather</a>. <a href="http://web.archive.org/web/*/http://www.dayah.com/periodic/">Enjoy historic versions</a>.</dd>
+   <dd>Ptable has a rich history stretching back to September 1997, a year before the founding of Google. It was introduced as a piece of HTML artwork and published to the web October 1, 1997. Simple dictionary element descriptions were added later in December. A version utilizing HTML 4 and CSS was introduced March 1999 and replaced the original version September 2004. Wikipedia integration and the addition of other languages came in August 2005. The first dynamic layout switching came later in September. The first low resolution-friendly layout (no names) came in October 2006. Interactivity was radically enhanced throughout summer 2007 and continues into the present day. The color scheme was tweaked to be friendly to non-deuteranomalous individuals with interactive assistance from <a href="http://photos-950.ll.facebook.com/photos-ll-sf2p/v233/204/102/832174950/n832174950_790754_2015.jpg">Kasey and Heather</a>. <a href="http://web.archive.org/web/*/http://www.dayah.com/periodic/">Enjoy historic versions</a>.</dd>
 
    <dt>Can I buy a poster?</dt>
    <dd>We're currently looking into producing a <a href="periodic-table-poster.html">periodic table poster</a>. First, we'll need some feedback from you on what size, paper, and finish you'd like.</dd>
@@ -119,10 +119,10 @@
    <dd>By all means, but only if you think it's the best. Please don't place it in a slew of dozens of links to periodic tables. This isn't 1996 and if your visitors want a list of links they'll visit Google. Exercise your editorial judgement as a webmaster and send them to the resource you believe is best.</dd>
 
    <dt>Contact methods</dt>
-   <dd>The <a href="feedback.html">contact form</a> is preferred, but I'm on AIM as <img src="http://big.oscar.aol.com/Looseint?on_url=http://www.aol.com/aim/gr/online.gif&off_url=http://www.aol.com/aim/gr/offline.gif" align="absmiddle"> <a href="aim:goim?screenname=Looseint&message=Hi.+I+was+looking+at+your+periodic+table.">Looseint</a>. Also check out my <a href="http://essays.dayah.com/">essays</a> and <a href="http://photos.dayah.com/">photos</a> or <a href="http://www.facebook.com/pages/Periodic-Table/7329016582">become a fan of the site on Facebook</a>. To keep up with minor site changes, <a href="http://twitter.com/Ptable">follow Ptable on Twitter</a>. For general chemistry help, visit the <a href="http://forum.ptable.com/">chemistry forum</a>.</dd>
+   <dd>The <a href="feedback.html">contact form</a> is preferred, but I'm on AIM as <img src="http://big.oscar.aol.com/Looseint?on_url=http://www.aol.com/aim/gr/online.gif&off_url=http://www.aol.com/aim/gr/offline.gif" align="absmiddle"> <a href="aim:goim?screenname=Looseint&message=Hi.+I+was+looking+at+your+periodic+table.">Looseint</a>. Also check out my <a href="http://essays.dayah.com/">essays</a> and <a href="http://photos.dayah.com/">photos</a> or <a href="http://www.facebook.com/pages/Periodic-Table/7329016582">become a fan of the site on Facebook</a>. To keep up with minor site changes, follow <a href="http://twitter.com/Ptable">Ptable on Twitter</a>. For general chemistry help, visit the <a href="http://forum.ptable.com/">chemistry forum</a>.</dd>
 
    <dt>Donations</dt>
-   <dd>Don't worry about my operational costs; this isn't the BBS days. The site can serve half a million visits a month for less than a Frappuccino a week. Instead of donating to me, <a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=5CFBC5BF-C6E7-4D60-95B5-3AAC57E46EDE">direct your support to the children's hospital</a> that did <a href="/toes/">my ingrown toenail surgery</a> a decade ago giving me the downtime to create the site.</dd>
+   <dd>Don't worry about my operational costs; this isn't the BBS days. The site can serve half a million visits a month for less than a Frappuccino a week. Instead of donating to me, <a href="https://dnbweb1.blackbaud.com/OPXDONATE/donate.asp?cguid=5CFBC5BF-C6E7-4D60-95B5-3AAC57E46EDE">direct your support to the children's hospital</a> that did <a href="http://www.dayah.com/toes/">my ingrown toenail surgery</a> a decade ago giving me the downtime to create the site.</dd>
 
   </dl>
  </body>
