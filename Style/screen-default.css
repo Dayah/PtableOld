@@ -7,17 +7,20 @@ h1			{ margin: 0 0.5cm; color: white; font: normal 4em "Franklin Gothic Medium",
 h1 #Reset	{ text-decoration: none; }
 h1 #Reset:hover	{ color: rgb(200, 200, 255); }
 h1, #Tabs, #Navigation	{ background: rgb(36, 83, 139) url("http://www.eehtpc.com/ptable/h1-gradient.png") repeat-x; }
-.Bevel		{ height: 20px; width: 20px; background-image: url(http://www.eehtpc.com/ptable/bevel-circle.png); }
+.Bevel		{ height: 20px; width: 20px; background-image: url("http://www.eehtpc.com/ptable/bevel-circle.png"); }
 #Ad			{ margin: 0 auto; width: 936px; position: relative; }
 #Ad > iframe	{ float: left; }
 
 #Tabs				{ text-align: center; margin: 0 0.5cm; font-weight: bold; background-position: 0 -4.5em; position: relative; top: -0.5em; }
-#Tabs a, #Tabs span	{ padding: 0.5ex 0.9ex; display: -moz-inline-box; display: inline-block; text-decoration: none; vertical-align: bottom; border: thin solid transparent; border-bottom: none; }
-#SeriesTab, #PropertyTab, #OrbitalTab, #IsotopeTab	{ border-color: white ! important; }
-#Tabs a, #Tabs label			{ color: white; }
-#Tabs span, a.Selected			{ background: white; }
-#Tabs a:hover, #Tabs a:focus	{ background: white; color: blue; }
+#Tabs a				{ padding: 0.5ex 0.9ex; display: -moz-inline-box; display: inline-block; text-decoration: none; vertical-align: bottom; border: thin solid transparent; border-bottom: none; }
+.Tabs select					{ font-weight: bold; margin: 0.4ex 0.5ex; background-color: rgb(36, 83, 139); color: white; }
+.Tabs .Active select, .Tabs select:hover, .Tabs .Active	{ background-color: white; color: black; }
+.Tabs a							{ color: white; border-color: white ! important; }
+#Tabs label						{ color: white; }
 #Tabs .Selected label			{ color: black; }
+#Tabs a.Selected				{ background: white; }
+#Tabs a:hover, #Tabs a:focus	{ color: blue; background: white; }
+#Tabs .Active:hover				{ color: black; cursor: text; }
 #Tabs a:hover label				{ color: blue; }
 
 #Navigation			{ color: white; margin: 0 0.5cm; text-align: center; letter-spacing: -1px; font-family: "Trebuchet MS"; position: relative; margin-top: -2em; height: 2em; background-position: 0 -4em; }
@@ -61,7 +64,7 @@ thead a, .Period a, #Series a	{ display: block; text-decoration: none; color: bl
 
 /*** Legend ***/
 #KeyContainer, #NewContainer	{ margin: auto; width: 95%; }
-.KeyRegion input	{ height: 16pt; margin-top: 0; margin-bottom: 0; }
+.KeyRegion input	{ height: 16pt; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; display: block; }
 #Series, #MatterState, #DecayModes	{ font-size: 1.36em; }
 #Series				{ white-space: normal; empty-cells: hide; line-height: 1; }
 .WMfix				{ width: 21em; line-height: 1; }
@@ -81,7 +84,7 @@ thead a, .Period a, #Series a	{ display: block; text-decoration: none; color: bl
 #Hund				{ font-size: 0.9em; }
 #Hund #lmn td		{ border: none; cursor: auto; }
 #Hund td td			{ border: 1px solid blue; line-height: 1.3; cursor: default; }
-#Hund td td span	{ visibility: hidden; font-family: "Lucida Sans Unicode", "Lucida Grande"; }
+#Hund td td span	{ visibility: hidden; }
 
 /*** Colors ***/
 .Solid acronym, #MatterState .Solid	{ color: #000000; }
@@ -117,7 +120,14 @@ label, #Temperature th, .Period a, thead a { color: rgb(36, 83, 139); }
 .d .d	{ background-color: #66FF66; }
 .f .f	{ background-color: #9999FF; }
 
-.s .eElement acronym,
+.Videos	.Element	{ background-color: #99CC99; }
+.Photos .Element	{ background-color: #9999FF; }
+.WebElements .s		{ background-color: #6699FF; }
+.WebElements .p		{ background-color: #FFCC00; }
+.WebElements .d		{ background-color: #FF9999; }
+.WebElements .f		{ background-color: #00CC33; }
+
+/*.s .eElement acronym,
 .p .eElement acronym,
 .d .eElement acronym,
 .f .eElement acronym	{ position: relative; top: 0.2em; }
@@ -125,7 +135,7 @@ label, #Temperature th, .Period a, thead a { color: rgb(36, 83, 139); }
 .p .eElement em,
 .d .eElement em,
 .f .eElement em		{ position: relative; top: 0.9em; }
-acronym sup			{ font-size: 0.7em; color: #333; line-height: 0; }
+acronym sup			{ font-size: 0.7em; color: #333; line-height: 0; }*/
 
 /*** Borders ***/
 .Clean, #Legend	{ border-left: thick solid white; }
@@ -160,7 +170,6 @@ thead td		{ border-right: 1pt solid #CCCCFF; }
 
 /*** Element boxes ***/
 #CloseupElement		{ padding: 0.2cm; font-size: 2.2em; white-space: nowrap; width: 3.84em; }
-
 small, big			{ display: -moz-inline-block; display: inline-block; font-size: 100%; }
 acronym, strong, em, i	{ display: block; }
 .Element acronym, #CloseupElement acronym, #Legend acronym	{ font-size: 1.2em; font-weight: bold; width: 2.6em; text-outline: white 1px 1px; }
@@ -176,7 +185,7 @@ em, i				{ overflow: hidden; text-overflow: ellipsis; }
 #isotopeholder .Element acronym	{ line-height: 1.5; width: auto; }
 * html .Element, .NoGradient .Element	{ background-image: none; }
 small				{ font-size: 0.52em; text-align: right; line-height: 1; width: 1em; }
-small, .Shells		{ vertical-align: top; }
+big, small, .Shells	{ vertical-align: top; }
 .Shells small		{ width: auto; }
 #Closeup small		{ width: 1.3em; }
 
@@ -196,7 +205,8 @@ body > #Overlay		{ position: fixed; }
 #OrbitalString		{ width: 10em; vertical-align: top; }
 #OrbitalString, #SliderCell		{ font-size: 1.28em; }
 .SliderTrack		{ position: relative; height: auto; border: 1px solid white; margin-top: 11px; width: 80%; float: left; }
-.SliderTrack .SliderSlit{ border: 2px inset; background-color: ButtonShadow; height: 2px; font-size: 0; margin: 10px 6px; }
+.SliderTrack .SliderSlit{ position: relative; border: 2px inset; background-color: ButtonShadow; height: 4px; font-size: 0; margin: 10px 6px; }
+.SliderSlit img		{ position: absolute; width: 100%; height: 100%; }
 .SliderTrack .SliderBar	{ position: absolute; margin: 0; padding: 0; top: 0; width: 15px; height: 27px; cursor: pointer; }
 .SliderSelect		{ margin-top: 11px; width: 18%; display: none; }
 .SliderDisplay		{ text-align: right; margin-top: 11px; width: 14%; }

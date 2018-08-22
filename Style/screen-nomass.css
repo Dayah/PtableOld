@@ -43,7 +43,7 @@ strong						{ font-size: 0.8em; }
 #OrbitalHolder				{ width: 150pt; }
 #Orbital					{ bottom: 0; right: 0; }
 #Properties, #IsotopeForm	{ font-size: 1.1em; }
-#Properties th				{ font-weight: normal; }
+#Properties th, #IsotopeForm th	{ font-weight: normal; }
 .KeyRegion input, #SliderCell input	{ height: 11pt; }
 #Search						{ font-size: 1.2em; }
 #SearchInput				{ width: 9ex; font-size: 1em; }
