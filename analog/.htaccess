@@ -1,0 +1,4 @@
+AuthUserFile /home/dayah/www/periodic/analog/.htpasswd
+AuthName Statistics
+AuthType Basic
+Require valid-user

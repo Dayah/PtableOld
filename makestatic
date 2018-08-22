@@ -1,0 +1,64 @@
+cd Static
+mkdir temp
+
+rm width-*
+
+rm ../Script/interactivity.js
+wget -O../Script/interactivity.js http://www.dayah.com/periodic/Script/interactivity.php
+
+rm ../Style/screen-noelectron.css
+wget -O../Style/screen-noelectron.css http://www.dayah.com/periodic/Style/screen-noelectron.php
+
+rm ../Style/screen-noname.css
+wget -O../Style/screen-noname.css http://www.dayah.com/periodic/Style/screen-noname.php
+
+rm ../Style/screen-nomass.css
+wget -O../Style/screen-nomass.css http://www.dayah.com/periodic/Style/screen-nomass.php
+
+rm mostdata.txt
+wget -Otemp/mostdata.txt http://www.dayah.com/periodic/data.php?set=electroneg,discover,affinity,heat-specific:vaporization:fusion,radius-calculated:empirical:covalent:van_der_waals,abundance-universe:solar:meteor:crust:ocean:human,ionize-1st:2nd:3rd:4th:5th:6th:7th:8th:9th:10th:11th:12th:13th:14th:15th:16th:17th:18th:19th:20th:21st:22nd:23rd:24th:25th:26th:27th:28th:29th:30th,valence,density-stp:liquid,hardness-brinell:mohs:vickers,modulus-bulk:shear:young,conductivity-thermal:electric
+mv temp/mostdata.txt .
+
+rm html.*
+wget -Ohtml.af http://www.dayah.com/periodic/index.php?lang=af
+wget -Ohtml.ar http://www.dayah.com/periodic/index.php?lang=ar
+wget -Ohtml.bg http://www.dayah.com/periodic/index.php?lang=bg
+wget -Ohtml.bn http://www.dayah.com/periodic/index.php?lang=bn
+wget -Ohtml.ca http://www.dayah.com/periodic/index.php?lang=ca
+wget -Ohtml.da http://www.dayah.com/periodic/index.php?lang=da
+wget -Ohtml.de http://www.dayah.com/periodic/index.php?lang=de
+wget -Ohtml.el http://www.dayah.com/periodic/index.php?lang=el
+wget -Ohtml.en http://www.dayah.com/periodic/index.php?lang=en
+wget -Ohtml.eo http://www.dayah.com/periodic/index.php?lang=eo
+wget -Ohtml.es http://www.dayah.com/periodic/index.php?lang=es
+wget -Ohtml.fa http://www.dayah.com/periodic/index.php?lang=fa
+wget -Ohtml.fi http://www.dayah.com/periodic/index.php?lang=fi
+wget -Ohtml.fr http://www.dayah.com/periodic/index.php?lang=fr
+wget -Ohtml.he http://www.dayah.com/periodic/index.php?lang=he
+wget -Ohtml.hi http://www.dayah.com/periodic/index.php?lang=hi
+wget -Ohtml.is http://www.dayah.com/periodic/index.php?lang=is
+wget -Ohtml.it http://www.dayah.com/periodic/index.php?lang=it
+wget -Ohtml.ja http://www.dayah.com/periodic/index.php?lang=ja
+wget -Ohtml.ko http://www.dayah.com/periodic/index.php?lang=ko
+wget -Ohtml.la http://www.dayah.com/periodic/index.php?lang=la
+wget -Ohtml.nl http://www.dayah.com/periodic/index.php?lang=nl
+wget -Ohtml.no http://www.dayah.com/periodic/index.php?lang=no
+wget -Ohtml.pl http://www.dayah.com/periodic/index.php?lang=pl
+wget -Ohtml.pt http://www.dayah.com/periodic/index.php?lang=pt
+wget -Ohtml.ro http://www.dayah.com/periodic/index.php?lang=ro
+wget -Ohtml.ru http://www.dayah.com/periodic/index.php?lang=ru
+wget -Ohtml.sv http://www.dayah.com/periodic/index.php?lang=sv
+wget -Ohtml.sw http://www.dayah.com/periodic/index.php?lang=sw
+wget -Ohtml.th http://www.dayah.com/periodic/index.php?lang=th
+wget -Ohtml.tr http://www.dayah.com/periodic/index.php?lang=tr
+wget -Ohtml.zh http://www.dayah.com/periodic/index.php?lang=zh
+wget -Ohtml.zh-tw http://www.dayah.com/periodic/index.php?lang=zh-tw
+rm -rf compress
+mkdir compress
+cp html.* compress
+cd compress
+gzip --best *
+mv *.gz ..
+cd ..
+rm -rf compress
+rm -rf temp

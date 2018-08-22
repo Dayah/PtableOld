@@ -1,0 +1,78 @@
+---standard questions---
+
+Who made this periodic table?
+	Michael Dayah.
+
+Why?
+	He thought it would look nice converted to HTML and wanted to see if he could do it.
+
+When?
+	September 1997. It was posted on the Internet October 1, 1997. Element descriptions were added later in December 1997.
+
+What's the big deal? There are other periodic tables on the Internet.
+	Not only is this one of the very few tables that has all the information on one page, it's quite possibly the most complex use of HTML tables anywhere on the Internet.
+
+How long did it take to make?
+	A total of about five hours plus one half hour per month maintenance.
+
+From where was the look of the table taken?
+	The color scheme is loosely based on a Frank Schaffer Publications poster. The categories were also used from this poster. The idea of using white space between elements was taken from the periodic table in the author's biology book.
+
+Can I print it?
+	Yes. [http://www.dayah.com/periodic/Images/PeriodicTable.GIF]
+
+Is there a license agreement I must follow?
+	Because of the frequent piracy of the periodic table, you are not allowed to redistribute the table electronically in any fashion. You are, however, allowed to print the table out for your own, personal use. If you would like to print out many copies for a classroom, please tell me.
+	You may also obtain a high-gloss, autographed print of the periodic table. Simply send ten US dollars to 2420 Congress Parkway #107, Athens, TN 37303, with your e-mail address.
+
+Can I link to your periodic table?
+	By all means.
+
+How can I get in touch with you?
+	The easiest way to reach me is through IRC on EFnet. My nickname is LuceNT. My ICQ UIN is 1186770 and my e-mail address is michael@dayah.com.
+
+Where can I see other sites made by the author of this table?
+	The author's personal web site is www.dayah.com. Links to most of his other sites can be found there.
+
+
+---html-related questions---
+
+Which browsers can display the table?
+	All structure, font style, and size are shown completely in the 4.0 versions of Microsoft Internet Explorer and Netscape Navigator. Structure, but not font style or size is preserved in Navigator 3.0. Because of the way ROWSPAN and COLSPAN overlap to save markup, Internet Explorer 3.0 (and 4.0 for the Mac) do not display the periodic table correctly. Navigator 2.0 displays the table correctly, minus the cell background colors. Internet Explorer 2.0 does not support HTML tables. The table appears vastly distorted in Opera 3.5, and several bugs in the browser can be seen using the table. To an extent, the information can even be extracted with Lynx. 
+
+What editor was used to make the periodic table?
+	Only notepad. No WYSIWYG or enhanced text editors were used.
+
+I don't believe that.
+	Good luck in even getting WYSIWYG editors to open it, much less save it and it still be viewable.
+
+It could have been done in FrontPage, HotDog, or [insert WYSIWYG HTML editor here].
+	Probably not. But if it could, it would not be as cross-browser compatible as it is now and would take up at least twice the markup.
+
+What do you mean by "complex tables"?
+	There are four qualities which make a table complex:
+	1) The table uses many dependent columns and rows.
+	2) The markup cannot be optimized any further.
+	3) COLSPAN and ROWSPAN are used extensively.
+	4) Removing one cell will likely cause the table to completely collapse.
+
+But table XYZ is more complex.
+	If you find a table more complex, please tell me about it. [michael@dayah.com]
+
+What does it look like with table borders turned on?
+	See for yourself. [http://www.dayah.com/periodic/structure.html]
+
+How many tables were used in the creation of the table?
+	Structurally, only two tables were needed. For cosmetic reasons, there are sixteen tables total.
+
+How deep are the tables nested?
+	Structurally, only one level of nesting was required. A second level was used for purely cosmetic reasons.
+
+Are there any images?
+	Structurally, no images are holding up the design. However, there is a counter image and a link to page statistics in element number 999.
+
+The HTML looks proprietary.
+	One proprietary element was used to make the table look identical in both Navigator and Internet Explorer. This is the same reason the table does not validate using W3's validator. The author prioritizes usability over validation.
+
+Of which web technologies does the table take advantage?
+	HTML 4.0, Cascading Style Sheets (CSS1), JavaScript.

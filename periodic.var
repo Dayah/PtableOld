@@ -1,0 +1,307 @@
+URI: periodic; vary="language,encoding"
+
+URI: Static/html.af
+Content-Language: af,af-ZA
+Content-Type: text/html
+
+URI: Static/html.af.gz
+Content-Language: af,af-ZA
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.ar
+Content-Language: ar,ar-DZ,ar-BH,ar-EG,ar-IQ,ar-JO,ar-KW,ar-LB,ar-LY,ar-MA,ar-OM,ar-QA,ar-SA,ar-SY,ar-TN,ar-AE,ar-YE
+Content-Type: text/html
+
+URI: Static/html.ar.gz
+Content-Language: ar,ar-DZ,ar-BH,ar-EG,ar-IQ,ar-JO,ar-KW,ar-LB,ar-LY,ar-MA,ar-OM,ar-QA,ar-SA,ar-SY,ar-TN,ar-AE,ar-YE
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.bg
+Content-Language: bg,bg-BG
+Content-Type: text/html
+
+URI: Static/html.bg.gz
+Content-Language: bg,bg-BG
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.bn
+Content-Language: bn,bn-BD,bn-IN
+Content-Type: text/html
+
+URI: Static/html.bn.gz
+Content-Language: bn,bn-BD,bn-IN
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.da
+Content-Language: da,da-DK
+Content-Type: text/html
+
+URI: Static/html.da.gz
+Content-Language: da,da-DK
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.de
+Content-Language: de,de-AT,de-DE,de-LI,de-LU,de-CH
+Content-Type: text/html
+
+URI: Static/html.de.gz
+Content-Language: de,de-AT,de-DE,de-LI,de-LU,de-CH
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.ca
+Content-Language: ca,ca-ES
+Content-Type: text/html
+
+URI: Static/html.ca.gz
+Content-Language: ca,ca-ES
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.el
+Content-Language: el,el-GR
+Content-Type: text/html
+
+URI: Static/html.el.gz
+Content-Language: el,el-GR
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.en
+Content-Language: en,en-AU,en-BZ,en-CA,en-IE,en-JM,en-NZ,en-PH,en-ZA,en-TT,en-GB,en-US,en-ZW
+Content-Type: text/html
+
+URI: Static/html.en.gz
+Content-Language: en,en-AU,en-BZ,en-CA,en-IE,en-JM,en-NZ,en-PH,en-ZA,en-TT,en-GB,en-US,en-ZW
+Content-Type: text/html
+Content-Encoding: gzip
+
+#URI: en_gb.html
+#Content-Language: en-GB,en-AU,en-BZ,en-CA,en-IE,en-JM,en-NZ,en-ZA,en-TT,en-ZW
+#Content-Type: text/html
+#
+#URI: en_gb.html.gz
+#Content-Language: en-GB,en-AU,en-BZ,en-CA,en-IE,en-JM,en-NZ,en-ZA,en-TT,en-ZW
+#Content-Type: text/html
+#Content-Encoding: gzip
+
+URI: Static/html.eo
+Content-Language: eo
+Content-Type: text/html
+
+URI: Static/html.eo.gz
+Content-Language: eo
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.es
+Content-Language: es,es-AR,es-BO,es-CL,es-CO,es-CR,es-DO,es-EC,es-SV,es-GT,es-HN,es-MX,es-NI,es-PA,es-PY,es-PE,es-PR,es-ES,es-US,es-UY,es-VE
+Content-Type: text/html
+
+URI: Static/html.es.gz
+Content-Language: es,es-AR,es-BO,es-CL,es-CO,es-CR,es-DO,es-EC,es-SV,es-GT,es-HN,es-MX,es-NI,es-PA,es-PY,es-PE,es-PR,es-ES,es-US,es-UY,es-VE
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.fa
+Content-Language: fa,fa-IR
+Content-Type: text/html
+
+URI: Static/html.fa.gz
+Content-Language: fa,fa-IR
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.fi
+Content-Language: fi,fi-FI
+Content-Type: text/html
+
+URI: Static/html.fi.gz
+Content-Language: fi,fi-FI
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.fr
+Content-Language: fr,fr-BE,fr-CA,fr-FR,fr-LU,fr-MC,fr-CH
+Content-Type: text/html
+
+URI: Static/html.fr.gz
+Content-Language: fr,fr-BE,fr-CA,fr-FR,fr-LU,fr-MC,fr-CH
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.he
+Content-Language: he,he-IL
+Content-Type: text/html
+
+URI: Static/html.he.gz
+Content-Language: he,he-IL
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.hi
+Content-Language: hi,hi-IN
+Content-Type: text/html
+
+URI: Static/html.hi.gz
+Content-Language: hi,hi-IN
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.is
+Content-Language: is,is-IS
+Content-Type: text/html
+
+URI: Static/html.is.gz
+Content-Language: is,is-IS
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.it
+Content-Language: it,it-IT,it-CH
+Content-Type: text/html
+
+URI: Static/html.it.gz
+Content-Language: it,it-IT,it-CH
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.ja
+Content-Language: ja,ja-JP
+Content-Type: text/html
+
+URI: Static/html.ja.gz
+Content-Language: ja,ja-JP
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.ko
+Content-Language: ko,ko-KP,ko-KR
+Content-Type: text/html
+
+URI: Static/html.ko.gz
+Content-Language: ko,ko-KP,ko-KR
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.la
+Content-Language: la
+Content-Type: text/html
+
+URI: Static/html.la.gz
+Content-Language: la
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.nl
+Content-Language: nl,nl-BE,nl-NL
+Content-Type: text/html
+
+URI: Static/html.nl.gz
+Content-Language: nl,nl-BE,nl-NL
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.no
+Content-Language: no,nb,nn,nb-NO,nn-NO
+Content-Type: text/html
+
+URI: Static/html.no.gz
+Content-Language: no,nb,nn,nb-NO,nn-NO
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.pl
+Content-Language: pl,pl-PL
+Content-Type: text/html
+
+URI: Static/html.pl.gz
+Content-Language: pl,pl-PL
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.pt
+Content-Language: pt,pt-BR,pt-PT
+Content-Type: text/html
+
+URI: Static/html.pt.gz
+Content-Language: pt,pt-BR,pt-PT
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.ro
+Content-Language: ro,ro-RO,ro-MD
+Content-Type: text/html
+
+URI: Static/html.ro.gz
+Content-Language: ro,ro-RO,ro-MD
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.ru
+Content-Language: ru,ru-RU
+Content-Type: text/html
+
+URI: Static/html.ru.gz
+Content-Language: ru,ru-RU
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.sv
+Content-Language: sv,sv-FI,sv-SE
+Content-Type: text/html
+
+URI: Static/html.sv.gz
+Content-Language: sv,sv-FI,sv-SE
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.sw
+Content-Language: sw,sw-KE
+Content-Type: text/html
+
+URI: Static/html.sw.gz
+Content-Language: sw,sw-KE
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.th
+Content-Language: th,th-TH
+Content-Type: text/html
+
+URI: Static/html.th.gz
+Content-Language: th,th-TH
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.tr
+Content-Language: tr,tr-TR
+Content-Type: text/html
+
+URI: Static/html.tr.gz
+Content-Language: tr,tr-TR
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.zh-tw
+Content-Language: zh-HK,zh-MO,zh-TW
+Content-Type: text/html
+
+URI: Static/html.zh-tw.gz
+Content-Language: zh-HK,zh-MO,zh-TW
+Content-Type: text/html
+Content-Encoding: gzip
+
+URI: Static/html.zh
+Content-Language: zh,zh-CN,zh-SG
+Content-Type: text/html
+
+URI: Static/html.zh.gz
+Content-Language: zh,zh-CN,zh-SG
+Content-Type: text/html
+Content-Encoding: gzip

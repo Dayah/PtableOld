@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<url>
+	<loc>http://www.dayah.com/periodic/</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/Other/Periodic Table.pdf</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.3</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/Other/A4 Periodic Table.pdf</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.3</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/Other/Legal Periodic Table.pdf</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.3</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/Images/Periodic Table.png</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.3</priority>
+</url>
+
+
+<url>
+	<loc>http://www.dayah.com/periodic/feedback.html</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/link.php</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/key.html</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/questions.html</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.2</priority>
+</url>
+
+
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=af</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=ar</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=bg</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=da</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=de</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=el</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=en_gb</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=eo</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=es</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=fi</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=fr</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=he</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=is</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=it</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=ja</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=ko</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=nl</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=no</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=pl</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=pt</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=ru</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=sv</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=sw</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=th</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=tr</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=zh</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+<url>
+	<loc>http://www.dayah.com/periodic/?lang=zh_tw</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.1</priority>
+</url>
+</urlset>

@@ -1,0 +1,344 @@
+<!-- http://tyrall.net/periodic/ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+ <head>
+
+  <title>Periodic Table of the Servers</title>
+
+   <script>
+   function element(name) {
+   	elementWin = window.open("elements.html#" + name, "elementWindow", "resizable=yes,scrollbars=yes,height=250,width=250");
+   	elementWin.focus();
+   }
+   function openKey() {
+   	keyWin = window.open("key.html", "keyWindow", "height=144,width=374");
+   }
+  </script>
+
+  <style type="text/css" media="screen, print">
+   A:active, A:hover	{ text-decoration: underline; }
+   TD DIV A		{ color: black; text-decoration: none; }
+   STRONG		{ font-size: large; }
+   BODY			{ background-color: white; font-family: sans-serif; }
+   HR			{ border: solid; color: #A33; height: 0.1em; width: 70%; }
+   IMG			{ border: 0; }
+   P			{ margin-left: auto; margin-right: auto; text-align: justify; text-indent: 2ex; width: 85%; }
+
+   #Header		{ background-color: #8FF; font-size: xx-large; font-weight: bold; white-space: nowrap; text-align: center; }
+
+   .CategoryBlock	{ height: 1.5em; width: 1.5em; }
+   .StateBlock		{ height: 2em; width: 2em; vertical-align: middle; border: thin solid black; }
+   .CategoryName	{ font-size: large; }
+   .State		{ font-weight: bold; font-size: large; }
+   .Liquid		{ color: green; }
+   .Gas			{ color: red; }
+   .Synthetic		{ color: white; }
+
+   .Nonmetal		{ background-color: #0F0; }
+   .Other		{ background-color: #0DD; }
+   .Noble		{ background-color: #8FF; }
+   .Nonmetal, .Other, .Noble, .Electron { padding: 1pt; }
+
+   .OldGroup		{ color: #A33; font-size: medium; text-align: center; }
+   .Period		{ font-size: large; text-align: right; }
+
+   .Name		{ font-size: xx-small; }
+   .LongName		{ font-size: xx-small; }
+   .Electron		{ font-size: xx-small; line-height: 1; text-align: right; vertical-align: top; }
+
+   .Divider		{ background-color: black; }
+
+   .Navigation		{ background-color: #BBB; text-align: center; }
+   .Navigation TD	{ background-color: #DDD; width: 25%; }
+   .RowSpace		{ height: 0.5em; padding-right: 0.5em; }
+   .Link		{ color: inherit; }
+  </style>
+
+  <style type="text/css" media="print">
+   @page					{ size: landscape; margin: 0; }
+   .Header					{ font-size: xx-large; }
+   STRONG, .CategoryName, .State, .Period, .OldGroup	{ font-size: 10pt; }
+   TD						{ font-size: 8pt; }
+   .Name, .Electron				{ font-size: 6pt; }
+   .LongName					{ font-size: 4pt; }
+   .Navigation, IMG, P				{ display: none; }
+   .RowSpace					{ height: 3pt; width: 3pt; }
+   .CategoryBlock				{ height: 6pt; width: 6pt; }
+   .StateBlock					{ height: 10pt; width: 10pt; }
+   .Nonmetal, .Other, .Noble, .Electron { padding: 1pt; }
+  </style>
+
+ </head>
+ <body>
+
+  <div id="Header">Periodic Table of the Servers</div>
+
+  <p>This is an adapted version of the superb <a href='http://www.dayah.com/periodic/html4css.html'>online Periodic Table</a> written by <a href='http://www.dayah.com/'>Michael Dayah</a>.
+<br>
+  It's been modifed to include details of the Tyrall machines named after each element (so far just Noble gases, group VIIA, Oxygen and Nitrogen).  Click the name of an element to see its description.
+<br>
+A <a href="JavaScript:openKey()" title="Legend for the periodic table">key</a> is available.</p>
+
+
+ <center>
+  <table border=0 cellpadding=0 cellspacing=0>
+   <tr>
+    <td class="RowSpace" colspan=17 rowspan=2>
+     <table cellpadding=5 cellspacing=0>
+      <tr>
+       <th rowspan=2><div class="CategoryBlock Other"></div></th>
+       <td rowspan=2 class="CategoryName">Other Metals</td>
+       <td rowspan=6 style="width: 1em;"></td>
+       <th rowspan=3 class="StateBlock"><strong>C</strong></th>
+       <td rowspan=3 class="State">Solid</td>
+       <td rowspan=6 style="width: 1em;"></td>
+       <th rowspan=3 class="StateBlock"><strong class="Gas">H</strong></th>
+       <td rowspan=3 class="State Gas">Gas</td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+       <th rowspan=2><div class="CategoryBlock Nonmetal"></div></th>
+       <td rowspan=2 class="CategoryName">Nonmetals</td>
+      </tr>
+      <tr>
+       <th rowspan=3 class="StateBlock"><strong class="Liquid">Br</strong></th>
+       <td rowspan=3 class="State Liquid">Liquid</td>
+       <th rowspan=3 class="StateBlock" style="background-color: black;"><strong class="Synthetic">Tc</strong></th>
+       <td rowspan=3 class="State" style="color: #BBB;">Synthetic</td>
+      </tr>
+      <tr>
+       <th rowspan=2><div class="CategoryBlock Noble"></div></th>
+       <td rowspan=2 class="CategoryName">Noble gases</td>
+      </tr>
+     </table>
+    </td>
+    <td colspan=2>&nbsp;</td>
+    <td class="RowSpace" rowspan=16></td>
+   </tr>
+
+   <tr>
+    <td class="OldGroup" height=1% colspan=2>VIIIA</td>
+   </tr>
+
+   <tr>
+    <td class="Period" rowspan=2>1</td>
+    <td class="RowSpace" rowspan=14></td>
+    <td colspan=2>&nbsp;</td>
+    <td class="RowSpace" rowspan=4></td>
+    <td colspan=2></td>
+    <td class="RowSpace" rowspan=6></td>
+    <td colspan=2></td>
+    <td class="RowSpace" rowspan=8></td>
+    <td colspan=2></td>
+    <td class="RowSpace" rowspan=10></td>
+    <td colspan=2></td>
+    <td class="RowSpace" rowspan=12></td>
+    <td rowspan=2 class="Noble">2<br><strong class="Gas">He</strong><br><div class="Name"><a href="JavaScript:element('Helium')">Helium</a><br>4.002602</div></td>
+    <td rowspan=2 class="Noble Electron">2</td>
+   </tr>
+
+   <tr>
+    <td class="OldGroup" height=1% colspan=2>IIIA</td>
+    <td class="OldGroup" colspan=2>IVA</td>
+    <td class="OldGroup" colspan=2>VA</td>
+    <td class="OldGroup" colspan=2>VIA</td>
+    <td class="OldGroup" colspan=2>VIIA</td>
+   </tr>
+
+   <tr>
+    <td class="RowSpace"></td>
+    <td class="RowSpace" colspan=2></td>
+    <td class="RowSpace" colspan=2></td>
+    <td class="RowSpace" colspan=2></td>
+    <td class="RowSpace" colspan=2></td>
+    <td class="RowSpace" colspan=2></td>
+    <td class="RowSpace" colspan=2></td>
+   </tr>
+
+   <tr>
+    <td class="Period">2</td>
+
+    <td class="Nonmetal">5<br><strong>B</strong><br><div class="Name"><a href="JavaScript:element('Boron')">Boron</a><br>10.811</div></td>
+    <td class="Nonmetal Electron">2<br>3</td>
+
+    <td class="Nonmetal">6<br><strong>C</strong><br><div class="Name"><a href="JavaScript:element('Carbon')">Carbon</a><br>12.0107</div></td>
+    <td class="Nonmetal Electron">2<br>4</td>
+
+    <td class="Nonmetal">7<br><strong class="Gas">N</strong><br><div class="Name"><a href="JavaScript:element('Nitrogen')">Nitrogen</a><br>14.00674</div></td>
+    <td class="Nonmetal Electron">2<br>5</td>
+
+    <td class="Nonmetal">8<br><strong class="Gas">O</strong><br><div class="Name"><a href="JavaScript:element('Oxygen')">Oxygen</a><br>15.9994</div></td>
+    <td class="Nonmetal Electron">2<br>6</td>
+
+    <td class="Nonmetal">9<br><strong class="Gas">F</strong><br><div class="Name"><a href="JavaScript:element('Fluorine')">Fluorine</a><br>18.9984032</div></td>
+    <td class="Nonmetal Electron">2<br>7</td>
+
+    <td class="Noble">10<br><strong class="Gas">Ne</strong><br><div class="Name"><a href="JavaScript:element('Neon')">Neon</a><br>20.1797</div></td>
+    <td class="Noble Electron">2<br>8</td>
+
+   </tr>
+
+   <tr>
+    <td class="RowSpace" colspan=2></td>
+    <td class="Divider" colspan=3></td>
+    <td class="RowSpace" colspan=15></td>
+   </tr>
+
+   <tr>
+    <td class="Period">3</td>
+
+    <td class="Other">13<br><strong>Al</strong><br><div class="Name"><a href="JavaScript:element('Aluminium')">Aluminium</a><br>26.981538</div></td>
+    <td class="Other Electron">2<br>8<br>3</td>
+
+    <td class="Divider" rowspan=2></td>
+
+    <td class="Nonmetal">14<br><strong>Si</strong><br><div class="Name"><a href="JavaScript:element('Silicon')">Silicon</a><br>28.0855</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>4</td>
+
+    <td class="Nonmetal">15<br><strong>P</strong><br><div class="Name"><a href="JavaScript:element('Phosphorus')">Phosphorus</a><br>30.973761</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>5</td>
+
+    <td class="Nonmetal">16<br><strong>S</strong><br><div class="Name"><a href="JavaScript:element('Sulphur')">Sulphur</a><br>32.066</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>6</td>
+
+    <td class="Nonmetal">17<br><strong class="Gas">Cl</strong><br><div class="Name"><a href="JavaScript:element('Chlorine')">Chlorine</a><br>35.4527</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>7</td>
+
+    <td class="Noble">18<br><strong class="Gas">Ar</strong><br><div class="Name"><a href="JavaScript:element('Argon')">Argon</a><br>39.948</div></td>
+    <td class="Noble Electron">2<br>8<br>8</td>
+   </tr>
+
+   <tr>
+    <td class="RowSpace" colspan=5></td>
+    <td class="Divider" colspan=3></td>
+    <td class="RowSpace" colspan=12></td>
+   </tr>
+
+   <tr>
+    <td class="Period">4</td>
+
+    <td class="Other">31<br><strong>Ga</strong><br><div class="Name"><a href="JavaScript:element('Gallium')">Gallium</a><br>69.723</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>3</td>
+
+    <td class="RowSpace" rowspan=7></td>
+
+    <td class="Other">32<br><strong>Ge</strong><br><div class="Name"><a href="JavaScript:element('Germanium')">Germanium</a><br>72.61</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>4</td>
+
+    <td class="Divider" rowspan=2></td>
+
+    <td class="Nonmetal">33<br><strong>As</strong><br><div class="Name"><a href="JavaScript:element('Arsenic')">Arsenic</a><br>74.92160</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>5</td>
+
+    <td class="Nonmetal">34<br><strong>Se</strong><br><div class="Name"><a href="JavaScript:element('Selenium')">Selenium</a><br>78.96</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>6</td>
+
+    <td class="Nonmetal">35<br><strong class="Liquid">Br</strong><br><div class="Name"><a href="JavaScript:element('Bromine')">Bromine</a><br>79.904</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>7</td>
+
+    <td class="Noble">36<br><strong class="Gas">Kr</strong><br><div class="Name"><a href="JavaScript:element('Krypton')">Krypton</a><br>83.80</div></td>
+    <td class="Noble Electron">2<br>8<br>18<br>8</td>
+
+   </tr>
+
+   <tr>
+    <td class="RowSpace" colspan=8></td>
+    <td class="Divider" colspan=3></td>
+    <td class="RowSpace" colspan=9></td>
+   </tr>
+
+   <tr>
+    <td class="Period">5</td>
+
+    <td class="Other">49<br><strong>In</strong><br><div class="Name"><a href="JavaScript:element('Indium')">Indium</a><br>114.818</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>18<br>3</td>
+
+    <td class="Other">50<br><strong>Sn</strong><br><div class="Name"><a href="JavaScript:element('Tin')">Tin</a><br>118.710</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>18<br>4</td>
+
+    <td class="RowSpace" rowspan=5></td>
+
+    <td class="Other">51<br><strong>Sb</strong><br><div class="Name"><a href="JavaScript:element('Antimony')">Antimony</a><br>121.760</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>18<br>5</td>
+
+    <td class="Divider" rowspan=2></td>
+
+    <td class="Nonmetal">52<br><strong>Te</strong><br><div class="Name"><a href="JavaScript:element('Tellurium')">Tellurium</a><br>127.60</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>18<br>6</td>
+
+    <td class="Nonmetal">53<br><strong>I</strong><br><div class="Name"><a href="JavaScript:element('Iodine')">Iodine</a><br>126.90447</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>18<br>7</td>
+
+    <td class="Noble">54<br><strong class="Gas">Xe</strong><br><div class="Name"><a href="JavaScript:element('Xenon')">Xenon</a><br>131.29</div></td>
+    <td class="Noble Electron">2<br>8<br>18<br>18<br>8</td>
+
+   </tr>
+
+   <tr>
+    <td class="RowSpace" colspan=11></td>
+    <td class="Divider" colspan=3></td>
+    <td class="RowSpace" colspan=6></td>
+   </tr>
+
+   <tr>
+    <td class="Period">6</td>
+
+    <td class="Other">81<br><strong>Tl</strong><br><div class="Name"><a href="JavaScript:element('Thallium')">Thallium</a><br>204.3833</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>3</td>
+
+    <td class="Other">82<br><strong>Pb</strong><br><div class="Name"><a href="JavaScript:element('Lead')">Lead</a><br>207.2</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>4</td>
+
+    <td class="Other">83<br><strong>Bi</strong><br><div class="Name"><a href="JavaScript:element('Bismuth')">Bismuth</a><br>208.98038</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>5</td>
+
+    <td class="RowSpace" rowspan=3></td>
+
+    <td class="Other">84<br><strong>Po</strong><br><div class="Name"><a href="JavaScript:element('Polonium')">Polonium</a><br>(209)</div></td>
+    <td class="Other Electron">2<br>8<br>18<br>32<br>18<br>6</td>
+
+    <td class="Divider" rowspan=2></td>
+
+    <td class="Nonmetal">85<br><strong>At</strong><br><div class="Name"><a href="JavaScript:element('Astatine')">Astatine</a><br>(210)</div></td>
+    <td class="Nonmetal Electron">2<br>8<br>18<br>32<br>18<br>7</td>
+
+    <td class="Noble">86<br><strong class="Gas">Rn</strong><br><div class="Name"><a href="JavaScript:element('Radon')">Radon</a><br>(222)</div></td>
+    <td class="Noble Electron">2<br>8<br>18<br>32<br>18<br>8</td>
+
+   </tr>
+
+   <tr>
+    <td class="RowSpace" colspan=14></td>
+    <td class="Divider" colspan=3></td>
+    <td class="RowSpace" colspan=3></td>
+   </tr>
+
+   <tr>
+    <td class="Period">7</td>
+
+    <td class="Other" colspan=2>113<br><strong class="Synthetic">&nbsp;<IMG SRC="http://www.dayah.com/periodic/Images/Spacer.GIF" ALT="" HEIGHT=5 WIDTH=5></strong><br><div class="Name">&nbsp;<br>&nbsp;</div></td>
+
+    <td class="Other" colspan=2>114<br><strong class="Synthetic">Uuq</strong><br><div class="Name">Ununquadium<br>(285)</div></td>
+
+    <td class="Other" colspan=2>115<br><strong class="Synthetic">&nbsp;</strong><br><div class="Name">&nbsp;<br>&nbsp;</div></td>
+
+    <td class="Other" colspan=2>116<br><strong class="Synthetic">Uuh</strong><br><div class="Name">Ununhexium<br>(289)</div></td>
+
+    <td class="RowSpace"></td>
+
+    <td class="Other" colspan=2>117<br><strong class="Synthetic">&nbsp;</strong><br><div class="Name">&nbsp;<br>&nbsp;</div></td>
+
+    <td class="Divider"></td>
+
+    <td class="Noble" colspan=2>118<br><strong class="Synthetic">Uuo</strong><br><div class="Name"><a href="JavaScript:element('Ununoctium')">Ununoctium</a><br>(293)</div></td>
+
+   </tr>
+   <tr>
+    <td colspan=20 style="font-size: medium; line-height: 3;">Atomic masses in parentheses are those of the most stable or common isotope.</td>
+   </tr>
+  </table>
+ </center>
+
+ </body>
+</html>

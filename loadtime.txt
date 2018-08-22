@@ -1,0 +1,74 @@
+
+/*var load_time = (new Date()).getTime(), view_start = 0, view_time = 0, active_element = false;
+window.onunload = function () {
+    var x = (window.ActiveXObject) ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+    if (view_start) view_time += (new Date()).getTime() - view_start;
+    x.open("GET", "visit_length.php?load=" + (((new Date()).getTime() - load_time) / 1000) + "&view=" + view_time / 1000, true);
+    x.send(null);
+}
+document.onfocusin = window.onfocus = window_focus;
+document.onfocusout = window.onblur = window_blur;
+function window_focus(e) {
+    e = e || event;
+    active_element = document.activeElement;
+    if (!view_start) {
+        document.title += " F";
+        view_start = (new Date()).getTime();
+    }
+    if (typeof wholetable.onfocusin !== "undefined") window.onfocus = null;
+}
+function window_blur(e) {
+    if (typeof wholetable.onfocusout !== "undefined") window.onblur = null;
+    e = e || event;
+    if (active_element != document.activeElement || (e.target.nodeType !== 9 && typeof e.target.nodeType != "undefined")) {
+        active_element = document.activeElement;
+        return;
+    }
+    document.title += " B";
+    view_time += (new Date()).getTime() - view_start;
+    view_start = 0;
+}*/
+
+
+function benchmark() {
+    activeTab({srcElement: document.getElementById('PropertyTab')});
+    document.getElementById('t_boil').checked = true;
+    document.forms['visualize'].onclick();
+    view_start = (new Date()).getTime();
+    for (var y = 0; y < 6000; y = y + 25) {
+        display.value = y;
+        slider_release({keyCode: 32});
+    }
+    alert((new Date()).getTime() - view_start);
+}
+
+function flying_box(start, end) {
+    var fly = document.createElement("div");
+    fly.start = start;
+    fly.end = end;
+    fly.cover = [];
+    fly.id = "Flying";
+    for (var x = 0; x < 4; x++) fly.cover[x] = (end[x] - start[x]) / animation_steps;
+    fly.style.border = "thin solid black";
+    fly.style.position = "absolute";
+    fly.style.top = start[0] + "px";
+    fly.style.left = start[1] + "px";
+    fly.style.height = start[2] + "px";
+    fly.style.width = start[3] + "px";
+    document.body.appendChild(fly);
+
+    do_fly();
+}
+
+function do_fly() {
+    var fly = document.getElementById("Flying");
+    fly.style.width = fly.start[3] + fly.cover[3] * aniX + "px";
+    fly.style.left = fly.start[1] + fly.cover[1] * aniX + "px";
+    fly.style.height = fly.start[2] + fly.cover[2] * aniX + "px";
+    fly.style.top = fly.start[0] + fly.cover[0] * aniX + "px";
+    if (aniX++ < animation_steps) setTimeout(do_fly, 10);
+    else {
+        aniX = 0;
+        fly.parentNode.removeChild(fly);
+    }
+}

@@ -1,0 +1,19 @@
+	I, Michael Dayah, the author of the Periodic Table of the Elements
+page <http://www.benray.com/periodic>, hereby give Joe Barta permission to
+use the table any way he sees fit at no cost as long as the table remains
+intact. He may make minor modifications as necessary. Minor modifications
+include adjusting relative links within the document, commenting the code,
+and adding pointers to illustrate various concepts. The original author's
+name will not be removed, neither will the link to e-mail him or the link
+to his personal homepage. One link that must remain intact as-is is the
+small counter image located within element 999. The reason being is so if
+the page is stolen from Mr. Barta's site, I will be able to track down
+where it went using the referrer logs. (I caught two different people
+copying the page in its entirety using this method.) Mr. Barta may also
+do a simple Find and Replace on the periodic table replacing "BORDER=0"
+with "BORDER=1". This new document could be used to display the underlying
+table structure.
+
+	Michael Dayah,
+	mdayah@tds.net
+	6/24/98
