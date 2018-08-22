@@ -78,7 +78,7 @@ throb_atomic = false;
    <a><input type="checkbox" id="wide" name="wide"/><label for="wide" title="Show rare earth elements inline">Wide</label></a>
   </div>
 
-  <div id="Ad" style="padding-right: 1.5em; background-color: #FF6; border: 1px dashed;">
+  <div id="Ad" style="padding-right: 1.5em; background-color: #FFFB8F;">
   <input type="button" onclick="this.parentNode.style.display = 'none'; document.cookie = 'demo=1; expires=Tue, 21 Oct 2008 04:29:00 GMT';" style="font-size: 1.2em; position: absolute; top: 0; right: 0;" value="×"/>
   This periodic table is far more featureful and interactive than even the most complex web and standalone applications. <b>Please take a moment to <a href="#" onclick="return load_script('demo');">watch a demo</a> of all its features. <span id="StopDemo" style="display: none;">[<a href="#" onclick="location.reload(false);">Stop</a>]</span></b></div>
 
@@ -183,13 +183,13 @@ throb_atomic = false;
   </tr><tr>
    <td class="Alkali" rowspan="2"><a href="http://en.wikipedia.org/wiki/Alkali metals">Alkali metals</a></td>
    <td class="Alkaline" rowspan="2"><a href="http://en.wikipedia.org/wiki/Alkaline earth metals">Alkaline earth metals</a></td>
-   <td class="Lanthanoid" style="writing-mode: lr-tb;"><a href="http://en.wikipedia.org/wiki/Lanthanoids">Lanthanoids</a></td>
+   <td class="Lanthanoid" style="writing-mode: lr-tb;"><a href="http://en.wikipedia.org/wiki/Lanthanoids" id="Lanthanoid">Lanthanoids</a></td>
    <td class="Transition" rowspan="2"><a href="http://en.wikipedia.org/wiki/Transition metals">Transition metals</a></td>
    <td class="Poor" rowspan="2"><a href="http://en.wikipedia.org/wiki/Poor metals">Poor metals</a></td>
    <td class="Nonmetal" rowspan="2"><a href="http://en.wikipedia.org/wiki/Other nonmetals">Other nonmetals</a></td>
    <td class="Noble" rowspan="2"><a href="http://en.wikipedia.org/wiki/Noble gases">Noble gases</a></td>
   </tr><tr>
-   <td class="Actinoid" style="writing-mode: lr-tb;"><a href="http://en.wikipedia.org/wiki/Actinoids">Actinoids</a></td>
+   <td class="Actinoid" style="writing-mode: lr-tb;"><a href="http://en.wikipedia.org/wiki/Actinoids" id="Actinoid">Actinoids</a></td>
   </tr></tbody>
  </table>
 
@@ -415,7 +415,7 @@ throb_atomic = false;
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 6 element">6</a></th>
   <td class="Element Alkali s"><strong>55</strong> <big>Cs</big> <em>Caesium</em><div>132.90<span>54519</span></div></td><td class="Electron Alkali s"><span>2<br/>8<br/>18<br/>18<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>56</strong> <big>Ba</big> <em>Barium</em><div>137.32<span>7</span></div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>18<br/>18<br/>8<br/>2</span></td>
-  <td class="InnerBorder BlueLeft BlueTop BlueRight" colspan="2">57–71</td>
+  <td class="Lanthanoid InnerBorder BlueLeft BlueTop BlueRight" colspan="2" onmouseover="document.getElementById('Lanthanoid').onfocus();" onmouseout="series_leave();">57–71</td>
   <td class="Element Transition d"><strong>72</strong> <big>Hf</big> <em>Hafnium</em><div>178.49</div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>32<br/>10<br/>2</span></td>
   <td class="Element Transition d"><strong>73</strong> <big>Ta</big> <em>Tantalum</em><div>180.94<span>788</span></div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>32<br/>11<br/>2</span></td>
   <td class="Element Transition d"><strong>74</strong> <big>W</big> <em>Tungsten</em><div>183.84</div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>32<br/>12<br/>2</span></td>
@@ -438,7 +438,7 @@ throb_atomic = false;
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 7 element">7</a></th>
   <td class="Element Alkali s"><strong>87</strong> <big>Fr</big> <em>Francium</em><div>(223)</div></td><td class="Electron Alkali s"><span>2<br/>8<br/>18<br/>32<br/>18<br/>8<br/>1</span></td>
   <td class="Element Alkaline s"><strong>88</strong> <big>Ra</big> <em>Radium</em><div>(226)</div></td><td class="Electron Alkaline s"><span>2<br/>8<br/>18<br/>32<br/>18<br/>8<br/>2</span></td>
-  <td class="InnerBorder BlueLeft BlueRight" colspan="2">89–103</td>
+  <td class="Actinoid InnerBorder BlueLeft BlueRight" colspan="2" onmouseover="document.getElementById('Actinoid').onfocus();" onmouseout="series_leave();">89–103</td>
   <td class="Element Transition d"><strong>104</strong> <big>Rf</big> <em class="Long">Rutherfordium</em><div>(261)</div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>32<br/>32<br/>10<br/>2</span></td>
   <td class="Element Transition d"><strong>105</strong> <big>Db</big> <em>Dubnium</em><div>(262)</div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>32<br/>32<br/>11<br/>2</span></td>
   <td class="Element Transition d"><strong>106</strong> <big>Sg</big> <em>Seaborgium</em><div>(266)</div></td><td class="Electron Transition d"><span>2<br/>8<br/>18<br/>32<br/>32<br/>12<br/>2</span></td>
@@ -465,7 +465,7 @@ throb_atomic = false;
 
  <tr>
   <td class="InnerBorder BlueLeft" colspan="2"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: July 31, 2008</span> </td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="30"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: August 10, 2008</span> </td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
@@ -511,7 +511,7 @@ throb_atomic = false;
  </tbody>
 </table>
 
-  <noscript><p style="font-size: x-small;"><a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fa">جدول تناوبی</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=hi">आवर्त सारणी</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=la">Systema Periodicum</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh-tw">元素週期表</a> | </p></noscript>
+  <noscript><p style="font-size: x-small;"><a href="/periodic/?lang=af">Periodieke Tabel</a> | <a href="/periodic/?lang=ar">جدول دوري</a> | <a href="/periodic/?lang=bg">Периодична Система</a> | <a href="/periodic/?lang=bn">পর্যায় সারণী</a> | <a href="/periodic/?lang=da">Periodiske System</a> | <a href="/periodic/?lang=de">Periodensystem</a> | <a href="/periodic/?lang=ca">Taula Periòdica</a> | <a href="/periodic/?lang=el">Περιοδικός Πίνακας</a> | <a href="/periodic/">Periodic Table</a> | <a href="/periodic/?lang=eo">Perioda Tabelo</a> | <a href="/periodic/?lang=es">Tabla Periódica</a> | <a href="/periodic/?lang=fa">جدول تناوبی</a> | <a href="/periodic/?lang=fi">Jaksollinen Järjestelmä</a> | <a href="/periodic/?lang=fr">Tableau Périodique</a> | <a href="/periodic/?lang=he">הטבלה המחזורית</a> | <a href="/periodic/?lang=hi">आवर्त सारणी</a> | <a href="/periodic/?lang=is">Lotukerfið</a> | <a href="/periodic/?lang=it">Tavola Periodica</a> | <a href="/periodic/?lang=ja">周期表</a> | <a href="/periodic/?lang=ko">주기율표</a> | <a href="/periodic/?lang=la">Systema Periodicum</a> | <a href="/periodic/?lang=nl">Periodiek Systeem</a> | <a href="/periodic/?lang=no">Periodesystemet</a> | <a href="/periodic/?lang=pl">Układ Okresowy</a> | <a href="/periodic/?lang=pt">Tabela Periódica</a> | <a href="/periodic/?lang=ru">Периодическая Система</a> | <a href="/periodic/?lang=sv">Periodiska Systemet</a> | <a href="/periodic/?lang=sw">Jedwali la Elementi</a> | <a href="/periodic/?lang=th">ตารางธาตุ</a> | <a href="/periodic/?lang=tr">Periyodik Tablo</a> | <a href="/periodic/?lang=zh">元素周期表</a> | <a href="/periodic/?lang=zh-tw">元素週期表</a> | </p></noscript>
   <div style="border-bottom: 3em solid white;"></div>
 </div>
 
@@ -534,7 +534,7 @@ throb_atomic = false;
    <a id="facebook" href="http://www.facebook.com/pages/Periodic-Table/7329016582">Facebook</a>
    <a id="twitter" href="http://twitter.com/Ptable">Twitter</a>
 -->
-   <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="hi">हिन्दी</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go"/></form>
+   <form name="language" method="get" action="/periodic/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="ca">Català</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="hi">हिन्दी</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="Go"/></form>
   </div>
 
   <div id="WikiBox">
