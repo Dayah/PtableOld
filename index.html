@@ -15,7 +15,6 @@
   <link href="Style/print-default.css" rel="stylesheet" type="text/css" media="print">
 
   <script type="text/javascript">
-if (top != self && document.referrer.indexOf("images.google") === -1 && document.referrer.indexOf("stumbleupon.com") === -1) top.location.replace(self.location.href);
 var language = "en", scheme = "day", rtl = "";
 var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_height="60", microsoft_adunit_legacy="false";
   </script>
@@ -30,10 +29,10 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
    <div class="Bevel" style="position: absolute; left: 0; bottom: 0; background-position: 0 -20px;"></div>
    <div class="Bevel" style="position: absolute; right: 0; bottom: 0; background-position: -20px -20px;"></div>
    <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; white-space: nowrap;"><tr><td class="Tabs" style="width: 50%; vertical-align: bottom;">
-   <span id="SeriesTab"><!--<select><option>Wikipedia<option>WebElements<option>Videos</select>-->Wikipedia</span>
-   <span id="PropertyTab">Properties</span>
-   <span id="OrbitalTab">Orbitals</span>
-   <span id="IsotopeTab">Isotopes</span>
+   <a id="SeriesTab" style="padding: 0;"><select id="ClickSelect"><option value="Wikipedia">Wikipedia<option value="WebElements">WebElements<option value="Videos">Videos<option value="Photos">Photos</select></a>
+   <a href="#" id="PropertyTab">Properties</a>
+   <a href="#" id="OrbitalTab">Orbitals</a>
+   <a href="#" id="IsotopeTab">Isotopes</a>
    </td><td class="Views" style="width: 50%;">
    <a class="Selected"><input type="checkbox" checked="checked" id="Weight"><label for="Weight" title="Show atomic masses">Weight</label></a>
    <a class="Selected"><input type="checkbox" checked="checked" id="Name"><label for="Name" title="Show element names">Names</label></a>
@@ -308,7 +307,7 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
    <div style="position: relative; width: 100%; height: 2.5em; overflow: hidden;">
     <div style="position: absolute; width: 100%; height: 100%;">
      <div style="width: 100%; height: 100%;">
-      <div id="SliderTrack" class="SliderTrack"><div id="SliderSlit" class="SliderSlit"></div><button id="SliderBar" class="SliderBar"></button></div>
+      <div id="SliderTrack" class="SliderTrack"><div id="SliderSlit" class="SliderSlit"><img src="http://www.eehtpc.com/ptable/temperature.png" alt=""></div><button id="SliderBar" class="SliderBar"></button></div>
       <input id="SliderDisplay" class="SliderDisplay" type="text" value="0">
       <select id="SliderSelect" class="SliderSelect"></select>
      </div>
@@ -446,7 +445,7 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
 
  <tr>
   <td class="InnerBorder BlueLeft"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="15">Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/<span id="Updated"> Last updated: February 06, 2009</span> </td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated March 18, 2009</span> </td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
@@ -505,8 +504,8 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
   </div>
 
   <div id="WikiBox">
-   <h1 id="WikiTitle"><button onclick="setTimeout(destroy, Math.floor(Math.random() * 3) || document.getElementById('Ad').style.display == 'none' ? 0 : 500);">×</button> Wikipedia - <a href="http://en.wikipedia.org/" id="ElementName">Loading</a> - Periodic Table</h1>
-   <div id="WikiFrameBox"><iframe id="WikiFrame" name="WikiFrame" frameborder="0" title="Wikipedia article on element" security="restricted"><h1>Loading…</h1></iframe></div>
+   <h1 id="WikiTitle"><button onclick="setTimeout(destroy, Math.floor(Math.random() * 3) || document.getElementById('Ad').style.display == 'none' ? 0 : 500);">×</button> <span id="Source">Wikipedia</span> - <a href="http://en.wikipedia.org/" id="ElementName">Loading</a> - Periodic Table</h1>
+   <div id="WikiFrameBox"><iframe id="WikiFrame" name="WikiFrame" frameborder="0" xecurity="restricted"><h1>Loading…</h1></iframe></div>
   </div><div id="Overlay"></div>
   <script type="text/javascript" src="Script/interactivity.js" defer="defer"></script>
 <!--  <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
