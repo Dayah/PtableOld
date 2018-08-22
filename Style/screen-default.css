@@ -1,109 +1,202 @@
-BODY			{ margin: 0; background-color: white; color: black; font-family: Arial, "Arial Unicode MS", sans-serif; }
+html, body	{ height: 100%; }
+body		{ margin: 0; background-color: white; color: black; font-family: Arial, "Arial Unicode MS", sans-serif; }
+form		{ display: inline; }
 
 /*** Headings ***/
-H1			{ color: white; background: rgb(36, 83, 139) url("http://web.utk.edu/~mdayah/h1-gradient.png") repeat-x; font: normal 4em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; margin: 0.2cm 0.2cm 0; }
+h1			{ margin: 0 0.5cm; color: white; font: normal 4em "Franklin Gothic Medium", "Helvetica Neue Medium", sans-serif; text-align: center; }
+h1 #Reset	{ text-decoration: none; }
+h1 #Reset:hover	{ color: rgb(200, 200, 255); }
+h1, #Tabs, #Navigation	{ background: rgb(36, 83, 139) url("http://www.eehtpc.com/ptable/h1-gradient.png") repeat-x; }
+.Bevel		{ height: 20px; width: 20px; background-image: url(http://www.eehtpc.com/ptable/bevel-circle.png); }
+#Ad			{ margin: 0 auto; width: 936px; position: relative; }
+#Ad > iframe	{ float: left; }
 
-#Navigation		{ margin: 0 0.2cm 0.2cm; text-align: center; font-family: "Trebuchet MS"; font-size: 1em; letter-spacing: -0.04em; border: thin solid rgb(210, 230, 255); }
-#Navigation A		{ padding: 0.15em 0.3em; text-decoration: none; white-space: nowrap; border: medium solid rgb(210, 230, 255); background-color: rgb(210, 230, 255); }
-#Navigation A:hover	{ background-color: rgb(230, 240, 255); }
-LABEL			{ font-weight: bold; }
+#Tabs				{ text-align: center; margin: 0 0.5cm; font-weight: bold; background-position: 0 -4.5em; position: relative; top: -0.5em; }
+#Tabs a, #Tabs span	{ padding: 0.5ex 0.9ex; display: -moz-inline-box; display: inline-block; text-decoration: none; vertical-align: bottom; border: thin solid transparent; border-bottom: none; }
+#SeriesTab, #PropertyTab, #OrbitalTab, #IsotopeTab	{ border-color: white ! important; }
+#Tabs a, #Tabs label			{ color: white; }
+#Tabs span, a.Selected			{ background: white; }
+#Tabs a:hover, #Tabs a:focus	{ background: white; color: blue; }
+#Tabs .Selected label			{ color: black; }
+#Tabs a:hover label				{ color: blue; }
 
-#Ad			{ text-align: center; margin: 0 auto; }
-#visualize, #Print, #ElectronBox	{ display: none; }
-#Note DIV		{ font-size: 0.8em; width: 14em; line-height: normal; }
-#Stable			{ padding: 1em 3ex; }
+#Navigation			{ color: white; margin: 0 0.5cm; text-align: center; letter-spacing: -1px; font-family: "Trebuchet MS"; position: relative; margin-top: -2em; height: 2em; background-position: 0 -4em; }
+#Navigation a		{ display: inline-block; padding: 0 0.5ex; line-height: 2; white-space: nowrap; }
+#Navigation span a:hover, #Navigation span a:focus	{ color: white; }
+#Navigation .Media a	{ color: #FCC; }
+#Navigation .Social a	{ color: #CFC; }
+#Navigation .Internal a	{ color: #CCF; }
 
-#Main			{ border-collapse: collapse; font-size: 0.9em; }
-THEAD TD		{ color: rgb(36, 83, 139); font-weight: bold; border-right: 1pt solid #CCCCFF; border-bottom: 7pt solid white; text-align: center; }
-THEAD TD:hover		{ background-color: yellow; }
-#Period			{ width: 1.2em; }
+.Paren				{ padding: 1.5ex 0 1.5ex 2ex; font-size: 1.1em; width: 764pt; }
+#Logo				{ height: 60px; width: 120px; border: none; }
+#SearchArea			{ text-align: center; vertical-align: bottom; }
+#Search				{ font-size: large; font-weight: bold; }
+#SearchInput		{ width: 10ex; font-size: large; background-color: #DDF; border: medium solid #BBF; }
+#SearchInput:focus	{ background-color: yellow; }
 
-#Main, #Key, #PropertyBox	{ margin: 0 auto; }
+#NonFooter			{ position: relative; min-height: 100%; }
+* html #NonFooter	{ height: 100%; }
+#FooterPad			{ border-bottom: 3em solid white; }
+
+table				{ border-collapse: separate; }
+#Main				{ border-collapse: collapse; margin: 0.2cm auto 0 auto; clear: both; }
+thead td			{ border-bottom: thick solid white; }
+thead a, .Period a	{ font-size: medium; font-weight: bold; text-align: center; }
+thead a, .Period a, #Series a	{ display: block; text-decoration: none; color: black; }
+.Period:hover, .Period a:focus, thead td:hover, thead td a:focus, .HoverOrbital, .Highlight, #Main .Highlight label	{ background-color: yellow; }
+.Period				{ /*width: 0.8em;*/ font-size: medium; }
+
+.Upscale			{ font-size: 1.4em; }
+#Closeup, #IsotopeForm, #Properties, #Block, #Hund, #DecayModes, #Temperature	{ display: none; }
+#IsotopeForm		{ position: absolute; }
+#CloseupHolder		{ width: 10.4em; }
+.OxidationStates	{ line-height: 0.9; color: #888; }
+.OxidationStates .Common	{ font-weight: bold; color: black; }
+#Properties, #IsotopeForm, #DecayModes	{ white-space: nowrap; font-size: 0.8em; }
+#Properties th, #IsotopeForm th			{ text-align: left; background-image: url("http://www.eehtpc.com/ptable/ellipsis.png"); background-repeat: repeat-x; background-position: 40% 40%; }
+#Properties label, #IsotopeForm label	{ background: white; margin-right: 1ex; }
+.Radio				{ white-space: nowrap; min-width: 5em; display: -moz-inline-box; display: inline-block; }
+#DecayModes td		{ letter-spacing: -1px; }
+#DecayModes th		{ cursor: default; }
 
 /*** Legend ***/
-.Clean, #Legend		{ border-left: 5pt solid white; }
-.KeyRegion		{ vertical-align: top; }
-#PropertyBox TH		{ text-align: right; }
-#PropertyBox		{ width: 88%; white-space: nowrap; }
-#Key			{ width: 80%; border-collapse: separate; border-spacing: 5px; }
-#Key TH			{ height: 1.8em; width: 1.8em; }
-#Key TD			{ padding: 0.3em; font-size: 1.2em; white-space: nowrap; }
-#Key TH, #Key TD	{ vertical-align: middle; }
-#Key TH.Solid, #Key TH.Liquid, #Key TH.Gas, #Key TH.Unknown	{ border: thin solid black; text-align: center; }
-#Key .Solid, #Key .Liquid, #Key .Gas, #Key .Unknown		{ font-weight: bold; }
-#Key TH.Unknown		{ background-color: black; }
-UL			{ list-style-type: none; border-bottom: thin solid #AAAAFF; text-align: center; margin: 0.5ex 2em 1ex 2em; font-size: 1.4em; }
-LI			{ display: inline; border: thin solid #AAAAFF; background-color: rgb(210, 230, 255); padding: 0 1em; margin: 0 1ex; cursor: pointer; }
-LI.Active		{ border-bottom-color: white; background-color: white; cursor: auto; }
-LI:hover		{ border-bottom-color: white; cursor: pointer; }
-#Hund TABLE		{ border: 0; padding: 0; }
-#Hund TD TD		{ border: 1px solid blue; }
-#Hund TD TD SPAN	{ visibility: hidden; }
-#Hund TABLE TR 		{ font-size: 0.8em; }
+#KeyContainer, #NewContainer	{ margin: auto; width: 95%; }
+.KeyRegion input	{ height: 16pt; margin-top: 0; margin-bottom: 0; }
+#Series, #MatterState, #DecayModes	{ font-size: 1.36em; }
+#Series				{ white-space: normal; empty-cells: hide; line-height: 1; }
+.WMfix				{ width: 21em; line-height: 1; }
+#Series th			{ border: thin solid black; border-bottom: none; }
+#Series td			{ writing-mode: tb-rl; line-height: 1; padding: 0.1em; font-size: 0.85em; }
+.WMfix td			{ letter-spacing: -0.05em; }
+#Temperature		{ font-size: 3em; margin-right: 2em; }
+#Temperature td		{ text-align: right; }
+#Temperature th, #MatterState th	{ text-align: left; font-weight: normal; }
+#MatterState td		{ text-align: center; height: 1.5em; width: 1.5em; border: thin solid black; cursor: default; }
+#MatterState td acronym{ font-size: 1.15em; }
+#MatterState		{ font-weight: bold; }
+#Block				{ font-size: 1.5em; }
+#Block th			{ height: 1.5em; width: 1.5em; cursor: default; }
+#Orbital			{ height: 108px; width: 108px; position: absolute; bottom: -5px; right: 0; clip: rect(5px auto 103px 5px); }
+#lmn				{ position: absolute; right: 110px; bottom: 0; font-size: 1.5em; }
+#Hund				{ font-size: 0.9em; }
+#Hund #lmn td		{ border: none; cursor: auto; }
+#Hund td td			{ border: 1px solid blue; line-height: 1.3; cursor: default; }
+#Hund td td span	{ visibility: hidden; font-family: "Lucida Sans Unicode", "Lucida Grande"; }
 
 /*** Colors ***/
-.Solid BIG		{ color: #000000; }
-.InvertState .Solid	{ background-color: #000000; }
-.Liquid BIG		{ color: #0000DD; }
-.InvertState .Liquid	{ background-color: #0000DD; }
-.Gas BIG		{ color: #AA0000; }
-.InvertState .Gas	{ background-color: #AA0000; }
-.Unknown BIG		{ color: #D8D8D8; }
-.InvertState .Unknown	{ background-color: #D8D8D8; }
-.InvertState .Element, .InvertState .Electron, .InvertState .Element BIG, .InvertState #Key BIG	{ color: white; }
+.Solid acronym, #MatterState .Solid	{ color: #000000; }
+.InvertState td.Solid				{ background-color: #000000; }
+.Liquid acronym, #MatterState .Liquid	{ color: #0000DD; }
+.InvertState td.Liquid 				{ background-color: #0000DD; }
+.Gas acronym, #MatterState .Gas		{ color: #AA0000; }
+.InvertState td.Gas					{ background-color: #AA0000; }
+.Unknown acronym, #MatterState .Unknown{ color: #667766; }
+.InvertState td.Unknown				{ background-color: #667766; }
+.InvertState .Element, .InvertState .Element acronym, .InvertState #MatterState acronym, #MatterState .InvertState acronym	{ color: white; }
 
-.Alkali			{ background-color: #FFAA00; }
-.Alkaline		{ background-color: #F7F700; }
-.Nonmetal		{ background-color: #00F700; }
-.Transition		{ background-color: #FF7799; }
-.Lanthanide		{ background-color: #FFAA88; }
-.Actinide		{ background-color: #DDAACC; }
-.Poor			{ background-color: #00CCCC; }
-.Noble			{ background-color: #55F7F7; }
-.Hydrogen		{ background-color: #E7E7E7; }
-.Undiscovered		{ background-color: #FFFFFF; }
-TH, LABEL		{ color: rgb(36, 83, 139); }
+.Element, .Series td, .Block th	{ background-color: #DDDDDD; }
+
+.Alkali .Alkali			{ background-color: #FFAA00; }
+.Alkaline .Alkaline		{ background-color: #F3F300; }
+.Lanthanoid .Lanthanoid	{ background-color: #FFAA88; }
+.Actinoid .Actinoid		{ background-color: #DDAACC; }
+.Transition .Transition	{ background-color: #DD9999; }
+.Metalloid .Metalloid, .Carbon .Carbon	{ background-color: #55CC88; }
+.Poor .Poor, .Boron .Boron				{ background-color: #99BBAA; }
+.Nonmetal .Nonmetal, .Pnictogen .Pnictogen	{ background-color: #00EE00; }
+.Chalcogen .Chalcogen	{ background-color: #00AAAA; }
+.Halogen .Halogen		{ background-color: #00DDBB; }
+.Noble .Noble			{ background-color: #66AAFF; }
+.Undiscovered			{ background-color: #FFFFFF; }
+.InnerBorder			{ background-color: #CCCCFF; }
+.InnerHover .InnerBorder{ background-color: #BBBBFF; cursor: pointer; }
+label, #Temperature th, .Period a, thead a { color: rgb(36, 83, 139); }
+
+.s .s	{ background-color: #FF6699; }
+.p .p	{ background-color: #FFCC66; }
+.d .d	{ background-color: #66FF66; }
+.f .f	{ background-color: #9999FF; }
+
+.s .eElement acronym,
+.p .eElement acronym,
+.d .eElement acronym,
+.f .eElement acronym	{ position: relative; top: 0.2em; }
+.s .eElement em,
+.p .eElement em,
+.d .eElement em,
+.f .eElement em		{ position: relative; top: 0.9em; }
+acronym sup			{ font-size: 0.7em; color: #333; line-height: 0; }
 
 /*** Borders ***/
-.InnerBorder		{ background-color: #CCCCFF; color: #0000FF; text-align: center; line-height: 1.4; }
-.OuterBorder		{ background-color: #0000FF; }
-.BlueLeft		{ border-left: 5pt solid blue; }
-.BlueRight		{ border-right: 5pt solid blue; }
-.BlueTop		{ border-top: 5pt solid blue; }
-.BlueBottom		{ border-bottom: 5pt solid blue; }
-.Element		{ border-top: 5pt solid white; border-left: 5pt solid white; }
-.Electron		{ border-top: 5pt solid white; }
-.DividerR		{ border-right: 5pt solid black; }
-.DividerB		{ border-bottom: 5pt solid black; }
-.Shells			{ border: 5pt solid white; color: gray; }
+.Clean, #Legend	{ border-left: thick solid white; }
+.InnerBorder	{ color: #0000FF; text-align: center; line-height: 1.4; }
+.BlueLeft		{ border-left: 5px solid blue; }
+.BlueRight		{ border-right: 5px solid blue; }
+.BlueTop		{ border-top: 5px solid blue; }
+.BlueBottom		{ border-bottom: 5px solid blue; }
+.InnerHover .BlueLeft, .InnerHover .BlueRight, .InnerHover .BlueTop, .InnerHover .BlueBottom	{ border-color: #6666FF; }
+.Element, .Shells	{ border: thick solid white; }
+.Shells			{ color: gray; padding-top: 0.2em; }
+.Element, .Clean, #Legend, .Shells, thead td	{ border-width: 3px; }
+.Locked			{ border: 4px solid #999; border-bottom-width: 3px; border-right-width: 3px; }
+thead td		{ border-right: 1pt solid #CCCCFF; }
+#isotopeholder .Element	{ border-width: medium; }
+
+.IsoHolder .Element		{ border-color: white; }
+.Stable, .AlphaEmission, .BetaDecay, .BetaPlusDecay, .DoubleBetaDecay, .DoubleBetaPlusDecay, .ElectronCapture, .NeutronEmission, .TwoNeutronEmission, .PositronEmission, .ProtonEmission, .TwoProtonEmission, .SpontaneousFission	{ border: medium solid white; }
+.Stable .Stable			{ border: medium solid black; }
+.AlphaEmission .AlphaEmission	{ border: medium solid orange; }
+.BetaDecay .BetaDecay		{ border: medium solid blue ! important; }
+.BetaPlusDecay .BetaPlusDecay	{ border: medium solid purple ! important; }
+.DoubleBetaDecay .DoubleBetaDecay	{ border: medium double blue; }
+.DoubleBetaPlusDecay .DoubleBetaPlusDecay { border: medium double purple; }
+.ElectronCapture .ElectronCapture	{ border: medium dashed purple; }
+.NeutronEmission .NeutronEmission	{ border: medium solid green ! important; }
+.TwoNeutronEmission .TwoNeutronEmission	{ border: medium double green; }
+.PositronEmission	{ }
+.ProtonEmission .ProtonEmission		{ border: medium solid red ! important; }
+.TwoProtonEmission .TwoProtonEmission	{ border: medium double red; }
+.SpontaneousFission .SpontaneousFission	{ border: medium dotted black; }
 
 /*** Element boxes ***/
-#CloseupElement		{ padding: 0.2cm; padding-right: 0; width: 1em; font-size: 2em; }
-#CloseupElectron	{ vertical-align: top; text-align: right; font-size: 1.1em; line-height: 1; padding: 0.2cm 0.2cm 0 0; }
+#CloseupElement		{ padding: 0.2cm; font-size: 2.2em; white-space: nowrap; width: 3.84em; }
 
-BIG, STRONG, EM		{ display: block; }
-.Element BIG, #CloseupElement BIG, #Legend BIG	{ font-size: 1.5em; font-weight: bold; width: 2.5em; text-outline: white 1px 1px; }
-STRONG			{ font-size: 1em; font-weight: normal; }
-EM, .Element DIV, #CloseupElement DIV, #Legend DIV	{ font-size: 0.7em; font-style: normal; }
-EM.Long			{ letter-spacing: -0.06em; }
-.Element		{ cursor: pointer; padding: 0.2em 0 0.2em 0.3em; background-image: url("http://web.utk.edu/~mdayah/gradient.png"); background-repeat: no-repeat; }
-.Electron		{ font-size: 0.7em; line-height: 1; text-align: right; vertical-align: top; }
-.Electron, .Shells	{ padding: 0.3em 0.3em 0 0.1em; vertical-align: top; background-image: none; font-size: 0.6em; line-height: 1; text-align: right; }
+small, big			{ display: -moz-inline-block; display: inline-block; font-size: 100%; }
+acronym, strong, em, i	{ display: block; }
+.Element acronym, #CloseupElement acronym, #Legend acronym	{ font-size: 1.2em; font-weight: bold; width: 2.6em; text-outline: white 1px 1px; }
+#Legend acronym		{ letter-spacing: -1px; font-weight: normal; width: auto; }
+strong				{ font-size: 0.8em; font-weight: normal; }
+em, .Element i, #CloseupElement i, #Legend i	{ font-size: 0.56em; font-style: normal; }
+em.Long				{ letter-spacing: -1px; }
+em, .Element i, #CloseupElement i	{ width: 5.57em; }
+em, i				{ overflow: hidden; text-overflow: ellipsis; }
+#Closeup em:hover, #Closeup big i:hover	{ overflow: visible; }
+.Element			{ cursor: pointer; padding: 2px 3px 1px 4px; white-space: nowrap; }
+#isotopeholder .Element	{ cursor: auto; position: absolute; }
+#isotopeholder .Element acronym	{ line-height: 1.5; width: auto; }
+* html .Element, .NoGradient .Element	{ background-image: none; }
+small				{ font-size: 0.52em; text-align: right; line-height: 1; width: 1em; }
+small, .Shells		{ vertical-align: top; }
+.Shells small		{ width: auto; }
+#Closeup small		{ width: 1.3em; }
 
 /*** Wikipedia iframe ***/
-#WikiBox		{ position: absolute; top: 15%; left: 15%; bottom: 15%; right: 15%; display: none; border: thick outset; filter: alpha(Opacity=90); opacity: 0.90; background-color: white; }
-BODY > DIV#WikiBox	{ position: fixed; }
-#WikiBox > IFRAME	{ position: absolute; top: 2.1em; left: 0; width: 100%; height: 95%; bottom: 0; }
-#WikiBox H1		{ border: thin inset; margin: 0; }
-H1 TABLE		{ width: 100%; font-weight: bold; }
-H1 #Title		{ text-align: left; font-family: Verdana, sans-serif; font-size: small; }
-H1 #Close		{ text-align: right; font-size: medium; width: 1ex; border: 2px outset; cursor: pointer; padding: 0 0.3em; color: ButtonText; background-color: ButtonFace; }
-#Title A		{ color: white; }
+#WikiBox			{ position: absolute; top: 15%; left: 15%; width: 70%; height: 70%; z-index: 101; display: none; }
+body > #WikiBox		{ top: 7em; }
+#WikiFrameBox		{ position: absolute; top: 2em; left: 0; width: 100%; bottom: 0; }
+#WikiFrame			{ height: 100%; width: 100%; }
+#WikiBox > #WikiFrameBox > iframe	{ position: absolute; }
+#WikiBox h1			{ border: thin inset; margin: 0; text-align: left; font-family: Verdana, sans-serif; font-size: small; font-weight: bold; line-height: 2; padding-left: 1ex; cursor: move; }
+h1 a				{ color: white; }
+h1 button, #Ad button	{ float: right; font-size: 14pt; width: 19pt; height: 19pt; text-align: center; padding: 0; line-height: normal; }
+#Overlay			{ display: none; position: absolute; left: 0; top: 0; height: 100%; width: 100%; background-color: black; z-index: 100; opacity: 0.80; filter: alpha(Opacity=80); }
+body > #Overlay		{ position: fixed; }
 
 /*** Slider ***/
-.ElectronString		{ width: 20em; }
-#SliderTrack		{ width: 100%; position: relative; height: auto; border: 1px solid white; }
-#SliderTrack #SliderSlit{ border: 2px inset; background-color: ButtonFace; height: 2px; font-size: 0; margin: 9px 6px; }
-#SliderTrack #SliderBar	{ position: absolute; top: 0; border: 2px outset; background-color: ButtonFace; width: 10px; height: 20px; cursor: pointer; }
-
-#SliderDisplay		{ text-align: right; width: 6ex; }
+#OrbitalString		{ width: 10em; vertical-align: top; }
+#OrbitalString, #SliderCell		{ font-size: 1.28em; }
+.SliderTrack		{ position: relative; height: auto; border: 1px solid white; margin-top: 11px; width: 80%; float: left; }
+.SliderTrack .SliderSlit{ border: 2px inset; background-color: ButtonShadow; height: 2px; font-size: 0; margin: 10px 6px; }
+.SliderTrack .SliderBar	{ position: absolute; margin: 0; padding: 0; top: 0; width: 15px; height: 27px; cursor: pointer; }
+.SliderSelect		{ margin-top: 11px; width: 18%; display: none; }
+.SliderDisplay		{ text-align: right; margin-top: 11px; width: 14%; }

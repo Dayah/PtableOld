@@ -1,0 +1,31 @@
+big				{ line-height: 1; }
+small, .Shells, #Legend span	{ display: none; }
+#Closeup small	{ display: inline-block; font-size: 50%; }
+#CloseupElement big { line-height: normal; }
+#Legend acronym	{ letter-spacing: normal; }
+.Element		{ padding: 1px 1px 0 1px; background-image: url("http://www.eehtpc.com/ptable/gradient-names.png"); background-repeat: no-repeat; }
+.KeyRegion, .InnerBorder	{ font-size: 0.8em; }
+.KeyRegion input	{ height: 13pt; }
+.Paren			{ font-size: 0.9em; width: 600pt; }
+.Period			{ width: 1em; }
+#Logo			{ position: absolute; clip: rect(auto 114px auto 4px); }
+#OrbitalString, #SliderCell	{ font-size: 1em; }
+thead td		{ border-bottom-width: 0; }
+.Clean, #Legend	{ border-width: 1px; }
+#Series td, #Hund	{ font-size: 0.8em; }
+#Series td, .Element, #CloseupElement	{ border: 1px solid #666; }
+.Locked			{ border: 2px solid black; }
+.Element acronym, #Legend acronym, .Element i, #Legend i	{ text-align: center; }
+#CloseupElement				{ width: 3.75em; border: none; }
+.Element em, #Legend em		{ display: none; }
+.Element i, #Legend i		{ font-size: 0.7em; width: 3.6em; text-overflow: clip; }
+.Element acronym, #Legend acronym	{ width: 2.1em; }
+#Legend acronym				{ letter-spacing: -0.08em; }
+.Element					{ padding: 0.2em; padding-bottom: 1px; border-width: 5px; border-color: white; background-image: url("http://www.eehtpc.com/ptable/gradient.png"); }
+.Locked						{ border: 6px solid #999; border-bottom-width: 5px; border-right-width: 5px; }
+.BlueTop, .BlueLeft, .BlueBottom, .BlueTop	{ border-width: 6px; }
+.KeyRegion, .InnerBorder	{ font-size: 0.75em; }
+#Orbital					{ bottom: -5px; right: -12px; }
+#Hund td td					{ letter-spacing: -1px; }
+#Series td					{ border: none; }
+.Paren						{ width: 580pt; /* don't ask */ }
