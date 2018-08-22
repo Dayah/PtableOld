@@ -1,17 +1,18 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
  <head>
   <title>Dynamic Periodic Table</title>
 
-  <meta name="description" content="Interactive Web 2.0 periodic table with dynamic layouts showing names, electrons, oxidation, trend visualization, orbitals, isotopes, search. Full descriptions."/>
-  <meta name="keywords" content="Periodic Table, dynamic, interactive, elements, name, chemistry, printable, homework, pdf, electron configuration"/>
-  <link rel="alternate" type="application/rss+xml" href="discovery.xml" title="Discovered elements"/>
+  <meta name="description" content="Interactive Web 2.0 periodic table with dynamic layouts showing names, electrons, oxidation, trend visualization, orbitals, isotopes, search. Full descriptions.">
+  <meta name="keywords" content="Periodic Table, dynamic, interactive, elements, name, chemistry, printable, homework, pdf, electron configuration">
+  <link rel="alternate" type="application/rss+xml" href="discovery.xml" title="Discovered elements">
 
-  <link href="Style/screen-default.css" rel="stylesheet" type="text/css" media="screen, print"/>
-  <link href="Style/screen-noelectron.css" rel="alternate stylesheet" type="text/css" media="screen, print" title="Atomic, Symbol, Name, Weight"/>
-  <link href="Style/screen-noname.css" rel="alternate stylesheet" type="text/css" media="screen, print" title="Atomic, Symbol, Weight"/>
-  <link href="Style/screen-nomass.css" rel="alternate stylesheet" type="text/css" media="screen, print" title="Atomic, Symbol"/>
-  <link href="Style/print-default.css" rel="stylesheet" type="text/css" media="print"/>
+  <link href="Style/screen-default.css" rel="stylesheet" type="text/css" media="screen, print">
+  <link href="Style/screen-noelectron.css" rel="alternate stylesheet" type="text/css" media="screen, print" title="Atomic, Symbol, Name, Weight">
+  <link href="Style/screen-noname.css" rel="alternate stylesheet" type="text/css" media="screen, print" title="Atomic, Symbol, Weight">
+  <link href="Style/screen-nomass.css" rel="alternate stylesheet" type="text/css" media="screen, print" title="Atomic, Symbol">
+  <!--[if lt IE 8]><style type="text/css" media="screen, print">big { vertical-align: baseline; }</style><![endif]-->
+  <link href="Style/print-default.css" rel="stylesheet" type="text/css" media="print">
 
   <script type="text/javascript">
   //<![CDATA[
@@ -21,7 +22,7 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
   //]]>
   </script>
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
 
  </head>
  <body><div id="NonFooter">
@@ -36,15 +37,14 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
    <span id="OrbitalTab">Orbitals</span>
    <span id="IsotopeTab">Isotopes</span>
    </td><td style="width: 50%;">
-   <a class="Selected"><input type="checkbox" checked="checked" id="Weight"/><label for="Weight" title="Show atomic masses">Weight</label></a>
-   <a class="Selected"><input type="checkbox" checked="checked" id="Name"/><label for="Name" title="Show element names">Names</label></a>
-   <a class="Selected"><input type="checkbox" checked="checked" id="Electrons"/><label for="Electrons" title="Show electron configurations">Electrons</label></a>
-   <a><input type="checkbox" id="wide"/><label for="wide" title="Show rare earth elements inline">Wide</label></a>
+   <a class="Selected"><input type="checkbox" checked="checked" id="Weight"><label for="Weight" title="Show atomic masses">Weight</label></a>
+   <a class="Selected"><input type="checkbox" checked="checked" id="Name"><label for="Name" title="Show element names">Names</label></a>
+   <a class="Selected"><input type="checkbox" checked="checked" id="Electrons"><label for="Electrons" title="Show electron configurations">Electrons</label></a>
+   <a><input type="checkbox" id="wide"><label for="wide" title="Show rare earth elements inline">Wide</label></a>
    </td></tr></table>
   </div>
 
   <div id="Ad">
-<script type="text/javascript">if (navigator.userAgent.indexOf("MSIE 8.0") !== -1) document.write("<b style='background-color: yellow;'>Ptable.com will not be compatible with IE 8 because Microsoft refuses to fix a certain bug. Please let them know of its importance by 1) going to <a href='https://connect.microsoft.com/directory/'>connect</a>, 2) sign into live/hotmail, 3) apply to Internet Explorer Beta Feedback, 4) validate and rate <a href='https://connect.microsoft.com/IE/feedback/ViewFeedback.aspx?FeedbackID=387059'>this bug</a>.</b>");</script>
    <button onclick="this.parentNode.style.display = 'none'; set_cookie('hideads', 1);" style="position: absolute; top: 0; right: 0;">×</button>
 <!-- This periodic table is far more featureful and interactive than even the most complex standalone applications. <b>Please take a moment to <a href="#" onclick="return load_script('demo');">watch a demo</a></b> or <a href="about.html#unique">read about its unique features</a>.-->
    <script type="text/javascript" src="http://adsyndication.msn.com/delivery/getads.js"></script>
@@ -87,7 +87,7 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
   <td class="Clean KeyRegion" colspan="10" rowspan="3">
    <table id="KeyContainer" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td id="CloseupHolder">
 
- <div id="Closeup"><div id="CloseupElement"><br/><br/></div><div id="ELECTRONSTRING" style="text-align: center;"></div></div>
+ <div id="Closeup"><div id="CloseupElement"><br><br></div><div id="ELECTRONSTRING" style="text-align: center;"></div></div>
 
  <table id="MatterState" cellspacing="5" cellpadding="0"><tbody>
   <tr>
@@ -111,27 +111,27 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
  <form name="isotopes" id="IsotopeForm" action="">
   <table cellspacing="0" cellpadding="0">
    <tr>
-    <td><input type="radio" name="isotopes" id="t_isoname" value="isoname" checked="checked"/></td>
+    <td><input type="radio" name="isotopes" id="t_isoname" value="isoname" checked="checked"></td>
     <th><label for="t_isoname" id="l_isoname">Name</label></th>
     <td id="ISONAME"><span></span><span></span></td>
    </tr><tr>
-    <td><input type="radio" name="isotopes" id="t_isomass" value="isomass"/></td>
+    <td><input type="radio" name="isotopes" id="t_isomass" value="isomass"></td>
     <th><label for="t_isomass" id="l_isomass">Mass</label></th>
     <td id="ISOMASS"></td>
    </tr><tr>
-    <td><input type="radio" name="isotopes" id="t_binding" value="binding"/></td>
+    <td><input type="radio" name="isotopes" id="t_binding" value="binding"></td>
     <th><label for="t_binding" id="l_binding">Binding Energy</label></th>
     <td id="BINDING"></td>
    </tr><tr>
-    <td><input type="radio" name="isotopes" id="t_masscontrib" value="masscontrib"/></td>
+    <td><input type="radio" name="isotopes" id="t_masscontrib" value="masscontrib"></td>
     <th><label for="t_masscontrib" id="l_masscontrib">Abundance</label></th>
     <td id="MASSCONTRIB"></td>
    </tr><tr>
-    <td><input type="radio" name="isotopes" id="t_halflife" value="halflife"/></td>
+    <td><input type="radio" name="isotopes" id="t_halflife" value="halflife"></td>
     <th><label for="t_halflife" id="l_halflife">Half-Life</label></th>
     <td id="HALFLIFE"></td>
    </tr><tr>
-    <td><input type="radio" name="isotopes" id="t_width" value="width"/></td>
+    <td><input type="radio" name="isotopes" id="t_width" value="width"></td>
     <th><label for="t_width" id="l_width">Decay Width</label></th>
     <td id="WIDTH"></td>
    </tr>
@@ -168,70 +168,70 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
  <div id="Properties" style="position: relative; height: 1%;"><form name="visualize" action="">
   <table cellspacing="0" cellpadding="0" align="right" style="border-left: 1px solid #999;">
    <tr>
-    <td><input type="radio" name="visualize" id="t_radius" value="radius"/></td>
+    <td><input type="radio" name="visualize" id="t_radius" value="radius"></td>
     <th><label for="t_radius" id="l_radius"><span></span> Radius</label></th>
     <td id="RADIUS"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_hardness" value="hardness"/></td>
+    <td><input type="radio" name="visualize" id="t_hardness" value="hardness"></td>
     <th><label for="t_hardness" id="l_hardness"><span></span> Hardness</label></th>
     <td id="HARDNESS"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_modulus" value="modulus"/></td>
+    <td><input type="radio" name="visualize" id="t_modulus" value="modulus"></td>
     <th><label for="t_modulus" id="l_modulus"><span></span> Modulus</label></th>
     <td id="MODULUS"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_density" value="density"/></td>
+    <td><input type="radio" name="visualize" id="t_density" value="density"></td>
     <th><label for="t_density" id="l_density"><span></span> Density</label></th>
     <td id="DENSITY"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_conductivity" value="conductivity"/></td>
+    <td><input type="radio" name="visualize" id="t_conductivity" value="conductivity"></td>
     <th><label for="t_conductivity" id="l_conductivity"><span></span> Conductivity</label></th>
     <td id="CONDUCTIVITY"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_heat" value="heat"/></td>
+    <td><input type="radio" name="visualize" id="t_heat" value="heat"></td>
     <th><label for="t_heat" id="l_heat"><span></span> Heat</label></th>
     <td id="HEAT"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_abundance" value="abundance"/></td>
+    <td><input type="radio" name="visualize" id="t_abundance" value="abundance"></td>
     <th><label for="t_abundance" id="l_abundance"><span></span> Abundance</label></th>
     <td id="ABUNDANCE"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_discover" value="discover"/></td>
+    <td><input type="radio" name="visualize" id="t_discover" value="discover"></td>
     <th><label for="t_discover" id="l_discover">Discovered</label></th>
     <td id="DISCOVER"></td>
    </tr>
   </table>
   <table cellspacing="0" cellpadding="0">
    <tr>
-    <td><input type="radio" name="visualize" id="t_chemical" value="chemical" checked="checked"/></td>
+    <td><input type="radio" name="visualize" id="t_chemical" value="chemical" checked="checked"></td>
     <th><label for="t_chemical" id="l_chemical"><span></span> Series</label></th>
     <td id="CHEMICAL"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_state" value="state"/></td>
+    <td><input type="radio" name="visualize" id="t_state" value="state"></td>
     <th><label for="t_state" id="l_state">State at <span></span></label></th>
     <td id="STATE"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_melt" value="melt"/></td>
+    <td><input type="radio" name="visualize" id="t_melt" value="melt"></td>
     <th><label for="t_melt" id="l_melt">Melting Point</label></th>
     <td id="MELT"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_boil" value="boil"/></td>
+    <td><input type="radio" name="visualize" id="t_boil" value="boil"></td>
     <th><label for="t_boil" id="l_boil">Boiling Point</label></th>
     <td id="BOIL"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_electroneg" value="electroneg"/></td>
+    <td><input type="radio" name="visualize" id="t_electroneg" value="electroneg"></td>
     <th><label for="t_electroneg" id="l_electroneg">Electronegativity</label></th>
     <td id="ELECTRONEG"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_affinity" value="affinity"/></td>
+    <td><input type="radio" name="visualize" id="t_affinity" value="affinity"></td>
     <th><label for="t_affinity" id="l_affinity">Electron Affinity</label></th>
     <td id="AFFINITY"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_valence" value="valence"/></td>
+    <td><input type="radio" name="visualize" id="t_valence" value="valence"></td>
     <th><label for="t_valence" id="l_valence"><span></span> Valence</label></th>
     <td id="VALENCE"></td>
    </tr><tr>
-    <td><input type="radio" name="visualize" id="t_ionize" value="ionize"/></td>
+    <td><input type="radio" name="visualize" id="t_ionize" value="ionize"></td>
     <th><label for="t_ionize" id="l_ionize"><span></span> Ionization</label></th>
     <td id="IONIZE"></td>
    </tr>
@@ -311,7 +311,7 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
     <div style="position: absolute; width: 100%; height: 100%;">
      <div style="width: 100%; height: 100%;">
       <div id="SliderTrack" class="SliderTrack"><div id="SliderSlit" class="SliderSlit"></div><button id="SliderBar" class="SliderBar"></button></div>
-      <input id="SliderDisplay" class="SliderDisplay" type="text" value="0"/>
+      <input id="SliderDisplay" class="SliderDisplay" type="text" value="0">
       <select id="SliderSelect" class="SliderSelect"></select>
      </div>
     </div>
@@ -324,171 +324,171 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
 
  <tr>
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 2 element">2</a></th>
-  <td class="Element Alkali s"><big><strong>3</strong> <acronym>Li</acronym> <em>Lithium</em> <i>6.941</i></big><small>2<br/>1</small></td>
-  <td class="Element Alkaline s"><big><strong>4</strong> <acronym>Be</acronym> <em>Beryllium</em> <i>9.012182</i></big><small>2<br/>2</small></td>
-  <td class="Element Metalloid Boron p"><big><strong>5</strong> <acronym>B</acronym> <em>Boron</em> <i>10.811</i></big><small>2<br/>3</small></td>
-  <td class="Element Nonmetal Carbon p"><big><strong>6</strong> <acronym>C</acronym> <em>Carbon</em> <i>12.0107</i></big><small>2<br/>4</small></td>
-  <td class="Element Nonmetal Pnictogen p"><big><strong>7</strong> <acronym>N</acronym> <em>Nitrogen</em> <i>14.0067</i></big><small>2<br/>5</small></td>
-  <td class="Element Nonmetal Chalcogen p"><big><strong>8</strong> <acronym>O</acronym> <em>Oxygen</em> <i>15.9994</i></big><small>2<br/>6</small></td>
-  <td class="Element Halogen p"><big><strong>9</strong> <acronym>F</acronym> <em>Fluorine</em> <i>18.9984032</i></big><small>2<br/>7</small></td>
-  <td class="Element Noble p"><big><strong>10</strong> <acronym>Ne</acronym> <em>Neon</em> <i>20.1797</i></big><small>2<br/>8</small></td>
-  <td class="Shells"><small>K<br/>L</small></td>
+  <td class="Element Alkali s"><big><strong>3</strong> <acronym>Li</acronym> <em>Lithium</em> <i>6.941</i></big><small>2<br>1</small></td>
+  <td class="Element Alkaline s"><big><strong>4</strong> <acronym>Be</acronym> <em>Beryllium</em> <i>9.012182</i></big><small>2<br>2</small></td>
+  <td class="Element Metalloid Boron p"><big><strong>5</strong> <acronym>B</acronym> <em>Boron</em> <i>10.811</i></big><small>2<br>3</small></td>
+  <td class="Element Nonmetal Carbon p"><big><strong>6</strong> <acronym>C</acronym> <em>Carbon</em> <i>12.0107</i></big><small>2<br>4</small></td>
+  <td class="Element Nonmetal Pnictogen p"><big><strong>7</strong> <acronym>N</acronym> <em>Nitrogen</em> <i>14.0067</i></big><small>2<br>5</small></td>
+  <td class="Element Nonmetal Chalcogen p"><big><strong>8</strong> <acronym>O</acronym> <em>Oxygen</em> <i>15.9994</i></big><small>2<br>6</small></td>
+  <td class="Element Halogen p"><big><strong>9</strong> <acronym>F</acronym> <em>Fluorine</em> <i>18.9984032</i></big><small>2<br>7</small></td>
+  <td class="Element Noble p"><big><strong>10</strong> <acronym>Ne</acronym> <em>Neon</em> <i>20.1797</i></big><small>2<br>8</small></td>
+  <td class="Shells"><small>K<br>L</small></td>
  </tr>
 
  <tr>
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 3 element">3</a></th>
-  <td class="Element Alkali s"><big><strong>11</strong> <acronym>Na</acronym> <em>Sodium</em> <i>22.98976928</i></big><small>2<br/>8<br/>1</small></td>
-  <td class="Element Alkaline s"><big><strong>12</strong> <acronym>Mg</acronym> <em>Magnesium</em> <i>24.3050</i></big><small>2<br/>8<br/>2</small></td>
-  <td class="Element Poor Boron p"><big><strong>13</strong> <acronym>Al</acronym> <em>Aluminium</em> <i>26.9815386</i></big><small>2<br/>8<br/>3</small></td>
-  <td class="Element Metalloid Carbon p"><big><strong>14</strong> <acronym>Si</acronym> <em>Silicon</em> <i>28.0855</i></big><small>2<br/>8<br/>4</small></td>
-  <td class="Element Nonmetal Pnictogen p"><big><strong>15</strong> <acronym>P</acronym> <em>Phosphorus</em> <i>30.973762</i></big><small>2<br/>8<br/>5</small></td>
-  <td class="Element Nonmetal Chalcogen p"><big><strong>16</strong> <acronym>S</acronym> <em>Sulfur</em> <i>32.065</i></big><small>2<br/>8<br/>6</small></td>
-  <td class="Element Halogen p"><big><strong>17</strong> <acronym>Cl</acronym> <em>Chlorine</em> <i>35.453</i></big><small>2<br/>8<br/>7</small></td>
-  <td class="Element Noble p"><big><strong>18</strong> <acronym>Ar</acronym> <em>Argon</em> <i>39.948</i></big><small>2<br/>8<br/>8</small></td>
-  <td class="Shells"><small>K<br/>L<br/>M</small></td>
+  <td class="Element Alkali s"><big><strong>11</strong> <acronym>Na</acronym> <em>Sodium</em> <i>22.98976928</i></big><small>2<br>8<br>1</small></td>
+  <td class="Element Alkaline s"><big><strong>12</strong> <acronym>Mg</acronym> <em>Magnesium</em> <i>24.3050</i></big><small>2<br>8<br>2</small></td>
+  <td class="Element Poor Boron p"><big><strong>13</strong> <acronym>Al</acronym> <em>Aluminium</em> <i>26.9815386</i></big><small>2<br>8<br>3</small></td>
+  <td class="Element Metalloid Carbon p"><big><strong>14</strong> <acronym>Si</acronym> <em>Silicon</em> <i>28.0855</i></big><small>2<br>8<br>4</small></td>
+  <td class="Element Nonmetal Pnictogen p"><big><strong>15</strong> <acronym>P</acronym> <em>Phosphorus</em> <i>30.973762</i></big><small>2<br>8<br>5</small></td>
+  <td class="Element Nonmetal Chalcogen p"><big><strong>16</strong> <acronym>S</acronym> <em>Sulfur</em> <i>32.065</i></big><small>2<br>8<br>6</small></td>
+  <td class="Element Halogen p"><big><strong>17</strong> <acronym>Cl</acronym> <em>Chlorine</em> <i>35.453</i></big><small>2<br>8<br>7</small></td>
+  <td class="Element Noble p"><big><strong>18</strong> <acronym>Ar</acronym> <em>Argon</em> <i>39.948</i></big><small>2<br>8<br>8</small></td>
+  <td class="Shells"><small>K<br>L<br>M</small></td>
  </tr>
 
  <tr>
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 4 element">4</a></th>
-  <td class="Element Alkali s"><big><strong>19</strong> <acronym>K</acronym> <em>Potassium</em> <i>39.0983</i></big><small>2<br/>8<br/>8<br/>1</small></td>
-  <td class="Element Alkaline s"><big><strong>20</strong> <acronym>Ca</acronym> <em>Calcium</em> <i>40.078</i></big><small>2<br/>8<br/>8<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>21</strong> <acronym>Sc</acronym> <em>Scandium</em> <i>44.955912</i></big><small>2<br/>8<br/>9<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>22</strong> <acronym>Ti</acronym> <em>Titanium</em> <i>47.867</i></big><small>2<br/>8<br/>10<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>23</strong> <acronym>V</acronym> <em>Vanadium</em> <i>50.9415</i></big><small>2<br/>8<br/>11<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>24</strong> <acronym>Cr</acronym> <em>Chromium</em> <i>51.9961</i></big><small>2<br/>8<br/>13<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>25</strong> <acronym>Mn</acronym> <em>Manganese</em> <i>54.938045</i></big><small>2<br/>8<br/>13<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>26</strong> <acronym>Fe</acronym> <em>Iron</em> <i>55.845</i></big><small>2<br/>8<br/>14<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>27</strong> <acronym>Co</acronym> <em>Cobalt</em> <i>58.933195</i></big><small>2<br/>8<br/>15<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>28</strong> <acronym>Ni</acronym> <em>Nickel</em> <i>58.6934</i></big><small>2<br/>8<br/>16<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>29</strong> <acronym>Cu</acronym> <em>Copper</em> <i>63.546</i></big><small>2<br/>8<br/>18<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>30</strong> <acronym>Zn</acronym> <em>Zinc</em> <i>65.38</i></big><small>2<br/>8<br/>18<br/>2</small></td>
-  <td class="Element Poor Boron p"><big><strong>31</strong> <acronym>Ga</acronym> <em>Gallium</em> <i>69.723</i></big><small>2<br/>8<br/>18<br/>3</small></td>
-  <td class="Element Metalloid Carbon p"><big><strong>32</strong> <acronym>Ge</acronym> <em>Germanium</em> <i>72.64</i></big><small>2<br/>8<br/>18<br/>4</small></td>
-  <td class="Element Metalloid Pnictogen p"><big><strong>33</strong> <acronym>As</acronym> <em>Arsenic</em> <i>74.92160</i></big><small>2<br/>8<br/>18<br/>5</small></td>
-  <td class="Element Nonmetal Chalcogen p"><big><strong>34</strong> <acronym>Se</acronym> <em>Selenium</em> <i>78.96</i></big><small>2<br/>8<br/>18<br/>6</small></td>
-  <td class="Element Halogen p"><big><strong>35</strong> <acronym>Br</acronym> <em>Bromine</em> <i>79.904</i></big><small>2<br/>8<br/>18<br/>7</small></td>
-  <td class="Element Noble p"><big><strong>36</strong> <acronym>Kr</acronym> <em>Krypton</em> <i>83.798</i></big><small>2<br/>8<br/>18<br/>8</small></td>
-  <td class="Shells"><small>K<br/>L<br/>M<br/>N</small></td>
+  <td class="Element Alkali s"><big><strong>19</strong> <acronym>K</acronym> <em>Potassium</em> <i>39.0983</i></big><small>2<br>8<br>8<br>1</small></td>
+  <td class="Element Alkaline s"><big><strong>20</strong> <acronym>Ca</acronym> <em>Calcium</em> <i>40.078</i></big><small>2<br>8<br>8<br>2</small></td>
+  <td class="Element Transition d"><big><strong>21</strong> <acronym>Sc</acronym> <em>Scandium</em> <i>44.955912</i></big><small>2<br>8<br>9<br>2</small></td>
+  <td class="Element Transition d"><big><strong>22</strong> <acronym>Ti</acronym> <em>Titanium</em> <i>47.867</i></big><small>2<br>8<br>10<br>2</small></td>
+  <td class="Element Transition d"><big><strong>23</strong> <acronym>V</acronym> <em>Vanadium</em> <i>50.9415</i></big><small>2<br>8<br>11<br>2</small></td>
+  <td class="Element Transition d"><big><strong>24</strong> <acronym>Cr</acronym> <em>Chromium</em> <i>51.9961</i></big><small>2<br>8<br>13<br>1</small></td>
+  <td class="Element Transition d"><big><strong>25</strong> <acronym>Mn</acronym> <em>Manganese</em> <i>54.938045</i></big><small>2<br>8<br>13<br>2</small></td>
+  <td class="Element Transition d"><big><strong>26</strong> <acronym>Fe</acronym> <em>Iron</em> <i>55.845</i></big><small>2<br>8<br>14<br>2</small></td>
+  <td class="Element Transition d"><big><strong>27</strong> <acronym>Co</acronym> <em>Cobalt</em> <i>58.933195</i></big><small>2<br>8<br>15<br>2</small></td>
+  <td class="Element Transition d"><big><strong>28</strong> <acronym>Ni</acronym> <em>Nickel</em> <i>58.6934</i></big><small>2<br>8<br>16<br>2</small></td>
+  <td class="Element Transition d"><big><strong>29</strong> <acronym>Cu</acronym> <em>Copper</em> <i>63.546</i></big><small>2<br>8<br>18<br>1</small></td>
+  <td class="Element Transition d"><big><strong>30</strong> <acronym>Zn</acronym> <em>Zinc</em> <i>65.38</i></big><small>2<br>8<br>18<br>2</small></td>
+  <td class="Element Poor Boron p"><big><strong>31</strong> <acronym>Ga</acronym> <em>Gallium</em> <i>69.723</i></big><small>2<br>8<br>18<br>3</small></td>
+  <td class="Element Metalloid Carbon p"><big><strong>32</strong> <acronym>Ge</acronym> <em>Germanium</em> <i>72.64</i></big><small>2<br>8<br>18<br>4</small></td>
+  <td class="Element Metalloid Pnictogen p"><big><strong>33</strong> <acronym>As</acronym> <em>Arsenic</em> <i>74.92160</i></big><small>2<br>8<br>18<br>5</small></td>
+  <td class="Element Nonmetal Chalcogen p"><big><strong>34</strong> <acronym>Se</acronym> <em>Selenium</em> <i>78.96</i></big><small>2<br>8<br>18<br>6</small></td>
+  <td class="Element Halogen p"><big><strong>35</strong> <acronym>Br</acronym> <em>Bromine</em> <i>79.904</i></big><small>2<br>8<br>18<br>7</small></td>
+  <td class="Element Noble p"><big><strong>36</strong> <acronym>Kr</acronym> <em>Krypton</em> <i>83.798</i></big><small>2<br>8<br>18<br>8</small></td>
+  <td class="Shells"><small>K<br>L<br>M<br>N</small></td>
  </tr>
 
  <tr>
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 5 element">5</a></th>
-  <td class="Element Alkali s"><big><strong>37</strong> <acronym>Rb</acronym> <em>Rubidium</em> <i>85.4678</i></big><small>2<br/>8<br/>18<br/>8<br/>1</small></td>
-  <td class="Element Alkaline s"><big><strong>38</strong> <acronym>Sr</acronym> <em>Strontium</em> <i>87.62</i></big><small>2<br/>8<br/>18<br/>8<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>39</strong> <acronym>Y</acronym> <em>Yttrium</em> <i>88.90585</i></big><small>2<br/>8<br/>18<br/>9<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>40</strong> <acronym>Zr</acronym> <em>Zirconium</em> <i>91.224</i></big><small>2<br/>8<br/>18<br/>10<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>41</strong> <acronym>Nb</acronym> <em>Niobium</em> <i>92.90638</i></big><small>2<br/>8<br/>18<br/>12<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>42</strong> <acronym>Mo</acronym> <em>Molybdenum</em> <i>95.96</i></big><small>2<br/>8<br/>18<br/>13<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>43</strong> <acronym>Tc</acronym> <em>Technetium</em> <i>(98)</i></big><small>2<br/>8<br/>18<br/>14<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>44</strong> <acronym>Ru</acronym> <em>Ruthenium</em> <i>101.07</i></big><small>2<br/>8<br/>18<br/>15<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>45</strong> <acronym>Rh</acronym> <em>Rhodium</em> <i>102.90550</i></big><small>2<br/>8<br/>18<br/>16<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>46</strong> <acronym>Pd</acronym> <em>Palladium</em> <i>106.42</i></big><small>2<br/>8<br/>18<br/>18<br/>0</small></td>
-  <td class="Element Transition d"><big><strong>47</strong> <acronym>Ag</acronym> <em>Silver</em> <i>107.8682</i></big><small>2<br/>8<br/>18<br/>18<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>48</strong> <acronym>Cd</acronym> <em>Cadmium</em> <i>112.411</i></big><small>2<br/>8<br/>18<br/>18<br/>2</small></td>
-  <td class="Element Poor Boron p"><big><strong>49</strong> <acronym>In</acronym> <em>Indium</em> <i>114.818</i></big><small>2<br/>8<br/>18<br/>18<br/>3</small></td>
-  <td class="Element Poor Carbon p"><big><strong>50</strong> <acronym>Sn</acronym> <em>Tin</em> <i>118.710</i></big><small>2<br/>8<br/>18<br/>18<br/>4</small></td>
-  <td class="Element Metalloid Pnictogen p"><big><strong>51</strong> <acronym>Sb</acronym> <em>Antimony</em> <i>121.760</i></big><small>2<br/>8<br/>18<br/>18<br/>5</small></td>
-  <td class="Element Metalloid Chalcogen p"><big><strong>52</strong> <acronym>Te</acronym> <em>Tellurium</em> <i>127.60</i></big><small>2<br/>8<br/>18<br/>18<br/>6</small></td>
-  <td class="Element Halogen p"><big><strong>53</strong> <acronym>I</acronym> <em>Iodine</em> <i>126.90447</i></big><small>2<br/>8<br/>18<br/>18<br/>7</small></td>
-  <td class="Element Noble p"><big><strong>54</strong> <acronym>Xe</acronym> <em>Xenon</em> <i>131.293</i></big><small>2<br/>8<br/>18<br/>18<br/>8</small></td>
-  <td class="Shells"><small>K<br/>L<br/>M<br/>N<br/>O</small></td>
+  <td class="Element Alkali s"><big><strong>37</strong> <acronym>Rb</acronym> <em>Rubidium</em> <i>85.4678</i></big><small>2<br>8<br>18<br>8<br>1</small></td>
+  <td class="Element Alkaline s"><big><strong>38</strong> <acronym>Sr</acronym> <em>Strontium</em> <i>87.62</i></big><small>2<br>8<br>18<br>8<br>2</small></td>
+  <td class="Element Transition d"><big><strong>39</strong> <acronym>Y</acronym> <em>Yttrium</em> <i>88.90585</i></big><small>2<br>8<br>18<br>9<br>2</small></td>
+  <td class="Element Transition d"><big><strong>40</strong> <acronym>Zr</acronym> <em>Zirconium</em> <i>91.224</i></big><small>2<br>8<br>18<br>10<br>2</small></td>
+  <td class="Element Transition d"><big><strong>41</strong> <acronym>Nb</acronym> <em>Niobium</em> <i>92.90638</i></big><small>2<br>8<br>18<br>12<br>1</small></td>
+  <td class="Element Transition d"><big><strong>42</strong> <acronym>Mo</acronym> <em>Molybdenum</em> <i>95.96</i></big><small>2<br>8<br>18<br>13<br>1</small></td>
+  <td class="Element Transition d"><big><strong>43</strong> <acronym>Tc</acronym> <em>Technetium</em> <i>(98)</i></big><small>2<br>8<br>18<br>14<br>1</small></td>
+  <td class="Element Transition d"><big><strong>44</strong> <acronym>Ru</acronym> <em>Ruthenium</em> <i>101.07</i></big><small>2<br>8<br>18<br>15<br>1</small></td>
+  <td class="Element Transition d"><big><strong>45</strong> <acronym>Rh</acronym> <em>Rhodium</em> <i>102.90550</i></big><small>2<br>8<br>18<br>16<br>1</small></td>
+  <td class="Element Transition d"><big><strong>46</strong> <acronym>Pd</acronym> <em>Palladium</em> <i>106.42</i></big><small>2<br>8<br>18<br>18<br>0</small></td>
+  <td class="Element Transition d"><big><strong>47</strong> <acronym>Ag</acronym> <em>Silver</em> <i>107.8682</i></big><small>2<br>8<br>18<br>18<br>1</small></td>
+  <td class="Element Transition d"><big><strong>48</strong> <acronym>Cd</acronym> <em>Cadmium</em> <i>112.411</i></big><small>2<br>8<br>18<br>18<br>2</small></td>
+  <td class="Element Poor Boron p"><big><strong>49</strong> <acronym>In</acronym> <em>Indium</em> <i>114.818</i></big><small>2<br>8<br>18<br>18<br>3</small></td>
+  <td class="Element Poor Carbon p"><big><strong>50</strong> <acronym>Sn</acronym> <em>Tin</em> <i>118.710</i></big><small>2<br>8<br>18<br>18<br>4</small></td>
+  <td class="Element Metalloid Pnictogen p"><big><strong>51</strong> <acronym>Sb</acronym> <em>Antimony</em> <i>121.760</i></big><small>2<br>8<br>18<br>18<br>5</small></td>
+  <td class="Element Metalloid Chalcogen p"><big><strong>52</strong> <acronym>Te</acronym> <em>Tellurium</em> <i>127.60</i></big><small>2<br>8<br>18<br>18<br>6</small></td>
+  <td class="Element Halogen p"><big><strong>53</strong> <acronym>I</acronym> <em>Iodine</em> <i>126.90447</i></big><small>2<br>8<br>18<br>18<br>7</small></td>
+  <td class="Element Noble p"><big><strong>54</strong> <acronym>Xe</acronym> <em>Xenon</em> <i>131.293</i></big><small>2<br>8<br>18<br>18<br>8</small></td>
+  <td class="Shells"><small>K<br>L<br>M<br>N<br>O</small></td>
  </tr>
 
  <tr>
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 6 element">6</a></th>
-  <td class="Element Alkali s"><big><strong>55</strong> <acronym>Cs</acronym> <em>Caesium</em> <i>132.9054519</i></big><small>2<br/>8<br/>18<br/>18<br/>8<br/>1</small></td>
-  <td class="Element Alkaline s"><big><strong>56</strong> <acronym>Ba</acronym> <em>Barium</em> <i>137.327</i></big><small>2<br/>8<br/>18<br/>18<br/>8<br/>2</small></td>
+  <td class="Element Alkali s"><big><strong>55</strong> <acronym>Cs</acronym> <em>Caesium</em> <i>132.9054519</i></big><small>2<br>8<br>18<br>18<br>8<br>1</small></td>
+  <td class="Element Alkaline s"><big><strong>56</strong> <acronym>Ba</acronym> <em>Barium</em> <i>137.327</i></big><small>2<br>8<br>18<br>18<br>8<br>2</small></td>
   <td class="Lanthanoid InnerBorder BlueLeft BlueTop BlueRight">57–71</td>
-  <td class="Element Transition d"><big><strong>72</strong> <acronym>Hf</acronym> <em>Hafnium</em> <i>178.49</i></big><small>2<br/>8<br/>18<br/>32<br/>10<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>73</strong> <acronym>Ta</acronym> <em>Tantalum</em> <i>180.94788</i></big><small>2<br/>8<br/>18<br/>32<br/>11<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>74</strong> <acronym>W</acronym> <em>Tungsten</em> <i>183.84</i></big><small>2<br/>8<br/>18<br/>32<br/>12<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>75</strong> <acronym>Re</acronym> <em>Rhenium</em> <i>186.207</i></big><small>2<br/>8<br/>18<br/>32<br/>13<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>76</strong> <acronym>Os</acronym> <em>Osmium</em> <i>190.23</i></big><small>2<br/>8<br/>18<br/>32<br/>14<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>77</strong> <acronym>Ir</acronym> <em>Iridium</em> <i>192.217</i></big><small>2<br/>8<br/>18<br/>32<br/>15<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>78</strong> <acronym>Pt</acronym> <em>Platinum</em> <i>195.084</i></big><small>2<br/>8<br/>18<br/>32<br/>17<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>79</strong> <acronym>Au</acronym> <em>Gold</em> <i>196.966569</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>80</strong> <acronym>Hg</acronym> <em>Mercury</em> <i>200.59</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>2</small></td>
-  <td class="Element Poor Boron p"><big><strong>81</strong> <acronym>Tl</acronym> <em>Thallium</em> <i>204.3833</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>3</small></td>
-  <td class="Element Poor Carbon p"><big><strong>82</strong> <acronym>Pb</acronym> <em>Lead</em> <i>207.2</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>4</small></td>
-  <td class="Element Poor Pnictogen p"><big><strong>83</strong> <acronym>Bi</acronym> <em>Bismuth</em> <i>208.98040</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>5</small></td>
-  <td class="Element Metalloid Chalcogen p"><big><strong>84</strong> <acronym>Po</acronym> <em>Polonium</em> <i>(209)</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>6</small></td>
-  <td class="Element Halogen p"><big><strong>85</strong> <acronym>At</acronym> <em>Astatine</em> <i>(210)</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>7</small></td>
-  <td class="Element Noble p"><big><strong>86</strong> <acronym>Rn</acronym> <em>Radon</em> <i>(222)</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>8</small></td>
-  <td class="Shells"><small>K<br/>L<br/>M<br/>N<br/>O<br/>P</small></td>
+  <td class="Element Transition d"><big><strong>72</strong> <acronym>Hf</acronym> <em>Hafnium</em> <i>178.49</i></big><small>2<br>8<br>18<br>32<br>10<br>2</small></td>
+  <td class="Element Transition d"><big><strong>73</strong> <acronym>Ta</acronym> <em>Tantalum</em> <i>180.94788</i></big><small>2<br>8<br>18<br>32<br>11<br>2</small></td>
+  <td class="Element Transition d"><big><strong>74</strong> <acronym>W</acronym> <em>Tungsten</em> <i>183.84</i></big><small>2<br>8<br>18<br>32<br>12<br>2</small></td>
+  <td class="Element Transition d"><big><strong>75</strong> <acronym>Re</acronym> <em>Rhenium</em> <i>186.207</i></big><small>2<br>8<br>18<br>32<br>13<br>2</small></td>
+  <td class="Element Transition d"><big><strong>76</strong> <acronym>Os</acronym> <em>Osmium</em> <i>190.23</i></big><small>2<br>8<br>18<br>32<br>14<br>2</small></td>
+  <td class="Element Transition d"><big><strong>77</strong> <acronym>Ir</acronym> <em>Iridium</em> <i>192.217</i></big><small>2<br>8<br>18<br>32<br>15<br>2</small></td>
+  <td class="Element Transition d"><big><strong>78</strong> <acronym>Pt</acronym> <em>Platinum</em> <i>195.084</i></big><small>2<br>8<br>18<br>32<br>17<br>1</small></td>
+  <td class="Element Transition d"><big><strong>79</strong> <acronym>Au</acronym> <em>Gold</em> <i>196.966569</i></big><small>2<br>8<br>18<br>32<br>18<br>1</small></td>
+  <td class="Element Transition d"><big><strong>80</strong> <acronym>Hg</acronym> <em>Mercury</em> <i>200.59</i></big><small>2<br>8<br>18<br>32<br>18<br>2</small></td>
+  <td class="Element Poor Boron p"><big><strong>81</strong> <acronym>Tl</acronym> <em>Thallium</em> <i>204.3833</i></big><small>2<br>8<br>18<br>32<br>18<br>3</small></td>
+  <td class="Element Poor Carbon p"><big><strong>82</strong> <acronym>Pb</acronym> <em>Lead</em> <i>207.2</i></big><small>2<br>8<br>18<br>32<br>18<br>4</small></td>
+  <td class="Element Poor Pnictogen p"><big><strong>83</strong> <acronym>Bi</acronym> <em>Bismuth</em> <i>208.98040</i></big><small>2<br>8<br>18<br>32<br>18<br>5</small></td>
+  <td class="Element Metalloid Chalcogen p"><big><strong>84</strong> <acronym>Po</acronym> <em>Polonium</em> <i>(209)</i></big><small>2<br>8<br>18<br>32<br>18<br>6</small></td>
+  <td class="Element Halogen p"><big><strong>85</strong> <acronym>At</acronym> <em>Astatine</em> <i>(210)</i></big><small>2<br>8<br>18<br>32<br>18<br>7</small></td>
+  <td class="Element Noble p"><big><strong>86</strong> <acronym>Rn</acronym> <em>Radon</em> <i>(222)</i></big><small>2<br>8<br>18<br>32<br>18<br>8</small></td>
+  <td class="Shells"><small>K<br>L<br>M<br>N<br>O<br>P</small></td>
  </tr>
 
  <tr>
   <th class="Period"><a href="http://en.wikipedia.org/wiki/Period 7 element">7</a></th>
-  <td class="Element Alkali s"><big><strong>87</strong> <acronym>Fr</acronym> <em>Francium</em> <i>(223)</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>8<br/>1</small></td>
-  <td class="Element Alkaline s"><big><strong>88</strong> <acronym>Ra</acronym> <em>Radium</em> <i>(226)</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>8<br/>2</small></td>
+  <td class="Element Alkali s"><big><strong>87</strong> <acronym>Fr</acronym> <em>Francium</em> <i>(223)</i></big><small>2<br>8<br>18<br>32<br>18<br>8<br>1</small></td>
+  <td class="Element Alkaline s"><big><strong>88</strong> <acronym>Ra</acronym> <em>Radium</em> <i>(226)</i></big><small>2<br>8<br>18<br>32<br>18<br>8<br>2</small></td>
   <td class="Actinoid InnerBorder BlueLeft BlueRight">89–103</td>
-  <td class="Element Transition d"><big><strong>104</strong> <acronym>Rf</acronym> <em class="Long">Rutherfordium</em> <i>(267)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>10<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>105</strong> <acronym>Db</acronym> <em>Dubnium</em> <i>(268)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>11<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>106</strong> <acronym>Sg</acronym> <em>Seaborgium</em> <i>(271)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>12<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>107</strong> <acronym>Bh</acronym> <em>Bohrium</em> <i>(272)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>13<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>108</strong> <acronym>Hs</acronym> <em>Hassium</em> <i>(270)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>14<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>109</strong> <acronym>Mt</acronym> <em>Meitnerium</em> <i>(276)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>15<br/>2</small></td>
-  <td class="Element Transition d"><big><strong>110</strong> <acronym>Ds</acronym> <em class="Long">Darmstadtium</em> <i>(281)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>17<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>111</strong> <acronym>Rg</acronym> <em class="Long">Roentgenium</em> <i>(280)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>1</small></td>
-  <td class="Element Transition d"><big><strong>112</strong> <acronym class="Long">Uub</acronym> <em>Ununbium</em> <i>(285)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>2</small></td>
-  <td class="Element Poor Boron p"><big><strong>113</strong> <acronym class="Long">Uut</acronym> <em>Ununtrium</em> <i>(284)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>3</small></td>
-  <td class="Element Poor Carbon p"><big><strong>114</strong> <acronym class="Long">Uuq</acronym> <em class="Long">Ununquadium</em> <i>(289)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>4</small></td>
-  <td class="Element Poor Pnictogen p"><big><strong>115</strong> <acronym class="Long">Uup</acronym> <em class="Long">Ununpentium</em> <i>(288)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>5</small></td>
-  <td class="Element Poor Chalcogen p"><big><strong>116</strong> <acronym class="Long">Uuh</acronym> <em>Ununhexium</em> <i>(293)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>6</small></td>
+  <td class="Element Transition d"><big><strong>104</strong> <acronym>Rf</acronym> <em class="Long">Rutherfordium</em> <i>(267)</i></big><small>2<br>8<br>18<br>32<br>32<br>10<br>2</small></td>
+  <td class="Element Transition d"><big><strong>105</strong> <acronym>Db</acronym> <em>Dubnium</em> <i>(268)</i></big><small>2<br>8<br>18<br>32<br>32<br>11<br>2</small></td>
+  <td class="Element Transition d"><big><strong>106</strong> <acronym>Sg</acronym> <em>Seaborgium</em> <i>(271)</i></big><small>2<br>8<br>18<br>32<br>32<br>12<br>2</small></td>
+  <td class="Element Transition d"><big><strong>107</strong> <acronym>Bh</acronym> <em>Bohrium</em> <i>(272)</i></big><small>2<br>8<br>18<br>32<br>32<br>13<br>2</small></td>
+  <td class="Element Transition d"><big><strong>108</strong> <acronym>Hs</acronym> <em>Hassium</em> <i>(270)</i></big><small>2<br>8<br>18<br>32<br>32<br>14<br>2</small></td>
+  <td class="Element Transition d"><big><strong>109</strong> <acronym>Mt</acronym> <em>Meitnerium</em> <i>(276)</i></big><small>2<br>8<br>18<br>32<br>32<br>15<br>2</small></td>
+  <td class="Element Transition d"><big><strong>110</strong> <acronym>Ds</acronym> <em class="Long">Darmstadtium</em> <i>(281)</i></big><small>2<br>8<br>18<br>32<br>32<br>17<br>1</small></td>
+  <td class="Element Transition d"><big><strong>111</strong> <acronym>Rg</acronym> <em class="Long">Roentgenium</em> <i>(280)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>1</small></td>
+  <td class="Element Transition d"><big><strong>112</strong> <acronym class="Long">Uub</acronym> <em>Ununbium</em> <i>(285)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>2</small></td>
+  <td class="Element Poor Boron p"><big><strong>113</strong> <acronym class="Long">Uut</acronym> <em>Ununtrium</em> <i>(284)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>3</small></td>
+  <td class="Element Poor Carbon p"><big><strong>114</strong> <acronym class="Long">Uuq</acronym> <em class="Long">Ununquadium</em> <i>(289)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>4</small></td>
+  <td class="Element Poor Pnictogen p"><big><strong>115</strong> <acronym class="Long">Uup</acronym> <em class="Long">Ununpentium</em> <i>(288)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>5</small></td>
+  <td class="Element Poor Chalcogen p"><big><strong>116</strong> <acronym class="Long">Uuh</acronym> <em>Ununhexium</em> <i>(293)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>6</small></td>
   <td class="Element Undiscovered p"><big><strong>117</strong> <acronym class="Long">Uus</acronym> <em class="Long">Ununseptium</em> <i> </i></big><small></small></td>
-  <td class="Element Noble p"><big><strong>118</strong> <acronym class="Long">Uuo</acronym> <em>Ununoctium</em> <i>(294)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>18<br/>8</small></td>
-  <td class="Shells"><small>K<br/>L<br/>M<br/>N<br/>O<br/>P<br/>Q</small></td>
+  <td class="Element Noble p"><big><strong>118</strong> <acronym class="Long">Uuo</acronym> <em>Ununoctium</em> <i>(294)</i></big><small>2<br>8<br>18<br>32<br>32<br>18<br>8</small></td>
+  <td class="Shells"><small>K<br>L<br>M<br>N<br>O<br>P<br>Q</small></td>
  </tr>
 
  <tr>
-  <td id="SearchArea" colspan="3" rowspan="2"><label id="Search" for="SearchInput">Search</label><br/><input id="SearchInput" type="text" value="# or Name"/></td>
+  <td id="SearchArea" colspan="3" rowspan="2"><label id="Search" for="SearchInput">Search</label><br><input id="SearchInput" type="text" value="# or Name"></td>
   <td class="InnerBorder BlueLeft BlueRight"></td>
   <td class="Paren" id="Paren" colspan="16">For elements with no stable isotopes, the mass number of the isotope with the longest half-life is in parentheses.</td>
  </tr>
 
  <tr>
   <td class="InnerBorder BlueLeft"></td>
-  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: January 07, 2009</span> </td>
+  <td class="InnerBorder BlueTop BlueBottom" colspan="15"><span>Periodic Table Design and Interface Copyright © 1997 Michael Dayah. http://www.ptable.com/ Last updated: February 02, 2009</span> </td>
   <td class="InnerBorder BlueTop BlueRight"></td>
  </tr>
 
  <tr>
-  <td colspan="3" rowspan="2"><a href="link.php?lang=en"><img src="http://www.eehtpc.com/ptable/ptable-logo.png" alt="Ptable.com" id="Logo"/></a></td>
+  <td colspan="3" rowspan="2"><a href="link.php?lang=en"><img src="http://www.eehtpc.com/ptable/ptable-logo.png" alt="Ptable.com" id="Logo"></a></td>
   <td class="InnerBorder BlueLeft BlueRight BlueBottom" rowspan="2"></td>
-  <td class="Element Lanthanoid f"><big><strong>57</strong> <acronym>La</acronym> <em>Lanthanum</em> <i>138.90547</i></big><small>2<br/>8<br/>18<br/>18<br/>9<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>58</strong> <acronym>Ce</acronym> <em>Cerium</em> <i>140.116</i></big><small>2<br/>8<br/>18<br/>19<br/>9<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>59</strong> <acronym>Pr</acronym> <em class="Long">Praseodymium</em> <i>140.90765</i></big><small>2<br/>8<br/>18<br/>21<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>60</strong> <acronym>Nd</acronym> <em>Neodymium</em> <i>144.242</i></big><small>2<br/>8<br/>18<br/>22<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>61</strong> <acronym>Pm</acronym> <em>Promethium</em> <i>(145)</i></big><small>2<br/>8<br/>18<br/>23<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>62</strong> <acronym>Sm</acronym> <em>Samarium</em> <i>150.36</i></big><small>2<br/>8<br/>18<br/>24<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>63</strong> <acronym>Eu</acronym> <em>Europium</em> <i>151.964</i></big><small>2<br/>8<br/>18<br/>25<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>64</strong> <acronym>Gd</acronym> <em>Gadolinium</em> <i>157.25</i></big><small>2<br/>8<br/>18<br/>25<br/>9<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>65</strong> <acronym>Tb</acronym> <em>Terbium</em> <i>158.92535</i></big><small>2<br/>8<br/>18<br/>27<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>66</strong> <acronym>Dy</acronym> <em>Dysprosium</em> <i>162.500</i></big><small>2<br/>8<br/>18<br/>28<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>67</strong> <acronym>Ho</acronym> <em>Holmium</em> <i>164.93032</i></big><small>2<br/>8<br/>18<br/>29<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>68</strong> <acronym>Er</acronym> <em>Erbium</em> <i>167.259</i></big><small>2<br/>8<br/>18<br/>30<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>69</strong> <acronym>Tm</acronym> <em>Thulium</em> <i>168.93421</i></big><small>2<br/>8<br/>18<br/>31<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid f"><big><strong>70</strong> <acronym>Yb</acronym> <em>Ytterbium</em> <i>173.054</i></big><small>2<br/>8<br/>18<br/>32<br/>8<br/>2</small></td>
-  <td class="Element Lanthanoid d"><big><strong>71</strong> <acronym>Lu</acronym> <em>Lutetium</em> <i>174.9668</i></big><small>2<br/>8<br/>18<br/>32<br/>9<br/>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>57</strong> <acronym>La</acronym> <em>Lanthanum</em> <i>138.90547</i></big><small>2<br>8<br>18<br>18<br>9<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>58</strong> <acronym>Ce</acronym> <em>Cerium</em> <i>140.116</i></big><small>2<br>8<br>18<br>19<br>9<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>59</strong> <acronym>Pr</acronym> <em class="Long">Praseodymium</em> <i>140.90765</i></big><small>2<br>8<br>18<br>21<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>60</strong> <acronym>Nd</acronym> <em>Neodymium</em> <i>144.242</i></big><small>2<br>8<br>18<br>22<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>61</strong> <acronym>Pm</acronym> <em>Promethium</em> <i>(145)</i></big><small>2<br>8<br>18<br>23<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>62</strong> <acronym>Sm</acronym> <em>Samarium</em> <i>150.36</i></big><small>2<br>8<br>18<br>24<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>63</strong> <acronym>Eu</acronym> <em>Europium</em> <i>151.964</i></big><small>2<br>8<br>18<br>25<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>64</strong> <acronym>Gd</acronym> <em>Gadolinium</em> <i>157.25</i></big><small>2<br>8<br>18<br>25<br>9<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>65</strong> <acronym>Tb</acronym> <em>Terbium</em> <i>158.92535</i></big><small>2<br>8<br>18<br>27<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>66</strong> <acronym>Dy</acronym> <em>Dysprosium</em> <i>162.500</i></big><small>2<br>8<br>18<br>28<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>67</strong> <acronym>Ho</acronym> <em>Holmium</em> <i>164.93032</i></big><small>2<br>8<br>18<br>29<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>68</strong> <acronym>Er</acronym> <em>Erbium</em> <i>167.259</i></big><small>2<br>8<br>18<br>30<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>69</strong> <acronym>Tm</acronym> <em>Thulium</em> <i>168.93421</i></big><small>2<br>8<br>18<br>31<br>8<br>2</small></td>
+  <td class="Element Lanthanoid f"><big><strong>70</strong> <acronym>Yb</acronym> <em>Ytterbium</em> <i>173.054</i></big><small>2<br>8<br>18<br>32<br>8<br>2</small></td>
+  <td class="Element Lanthanoid d"><big><strong>71</strong> <acronym>Lu</acronym> <em>Lutetium</em> <i>174.9668</i></big><small>2<br>8<br>18<br>32<br>9<br>2</small></td>
   <td rowspan="2" class="InnerBorder BlueRight BlueBottom BlueLeft"></td>
  </tr>
 
  <tr>
-  <td class="Element Actinoid f"><big><strong>89</strong> <acronym>Ac</acronym> <em>Actinium</em> <i>(227)</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>9<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>90</strong> <acronym>Th</acronym> <em>Thorium</em> <i>232.03806</i></big><small>2<br/>8<br/>18<br/>32<br/>18<br/>10<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>91</strong> <acronym>Pa</acronym> <em>Protactinium</em> <i>231.03588</i></big><small>2<br/>8<br/>18<br/>32<br/>20<br/>9<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>92</strong> <acronym>U</acronym> <em>Uranium</em> <i>238.02891</i></big><small>2<br/>8<br/>18<br/>32<br/>21<br/>9<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>93</strong> <acronym>Np</acronym> <em>Neptunium</em> <i>(237)</i></big><small>2<br/>8<br/>18<br/>32<br/>22<br/>9<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>94</strong> <acronym>Pu</acronym> <em>Plutonium</em> <i>(244)</i></big><small>2<br/>8<br/>18<br/>32<br/>24<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>95</strong> <acronym>Am</acronym> <em>Americium</em> <i>(243)</i></big><small>2<br/>8<br/>18<br/>32<br/>25<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>96</strong> <acronym>Cm</acronym> <em>Curium</em> <i>(247)</i></big><small>2<br/>8<br/>18<br/>32<br/>25<br/>9<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>97</strong> <acronym>Bk</acronym> <em>Berkelium</em> <i>(247)</i></big><small>2<br/>8<br/>18<br/>32<br/>27<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>98</strong> <acronym>Cf</acronym> <em>Californium</em> <i>(251)</i></big><small>2<br/>8<br/>18<br/>32<br/>28<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>99</strong> <acronym>Es</acronym> <em>Einsteinium</em> <i>(252)</i></big><small>2<br/>8<br/>18<br/>32<br/>29<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>100</strong> <acronym>Fm</acronym> <em>Fermium</em> <i>(257)</i></big><small>2<br/>8<br/>18<br/>32<br/>30<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>101</strong> <acronym>Md</acronym> <em class="Long">Mendelevium</em> <i>(258)</i></big><small>2<br/>8<br/>18<br/>32<br/>31<br/>8<br/>2</small></td>
-  <td class="Element Actinoid f"><big><strong>102</strong> <acronym>No</acronym> <em>Nobelium</em> <i>(259)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>8<br/>2</small></td>
-  <td class="Element Actinoid d"><big><strong>103</strong> <acronym>Lr</acronym> <em>Lawrencium</em> <i>(262)</i></big><small>2<br/>8<br/>18<br/>32<br/>32<br/>9<br/>2</small></td>
+  <td class="Element Actinoid f"><big><strong>89</strong> <acronym>Ac</acronym> <em>Actinium</em> <i>(227)</i></big><small>2<br>8<br>18<br>32<br>18<br>9<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>90</strong> <acronym>Th</acronym> <em>Thorium</em> <i>232.03806</i></big><small>2<br>8<br>18<br>32<br>18<br>10<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>91</strong> <acronym>Pa</acronym> <em>Protactinium</em> <i>231.03588</i></big><small>2<br>8<br>18<br>32<br>20<br>9<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>92</strong> <acronym>U</acronym> <em>Uranium</em> <i>238.02891</i></big><small>2<br>8<br>18<br>32<br>21<br>9<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>93</strong> <acronym>Np</acronym> <em>Neptunium</em> <i>(237)</i></big><small>2<br>8<br>18<br>32<br>22<br>9<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>94</strong> <acronym>Pu</acronym> <em>Plutonium</em> <i>(244)</i></big><small>2<br>8<br>18<br>32<br>24<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>95</strong> <acronym>Am</acronym> <em>Americium</em> <i>(243)</i></big><small>2<br>8<br>18<br>32<br>25<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>96</strong> <acronym>Cm</acronym> <em>Curium</em> <i>(247)</i></big><small>2<br>8<br>18<br>32<br>25<br>9<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>97</strong> <acronym>Bk</acronym> <em>Berkelium</em> <i>(247)</i></big><small>2<br>8<br>18<br>32<br>27<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>98</strong> <acronym>Cf</acronym> <em>Californium</em> <i>(251)</i></big><small>2<br>8<br>18<br>32<br>28<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>99</strong> <acronym>Es</acronym> <em>Einsteinium</em> <i>(252)</i></big><small>2<br>8<br>18<br>32<br>29<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>100</strong> <acronym>Fm</acronym> <em>Fermium</em> <i>(257)</i></big><small>2<br>8<br>18<br>32<br>30<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>101</strong> <acronym>Md</acronym> <em class="Long">Mendelevium</em> <i>(258)</i></big><small>2<br>8<br>18<br>32<br>31<br>8<br>2</small></td>
+  <td class="Element Actinoid f"><big><strong>102</strong> <acronym>No</acronym> <em>Nobelium</em> <i>(259)</i></big><small>2<br>8<br>18<br>32<br>32<br>8<br>2</small></td>
+  <td class="Element Actinoid d"><big><strong>103</strong> <acronym>Lr</acronym> <em>Lawrencium</em> <i>(262)</i></big><small>2<br>8<br>18<br>32<br>32<br>9<br>2</small></td>
  </tr>
 
  </tbody>
@@ -502,7 +502,7 @@ var microsoft_adunitid="3834", microsoft_adunit_width="468", microsoft_adunit_he
    <div class="Bevel" style="float: left; background-position: 0 0;"></div>
    <div class="Bevel" style="float: right; background-position: -20px 0;"></div>
 <span class="Media"><a href="Other/Periodic Table.pdf" title="US paper size (8.5×11 in) printable PDF">Periodic Table PDF</a><a href="Images/periodic table.png" title="Periodic Table image">Periodic Table PNG</a></span><span class="Internal"><a href="about.html" title="Questions about this particular periodic table">About</a><a href="http://forum.ptable.com/" title="Chemistry forum">Forum</a><a href="feedback.html" title="Contact the designer">Contact</a><a href="periodic-table-poster.html" title="Buy a periodic table poster">Poster</a><a href="#" onclick="return load_script('demo');" title="Short demonstration of Ptable's features">Demo</a><span id="StopDemo" style="display: none;"> [<a href="#" onclick="location.reload(false);">Stop</a>]</span></span><span class="Social"><a id="facebook" href="http://www.facebook.com/pages/Periodic-Table/7329016582">Facebook</a><a id="twitter" href="http://twitter.com/Ptable">Twitter</a></span>
-   <form name="language" method="get" action="http://www.ptable.com/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="ca">Català</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="hi">हिन्दी</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ro">Română</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="OK"/></form>
+   <form name="language" method="get" action="http://www.ptable.com/" id="langswitch"><select name="lang"><option value="af">Afrikaans</option><option value="ar">العربية</option><option value="bg">Български</option><option value="bn">বাংলা</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="ca">Català</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="eo">Esperanto</option><option value="es">Español</option><option value="fa">فارسی</option><option value="fi">Suomi</option><option value="fr">Français</option><option value="he">עברית</option><option value="hi">हिन्दी</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="la">Latina</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ro">Română</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="sw">Kiswahili</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="zh">中文 (简)</option><option value="zh-tw">中文 (繁)</option></select><input type="submit" value="OK"></form>
 <!-- <a href="#" onclick="return load_script('song');" title="Song">Song</a> -->
   </div>
 

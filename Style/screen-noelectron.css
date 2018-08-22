@@ -1,13 +1,17 @@
-SMALL		{ display: none; }
-.Shells		{ visibility: hidden; }
-STRONG, EM	{ line-height: 1; }
-BIG, DIV, EM	{ text-align: center; }
-BIG		{ margin-left: auto; margin-right: auto; width: 2.9em; }
-.Long		{ font-size: 0.6em; }
-STRONG		{ filter: alpha(Opacity=50); opacity: 0.50; background-color: white; height: 1em; }
-#Key		{ font-size: 0.9em; }
-Removed	{ font-size: 0.8em; }
-#Note		{ font-size: 0.7em; }
-.Alkali, .Alkaline, .Nonmetal, .Transition, .Actinide, .Lanthanide, .Poor, .Noble, .Hydrogen
-		{ padding: 0.2em; }
-.Electron	{ padding: 0; }
+big				{ line-height: 1; }
+small, .Shells, #Legend span	{ display: none; }
+#Closeup small	{ display: inline-block; font-size: 50%; }
+#CloseupElement big { line-height: normal; }
+#Legend acronym	{ letter-spacing: normal; }
+.Element		{ padding: 1px 1px 0 1px; background-image: url("http://www.eehtpc.com/ptable/gradient-names.png"); background-repeat: no-repeat; }
+.KeyRegion, .InnerBorder	{ font-size: 0.8em; }
+.KeyRegion input	{ height: 13pt; }
+.Paren			{ font-size: 0.9em; width: 600pt; }
+.Period			{ width: 1em; }
+#Logo			{ position: absolute; clip: rect(auto 114px auto 4px); }
+#OrbitalString, #SliderCell	{ font-size: 1em; }
+thead td		{ border-bottom-width: 0; }
+.Clean, #Legend	{ border-width: 1px; }
+#Series td, #Hund	{ font-size: 0.8em; }
+#Series td, .Element, #CloseupElement	{ border: 1px solid #666; }
+.Locked			{ border: 2px solid black; }
