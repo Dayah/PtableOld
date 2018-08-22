@@ -1,26 +1,25 @@
-@page			{ size: landscape; margin: 0; }
+@page					{ size: landscape; margin: 0; }
 
-#Navigation, IMG, H2, P, #Ad, #TopAd, #Copyright .Web,
-			{ display: none; }
-#HideEC			{ color: white; }
-H1			{ font-size: 48pt; border: none; margin-top: 0; margin-bottom: 40pt; }
-TD, #Copyright		{ font-size: 8pt; }
-STRONG			{ font-size: 8pt; font-weight: normal; }
-BIG			{ font-size: 13pt; width: 26.5pt; }
-.NewGroup, .OldGroup, .Period, .CategoryName
-			{ font-size: 10pt; }
-EM, DIV			{ font-size: 5pt; }
-.Long			{ font-size: 4.2pt; }
-SMALL			{ font-size: 4.5pt; }
-.RowSpace		{ height: 3pt; padding-right: 3pt; }
-.Note, .StateBlock STRONG, .State
-			{ font-size: 9pt; }
-.Removed		{ font-size: 7pt; }
-#Note			{ font-size: 6pt; }
-#Main TH		{ font-size: 10pt; }
-#Key TH			{ width: 12pt; height: 12pt; font-size: 9pt; }
-#Key TD			{ font-size: 10pt; }
-#Stable			{ font-size: 10pt; line-height: 4; }
-#Copyright #Print	{ display: inline; }
-#Key			{ width: 83%; }
-.Shells, .Shells SMALL	{ text-align: center; }
+h1						{ font-size: 5em; line-height: 1; margin-bottom: 0.1em; background-image: none; background-color: #5FF; color: black; }
+#Navigation, #Tabs, #Ad, #Search, img	{ display: none; }
+input, #SliderTrack		{ visibility: hidden; }
+.Element, .Electron, thead td, .Clean, #Legend	{ background-image: none; }
+#Legend acronym			{ font-weight: normal; }
+thead td				{ border-right-width: 1px; border-bottom-width: 1em; }
+thead a, .Period a		{ font-size: 1.3em; display: block; }
+strong					{ font-size: 1.2em; }
+#KeyContainer			{ width: 90% ! important; }
+#Series					{ height: 8em; width: 24em; }
+.Paren					{ line-height: 1.5; padding-left: 6ex; }
+.InnerBorder			{ font-size: 0.8em; }
+.Alkali .Alkali         { background-color: #FFD47F; }
+.Alkaline .Alkaline     { background-color: #FFFF7F; }
+.Transition .Transition { background-color: #EECCCC; }
+.Poor .Poor             { background-color: #88EEDD; }
+.Nonmetal .Nonmetal     { background-color: #7FF67F; }
+.Noble .Noble           { background-color: #C3D4FF; }
+.Lanthanoid .Lanthanoid { background-color: #FFD4C3; }
+.Actinoid .Actinoid     { background-color: #EED4E5; }
+.Undiscovered           { background-color: #FFFFFF; }
+.InnerBorder            { background-color: #CCCCFF; }
+.BlueLeft, .BlueRight, .BlueTop, .BlueBottom	{ border-color: #6666FF; }
