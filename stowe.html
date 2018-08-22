@@ -1,0 +1,616 @@
+color by: class, orbital, period
+
+<script>
+function show(n) {
+	document.getElementById(n).style.display = "block";
+}
+function hide(n) {
+	document.getElementById(n).style.display = "none";
+}
+
+</script>
+
+<style>
+A	{ display: block; padding: 0.2em; border: thin solid black; width: 10%; float: right; clear: right; }
+TABLE		{ position: absolute; display: none; }
+TABLE TD	{ border: solid; height: 2em; width: 1.5em;}
+.f		{ background-color: lightblue; }
+.d		{ background-color: magenta; }
+.p		{ background-color: yellow; }
+.s		{ background-color: white; }
+</style>
+<br>
+
+<table id=1>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="s">1</td>
+  <td class="s">2</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<table id=2>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="p">7</td>
+  <td class="p">8</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="p">6</td>
+  <td class="s">3</td>
+  <td class="s">4</td>
+  <td class="p">9</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="p">5</td>
+  <td class="p">10</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<table id=3>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="d">25</td>
+  <td class="d">26</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="d">24</td>
+  <td class="p">15</td>
+  <td class="p">16</td>
+  <td class="d">27</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="d">23</td>
+  <td class="p">14</td>
+  <td class="s">11</td>
+  <td class="s">12</td>
+  <td class="p">17</td>
+  <td class="d">28</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="d">22</td>
+  <td class="p">13</td>
+  <td class="p">18</td>
+  <td class="d">29</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="d">21</td>
+  <td class="d">30</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+
+<table id=4>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="f">64</td>
+  <td class="f">65</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="f">63</td>
+  <td class="d">43</td>
+  <td class="d">44</td>
+  <td class="f">66</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="f">62</td>
+  <td class="d">42</td>
+  <td class="p">33</td>
+  <td class="p">34</td>
+  <td class="d">45</td>
+  <td class="f">67</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td class="f">61</td>
+  <td class="d">41</td>
+  <td class="p">32</td>
+  <td class="s">19</td>
+  <td class="s">20</td>
+  <td class="p">35</td>
+  <td class="d">46</td>
+  <td class="f">68</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="f">60</td>
+  <td class="d">40</td>
+  <td class="p">31</td>
+  <td class="p">36</td>
+  <td class="d">47</td>
+  <td class="f">69</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="f">59</td>
+  <td class="d">39</td>
+  <td class="d">48</td>
+  <td class="f">70</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="f">58</td>
+  <td class="f">71</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<table id=5>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="f">96</td>
+  <td class="f">97</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="f">95</td>
+  <td class="d">75</td>
+  <td class="d">76</td>
+  <td class="f">98</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="f">94</td>
+  <td class="d">74</td>
+  <td class="p">51</td>
+  <td class="p">52</td>
+  <td class="d">77</td>
+  <td class="f">99</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td class="f">93</td>
+  <td class="d">73</td>
+  <td class="p">50</td>
+  <td class="s">37</td>
+  <td class="s">38</td>
+  <td class="p">53</td>
+  <td class="d">78</td>
+  <td class="f">100</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="f">92</td>
+  <td class="d">72</td>
+  <td class="p">49</td>
+  <td class="p">54</td>
+  <td class="d">79</td>
+  <td class="f">101</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="f">91</td>
+  <td class="d">57</td>
+  <td class="d">80</td>
+  <td class="f">102</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="f">90</td>
+  <td class="f">103</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<table id=6>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="d">107</td>
+  <td class="d">109</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="d">106</td>
+  <td class="p">83</td>
+  <td class="p">84</td>
+  <td class="d">110</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="d">105</td>
+  <td class="p">82</td>
+  <td class="s">55</td>
+  <td class="s">56</td>
+  <td class="p">85</td>
+  <td class="d">111</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="d">104</td>
+  <td class="p">81</td>
+  <td class="p">86</td>
+  <td class="d">112</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="d">89</td>
+  <td class="d">113</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<table id=7>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="p">116</td>
+  <td class="p">117</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td class="p">115</td>
+  <td class="s">87</td>
+  <td class="s">88</td>
+  <td class="p">118</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="p">114</td>
+  <td class="p">119</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="s">120</td>
+  <td class="s">121</td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+
+<a onMouseOver="show('1')" onMouseOut="hide('1')">1</a>
+<a onMouseOver="show('2')" onMouseOut="hide('2')">2</a>
+<a onMouseOver="show('3')" onMouseOut="hide('3')">3</a>
+<a onMouseOver="show('4')" onMouseOut="hide('4')">4</a>
+<a onMouseOver="show('5')" onMouseOut="hide('5')">5</a>
+<a onMouseOver="show('6')" onMouseOut="hide('6')">6</a>
+<a onMouseOver="show('7')" onMouseOut="hide('7')">7</a>
