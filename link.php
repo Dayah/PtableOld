@@ -4,7 +4,7 @@
 
   <style type="text/css">
    BODY	{ margin: 0 0.5cm 1em; font-family: sans-serif; }
-   H1	{ margin: 0; color: white; background: rgb(36, 83, 139) url("http://web.utk.edu/~mdayah/h1-gradient.png") repeat-x; font: normal 3em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; border-bottom: 1px solid #00C; }
+   H1	{ margin: 0; color: white; background: rgb(36, 83, 139) url("http://www.eehtpc.com/ptable/h1-gradient.png") repeat-x; font: normal 3em "Franklin Gothic Medium", "Trebuchet MS", Verdana; text-align: center; white-space: nowrap; border-bottom: 1px solid #00C; }
    H2	{ margin-left: 3em; margin-right: 60%; border-bottom: thin solid blue; border-right: thin solid blue; }
    P	{ margin: 0 1em; text-align: justify; }
    DIV	{ margin-left: 5cm; }
@@ -17,8 +17,8 @@
 
   <h1>Link to the Periodic Table</h1>
   <div style="position: relative; height: 12px; margin-left: 0;">
-   <img src="http://web.utk.edu/~mdayah/bevel-left.png" style="position: absolute; top: -13px; left: 0; height: 24px; width: 12px;" alt="">
-   <img src="http://web.utk.edu/~mdayah/bevel-right.png" style="position: absolute; top: -13px; right: 0; height: 24px; width: 12px;" alt="">
+   <img src="http://www.eehtpc.com/ptable/bevel-left.png" style="position: absolute; top: -13px; left: 0; height: 24px; width: 12px;" alt="">
+   <img src="http://www.eehtpc.com/ptable/bevel-right.png" style="position: absolute; top: -13px; right: 0; height: 24px; width: 12px;" alt="">
   </div>
 
   <p>Consider placing a link to this <a href="/periodic/">periodic table</a> on your web site. Links help more people find the site as well as increase its ranking in search engines. Please don't place it in a slew of dozens of links to periodic tables. This isn't 1996 and if your visitors want a list of links to periodic tables, they'll visit Google. Exercise your editorial judgement as a webmaster and send them to the resource you believe is best.</p>
@@ -28,10 +28,10 @@
   <div><textarea rows=3 cols=60>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;Periodic Table&lt;/a&gt;</textarea></div>
 
   <h2>Logo</h2>
-  <div><a href="/periodic/" title="Periodic Table of Elements"><img src="Images/ptable-logo.png" alt="Periodic Table" height=60 width=120 border=0></a></div>
-  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/ptable-logo.png" alt="Ptable.com" height=60 width=120 border=0&gt;&lt;/a&gt;</textarea></div>
+  <div><a href="/periodic/" title="Periodic Table of Elements"><img src="Images/ptable-logo.png" alt="Periodic Table" style="height: 60px; width: 120px; border: none;"></a></div>
+  <div><textarea rows=4 cols=65>&lt;a href="http://www.ptable.com/" title="Periodic Table of Elements"&gt;&lt;img src="http://www.ptable.com/Images/ptable-logo.png" alt="Ptable.com" style="height: 60px; width: 120px; border: none;"/&gt;&lt;/a&gt;</textarea></div>
 
-  <p>Please only link to the main site. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or the full interactive experience.</p>
+  <p style="margin-top: 1em;">Please only link to the main site. This gives your visitors the opportunity to choose whether they'd prefer a certain PDF paper size, image, or the full interactive experience. If you insist on linking to the image or PDF, do <strong>not</strong> copy it to your server. Hotlink it. You have my permission.</p>
 
  </body>
 </html>
